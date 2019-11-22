@@ -1,0 +1,18 @@
+{
+    "animals": [{
+        "name": "大熊猫",
+        "imageURL": "assets/data/cn/image/Panda.png",
+        "dataURL": "assets/data/cn/Panda.json"
+    },
+    {
+        "name": "大鲵",
+        "imageURL": "assets/data/cn/image/GiantSalamander.png",
+        "dataURL": "assets/data/cn/GiantSalamander.json"
+    },
+    {
+        "name": "长臂猿",
+        "imageURL": "assets/data/cn/image/Gibbon.png",
+        "dataURL": "assets/data/cn/Gibbon.json"
+    }
+    ]
+}

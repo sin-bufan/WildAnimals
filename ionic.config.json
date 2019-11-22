@@ -1,0 +1,7 @@
+{
+  "name": "WildAnimals",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

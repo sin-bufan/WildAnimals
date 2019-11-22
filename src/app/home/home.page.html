@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      野生动物
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-lines class="book-list">
+    <button
+      class="animal-item"
+      [routerLink]="['/animal', animal.dataURL]"
+      *ngFor="let animal of this.animals"
+    >
+      <img src="{{animal.imageURL}}" />
+    </button>
+  </ion-list>
+</ion-content>
