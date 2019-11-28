@@ -3,13 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import * as Phaser from 'phaser';
 
 @Component({
-  selector: 'app-game1',
-  templateUrl: './game1.component.html',
-  styleUrls: ['./game1.component.scss'],
+  selector: 'animal-game',
+  templateUrl: './game.component.html',
+  styleUrls: ['./game.component.scss'],
 })
-export class Game1Component implements OnInit {
-
-
+export class GameComponent implements OnInit {
   // public game = {
   //   width?: integer | string;
   //   height?: integer | string;
@@ -41,11 +39,12 @@ export class Game1Component implements OnInit {
   //   scale?: ScaleConfig;,
   //   instance: Game // It's created internally when the game is initialized
   // };
+
   public game;
   public initialize: boolean;
   
   constructor() {
-    this.initializeGame()
+    this.initializeGame();
   }
   initializeGame() {
     this.game = {
@@ -65,9 +64,6 @@ export class Game1Component implements OnInit {
   }
   create(){
     this.game.scene.scenes[0].add.image(400,300,'bg')
-  }
-  getInstance(){
-    return this.game.instance
   }
 
   ngOnInit() {}

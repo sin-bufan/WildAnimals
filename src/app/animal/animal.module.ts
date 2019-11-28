@@ -6,6 +6,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AnimalPage } from './animal.page';
+import {MapComponent} from './map/map.component';
+import {GameComponent} from './game/game.component';
+
 
 const routes: Routes = [
   {
@@ -21,7 +24,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AnimalPage],
+  declarations: [AnimalPage,MapComponent,GameComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]//ion-phaser使用
 })
 export class AnimalPageModule {}

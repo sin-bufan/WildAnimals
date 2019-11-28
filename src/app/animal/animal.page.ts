@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
-import * as Phaser from 'phaser';
+
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -15,8 +15,6 @@ export class AnimalPage implements OnInit {
   slideOpts = {
     loop:true
   }
-  public game;
-  public initialize: boolean;
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -32,31 +30,5 @@ export class AnimalPage implements OnInit {
         console.info("Animal: ", this.animal)
       }
     );
-
-    this.initializeGame()
-  }
-
-
-  initializeGame() {
-    this.game = {
-      width: "100%",
-      height: "100%",
-      type: Phaser.AUTO,
-      scene: {
-        preload: this.preload,
-        create: this.create
-      }
-    }
-    this.initialize = true
-  }
-  preload() {
-    console.info(this.game.scene.scenes[0])
-    this.game.scene.scenes[0].load.image('bg', 'assets/bg.png')
-  }
-  create() {
-    this.game.scene.scenes[0].add.image(400, 300, 'bg')
-  }
-  getInstance() {
-    return this.game.instance
   }
 }
