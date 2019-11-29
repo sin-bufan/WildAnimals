@@ -40,32 +40,46 @@ export class GameComponent implements OnInit {
   //   instance: Game // It's created internally when the game is initialized
   // };
 
-  public game;
+  public game: any = {};
+  // public game = {
+  //   instance: Phaser.Game
+  // };
   public initialize: boolean;
-  
+
   constructor() {
     this.initializeGame();
   }
   initializeGame() {
+    this.initialize = true;
     this.game = {
       width: "100%",
       height: "100%",
-      type: Phaser.AUTO,
+      type: Phaser.WEBGL,
       scene: {
-        preload:this.preload,
-        create:this.create
+        preload: this.preload,
+        create: this.create
       }
-    }
-    this.initialize = true
+    };
+
+    // var config = {
+    //   width: "100%",
+    //   height: "100%",
+    //   type: Phaser.WEBGL,
+    //   scene: {
+    //     preload:this.preload,
+    //     create:this.create
+    //   }
+    // }
+    // this.game = new Phaser.Game(config);
   }
-  preload(){
+  preload() {
     console.info(this.game.scene.scenes[0])
-    this.game.scene.scenes[0].load.image('bg','assets/bg.png')
+    //this.game.scene.scenes[0].load.image('bg','assets/bg.png')
   }
-  create(){
-    this.game.scene.scenes[0].add.image(400,300,'bg')
+  create() {
+    //this.game.scene.scenes[0].add.image(400,300,'bg')
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
