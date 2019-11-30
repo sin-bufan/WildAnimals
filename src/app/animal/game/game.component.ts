@@ -1,6 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Phaser from 'phaser';
+class BootScene extends Phaser.Scene {
+  preload(){
+    console.info(this)
+    this.load.image('bg','assets/bg.png')
+  }
+  helloWorld: Phaser.GameObjects.Text
+
+  init () {
+    this.cameras.main.setBackgroundColor('#24252A');
+    console.info(this.cameras.main.backgroundColor)
+  }
+
+  create () {
+
+    this.add.image(0,0,'bg')
+    this.helloWorld = this.add.text(
+      this.cameras.main.centerX, 
+      this.cameras.main.centerY, 
+      "Hello World", { 
+        font: "40px Arial", 
+        fill: "#000000" 
+      }
+    );
+  }
+
+  update () {
+    this.helloWorld.angle -= 1;
+  }
+}
+interface GameInstance extends Phaser.Types.Core.GameConfig {
+  instance: Phaser.Game
+}
 
 @Component({
   selector: 'animal-game',
@@ -40,32 +72,30 @@ export class GameComponent implements OnInit {
   //   instance: Game // It's created internally when the game is initialized
   // };
 
-  public game;
-  public initialize: boolean;
+  game: GameInstance;
+  initialize: boolean = false;
   
   constructor() {
     this.initializeGame();
   }
+
+  getInstance () {
+    return this.game.instance;
+  }
+
   initializeGame() {
     this.game = {
       width: "100%",
       height: "100%",
       type: Phaser.AUTO,
-      scene: {
-        preload:this.preload,
-        create:this.create
-      }
-    }
+      scene: BootScene,
+      instance: new Phaser.Game()
+    };
     this.initialize = true
   }
-  preload(){
-    console.info(this.game.scene.scenes[0])
-    this.game.scene.scenes[0].load.image('bg','assets/bg.png')
-  }
-  create(){
-    this.game.scene.scenes[0].add.image(400,300,'bg')
-  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.initialize=true;
+  }
 
 }
