@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';//ion-phaser使用
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
@@ -24,7 +24,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AnimalPage,MapComponent,GameComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]//ion-phaser使用
+  declarations: [AnimalPage,MapComponent,GameComponent]
 })
 export class AnimalPageModule {}
