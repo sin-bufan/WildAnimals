@@ -1,6 +1,6 @@
 {
   "animal": {
-    "name": "大熊猫",
+    "name": "大鲵",
     "intro": {
       "des":"总体介绍",
       "bg": "assets/data/cn/Panda/introBg.jpg",
@@ -56,8 +56,8 @@
     },
     "habits": {
       "des":"生活习性",
-      "type":"Game1",
-      "text": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。"
+      "type":"Game2",
+      "text": "hello"
     },
     "protection":{
       "des":"保护措施",

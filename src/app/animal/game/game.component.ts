@@ -1,14 +1,22 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit,Input } from '@angular/core';
 
 import * as Phaser from 'phaser';
-import {GameScene1} from './game-scene1'
-let this_;
+import {GameScene1} from './game-scene1';
+import {GameScene2} from './game-scene2';
+
+let this_//once the Phaser scene is initialized, this contains the default game state
 @Component({
   selector: 'animal-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements AfterViewInit {
+  @Input() 
+  set data(data:GameData){
+    if (data!=null && data.type!=null){
+      this_.initializeScene(data)
+    }
+  };//游戏数据
   game:Phaser.Game;
   constructor() {
     this_ = Object.create(this.constructor.prototype);
@@ -22,12 +30,25 @@ export class GameComponent implements AfterViewInit {
       parent:'phaser-div',
       scene: []
     });
-    this.game.scene.remove('game');
-    this.game.scene.add('game',GameScene1,true);
+    this_.game.scene.remove('game');
   }
-  
+  //初始化场景
+  initializeScene(data:GameData){
+    console.info(data);
+    switch(data.type){
+      case "Game1":
+        this_.game.scene.add('game',GameScene1,true,data);
+        break;
+      case "Game2":
+        this_.game.scene.add('game',GameScene2,true,data);
+        break;
+    }
+  }
   ngAfterViewInit() {
     this_.initializeGame()
   }
 
+}
+class GameData{
+  type:string;
 }

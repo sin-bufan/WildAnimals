@@ -1,4 +1,4 @@
-export class GameScene1  extends Phaser.Scene{
+export class GameScene2  extends Phaser.Scene{
     //1.初始化
     init (data) {
       console.info("GameScene1 receive data:",data)
