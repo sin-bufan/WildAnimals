@@ -1,6 +1,7 @@
-import { Component ,AfterViewInit} from '@angular/core';
-// import * as L from 'leaflet';
-declare var L;
+import { Component, AfterViewInit } from '@angular/core';
+import * as L from 'leaflet';
+import { AnimalsDataService } from 'src/app/animals-data.service';
+const PRESENCE: Array<ExtantStatus> = [{ "code":1,"label": "EXTANT (RESIDENT)", "color": "orange" }, { "code":3,"label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }];
 @Component({
   selector: 'animal-map',
   templateUrl: './map.component.html',
@@ -8,37 +9,45 @@ declare var L;
 })
 export class MapComponent implements AfterViewInit {
 
-  constructor() { }
-  m:any;
+  constructor(
+    private animalsDataService: AnimalsDataService) { }
+  m: any;
   ngAfterViewInit() {
     this.initMap()
   }
-  initMap(){
-    this.m = L.map('map').setView([36, 104 ], 5);
+  initMap() {
+    this.m = L.map('map').setView([36, 104], 5);
     const mapPath = './assets/data/cn/map/'
-    L.tileLayer(mapPath+'{z}/{x}/{y}.png', {
-        attribution: 'Map tiles by google',
-        minZoom: 3,
-        maxZoom: 8
+    L.tileLayer(mapPath + '{z}/{x}/{y}.png', {
+      attribution: 'Map tiles by google',
+      minZoom: 3,
+      maxZoom: 8
     }).addTo(this.m);
- 
-    var shpfile = new L.Shapefile(mapPath+'redlist_species_data1.zip', {
-			onEachFeature: function(feature, layer) {
-        console.info(feature,layer)
-				if (feature.properties) {
-          console.info(feature)
-					layer.bindPopup(Object.keys(feature.properties).map(function(k) {
-						return k + ": " + feature.properties[k];
-					}).join("<br />"), {
-						maxHeight: 200
-					});
-				}
-			}
-    });
-    console.log("start load shapefile");
-		shpfile.addTo(this.m);
-		shpfile.once("data:loaded", function() {
-			console.log("finished loaded shapefile");
-		}); 
+
+    console.log("map overlay file path: ", mapPath + 'Panda.json');
+    this.animalsDataService.getAnimal(mapPath + 'Panda.json').subscribe(
+      (data) => {
+        L.geoJSON(data, {
+          style: function (feature) {
+            console.info(feature);
+            PRESENCE.forEach(item => {
+              if (item.code ==feature.properties.PRESENCE){
+                feature.properties.color = item.color;
+              }
+            });
+            console.info(feature.properties.color);
+            return { stroke:false,opacity:0.5,fillOpacity:0.4,color: feature.properties.color };
+          }
+        }).bindPopup(function (layer) {
+          // console.info(layer);
+          return layer.feature.properties.BINOMIAL;
+        }).addTo(this.m);
+      }
+    );
   }
+}
+class ExtantStatus {
+  code:number;
+  label: string;
+  color: string;
 }

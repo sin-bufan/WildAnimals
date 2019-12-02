@@ -18,4 +18,7 @@ export class AnimalsDataService {
   getAnimal(url:string): any {
     return this.http.get(url, { responseType: 'json' });
   }
+  getGEOJSON(url:string): any {
+    return this.http.get(url, { responseType: 'json' });
+  }
 }

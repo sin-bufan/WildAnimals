@@ -27,9 +27,11 @@
     "cordova-android": "8.1.0",
     "cordova-electron": "1.1.1",
     "core-js": "^2.5.4",
+    "geojson-vt": "^3.2.1",
     "leaflet": "^1.6.0",
     "phaser": "^3.20.1",
     "rxjs": "~6.5.1",
+    "shpjs": "^3.4.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
