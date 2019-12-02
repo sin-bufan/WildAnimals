@@ -1,85 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit,Input } from '@angular/core';
 
 import * as Phaser from 'phaser';
+import {GameScene1} from './game-scene1';
+import {GameScene2} from './game-scene2';
 
+let this_//once the Phaser scene is initialized, this contains the default game state
 @Component({
   selector: 'animal-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
-export class GameComponent implements OnInit {
-  // public game = {
-  //   width?: integer | string;
-  //   height?: integer | string;
-  //   zoom?: number;
-  //   resolution?: number;
-  //   type?: number;
-  //   parent: HTMLElement | string;
-  //   canvas?: HTMLCanvasElement;
-  //   canvasStyle?: string;
-  //   context?: CanvasRenderingContext2D;
-  //   scene?: object;
-  //   seed?: string[];
-  //   title?: string;
-  //   url?: string;
-  //   version?: string;
-  //   autoFocus?: boolean;
-  //   input?: boolean | InputConfig;
-  //   disableContextMenu?: boolean;
-  //   banner?: boolean | BannerConfig;
-  //   dom?: DOMContainerConfig;
-  //   fps?: FPSConfig;
-  //   render?: RenderConfig;
-  //   backgroundColor?: string | number;
-  //   callbacks?: CallbacksConfig;
-  //   loader?: LoaderConfig;
-  //   images?: ImagesConfig;
-  //   physics?: object;
-  //   plugins?: PluginObject | PluginObjectItem[];
-  //   scale?: ScaleConfig;,
-  //   instance: Game // It's created internally when the game is initialized
-  // };
-
-  public game: any = {};
-  // public game = {
-  //   instance: Phaser.Game
-  // };
-  public initialize: boolean;
-
+export class GameComponent implements AfterViewInit {
+  @Input() 
+  set data(data:GameData){
+    if (data!=null && data.type!=null){
+      this_.initializeScene(data)
+    }
+  };//游戏数据
+  game:Phaser.Game;
   constructor() {
-    this.initializeGame();
-  }
+    this_ = Object.create(this.constructor.prototype);
+  } 
+  //初始化游戏
   initializeGame() {
-    this.initialize = true;
-    this.game = {
+    this_.game = new Phaser.Game({
       width: "100%",
       height: "100%",
-      type: Phaser.WEBGL,
-      scene: {
-        preload: this.preload,
-        create: this.create
-      }
-    };
-
-    // var config = {
-    //   width: "100%",
-    //   height: "100%",
-    //   type: Phaser.WEBGL,
-    //   scene: {
-    //     preload:this.preload,
-    //     create:this.create
-    //   }
-    // }
-    // this.game = new Phaser.Game(config);
+      type: Phaser.AUTO,
+      parent:'phaser-div',
+      scene: []
+    });
+    this_.game.scene.remove('game');
   }
-  preload() {
-    console.info(this.game.scene.scenes[0])
-    //this.game.scene.scenes[0].load.image('bg','assets/bg.png')
+  //初始化场景
+  initializeScene(data:GameData){
+    console.info(data);
+    switch(data.type){
+      case "Game1":
+        this_.game.scene.add('game',GameScene1,true,data);
+        break;
+      case "Game2":
+        this_.game.scene.add('game',GameScene2,true,data);
+        break;
+    }
   }
-  create() {
-    //this.game.scene.scenes[0].add.image(400,300,'bg')
+  ngAfterViewInit() {
+    this_.initializeGame()
   }
 
-  ngOnInit() { }
-
+}
+class GameData{
+  type:string;
 }
