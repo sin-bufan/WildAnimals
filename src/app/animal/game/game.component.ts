@@ -11,12 +11,13 @@ let this_//once the Phaser scene is initialized, this contains the default game 
   styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements AfterViewInit {
+  //数据
   @Input() 
   set data(data:GameData){
     if (data!=null && data.type!=null){
       this_.initializeScene(data)
     }
-  };//游戏数据
+  };
   game:Phaser.Game;
   constructor() {
     this_ = Object.create(this.constructor.prototype);

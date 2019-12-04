@@ -1,13 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      野生动物
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-list no-lines class="book-list">
+  <ion-list no-lines class="animal-list">
     <button
       class="animal-item"
       [routerLink]="['/animal', animal.dataURL]"
@@ -16,4 +8,9 @@
       <img src="{{animal.imageURL}}" />
     </button>
   </ion-list>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="info"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

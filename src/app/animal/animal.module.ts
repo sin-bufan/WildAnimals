@@ -6,8 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { AnimalPage } from './animal.page';
-import {MapComponent} from './map/map.component';
-import {GameComponent} from './game/game.component';
+import { AlbumComponent } from './album/album.component';
+import { KeypointComponent } from './keypoint/keypoint.component';
+import { MapComponent } from './map/map.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { GameComponent } from './game/game.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,11 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AnimalPage,MapComponent,GameComponent]
+  declarations: [AnimalPage,
+  AlbumComponent,
+  KeypointComponent,
+  MapComponent,
+  GameComponent,
+  TimelineComponent]
 })
 export class AnimalPageModule {}

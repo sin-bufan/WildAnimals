@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { AnimalsDataService } from '../animals-data.service';
 export class AnimalPage implements OnInit {
 
   constructor(private route: ActivatedRoute,
+  private router: Router,
     private animalsDataService: AnimalsDataService) { }
   animal: any = {};
   slideOpts = {
@@ -31,4 +32,17 @@ export class AnimalPage implements OnInit {
       }
     );
   }
+  //回主页
+  onHome(){
+    console.info("go back")
+    this.router.navigate(['home']);
+  }
+}
+class AnimalData{
+  name:string;
+  intro:JSON;
+  feather:JSON;
+  habitat:JSON;
+  habit:JSON;
+  protection:JSON;
 }

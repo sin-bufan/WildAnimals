@@ -1,19 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{animal.name}}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide>
-      <animal-map></animal-map>
+      <animal-album [data]="animal.intro"></animal-album>
     </ion-slide>
     <ion-slide>
-      <h1>Slide 2</h1>
+      <animal-keypoint [data]="animal.feather"></animal-keypoint>
+    </ion-slide>
+    <ion-slide>
+      <animal-map [data]="animal.habitat"></animal-map>
     </ion-slide>
     <ion-slide>
       <animal-game [data]="animal.habits"></animal-game>
     </ion-slide>
+    <ion-slide>
+      <animal-timeline [data]="animal.protection"></animal-timeline>
+    </ion-slide>
   </ion-slides>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onHome()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -1,42 +1,49 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Input } from '@angular/core';
 import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
-const PRESENCE: Array<ExtantStatus> = [{ "code":1,"label": "EXTANT (RESIDENT)", "color": "orange" }, { "code":3,"label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }];
+
 @Component({
   selector: 'animal-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements AfterViewInit {
+export class MapComponent implements OnInit {
+  //数据
+  @Input()
+  set data(data: MapData) {
+    if (data != null) {
+      // console.info(data.text)
+      this.initMap(data)
+    }
+  };
+  m: L.Map;//地图实例
+  constructor(private animalsDataService: AnimalsDataService) { }
 
-  constructor(
-    private animalsDataService: AnimalsDataService) { }
-  m: any;
-  ngAfterViewInit() {
-    this.initMap()
+  ngOnInit() {
   }
-  initMap() {
-    this.m = L.map('map').setView([36, 104], 5);
-    const mapPath = './assets/data/cn/map/'
-    L.tileLayer(mapPath + '{z}/{x}/{y}.png', {
-      attribution: 'Map tiles by google',
-      minZoom: 3,
-      maxZoom: 8
+  //初始化地图
+  initMap(mapData: MapData) {
+    this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
+    //加入瓦片地图
+    L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
+      attribution: '',
+      minZoom: mapData.mapMinZoom,
+      maxZoom: mapData.mapMaxZoom
     }).addTo(this.m);
 
-    console.log("map overlay file path: ", mapPath + 'Panda.json');
-    this.animalsDataService.getAnimal(mapPath + 'Panda.json').subscribe(
+    //加入现状分布图层
+    this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonUrl).subscribe(
       (data) => {
         L.geoJSON(data, {
           style: function (feature) {
             console.info(feature);
-            PRESENCE.forEach(item => {
-              if (item.code ==feature.properties.PRESENCE){
+            mapData.habitatLegend.forEach(item => {
+              if (item.code == feature.properties.PRESENCE) {
                 feature.properties.color = item.color;
               }
             });
             console.info(feature.properties.color);
-            return { stroke:false,opacity:0.5,fillOpacity:0.4,color: feature.properties.color };
+            return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
           }
         }).bindPopup(function (layer) {
           // console.info(layer);
@@ -46,8 +53,21 @@ export class MapComponent implements AfterViewInit {
     );
   }
 }
+//地图数据
+class MapData {
+  text: string;
+  mapPath: string;
+  mapCenterX: number;
+  mapCenterY: number;
+  mapMaxZoom: number;
+  mapMinZoom: number;
+  mapDefaultZoom: number;
+  habitatGeoJsonUrl: string;
+  habitatLegend: Array<ExtantStatus>
+}
+//动物现状数据
 class ExtantStatus {
-  code:number;
+  code: number;
   label: string;
   color: string;
 }

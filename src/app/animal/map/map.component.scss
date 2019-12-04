@@ -1,7 +1,7 @@
 
 .map-container {
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -15,4 +15,13 @@
 
 #map {
   height: 100%;
+}
+.map-text{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  
+  margin: 30px;
 }
