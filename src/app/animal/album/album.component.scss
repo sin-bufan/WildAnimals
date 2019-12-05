@@ -1,0 +1,21 @@
+.info-container{
+    display: flex;
+    flex-direction:column;
+    max-width: 40%;
+    align-items: flex-start;
+}
+p {
+    text-align: start;
+}
+
+.albem-container{
+    display: flex;
+    flex-direction:row;
+    max-width: 40%;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+ion-thumbnail{
+    width: 100px;
+    height: 100px;
+}

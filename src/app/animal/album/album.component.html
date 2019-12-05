@@ -1,4 +1,16 @@
-<ion-text *ngIf="data">{{data.name}}</ion-text>
-<ion-text *ngIf="data">{{data.aliasName}}</ion-text>
-<ion-text *ngIf="data">{{data.scientificName}}</ion-text>
-<ion-text *ngIf="data">{{data.intro}}</ion-text>
+<div *ngIf="data" class="info-container">
+  <h1>{{ data.name }}</h1>
+  <p>{{ data.aliasName }}</p>
+  <p>{{ data.scientificName }}</p>
+  <p>{{ data.intro }}</p>
+</div>
+<div *ngIf="data" class="albem-container">
+  <div *ngFor="let item of data.album">
+    <ion-thumbnail *ngIf="item.type == 'image'">
+      <img [src]="item.url" />
+    </ion-thumbnail>
+    <ion-thumbnail *ngIf="item.type == 'video'">
+      <img [src]="item.thumbnail" />
+    </ion-thumbnail>
+  </div>
+</div>

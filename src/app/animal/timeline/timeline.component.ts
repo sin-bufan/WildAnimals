@@ -7,12 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
   //数据
-  @Input()
-  set data(data: TimelineData) {
-    if (data != null) {
-
-    }
-  };
+  @Input() data: TimelineData;
+  
   constructor() { }
 
   ngOnInit() { }

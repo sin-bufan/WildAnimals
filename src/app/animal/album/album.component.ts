@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AlbumComponent implements OnInit {
   //数据
   @Input() data:AlbumData;
-
+  
   constructor() { }
 
   ngOnInit() { }
@@ -26,7 +26,8 @@ class AlbumData {
  class Media{
    type:MediaType=MediaType.PHOTO;
    url:string;
+   thumbnail:string;
  }
- enum MediaType{
-   PHOTO,VIDEO
+ export enum MediaType{
+   "PHOTO","VIDEO"
  }

@@ -9,13 +9,18 @@ import { AnimalsDataService } from 'src/app/animals-data.service';
 })
 export class MapComponent implements OnInit {
   //数据
+  _data:MapData;
   @Input()
-  set data(data: MapData) {
-    if (data != null) {
-      // console.info(data.text)
-      this.initMap(data)
+  set data(value: MapData) {
+    if (value != null) {
+      this._data = value;
+      this.initMap(this._data)
     }
   };
+  get data():MapData{
+    return this._data;
+  }
+  
   m: L.Map;//地图实例
   constructor(private animalsDataService: AnimalsDataService) { }
 
@@ -36,13 +41,12 @@ export class MapComponent implements OnInit {
       (data) => {
         L.geoJSON(data, {
           style: function (feature) {
-            console.info(feature);
+            //console.info(feature);
             mapData.habitatLegend.forEach(item => {
               if (item.code == feature.properties.PRESENCE) {
                 feature.properties.color = item.color;
               }
             });
-            console.info(feature.properties.color);
             return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
           }
         }).bindPopup(function (layer) {
