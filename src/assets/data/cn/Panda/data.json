@@ -3,7 +3,7 @@
     "name": "大熊猫",
     "intro": {
       "des": "总体介绍",
-      "bg": "assets/data/cn/Panda/introBg.jpg",
+      "bg": "assets/data/cn/Panda/image/introBg.jpg",
       "name": "大熊猫",
       "aliasName": "猫熊",
       "scientificName": "Ailuropoda melanoleuca",
@@ -22,7 +22,7 @@
     },
     "feather": {
       "des": "外形特征",
-      "bg": "assets/data/cn/Panda/feather/bg.jpg",
+      "bg": "assets/data/cn/Panda/image/featherBg.jpg",
       "feathers": [
         {
           "pointX": "500",
@@ -56,6 +56,7 @@
     },
     "habitat": {
       "des": "栖息环境",
+      "bg": "assets/data/cn/Panda/image/habitatBg.jpg",
       "text": "大熊猫目前主要分布在中国四川省，另外陕西，云南省也有分布。它们集中在由南向北的六大山系：秦岭、岷山、邛崃、凉山、大相岭和小相岭。",
       "mapPath": "./assets/data/cn/map/",
       "mapCenterX": "36",
@@ -71,11 +72,13 @@
     },
     "habits": {
       "des": "生活习性",
+      "bg": "assets/data/cn/Panda/image/habitsBg.jpg",
       "type": "Game1",
       "text": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。"
     },
     "protection": {
       "des": "保护措施",
+      "bg": "assets/data/cn/Panda/image/protectionBg.jpg",
       "album": [
         { "type": "image", "url": "assets/data/cn/Panda/protection/1.jpg" },
         { "type": "image", "url": "assets/data/cn/Panda/protection/2.jpg" },

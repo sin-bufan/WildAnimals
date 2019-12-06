@@ -17,8 +17,14 @@
     </ion-slide>
   </ion-slides>
   <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onMusic()">
+      <ion-icon name="volume-high"></ion-icon>
+    </ion-fab-button>
     <ion-fab-button (click)="onHome()">
       <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="onMenu()">
+      <ion-icon name="menu"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
