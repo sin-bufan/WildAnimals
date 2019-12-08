@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-list no-lines class="animal-list">
+  <!-- <ion-list no-lines class="animal-list">
     <button
       class="animal-item"
       [routerLink]="['/animal', animal.dataURL]"
@@ -7,7 +7,14 @@
     >
       <img src="{{animal.imageURL}}" />
     </button>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide [routerLink]="['/animal', animal.dataURL]" *ngFor="let animal of this.animals">
+      <img src="{{animal.imageURL}}" />
+    </ion-slide>
+  </ion-slides>
+
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="information-circle"></ion-icon>

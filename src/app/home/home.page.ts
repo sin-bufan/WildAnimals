@@ -8,6 +8,15 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage {
   animals:any = [];
+  slideOpts = {
+    loop: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+  }
   constructor(private navCtrl:NavController,
     private animalsDataService: AnimalsDataService) {
   }
