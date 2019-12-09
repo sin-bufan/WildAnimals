@@ -1,18 +1,54 @@
 {
-    "animals": [{
-        "name": "大熊猫",
-        "imageURL": "assets/data/cn/image/Panda.png",
-        "dataURL": "assets/data/cn/Panda/data.json"
+  "animals": [
+    {
+      "name": "藏羚羊",
+      "imageURL": "assets/data/cn/01_TibetanAntelope/icon.png",
+      "dataURL": "assets/data/cn/01_TibetanAntelope/data.json"
     },
     {
-        "name": "大鲵",
-        "imageURL": "assets/data/cn/image/GiantSalamander.png",
-        "dataURL": "assets/data/cn/GiantSalamander/data.json"
+      "name": "大鲵",
+      "imageURL": "assets/data/cn/02_GiantSalamander/icon.png",
+      "dataURL": "assets/data/cn/02_GiantSalamander/data.json"
     },
     {
-        "name": "长臂猿",
-        "imageURL": "assets/data/cn/image/Gibbon.png",
-        "dataURL": "assets/data/cn/Gibbon.json"
+      "name": "大熊猫",
+      "imageURL": "assets/data/cn/03_GiantPanda/icon.png",
+      "dataURL": "assets/data/cn/03_GiantPanda/data.json"
+    },
+    {
+      "name": "丹顶鹤",
+      "imageURL": "assets/data/cn/04_Red-crownedCranes/icon.png",
+      "dataURL": "assets/data/cn/04_Red-crownedCranes/data.json"
+    },
+    {
+      "name": "东北虎",
+      "imageURL": "assets/data/cn/05_ManchurianTiger/icon.png",
+      "dataURL": "assets/data/cn/05_ManchurianTiger/data.json"
+    },
+    {
+      "name": "金丝猴",
+      "imageURL": "assets/data/cn/06_GoldenMonkey/icon.png",
+      "dataURL": "assets/data/cn/06_GoldenMonkey/data.json"
+    },
+    {
+      "name": "麋鹿",
+      "imageURL": "assets/data/cn/07_Elk/icon.png",
+      "dataURL": "assets/data/cn/07_Elk/data.json"
+    },
+    {
+      "name": "普氏野马",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "dataURL": "assets/data/cn/08_PrzewalskisHorse/data.json"
+    },
+    {
+      "name": "雪豹",
+      "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
+      "dataURL": "assets/data/cn/09_SnowLeopard/data.json"
+    },
+    {
+      "name": "长臂猿",
+      "imageURL": "assets/data/cn/10_Gibbon/icon.png",
+      "dataURL": "assets/data/cn/10_Gibbon/data.json"
     }
-    ]
+  ]
 }
