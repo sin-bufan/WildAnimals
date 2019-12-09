@@ -1,18 +1,27 @@
-.animal-list{
-    position:fixed;
-    left: 50%;
-    right: 10%;
-    vertical-align: middle;
-}
 
-ion-slide{
-    width: 300px;
-    height: 300px;
-}
-
- .title {
+.title {
     position: absolute;
-    top: 40%;
-    left: 10%;
+    top: 20%;
+    left: 20px;
 }
+ion-slides{
+    position: absolute;
+    right: 20px;
+    top:10%;
+    width: 600px;
+    height: 600px;
+}
+ion-slide{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    filter:drop-shadow(5px 5px 10px black)
+}
+.slide-bg{
+    position: absolute;
+}
+.slide-content{
+    position: absolute;
+}
+
   

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { PhotoComponent,Photo } from '../photo/photo.component';
 
 @Component({
   selector: 'animal-album',
@@ -9,10 +11,21 @@ export class AlbumComponent implements OnInit {
   //数据
   @Input() data:AlbumData;
   
-  constructor() { }
+  constructor(private modalController:ModalController) { }
 
   ngOnInit() { }
-
+  
+  async showPhoto(photo:any) {
+    console.info(photo)
+    const modal = await this.modalController.create({
+      component: PhotoComponent,
+      componentProps: {
+        'data': photo
+      }
+    });
+    return await modal.present();
+  }
+  
 }
 //相册数据
 class AlbumData {

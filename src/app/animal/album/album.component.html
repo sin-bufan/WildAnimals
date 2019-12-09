@@ -6,7 +6,7 @@
 </div>
 <div *ngIf="data" class="albem-container">
   <div *ngFor="let item of data.album">
-    <ion-thumbnail *ngIf="item.type == 'image'">
+    <ion-thumbnail *ngIf="item.type == 'image'" (click)="showPhoto(item)">
       <img [src]="item.url" />
     </ion-thumbnail>
     <ion-thumbnail *ngIf="item.type == 'video'">
