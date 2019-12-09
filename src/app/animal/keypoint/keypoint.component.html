@@ -1,12 +1,14 @@
 <div *ngIf="data" class="info-container">
-  <img [src]="data.feather[index].imageUrl" />
-  <h1>{{ data.feather[index].title }}</h1>
-  <p>{{ data.feather[index].text }}</p>
+  <img [src]="data.feathers[index].imageUrl" />
+  <h1>{{ data.feathers[index].title }}</h1>
+  <p>{{ data.feathers[index].text }}</p>
 </div>
 
 
 <div *ngIf="data" class="point-container">
-    <ion-button *ngFor="let item of data.feather" (click)="onHome()" x="item.pointX" y="item.pointY">
+    <ion-button class="point" *ngFor="let item of data.feathers;let i=index"
+     (click)="onShow(i)" 
+    [ngStyle]="item.position">
         <ion-icon name="pin"></ion-icon>
     </ion-button>
 </div>

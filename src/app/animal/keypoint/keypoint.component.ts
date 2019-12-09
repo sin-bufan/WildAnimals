@@ -7,17 +7,15 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class KeypointComponent implements OnInit {
   //数据
-  @Input()
-  set data(data: KeypointData) {
-    if (data != null) {
-
-    }
-  };
-
+  @Input() data: KeypointData;
+  index:number=0;
   constructor() { }
 
   ngOnInit() {}
-
+ onShow(i:number){
+   console.info(this.data.feathers[i].position)
+   this.index=i;
+ }
 }
 class KeypointData{
   bg:string="";
@@ -25,9 +23,12 @@ class KeypointData{
 }
 
 class Feather {
-  pointX:number=0;
-  pointY:number=0;
+  position:Position;
   title:string="";
   text:string="";
   imageUrl:string="";
+ }
+ class Position{
+   left:string;
+   top:string;
  }

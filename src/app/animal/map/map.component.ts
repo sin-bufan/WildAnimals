@@ -28,15 +28,20 @@ export class MapComponent implements OnInit {
   }
   //初始化地图
   initMap(mapData: MapData) {
-    if (!this.m){
+    //let Leaflet = L.noConflict();//为了重复使用L实例
+    var container = L.DomUtil.get('map');
+    if(container != null){
+      container._leaflet_id = null;
+    }
+
       this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
       //加入瓦片地图
       L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
-        attribution: '',
+        attributionControl: false,
         minZoom: mapData.mapMinZoom,
         maxZoom: mapData.mapMaxZoom
       }).addTo(this.m);
-    }
+    
     //加入现状分布图层
     this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonUrl).subscribe(
       (data) => {

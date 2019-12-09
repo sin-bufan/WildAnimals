@@ -6,7 +6,7 @@
   <ion-content>
     <ion-list>
       <ion-menu-toggle auto-hide="false" *ngFor="let animal of animals">
-        <ion-item [routerDirection]="root" [routerLink]="['/animal', animal.dataURL]">
+        <ion-item [routerLink]="['/animal', animal.dataURL]">
           <ion-label>
             {{ animal.name }}
           </ion-label>

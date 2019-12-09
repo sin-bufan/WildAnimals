@@ -8,5 +8,13 @@ p {
     text-align: start;
 }
 .point-container{
-    display: absolute;
+    position: absolute;
+    left: 0;
+    right:0;
+    top:0;
+    bottom: 0;
+    
+}
+.point{
+    position: absolute;
 }

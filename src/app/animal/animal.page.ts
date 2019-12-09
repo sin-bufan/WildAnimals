@@ -40,7 +40,6 @@ export class AnimalPage implements OnInit {
   }
   //回主页
   onHome() {
-    console.info("go back")
     this.router.navigate(['home']);
   }
   //切换音乐静音
