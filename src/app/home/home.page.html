@@ -8,10 +8,12 @@
       <img src="{{animal.imageURL}}" />
     </button>
   </ion-list> -->
-
+  <!-- <img class="bg" src="assets/images/home_bg.jpg" /> -->
+  <img class="title" src="assets/images/home_title.png" />
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide [routerLink]="['/animal', animal.dataURL]" *ngFor="let animal of this.animals">
-      <img src="{{animal.imageURL}}" />
+      <img class="slide-bg" src="assets/images/slide_bg.png" />
+      <img class="slide-content" src="{{animal.imageURL}}" />
     </ion-slide>
   </ion-slides>
 
