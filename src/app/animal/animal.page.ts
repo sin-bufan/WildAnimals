@@ -62,6 +62,7 @@ export class AnimalPage implements OnInit {
 }
 class AnimalData {
   name: string;
+  bgURL:string;
   intro: JSON;
   feather: JSON;
   habitat: JSON;

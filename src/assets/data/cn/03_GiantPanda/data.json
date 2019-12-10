@@ -1,9 +1,9 @@
 {
   "animal": {
     "name": "大熊猫",
+    "bgURL":"assets/data/cn/03_GiantPanda/bg.jpg",
     "intro": {
       "des": "总体介绍",
-      "bg": "assets/data/cn/03_GiantPanda/image/introBg.jpg",
       "name": "大熊猫",
       "aliasName": "猫熊",
       "scientificName": "Ailuropoda melanoleuca",

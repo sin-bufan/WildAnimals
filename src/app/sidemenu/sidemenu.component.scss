@@ -1,3 +1,14 @@
 ion-content{
     height: 600px;
 }
+
+ion-item{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+ion-label{
+    margin: 20px;
+    font-size:30px;
+}

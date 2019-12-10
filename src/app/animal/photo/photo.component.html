@@ -1,3 +1,5 @@
-<p>
-  photo works!
-</p>
+<img *ngIf="data" [src]="data.url" (click)="onClose()"/>
+<div class="text-background" *ngIf="data&&data.text">
+  <ion-text>{{data.text}}</ion-text>
+</div>
+
