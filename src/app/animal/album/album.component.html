@@ -1,16 +1,23 @@
-<div *ngIf="data" class="info-container">
-  <h1>{{ data.name }}</h1>
-  <p>{{ data.aliasName }}</p>
-  <p>{{ data.scientificName }}</p>
-  <p>{{ data.intro }}</p>
-</div>
-<div *ngIf="data" class="albem-container">
-  <div *ngFor="let item of data.album">
-    <ion-thumbnail *ngIf="item.type == 'image'" (click)="showPhoto(item)">
-      <img [src]="item.url" />
-    </ion-thumbnail>
-    <ion-thumbnail *ngIf="item.type == 'video'">
-      <img [src]="item.thumbnail" />
-    </ion-thumbnail>
+<div class="bg">
+  <div class="left">
+    <div *ngIf="data" class="info-container">
+      <h1>{{ data.name }}</h1>
+      <p>{{ data.aliasName }}</p>
+      <p>{{ data.scientificName }}</p>
+      <p>{{ data.intro }}</p>
+    </div>
+    <div class="media-container">
+      <div *ngIf="data" class="album-container">
+        <ion-thumbnail
+          *ngFor="let item of data.album"
+          (click)="showPhoto(item)">
+          <img [src]="item.url" />
+        </ion-thumbnail>
+      </div>
+      <ion-thumbnail *ngIf="data && data.video" (click)="showVideo(data.video)">
+        <img [src]="data.video.thumbnail"/>
+      </ion-thumbnail>
+    </div>
   </div>
+  <img *ngIf="data" [src]="data.imageURL" />
 </div>

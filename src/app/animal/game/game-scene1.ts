@@ -6,7 +6,7 @@ export class GameScene1  extends Phaser.Scene{
       }
       //2.加载素材
     preload(){
-        this.load.image('bg','assets/bg.png')
+        //this.load.image('bg','assets/bg.png')
       }
       helloWorld: Phaser.GameObjects.Text;
       //3.创建舞台内容

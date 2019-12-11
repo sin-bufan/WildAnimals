@@ -1,11 +1,14 @@
 .info-container{
     display: flex;
     flex-direction:column;
-    max-width: 40%;
+    max-width: 30%;
     align-items: flex-start;
+    position: absolute;
+    left: 10%;
+    top: 20%;
 }
 p {
-    text-align: start;
+    text-align: justify;
 }
 .point-container{
     position: absolute;
@@ -13,7 +16,6 @@ p {
     right:0;
     top:0;
     bottom: 0;
-    
 }
 .point{
     position: absolute;

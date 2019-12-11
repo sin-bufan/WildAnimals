@@ -1,15 +1,20 @@
 <ion-content>
-  <img class="title" src="assets/images/home_title.png" />
-  <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide [routerLink]="['/animal', animal.dataURL]" *ngFor="let animal of this.animals">
-      <img class="slide-bg" src="assets/images/slide_bg.png" />
-      <img class="slide-content" src="{{animal.imageURL}}" />
-    </ion-slide>
-  </ion-slides>
+  <div class="bg">
+    <img class="title" src="assets/images/home_title.png" />
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide
+        [routerLink]="['/animal', animal.dataURL]"
+        *ngFor="let animal of this.animals"
+      >
+        <img class="slide-bg" src="assets/images/slide_bg.png" />
+        <img class="slide-content" src="{{animal.imageURL}}" />
+      </ion-slide>
+    </ion-slides>
 
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="information-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>

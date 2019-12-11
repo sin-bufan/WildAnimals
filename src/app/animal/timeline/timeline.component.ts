@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { PhotoComponent,Photo } from '../photo/photo.component';
 
 @Component({
   selector: 'animal-timeline',
@@ -9,22 +11,25 @@ export class TimelineComponent implements OnInit {
   //数据
   @Input() data: TimelineData;
   
-  constructor() { }
+  constructor(private modalController:ModalController) { }
 
   ngOnInit() { }
-
+  //显示照片
+  async showPhoto(photo:any) {
+    console.info(photo)
+    const modal = await this.modalController.create({
+      component: PhotoComponent,
+      componentProps: {
+        'data': photo
+      }
+    });
+    return await modal.present();
+  }
 }
 
 class TimelineData {
-  album: Array<Media> = [];
+  album: Array<Photo> = [];
   timeline: Array<TimelineNode> = [];
-}
-class Media {
-  type: MediaType = MediaType.PHOTO;
-  url: string;
-}
-enum MediaType {
-  PHOTO
 }
 class TimelineNode {
   time: Date;

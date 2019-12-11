@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavParams,ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'animal-photo',
@@ -8,9 +8,7 @@ import { NavParams,ModalController } from '@ionic/angular';
 })
 export class PhotoComponent {
   @Input() data: Photo;
-  constructor(private modalCtrl:ModalController,
-    private navParams:NavParams) { 
-    console.log(navParams.get('data'));
+  constructor(private modalCtrl:ModalController) { 
   }
   onClose(){
     this.modalCtrl.dismiss({
@@ -19,7 +17,6 @@ export class PhotoComponent {
   }
 }
 export class Photo{
-  type:string;
   url:string;
   text:string;
 }

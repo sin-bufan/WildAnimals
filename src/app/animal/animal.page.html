@@ -2,19 +2,19 @@
   <img [src]="animal.bgURL">
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide>
-      <animal-album [data]="animal.intro"></animal-album>
+      <animal-album class="content" [data]="animal.intro"></animal-album>
     </ion-slide>
     <ion-slide>
-      <animal-keypoint [data]="animal.feather"></animal-keypoint>
+      <animal-keypoint class="content" [data]="animal.feather"></animal-keypoint>
     </ion-slide>
     <ion-slide>
-      <animal-map [data]="animal.habitat"></animal-map>
+      <animal-map class="content" [data]="animal.habitat"></animal-map>
     </ion-slide>
     <ion-slide>
-      <animal-game [data]="animal.habits"></animal-game>
+      <animal-game class="content" [data]="animal.habits"></animal-game>
     </ion-slide>
     <ion-slide>
-      <animal-timeline [data]="animal.protection"></animal-timeline>
+      <animal-timeline class="content" [data]="animal.protection"></animal-timeline>
     </ion-slide>
   </ion-slides>
   <ion-fab vertical="top" horizontal="end" slot="fixed">

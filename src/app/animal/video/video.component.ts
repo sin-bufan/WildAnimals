@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'animal-video',
@@ -6,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video.component.scss'],
 })
 export class VideoComponent implements OnInit {
+  @Input() data: Video;
+  constructor(private modalCtrl: ModalController) {
 
-  constructor() { }
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  onClose() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+  }
+}
+export class Video {
+  url: string;
+  thumbnail: string;
 }

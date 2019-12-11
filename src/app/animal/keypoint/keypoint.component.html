@@ -4,11 +4,13 @@
   <p>{{ data.feathers[index].text }}</p>
 </div>
 
-
 <div *ngIf="data" class="point-container">
-    <ion-button class="point" *ngFor="let item of data.feathers;let i=index"
-     (click)="onShow(i)" 
-    [ngStyle]="item.position">
-        <ion-icon name="pin"></ion-icon>
-    </ion-button>
+  <ion-button
+    class="point"
+    *ngFor="let item of data.feathers; let i = index"
+    (click)="onShow(i)"
+    [ngStyle]="item.position"
+  >
+    <ion-icon name="pin"></ion-icon>
+  </ion-button>
 </div>

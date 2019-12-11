@@ -1,3 +1,2 @@
-<p>
-  video works!
-</p>
+<video *ngIf="data"  [src]="data.url" controls="controls"></video>
+<ion-button  (click)="onClose()">close</ion-button>

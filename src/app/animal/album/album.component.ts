@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { PhotoComponent,Photo } from '../photo/photo.component';
-
+import { PhotoComponent ,Photo} from '../photo/photo.component';
+import { VideoComponent ,Video} from '../video/video.component';
 @Component({
   selector: 'animal-album',
   templateUrl: './album.component.html',
@@ -14,7 +14,7 @@ export class AlbumComponent implements OnInit {
   constructor(private modalController:ModalController) { }
 
   ngOnInit() { }
-  
+  //显示照片
   async showPhoto(photo:any) {
     console.info(photo)
     const modal = await this.modalController.create({
@@ -25,22 +25,24 @@ export class AlbumComponent implements OnInit {
     });
     return await modal.present();
   }
-  
+  async showVideo(video:any) {
+    console.info(video)
+    const modal = await this.modalController.create({
+      component: VideoComponent,
+      componentProps: {
+        'data': video
+      }
+    });
+    return await modal.present();
+  }
 }
 //相册数据
 class AlbumData {
-  bg:string="";
   name:string="";
   aliasName:string="";
   scientificName:string="";
   intro:string="";
-  album:Array<Media>=[]
- }
- class Media{
-   type:MediaType=MediaType.PHOTO;
-   url:string;
-   thumbnail:string;
- }
- export enum MediaType{
-   "PHOTO","VIDEO"
+  imageURL:string="";
+  album:Array<Photo>=[];
+  video:Video;
  }
