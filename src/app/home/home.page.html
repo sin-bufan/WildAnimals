@@ -1,6 +1,14 @@
 <ion-content>
   <div class="bg">
-    <img class="title" src="assets/images/home_title.png" />
+    <div class="left">
+      <img class="title" src="assets/images/home_title.png" />
+      <ion-button class="language-button" expand="full" fill="clear">
+        <img src="assets/images/cn_a.png" />
+      </ion-button>
+      <ion-button class="language-button" expand="full" fill="clear">
+        <img src="assets/images/en_a.png" />
+      </ion-button>
+    </div>
     <ion-slides pager="true" [options]="slideOpts">
       <ion-slide
         [routerLink]="['/animal', animal.dataURL]"
@@ -10,11 +18,13 @@
         <img class="slide-content" src="{{animal.imageURL}}" />
       </ion-slide>
     </ion-slides>
-
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon name="information-circle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  </div>
+  <div class="top-right">
+    <ion-button class="nav-button" expand="full" fill="clear">
+      <img src="assets/images/download.png" />
+    </ion-button>
+    <ion-button class="nav-button" expand="full" fill="clear">
+      <img src="assets/images/copyright.png" />
+    </ion-button>
   </div>
 </ion-content>
