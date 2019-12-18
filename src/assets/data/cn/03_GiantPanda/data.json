@@ -12,55 +12,76 @@
       "album": [
         {
           "url": "assets/data/cn/03_GiantPanda/album/1.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/1.jpg",
           "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
         },
         {
           "url": "assets/data/cn/03_GiantPanda/album/2.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/2.jpg",
           "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
         },
         {
           "url": "assets/data/cn/03_GiantPanda/album/3.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/3.jpg",
           "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
         },
-        { "url": "assets/data/cn/03_GiantPanda/album/4.jpg" },
-        { "url": "assets/data/cn/03_GiantPanda/album/5.jpg" },
-        { "url": "assets/data/cn/03_GiantPanda/album/6.jpg" },
-        { "url": "assets/data/cn/03_GiantPanda/album/7.jpg" },
-        { "url": "assets/data/cn/03_GiantPanda/album/8.jpg" },
-        { "url": "assets/data/cn/03_GiantPanda/album/9.jpg" }
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/4.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/4.jpg"
+        },
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/5.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/5.jpg"
+        },
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/6.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/6.jpg"
+        },
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/7.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/7.jpg"
+        },
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/8.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/8.jpg"
+        },
+        {
+          "url": "assets/data/cn/03_GiantPanda/album/9.jpg",
+          "thumb": "assets/data/cn/03_GiantPanda/album/thumb/9.jpg"
+        }
       ],
       "video": {
         "url": "assets/data/cn/03_GiantPanda/video/1.mp4",
-        "thumbnail": "assets/data/cn/03_GiantPanda/video/1.jpg"
+        "thumb": "assets/data/cn/03_GiantPanda/video/1.jpg"
       }
     },
     "feather": {
       "des": "外形特征",
-      "imageURL": "assets/data/cn/03_GiantPanda/icon.png",
+      "imageURL": "assets/data/cn/03_GiantPanda/feathers.png",
       "feathers": [
         {
           "position": { "left": "500px", "top": "500px" },
           "title": "圆脸",
           "text": "为了取食竹子，大熊猫演化出具有发达咬合肌的圆脸，配合粗大的臼齿，可将竹子研磨成较小的颗粒便于消化。",
-          "imageUrl": "assets/data/cn/03_GiantPanda/feather/feather_1.jpg"
+          "imageUrl": "assets/data/cn/03_GiantPanda/feather/1.jpg"
         },
         {
           "position": { "left": "600px", "top": "200px" },
           "title": "第六指",
           "text": "大熊猫前掌五根手指的对面斜上方有一个像拇指一样的肉垫，这就是被称作伪拇指的熊猫“第六指”。这根“第六指”，使它拥有了动物界少有的对握功能。因此，大熊猫能够更加灵活地取食竹子。",
-          "imageUrl": "assets/data/cn/03_GiantPanda/feather/feather_2.jpg"
+          "imageUrl": "assets/data/cn/03_GiantPanda/feather/2.jpg"
         },
         {
           "position": { "left": "300px", "top": "400px" },
           "title": "毛色",
           "text": "大熊猫头部和身体毛色黑白相间分明，这种黑白相间的外表，有利于隐蔽在密林的树上和积雪的地面而不易被天敌发现。",
-          "imageUrl": "assets/data/cn/03_GiantPanda/feather/feather_3.jpg"
+          "imageUrl": "assets/data/cn/03_GiantPanda/feather/3.jpg"
         },
         {
           "position": { "left": "800px", "top": "500px" },
           "title": "尾巴",
           "text": "大熊猫的尾巴就像一个宽扁的坐垫，长度约10-15cm，仅次于懒熊，位居熊类第二长。",
-          "imageUrl": "assets/data/cn/03_GiantPanda/feather/feather_4.jpg"
+          "imageUrl": "assets/data/cn/03_GiantPanda/feather/4.jpg"
         }
       ]
     },

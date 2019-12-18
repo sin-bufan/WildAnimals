@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
-import { MenuController, Events } from '@ionic/angular';
+import { MenuController, Events, IonSlides } from '@ionic/angular';
 import { SIDEMENU_EVENT } from '../sidemenu/sidemenu.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SIDEMENU_EVENT } from '../sidemenu/sidemenu.component';
   styleUrls: ['./animal.page.scss'],
 })
 export class AnimalPage implements OnInit {
-
+  @ViewChild("slides",{static:true}) slides:IonSlides;
   constructor(private route: ActivatedRoute,
     private router: Router,
     private animalsDataService: AnimalsDataService,
@@ -50,6 +50,7 @@ export class AnimalPage implements OnInit {
   onMenu() {
     this.menuCtrl.open();
   }
+
   //初始化菜单
   initMenu() {
     this.events.publish(SIDEMENU_EVENT.UPDATE_SIDEMENU, "cn");

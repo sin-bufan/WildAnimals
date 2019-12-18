@@ -28,6 +28,7 @@ export class GameComponent implements AfterViewInit {
       width: "100%",
       height: "100%",
       type: Phaser.AUTO,
+      transparent:true,
       parent:'phaser-div',
       scene: []
     });

@@ -1,11 +1,14 @@
 <ion-content>
-  <img [src]="animal.bgURL">
-  <ion-slides pager="true" [options]="slideOpts">
+  <img [src]="animal.bgURL" />
+  <ion-slides #slides pager="true" [options]="slideOpts">
     <ion-slide>
       <animal-album class="content" [data]="animal.intro"></animal-album>
     </ion-slide>
     <ion-slide>
-      <animal-keypoint class="content" [data]="animal.feather"></animal-keypoint>
+      <animal-keypoint
+        class="content"
+        [data]="animal.feather"
+      ></animal-keypoint>
     </ion-slide>
     <ion-slide>
       <animal-map class="content" [data]="animal.habitat"></animal-map>
@@ -14,18 +17,56 @@
       <animal-game class="content" [data]="animal.habits"></animal-game>
     </ion-slide>
     <ion-slide>
-      <animal-timeline class="content" [data]="animal.protection"></animal-timeline>
+      <animal-timeline
+        class="content"
+        [data]="animal.protection"
+      ></animal-timeline>
     </ion-slide>
   </ion-slides>
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="onMusic()">
-      <ion-icon name="volume-high"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="onHome()">
-      <ion-icon name="home"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-button (click)="onMenu()">
-      <ion-icon name="menu"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+  <div class="left-right">
+    <ion-button
+      class="swipt-button"
+      expand="full"
+      fill="clear"
+      (click)="slides.slidePrev()"
+    >
+      <img src="assets/images/button/prevScreen.png" />
+    </ion-button>
+    <ion-button
+      class="swipt-button"
+      expand="full"
+      fill="clear"
+      (click)="slides.slideNext()"
+    >
+      <img src="assets/images/button/nextScreen.png" />
+    </ion-button>
+  </div>
+
+  <div class="top-right">
+    <ion-button
+      class="nav-button"
+      expand="full"
+      fill="clear"
+      (click)="onMusic()"
+    >
+      <img src="assets/images/button/music.png" />
+    </ion-button>
+    <ion-button
+      class="nav-button"
+      expand="full"
+      fill="clear"
+      (click)="onHome()"
+    >
+      <img src="assets/images/button/home.png" />
+    </ion-button>
+    <ion-button
+      class="nav-button"
+      expand="full"
+      fill="clear"
+      (click)="onMenu()"
+    >
+      <img src="assets/images/button/menu.png" />
+    </ion-button>
+  </div>
 </ion-content>
