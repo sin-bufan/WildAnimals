@@ -38,6 +38,7 @@ export class HomePage {
     });
     this_.game.scene.remove('game');
     this_.game.scene.add('game', MenuScene, true);
+    this_.game.events.addListener("selectMenuIndex",this_.gotoAnimal)
   }
   //初始化数据
   init(data_url: string) {
@@ -47,6 +48,10 @@ export class HomePage {
         console.info("Animals: ", this_.animals)
       }
     );
+  }
+  //
+  gotoAnimal(index){
+    console.info(this_.animals[index])
   }
 }
 
@@ -70,13 +75,13 @@ class MenuScene extends Phaser.Scene {
       frameRate : FRAME_RATE,
       repeat : -1
     })
- 
+    sprite.setInteractive();
     sprite.anims.setDelay(PAUSE_DELAY);
     sprite.anims.play("all",true);
     //sprite.on('animationupdate',this.onAnimationUpdate)
-    sprite.removeAllListeners();
+    //sprite.removeAllListeners();
     sprite.addListener('animationupdate',this.onAnimationUpdate);
-    sprite.addListener('gameobjectdown',this.onClick);
+    this.input.addListener('gameobjectdown',this.onClick);
   }
   //动画每帧变动时执行
   onAnimationUpdate(animation,frame,sprite){
@@ -87,8 +92,10 @@ class MenuScene extends Phaser.Scene {
       sprite.anims.play();
     }
   }
-  onClick(pointer,localX,localY,event){
-    console.info(pointer,localX,localY,event)
+  onClick(pointer,gameObject:Phaser.GameObjects.Sprite,event){
+    console.info(pointer,gameObject,event)
+    let animalIndex:number = Math.floor(gameObject.anims.currentFrame.index/ANIMAL_PER_FRAME);
+    this.events.emit("selectMenuIndex",animalIndex)
   }
   //4.循环刷新（16ms）
   update() {
