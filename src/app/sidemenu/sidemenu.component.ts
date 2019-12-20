@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Events } from '@ionic/angular';
 import { AnimalsDataService } from '../animals-data.service';
 
 @Component({
@@ -23,15 +22,10 @@ export class SidemenuComponent implements OnInit {
 
   animals: any = [];
 
-  constructor(private events: Events,
+  constructor(
     private animalsDataService: AnimalsDataService) { }
 
-  ngOnInit() {  }
-
-  //点击某个节点
-  // openItem(item): void {
-  //   this.events.publish(SIDEMENU_EVENT.SELECT_MENUITEM, item);
-  // }
+  ngOnInit() { }
 
   initMenu(data_url: string) {
     this.animalsDataService.getAnimals(data_url).subscribe(
@@ -42,6 +36,6 @@ export class SidemenuComponent implements OnInit {
     );
   }
 }
-export enum SIDEMENU_EVENT{
-  UPDATE_SIDEMENU="UpdateSideMenu",SELECT_MENUITEM="SelectMenuItem"
+export enum SIDEMENU_EVENT {
+  UPDATE_SIDEMENU = "UpdateSideMenu", SELECT_MENUITEM = "SelectMenuItem"
 }

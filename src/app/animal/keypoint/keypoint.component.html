@@ -1,16 +1,21 @@
-<div *ngIf="data" class="info-container">
-  <img [src]="data.feathers[index].imageUrl" />
-  <h1>{{ data.feathers[index].title }}</h1>
-  <p>{{ data.feathers[index].text }}</p>
-</div>
+<div class="container">
+  <div *ngIf="data" class="info-container">
+    <img [src]="data.feathers[index].imageURL" />
+    <h1>{{ data.feathers[index].title }}</h1>
+    <p>{{ data.feathers[index].text }}</p>
+  </div>
 
-<div *ngIf="data" class="point-container">
-  <ion-button
-    class="point"
-    *ngFor="let item of data.feathers; let i = index"
-    (click)="onShow(i)"
-    [ngStyle]="item.position"
-  >
-    <ion-icon name="pin"></ion-icon>
-  </ion-button>
+  <div *ngIf="data" class="point-container">
+    <img class="feather-image" [src]="data.imageURL" />
+    <ion-button
+      class="point"
+      expand="full"
+      fill="clear"
+      *ngFor="let item of data.feathers; let i = index"
+      (click)="onShow(i)"
+      [ngStyle]="item.position"
+    >
+      <img src="assets/images/button/featherPoint.gif" />
+    </ion-button>
+  </div>
 </div>

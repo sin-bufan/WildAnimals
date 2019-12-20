@@ -26,7 +26,7 @@ class Feather {
   position:Position;
   title:string="";
   text:string="";
-  imageUrl:string="";
+  imageURL:string="";
  }
  class Position{
    left:string;

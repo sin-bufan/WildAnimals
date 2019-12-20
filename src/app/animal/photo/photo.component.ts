@@ -17,6 +17,7 @@ export class PhotoComponent {
   }
 }
 export class Photo{
-  url:string;
+  imageURL:string;
+  thumbURL:string;
   text:string;
 }

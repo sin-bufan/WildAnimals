@@ -21,6 +21,7 @@ export class VideoComponent implements OnInit {
   }
 }
 export class Video {
-  url: string;
+  videoURL:string;
+  thumbURL:string;
   thumbnail: string;
 }

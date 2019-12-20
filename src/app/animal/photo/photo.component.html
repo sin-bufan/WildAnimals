@@ -1,5 +1,9 @@
-<img *ngIf="data" [src]="data.url" (click)="onClose()"/>
-<div class="text-background" *ngIf="data&&data.text">
-  <ion-text>{{data.text}}</ion-text>
+<div class="container">
+  <img class="bg" src="assets/images/imagePanel.png" />
+  <div class="image-container">
+    <img class="image" *ngIf="data" [src]="data.imageURL" (click)="onClose()" />
+    <div class="text-background" *ngIf="data && data.text">
+      <ion-text>{{ data.text }}</ion-text>
+    </div>
+  </div>
 </div>
-

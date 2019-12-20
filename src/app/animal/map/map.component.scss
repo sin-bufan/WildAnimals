@@ -1,33 +1,24 @@
-p {
-  text-align:justify;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  right: 30%;
-}
-.map-container {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 30px;
-}
-
-.map-frame {
-  border: 2px solid black;
+.container {
+  margin: auto;
+  width: 75%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-
+.map-panel {
+  position: relative;
+}
 #map {
-  height: 100%;
-}
-.map-text{
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  
-  margin: 30px;
+  top: 26px;
+  left: 24px;
+  right: 24px;
+  bottom: 32px;
+}
+.map-text {
+  text-align: justify;
+  max-width: 60%;
+  margin-bottom: 80px;
 }

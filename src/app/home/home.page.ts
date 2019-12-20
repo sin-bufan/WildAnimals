@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { AnimalsDataService } from '../animals-data.service';
-import { NavController } from '@ionic/angular';
 import * as Phaser from 'phaser';
+import { Router } from '@angular/router';
 
 let this_//once the Phaser scene is initialized, this contains the default game state
-
-const PAUSE_DELAY:number= 1500;
-const ANIMALS_SPRITE_WIDTH:number = 650;
-const ANIMALS_SPRITE_HEIGHT:number = 768;
-const TOTAL_FRAME_NUM:number = 150;
-const FRAME_RATE:number = 24;
-const ANIMAL_PER_FRAME:number = 15;
+let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
+const PAUSE_DELAY: number = 1500;
+const ANIMALS_SPRITE_WIDTH: number = 650;
+const ANIMALS_SPRITE_HEIGHT: number = 768;
+const TOTAL_FRAME_NUM: number = 150;
+const FRAME_RATE: number = 24;
+const ANIMAL_PER_FRAME: number = 15;
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,9 +19,12 @@ const ANIMAL_PER_FRAME:number = 15;
 export class HomePage {
   animals: any = [];
   game: Phaser.Game;
-  constructor(private navCtrl: NavController,
-    private animalsDataService: AnimalsDataService) {
+  router: Router;
+  constructor(
+    private animalsDataService: AnimalsDataService,
+    private r: Router) {
     this_ = Object.create(this.constructor.prototype);
+    this_.router = this.r;
   }
 
   ngOnInit() {
@@ -31,27 +34,29 @@ export class HomePage {
     this_.game = new Phaser.Game({
       width: "650px",
       height: "768px",
-      transparent:true,
+      transparent: true,
       type: Phaser.AUTO,
       parent: 'phaser-div',
       scene: []
     });
     this_.game.scene.remove('game');
     this_.game.scene.add('game', MenuScene, true);
-    this_.game.events.addListener("selectMenuIndex",this_.gotoAnimal)
+    //接受传出来的消息
+    eventEmitter.addListener("selectMenuIndex", this_.gotoAnimal);
   }
   //初始化数据
   init(data_url: string) {
     this.animalsDataService.getAnimals(data_url).subscribe(
       (data) => {
         this_.animals = data.animals;
-        console.info("Animals: ", this_.animals)
+        //console.info("Animals: ", this_.animals)
       }
     );
   }
-  //
-  gotoAnimal(index){
-    console.info(this_.animals[index])
+  //跳转
+  gotoAnimal(index) {
+    index=2
+    this_.router.navigate(['animal', this_.animals[index].dataURL]);
   }
 }
 
@@ -63,39 +68,38 @@ class MenuScene extends Phaser.Scene {
   //2.加载素材
   preload() {
     this.load.spritesheet('animals', 'assets/images/animalIcon.png', { frameWidth: ANIMALS_SPRITE_WIDTH, frameHeight: ANIMALS_SPRITE_HEIGHT });
-    console.info("spritesheet loaded!!!")
+    //console.info("spritesheet loaded!!!")
   }
   //3.创建舞台内容
   // animals:Phaser.GameObjects.Sprite;
   create() {
-    let sprite:Phaser.GameObjects.Sprite = this.add.sprite(ANIMALS_SPRITE_WIDTH/2, ANIMALS_SPRITE_HEIGHT/2, 'animals');
+    let sprite: Phaser.GameObjects.Sprite = this.add.sprite(ANIMALS_SPRITE_WIDTH / 2, ANIMALS_SPRITE_HEIGHT / 2, 'animals');
     this.anims.create({
-      key : 'all',
-      frames : this.anims.generateFrameNumbers('animals',{start : 0,end : TOTAL_FRAME_NUM}),
-      frameRate : FRAME_RATE,
-      repeat : -1
+      key: 'all',
+      frames: this.anims.generateFrameNumbers('animals', { start: 0, end: TOTAL_FRAME_NUM }),
+      frameRate: FRAME_RATE,
+      repeat: -1
     })
     sprite.setInteractive();
     sprite.anims.setDelay(PAUSE_DELAY);
-    sprite.anims.play("all",true);
-    //sprite.on('animationupdate',this.onAnimationUpdate)
+    sprite.anims.play("all", true);
     //sprite.removeAllListeners();
-    sprite.addListener('animationupdate',this.onAnimationUpdate);
-    this.input.addListener('gameobjectdown',this.onClick);
+    sprite.addListener('animationupdate', this.onAnimationUpdate);
+    this.input.addListener('gameobjectdown', this.onClick);
   }
   //动画每帧变动时执行
-  onAnimationUpdate(animation,frame,sprite){
-    if (frame.index%ANIMAL_PER_FRAME==0){
+  onAnimationUpdate(animation, frame, sprite) {
+    if (frame.index % ANIMAL_PER_FRAME == 0) {
       //console.info(animation,frame,sprite)
       sprite.anims.pause();
       sprite.anims.setDelay(PAUSE_DELAY);
       sprite.anims.play();
     }
   }
-  onClick(pointer,gameObject:Phaser.GameObjects.Sprite,event){
-    console.info(pointer,gameObject,event)
-    let animalIndex:number = Math.floor(gameObject.anims.currentFrame.index/ANIMAL_PER_FRAME);
-    this.events.emit("selectMenuIndex",animalIndex)
+  onClick(pointer, gameObject: Phaser.GameObjects.Sprite, event) {
+    //console.info(pointer,gameObject,event)
+    let animalIndex: number = Math.floor(gameObject.anims.currentFrame.index / ANIMAL_PER_FRAME);
+    eventEmitter.emit("selectMenuIndex", animalIndex)
   }
   //4.循环刷新（16ms）
   update() {
