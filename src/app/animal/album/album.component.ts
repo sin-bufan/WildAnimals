@@ -30,7 +30,7 @@ export class AlbumComponent implements OnInit {
     console.info(video)
     const modal = await this.modalController.create({
       component: VideoComponent,
-      cssClass: 'modal',
+      cssClass: 'photo-modal',
       componentProps: {
         'data': video
       }

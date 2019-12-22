@@ -1,5 +1,20 @@
-<div *ngIf="data" class="album-container">
-  <ion-thumbnail *ngFor="let item of data.album" (click)="showPhoto(item)">
-    <img [src]="item.url" />
-  </ion-thumbnail>
+<div class="container">
+  <div *ngIf="data" class="album-container">
+    <ion-thumbnail *ngFor="let item of data.album" (click)="showPhoto(item)">
+      <img [src]="item.thumbURL" />
+    </ion-thumbnail>
+  </div>
+  <div *ngIf="data" class="timeline-container">
+    <div>
+    <p *ngFor="let item of data.timeline">
+      {{item.text}}
+    </p>
+  </div>
+  </div>
+
+  <!-- <ion-virtual-scroll *ngIf="data" [items]="data.timeline" class="timeline-container">
+    <ion-item *virtualItem="let item">
+      {{ item.text }}
+    </ion-item>
+  </ion-virtual-scroll> -->
 </div>

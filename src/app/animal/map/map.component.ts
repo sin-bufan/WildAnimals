@@ -26,6 +26,13 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
   }
+  //阻止上层的slides滑动
+  blockEvent(event:Event){
+    console.info(event)
+    // event.originalEvent.stopImmediatePropagation();
+    // event.originalEvent.stopPropagation();
+    // event.originalEvent.preventDefault();
+  }
   //初始化地图
   initMap(mapData: MapData) {
     //let Leaflet = L.noConflict();//为了重复使用L实例
@@ -34,16 +41,17 @@ export class MapComponent implements OnInit {
       container._leaflet_id = null;
     }
 
-      this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
-      //加入瓦片地图
-      L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
-        attributionControl: false,
-        minZoom: mapData.mapMinZoom,
-        maxZoom: mapData.mapMaxZoom
-      }).addTo(this.m);
+    this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
+    this.m.on("mousedown",this.blockEvent)
+    //加入瓦片地图
+    L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
+      attributionControl: false,
+      minZoom: mapData.mapMinZoom,
+      maxZoom: mapData.mapMaxZoom
+    }).addTo(this.m);
     
     //加入现状分布图层
-    this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonUrl).subscribe(
+    this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonURL).subscribe(
       (data) => {
         L.geoJSON(data, {
           style: function (feature) {
@@ -51,13 +59,22 @@ export class MapComponent implements OnInit {
             mapData.habitatLegend.forEach(item => {
               if (item.code == feature.properties.PRESENCE) {
                 feature.properties.color = item.color;
+                if (item.imageURL){
+                  feature.properties.imageURL = item.imageURL;
+                }
               }
             });
             return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
           }
         }).bindPopup(function (layer) {
-          // console.info(layer);
-          return layer.feature.properties.BINOMIAL;
+          console.info("map layer: ",layer);
+          //return layer.feature.properties.BINOMIAL;
+          let url:string = layer.feature.properties.imageURL;
+          if (url!=""){
+            return "<img class='map-popup' src="+url+">";
+          }else{
+            return null;
+          }
         }).addTo(this.m);
       }
     );
@@ -72,7 +89,7 @@ class MapData {
   mapMaxZoom: number;
   mapMinZoom: number;
   mapDefaultZoom: number;
-  habitatGeoJsonUrl: string;
+  habitatGeoJsonURL: string;
   habitatLegend: Array<ExtantStatus>
 }
 //动物现状数据
@@ -80,4 +97,5 @@ class ExtantStatus {
   code: number;
   label: string;
   color: string;
+  imageURL:string="";
 }

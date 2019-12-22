@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
 import { MenuController, Events, IonSlides } from '@ionic/angular';
@@ -11,12 +11,14 @@ import { SIDEMENU_EVENT } from '../sidemenu/sidemenu.component';
 })
 export class AnimalPage implements OnInit {
   @ViewChild("slides",{static:true}) slides:IonSlides;
+  @ViewChild("bg",{static:true}) bg:ElementRef;
   constructor(private route: ActivatedRoute,
     private router: Router,
     private animalsDataService: AnimalsDataService,
     // private popoverCtrl: PopoverController,
-    private menuCtrl: MenuController,
-    private events: Events) { }
+    private menuCtrl: MenuController,private render: Renderer2,
+    private events: Events) { 
+    }
   animal: any = {};
   slideOpts = {
     loop: true
@@ -28,16 +30,43 @@ export class AnimalPage implements OnInit {
       let data_url: string = params.get('animal_data_url');
       this.init(data_url);
     });
+    this.initBg();
   }
   //初始化数据
   init(data_url: string) {
     this.animalsDataService.getAnimal(data_url).subscribe(
       (data) => {
         this.animal = data.animal;
-        console.info("Animal: ", this.animal)
+        //console.info("Animal: ", this.animal)
       }
     );
   }
+  async initBg(){
+    let swiper = await this.slides.getSwiper();
+    let this_=this;
+    swiper.on("progress",function(progress){
+      this_.updateBackground(progress);
+    })
+  }
+  //根据slides的位置，更新背景图位置
+   async updateBackground(progress){
+    let domWidth:number = window.innerWidth;
+    let bgWidth:number=this.bg.nativeElement.naturalWidth;
+    let slideNum = await this.slides.length()
+    if (!progress){
+      let swiper = await this.slides.getSwiper();
+      progress = swiper.progress;
+    }
+    let bgLeft:number=0;
+    if (progress>1/slideNum){
+      bgLeft = (domWidth-bgWidth)*(progress-1/slideNum);
+   }else{
+     bgLeft = (domWidth-bgWidth)*(progress-1/slideNum+1);
+   }
+    this.render.setStyle(this.bg.nativeElement,"left",bgLeft+"px")
+  }
+
+
   //回主页
   onHome() {
     this.router.navigate(['home']);

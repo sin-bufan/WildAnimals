@@ -32,11 +32,11 @@ export class GameComponent implements AfterViewInit {
       parent:'phaser-div',
       scene: []
     });
-    this_.game.scene.remove('game');
   }
   //初始化场景
   initializeScene(data:GameData){
     console.info(data);
+    this_.game.scene.remove('game');
     switch(data.type){
       case "Game1":
         this_.game.scene.add('game',GameScene1,true,data);

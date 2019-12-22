@@ -1,8 +1,7 @@
 export class GameScene1  extends Phaser.Scene{
     //1.初始化
     init (data) {
-      console.info("GameScene1 receive data:",data)
-        this.cameras.main.setBackgroundColor('#ff0000');
+      console.info("GameScene1 receive data:",data);
       }
       //2.加载素材
     preload(){

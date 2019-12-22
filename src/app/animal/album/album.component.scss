@@ -22,6 +22,7 @@
 }
 p {
     text-align:justify;
+    margin: 5px;
 }
 .media-container{
     display: flex;
@@ -34,12 +35,19 @@ p {
     align-items: flex-start;
     flex-wrap: wrap;
     // justify-content: space-between;
-    width: 360px;
-    height: 360px;
+    width: 330px;
+    height: 330px;
 }
 
 ion-thumbnail{
     width: 100px;
     height: 100px;
-    margin:10px;
+    margin:5px;
+    position: relative;
+}
+.video-icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }

@@ -13,7 +13,7 @@ export class KeypointComponent implements OnInit {
 
   ngOnInit() {}
  onShow(i:number){
-   console.info(this.data.feathers[i].position)
+   //console.info(this.data.feathers[i].position)
    this.index=i;
  }
 }

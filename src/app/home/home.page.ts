@@ -30,13 +30,13 @@ export class HomePage {
   ngOnInit() {
     this.init(AnimalsDataService.CN_DATA_URL)
   }
-  ngAfterViewInit() {
+  _ngAfterViewInit() {
     this_.game = new Phaser.Game({
       width: "650px",
       height: "768px",
       transparent: true,
       type: Phaser.AUTO,
-      parent: 'phaser-div',
+      parent: 'phaser-div-menu',
       scene: []
     });
     this_.game.scene.remove('game');
@@ -55,7 +55,6 @@ export class HomePage {
   }
   //跳转
   gotoAnimal(index) {
-    index=2
     this_.router.navigate(['animal', this_.animals[index].dataURL]);
   }
 }

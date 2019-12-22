@@ -1,2 +1,9 @@
-<video *ngIf="data"  [src]="data.videoURL" controls="controls"></video>
-<ion-button  (click)="onClose()">close</ion-button>
+<div class="container">
+    <img class="bg" src="assets/images/imagePanel.png" />
+    <div class="image-container">
+        <video *ngIf="data"  [src]="data.videoURL" controls="controls"></video>
+    </div>
+    <ion-button class="close-button" expand="full" fill="clear">
+        <img src="assets/images/button/closeImage.png" (click)="onClose()"/>
+    </ion-button>
+</div>
