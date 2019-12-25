@@ -25,15 +25,15 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-// @font-face {
-//   font-family: "NotoSerif";
-//   font-style: normal;
-//   font-weight: bold;
-//   src: url("../assets/fonts/NotoSerifCJKsc-Bold.otf");
-// }
-// :root {
-//   --ion-font-family: "NotoSerif";
-// }
+@font-face {
+  font-family: "NotoSerif";
+  font-style: normal;
+  font-weight: bold;
+  src: url("assets/fonts/NotoSerifCJKsc-Bold.otf");
+}
+:root {
+  --ion-font-family: "NotoSerif";
+}
 .photo-modal {
   --width:100%;
   --height: 100%;

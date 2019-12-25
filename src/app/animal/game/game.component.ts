@@ -3,6 +3,7 @@ import { Component, AfterViewInit,Input } from '@angular/core';
 import * as Phaser from 'phaser';
 import {GameScene1} from './game-scene1';
 import {GameScene2} from './game-scene2';
+import {GameScene3} from './game-scene3';
 
 let this_//once the Phaser scene is initialized, this contains the default game state
 @Component({
