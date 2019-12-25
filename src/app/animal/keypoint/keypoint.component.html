@@ -1,12 +1,12 @@
 <div class="container">
   <div *ngIf="data" class="info-container">
-    <img [src]="data.feathers[index].imageURL" />
-    <h1>{{ data.feathers[index].title }}</h1>
-    <p>{{ data.feathers[index].text }}</p>
+    <img class="feather-image" [src]="data.feathers[index].imageURL" />
+    <h1 class="feather-title">{{ data.feathers[index].title }}</h1>
+    <p class="feather-text">{{ data.feathers[index].text }}</p>
   </div>
 
   <div *ngIf="data" class="point-container">
-    <img class="feather-image" [src]="data.imageURL" />
+    <img class="animal-image" [src]="data.imageURL" />
     <ion-button
       class="point"
       expand="full"

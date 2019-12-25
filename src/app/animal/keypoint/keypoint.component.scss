@@ -12,17 +12,32 @@
     flex-direction:column;
     max-width: 30%;
     align-items: flex-start;
+    
+    background-image: url('/assets/images/bg.jpg');
+    padding: 20px;
+    border-style: solid;
+    border-color: rgb(176, 176, 176);
+    border-width: medium;
 }
-p {
+.feather-image{
+    width: 100%;
+}
+.feather-title {
     text-align: justify;
     width: 100%;
+}
+.feather-text {
+    text-align: justify;
+    width: 100%;
+}
+
+.animal-image{
+    padding: 50px;
 }
 .point-container{
     position: relative;
 }
-.feather-image{
-    padding: 50px;
-}
+
 .point{
     position: absolute;
 }

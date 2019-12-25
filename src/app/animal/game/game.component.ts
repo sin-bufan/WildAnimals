@@ -44,6 +44,9 @@ export class GameComponent implements AfterViewInit {
       case "Game2":
         this_.game.scene.add('game',GameScene2,true,data);
         break;
+      case "Game3":
+        this_.game.scene.add('game',GameScene3,true,data);
+        break;
     }
   }
   ngAfterViewInit() {
