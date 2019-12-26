@@ -1,0 +1,13 @@
+//右上角导航按钮
+.nav-button{
+    margin-left: -10px;
+    margin-right: -10px;
+    height: 52px;
+    button-native{
+        padding:0px;
+    }
+}
+.mute-button{
+    filter: grayscale(100%);
+    opacity: 0.4;
+}

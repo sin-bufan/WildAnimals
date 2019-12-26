@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import {SharedModule} from '../shared.module';
 
 import { AnimalPage } from './animal.page';
 import { AlbumComponent } from './album/album.component';
@@ -13,7 +14,6 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { GameComponent } from './game/game.component';
 import { PhotoComponent } from './photo/photo.component';
 import { VideoComponent } from './video/video.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -23,20 +23,25 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AnimalPage,
-  AlbumComponent,
-  PhotoComponent,
-  VideoComponent,
-  KeypointComponent,
-  MapComponent,
-  GameComponent,
-  TimelineComponent],
-  entryComponents: [PhotoComponent,
-    VideoComponent]
+  declarations: [
+    AnimalPage,
+    AlbumComponent,
+    PhotoComponent,
+    VideoComponent,
+    KeypointComponent,
+    MapComponent,
+    GameComponent,
+    TimelineComponent
+  ],
+  entryComponents: [
+    PhotoComponent,
+    VideoComponent
+  ]
 })
-export class AnimalPageModule {}
+export class AnimalPageModule { }

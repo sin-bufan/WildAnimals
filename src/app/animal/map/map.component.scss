@@ -9,18 +9,16 @@
 }
 .map-panel {
   position: relative;
-  border:27px solid #000; //盒子边框宽度为27px
+  border:26px solid transparent; //盒子边框宽度为27px
   border-image-source:url("/assets/images/mapPanel.png");
-  border-image-outset:27px 27px 27px 27px; //边框图片向设置为27px，那么背景图将会从盒子最外边界向外上右下左各延伸27px。
+  border-image-slice:26; //边框图片向设置为27px，那么背景图将会从盒子最外边界向外上右下左各延伸27px。
   width: 100%;
   height: 70%;
 }
 #map {
   position: absolute;
-  top: 26px;
-  left: 24px;
-  right: 24px;
-  bottom: 32px;
+  width: 100%;
+  height: 100%;
 }
 .map-text {
   text-align: justify;
