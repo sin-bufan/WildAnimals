@@ -1,5 +1,16 @@
+ion-header{
+    // background-blend-mode: multiply;
+}
+.menu-title{
+    // position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 ion-content{
-    height: 600px;
+    height:760px;
+    background-image: url('/assets/images/bg.jpg');
 }
 
 ion-item{
@@ -7,8 +18,18 @@ ion-item{
     flex-direction:row;
     align-items:center;
 }
-
-ion-label{
-    margin: 20px;
-    font-size:30px;
+.animal-icon{
+    margin: 10px;
+}
+.animal-name-container{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    margin:10px;
+}
+.animal-name{
+    font-size:20px;
+}
+.animal-name2{
+    font-size:14px;
 }
