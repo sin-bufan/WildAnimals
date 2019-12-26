@@ -19,6 +19,7 @@ export class TimelineComponent implements OnInit {
     console.info(photo)
     const modal = await this.modalController.create({
       component: PhotoComponent,
+      cssClass: 'photo-modal',
       componentProps: {
         'data': photo
       }
