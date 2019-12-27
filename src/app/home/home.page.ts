@@ -7,8 +7,8 @@ let this_//once the Phaser scene is initialized, this contains the default game 
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
 const PAUSE_DELAY: number = 1500;
 const ANIMALS_SPRITE_WIDTH: number = 650;
-const ANIMALS_SPRITE_HEIGHT: number = 768;
-const TOTAL_FRAME_NUM: number = 150;
+const ANIMALS_SPRITE_HEIGHT: number = 650;
+const TOTAL_FRAME_NUM: number = 151;
 const FRAME_RATE: number = 24;
 const ANIMAL_PER_FRAME: number = 15;
 @Component({
@@ -18,7 +18,7 @@ const ANIMAL_PER_FRAME: number = 15;
 })
 export class HomePage {
   animals: any = [];
-  game: Phaser.Game;
+  menu: Phaser.Game;
   router: Router;
   constructor(
     private animalsDataService: AnimalsDataService,
@@ -30,17 +30,17 @@ export class HomePage {
   ngOnInit() {
     this.init(AnimalsDataService.CN_DATA_URL)
   }
-  _ngAfterViewInit() {
-    this_.game = new Phaser.Game({
+  ngAfterViewInit() {
+    this_.menu = new Phaser.Game({
       width: "650px",
-      height: "768px",
+      height: "650px",
       transparent: true,
-      type: Phaser.AUTO,
+      type: Phaser.CANVAS,
       parent: 'phaser-div-menu',
       scene: []
     });
-    this_.game.scene.remove('game');
-    this_.game.scene.add('game', MenuScene, true);
+    this_.menu.scene.remove('menu');
+    this_.menu.scene.add('menu', MenuScene, true);
     //接受传出来的消息
     eventEmitter.addListener("selectMenuIndex", this_.gotoAnimal);
   }
@@ -74,15 +74,17 @@ class MenuScene extends Phaser.Scene {
   create() {
     let sprite: Phaser.GameObjects.Sprite = this.add.sprite(ANIMALS_SPRITE_WIDTH / 2, ANIMALS_SPRITE_HEIGHT / 2, 'animals');
     this.anims.create({
-      key: 'all',
-      frames: this.anims.generateFrameNumbers('animals', { start: 0, end: TOTAL_FRAME_NUM }),
+      key: 'menu',
+      frames: this.anims.generateFrameNumbers('animals', { start: 0, end: TOTAL_FRAME_NUM-1 }),
       frameRate: FRAME_RATE,
       repeat: -1
     })
+    //console.info("animation created!!!");
     sprite.setInteractive();
     sprite.anims.setDelay(PAUSE_DELAY);
-    sprite.anims.play("all", true);
-    //sprite.removeAllListeners();
+    sprite.anims.play("menu", true);
+    //console.info("animation played!!!");
+    sprite.removeAllListeners();
     sprite.addListener('animationupdate', this.onAnimationUpdate);
     this.input.addListener('gameobjectdown', this.onClick);
   }

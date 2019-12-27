@@ -18,7 +18,7 @@ export class KeypointComponent implements OnInit {
  }
 }
 class KeypointData{
-  bg:string="";
+  imageURL:string="";
   feathers:Array<Feather>=[]
 }
 

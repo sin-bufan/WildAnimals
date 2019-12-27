@@ -24,7 +24,7 @@
     align-items:center;
 }
 .title {
-    margin-bottom: 30px;
+    margin: 30px;
 }
 .language-button{
     margin: 10px;
@@ -36,9 +36,10 @@
     margin-right: -10px;
     height: 52px;
 }
-#phaser-div{
+#phaser-div-menu{
     width: 650px;
-    height: 768px;
+    height: 650px;
+    margin-left: -100px;
 }
 ion-slide{
     display: flex;

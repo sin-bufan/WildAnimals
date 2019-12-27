@@ -3,33 +3,37 @@ ion-header{
 }
 .menu-title{
     // position: absolute;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 80px;
+    // margin-right: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 ion-content{
-    height:760px;
+    height:750px;
     background-image: url('/assets/images/bg.jpg');
 }
-
+ion-list{
+    // background-color:transparent;
+}
 ion-item{
     display:flex;
     flex-direction:row;
     align-items:center;
+    // --background-color:transparent;
 }
 .animal-icon{
-    margin: 10px;
+    margin: 4px;
 }
 .animal-name-container{
     display:flex;
     flex-direction:column;
     align-items:flex-start;
-    margin:10px;
+    margin:4px;
 }
 .animal-name{
     font-size:20px;
 }
 .animal-name2{
     font-size:14px;
+    margin: 0;
 }
