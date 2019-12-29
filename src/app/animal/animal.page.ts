@@ -52,17 +52,18 @@ export class AnimalPage implements OnInit {
    async updateBackground(progress){
     let domWidth:number = window.innerWidth;
     let bgWidth:number=this.bg.nativeElement.naturalWidth;
-    let slideNum = await this.slides.length()
+    let slideNum = await this.slides.length()-2;//5
     if (!progress){
       let swiper = await this.slides.getSwiper();
       progress = swiper.progress;
     }
     let bgLeft:number=0;
-    if (progress>1/slideNum){
-      bgLeft = (domWidth-bgWidth)*(progress-1/slideNum);
-   }else{
-     bgLeft = (domWidth-bgWidth)*(progress-1/slideNum+1);
-   }
+    if (progress>=1/(slideNum+1)){
+      bgLeft = (domWidth-bgWidth)*(progress-2/(slideNum+1))/((slideNum-2)/(slideNum+1));
+    }else{
+      bgLeft = (domWidth-bgWidth);
+    }
+    // console.info(domWidth,bgWidth,progress,slideNum,bgLeft)
     this.render.setStyle(this.bg.nativeElement,"left",bgLeft+"px")
   }
 

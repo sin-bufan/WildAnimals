@@ -31,7 +31,7 @@ export class SidemenuComponent implements OnInit {
     this.animalsDataService.getAnimals(data_url).subscribe(
       (data) => {
         this.animals = data.animals;
-        console.info("Side Menu Data: ", this.animals)
+        //console.info("Side Menu Data: ", this.animals)
       }
     );
   }

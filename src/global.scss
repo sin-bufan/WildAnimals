@@ -29,7 +29,7 @@
   font-family: "NotoSerif";
   font-style: normal;
   font-weight: bold;
-  src: url("assets/fonts/NotoSerifCJKsc-Bold.otf");
+  src: url("/src/assets/fonts/NotoSerifCJKsc-Bold.otf");
 }
 :root {
   --ion-font-family: "NotoSerif";
@@ -38,4 +38,10 @@
   --width:100%;
   --height: 100%;
   --background:none;
+}
+.image-button{
+  width: fit-content;
+  height: fit-content;
+  --padding-start:0;
+  --padding-end:0
 }

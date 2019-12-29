@@ -37,7 +37,8 @@ export class HomePage {
       transparent: true,
       type: Phaser.CANVAS,
       parent: 'phaser-div-menu',
-      scene: []
+      scene: [],
+      audio:{noAudio:true}
     });
     this_.menu.scene.remove('menu');
     this_.menu.scene.add('menu', MenuScene, true);
@@ -86,21 +87,35 @@ class MenuScene extends Phaser.Scene {
     //console.info("animation played!!!");
     sprite.removeAllListeners();
     sprite.addListener('animationupdate', this.onAnimationUpdate);
-    this.input.addListener('gameobjectdown', this.onClick);
+    this.input.addListener('pointerdown', this.onMouseDown);
+    this.input.addListener('pointerup', this.onMouseUp);
+    this.input.addListener('pointermove', this.onMouseMove);
   }
   //动画每帧变动时执行
+  touching:boolean=false;
   onAnimationUpdate(animation, frame, sprite) {
-    if (frame.index % ANIMAL_PER_FRAME == 0) {
+    if (frame.index % ANIMAL_PER_FRAME == 0 && !this.touching) {
       //console.info(animation,frame,sprite)
       sprite.anims.pause();
       sprite.anims.setDelay(PAUSE_DELAY);
       sprite.anims.play();
     }
   }
-  onClick(pointer, gameObject: Phaser.GameObjects.Sprite, event) {
-    //console.info(pointer,gameObject,event)
-    let animalIndex: number = Math.floor(gameObject.anims.currentFrame.index / ANIMAL_PER_FRAME);
-    eventEmitter.emit("selectMenuIndex", animalIndex)
+  onMouseDown(pointer, localX,localY,event) {
+    console.info("Down: ",pointer,localX,localY,event);
+    //gameObject.anims.pause();
+    this.touching=true;
+  }
+  onMouseUp(pointer, localX,localY, event) {
+    console.info("Up: ",pointer,localX,localY,event);
+    this.touching=false;
+    //let animalIndex: number = Math.floor(gameObject.anims.currentFrame.index / ANIMAL_PER_FRAME);
+    //eventEmitter.emit("selectMenuIndex", animalIndex)
+  }
+  onMouseMove(pointer,localX,localY, event) {
+    console.info("MovelocalX,localY,: ",pointer,localX,localY,event);
+    //gameObject.anims.pause();
+    this.touching=true;
   }
   //4.循环刷新（16ms）
   update() {

@@ -1,3 +1,4 @@
+@import "../../global.scss";
 ion-content{
     position: absolute;
     width: 100%;
@@ -6,9 +7,9 @@ ion-content{
 .bg{
     position: absolute;
     height:100%;
+    min-height: 768px;
     width: auto;
     max-width: max-content;
-    left:-500px;
 }
 
 ion-slides
@@ -56,14 +57,7 @@ ion-slide
 }
 //右上角导航按钮
 .nav-button{
-    margin-left: -10px;
-    margin-right: -10px;
-    height: 52px;
-    button-native{
-        padding:0px;
-    }
-}
-//左右滑动按钮
-.swipt-button{
-    height: 52px;
+    @extend .image-button;
+    margin-left: 10px;
+    margin-right: 10px;
 }

@@ -5,7 +5,9 @@ import {GameScene1} from './game-scene1';
 import {GameScene2} from './game-scene2';
 import {GameScene3} from './game-scene3';
 
-let this_//once the Phaser scene is initialized, this contains the default game state
+import {GameScene5} from './game-scene5';
+
+let this_:GameComponent//once the Phaser scene is initialized, this contains the default game state
 @Component({
   selector: 'animal-game',
   templateUrl: './game.component.html',
@@ -13,12 +15,19 @@ let this_//once the Phaser scene is initialized, this contains the default game 
 })
 export class GameComponent implements AfterViewInit {
   //数据
+  _data:GameData;
   @Input() 
-  set data(data:GameData){
-    if (data!=null && data.type!=null){
-      this_.initializeScene(data)
+  set data(value:GameData){
+    if (value!=null && value.type!=null){
+      this_._data = value;
+      if (!this_._data.startDialog){
+        this_.startGame();
+      }
     }
   };
+  get data():GameData{
+    return this_._data;
+  }
   game:Phaser.Game;
   constructor() {
     this_ = Object.create(this.constructor.prototype);
@@ -28,15 +37,18 @@ export class GameComponent implements AfterViewInit {
     this_.game = new Phaser.Game({
       width: "100%",
       height: "100%",
-      type: Phaser.AUTO,
+      type: Phaser.CANVAS,
       transparent:true,
       parent:'phaser-div',
-      scene: []
+      scene: [],
+      dom:{
+        createContainer: true
+      }
     });
   }
   //初始化场景
   initializeScene(data:GameData){
-    console.info(data);
+    //console.info(data);
     this_.game.scene.remove('game');
     switch(data.type){
       case "Game1":
@@ -48,13 +60,35 @@ export class GameComponent implements AfterViewInit {
       case "Game3":
         this_.game.scene.add('game',GameScene3,true,data);
         break;
+      case "Game5":
+          this_.game.scene.add('game',GameScene5,true,data);
+          break;
     }
   }
+  gameStarted:boolean=false;
+  startGame(){
+    this_.initializeGame();
+    this_.initializeScene(this_.data)
+    this_.gameStarted=true;
+    console.info(this_.gameStarted)
+  }
   ngAfterViewInit() {
-    this_.initializeGame()
   }
 
 }
 class GameData{
   type:string;
+  intro:string;
+  startDialog:StartGameDialog;
+  game:Game5Data;
+}
+class StartGameDialog{
+  text:string;
+}
+class Game5Data{
+  options:Array<Game5Option>
+}
+class Game5Option{
+  imageURL:string;
+  value:string;
 }

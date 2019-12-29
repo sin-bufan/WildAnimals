@@ -102,8 +102,20 @@
     },
     "habits": {
       "des": "生活习性",
-      "type": "Game1",
-      "text": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。"
+      "type": "Game5",
+      "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。",
+      "startDialog":{
+        "text":"给不同年龄的熊猫称体重"
+      },
+      "game":{
+        "options":[
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight1-140g.png","value":"140g"},
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight2-28kg.png","value":"28kg"},
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight3-80kg.png","value":"80kg"},
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight4-120kg.png","value":"120kg"},
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight5-140kg.png","value":"140kg"}
+        ]
+      }
     },
     "protection": {
       "des": "保护措施",

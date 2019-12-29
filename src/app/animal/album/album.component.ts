@@ -16,7 +16,7 @@ export class AlbumComponent implements OnInit {
   ngOnInit() { }
   //显示照片
   async showPhoto(photo:any) {
-    console.info(photo)
+    //console.info(photo)
     const modal = await this.modalController.create({
       component: PhotoComponent,
       cssClass: 'photo-modal',
@@ -27,7 +27,7 @@ export class AlbumComponent implements OnInit {
     return await modal.present();
   }
   async showVideo(video:any) {
-    console.info(video)
+    //console.info(video)
     const modal = await this.modalController.create({
       component: VideoComponent,
       cssClass: 'photo-modal',

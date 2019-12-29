@@ -16,7 +16,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit() { }
   //显示照片
   async showPhoto(photo:any) {
-    console.info(photo)
+    //console.info(photo)
     const modal = await this.modalController.create({
       component: PhotoComponent,
       cssClass: 'photo-modal',
