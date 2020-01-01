@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AnimalsDataService } from '../animals-data.service';
 import * as Phaser from 'phaser';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd,Event as NavigationEvent } from '@angular/router';
 
 let this_//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
@@ -10,13 +10,13 @@ const ANIMALS_SPRITE_WIDTH: number = 650;
 const ANIMALS_SPRITE_HEIGHT: number = 650;
 const TOTAL_FRAME_NUM: number = 151;
 const FRAME_RATE: number = 24;
-const ANIMAL_PER_FRAME: number = 15;
+const ANIMAL_PER_FRAME: number = 15;//ms
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage{
   animals: any = [];
   menu: Phaser.Game;
   router: Router;
@@ -25,6 +25,16 @@ export class HomePage {
     private r: Router) {
     this_ = Object.create(this.constructor.prototype);
     this_.router = this.r;
+    this_.router.events
+    .subscribe(
+      (event: NavigationEvent) => {
+        if(event instanceof NavigationEnd) {
+          console.log(event);
+          if (event.url=="/home"){
+            this_.menu.scene.resume("menu");
+          }
+        }
+      });
   }
 
   ngOnInit() {
@@ -45,6 +55,7 @@ export class HomePage {
     //接受传出来的消息
     eventEmitter.addListener("selectMenuIndex", this_.gotoAnimal);
   }
+  
   //初始化数据
   init(data_url: string) {
     this.animalsDataService.getAnimals(data_url).subscribe(
@@ -56,14 +67,16 @@ export class HomePage {
   }
   //跳转
   gotoAnimal(index) {
+    console.info("enter animal: ",index)
     this_.router.navigate(['animal', this_.animals[index].dataURL]);
+    this_.menu.scene.pause("menu");
   }
 }
-
+let menuScene:MenuScene;
 class MenuScene extends Phaser.Scene {
   //1.初始化
   init() {
-
+    menuScene = this;
   }
   //2.加载素材
   preload() {
@@ -72,8 +85,9 @@ class MenuScene extends Phaser.Scene {
   }
   //3.创建舞台内容
   // animals:Phaser.GameObjects.Sprite;
+  sprite:Phaser.GameObjects.Sprite ;
   create() {
-    let sprite: Phaser.GameObjects.Sprite = this.add.sprite(ANIMALS_SPRITE_WIDTH / 2, ANIMALS_SPRITE_HEIGHT / 2, 'animals');
+    this.sprite = this.add.sprite(ANIMALS_SPRITE_WIDTH / 2, ANIMALS_SPRITE_HEIGHT / 2, 'animals');
     this.anims.create({
       key: 'menu',
       frames: this.anims.generateFrameNumbers('animals', { start: 0, end: TOTAL_FRAME_NUM-1 }),
@@ -81,41 +95,56 @@ class MenuScene extends Phaser.Scene {
       repeat: -1
     })
     //console.info("animation created!!!");
-    sprite.setInteractive();
-    sprite.anims.setDelay(PAUSE_DELAY);
-    sprite.anims.play("menu", true);
-    //console.info("animation played!!!");
-    sprite.removeAllListeners();
-    sprite.addListener('animationupdate', this.onAnimationUpdate);
+    this.sprite.setInteractive();
+    this.sprite.anims.delayedPlay(PAUSE_DELAY,"menu");
+    //console.info("animation played!!!",this.animation);
+    this.sprite.removeAllListeners();
+    this.sprite.addListener('animationupdate', this.onAnimationUpdate);
     this.input.addListener('pointerdown', this.onMouseDown);
     this.input.addListener('pointerup', this.onMouseUp);
+    this.input.addListener('pointerupoutside', this.onMouseUp);
     this.input.addListener('pointermove', this.onMouseMove);
   }
   //动画每帧变动时执行
-  touching:boolean=false;
+  press:boolean=false;
   onAnimationUpdate(animation, frame, sprite) {
-    if (frame.index % ANIMAL_PER_FRAME == 0 && !this.touching) {
+    if (frame.index % ANIMAL_PER_FRAME == 0 && !this.press) {
       //console.info(animation,frame,sprite)
       sprite.anims.pause();
-      sprite.anims.setDelay(PAUSE_DELAY);
-      sprite.anims.play();
+      sprite.anims.delayedPlay(PAUSE_DELAY,"menu",frame.index);
     }
   }
-  onMouseDown(pointer, localX,localY,event) {
-    console.info("Down: ",pointer,localX,localY,event);
-    //gameObject.anims.pause();
-    this.touching=true;
+  //手势控制
+  onMouseDown(pointer, currentlyOver) {
+    //console.info("Down: ",pointer,currentlyOver,menuScene.touching);
+    if (!this.press){
+      menuScene.sprite.anims.pause();
+      setTimeout(function (){
+        menuScene.press=true;
+      },200)
+    }else{
+      //console.info("mouse down out!!!")
+    }
   }
-  onMouseUp(pointer, localX,localY, event) {
-    console.info("Up: ",pointer,localX,localY,event);
-    this.touching=false;
-    //let animalIndex: number = Math.floor(gameObject.anims.currentFrame.index / ANIMAL_PER_FRAME);
-    //eventEmitter.emit("selectMenuIndex", animalIndex)
+  onMouseUp(pointer) {
+    //console.info("Up: ",pointer,menuScene.press);
+    if (menuScene.press){
+      menuScene.press=false;
+      menuScene.sprite.anims.resume();
+    }else{
+      let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / ANIMAL_PER_FRAME);
+      eventEmitter.emit("selectMenuIndex", animalIndex)
+    }
   }
-  onMouseMove(pointer,localX,localY, event) {
-    console.info("MovelocalX,localY,: ",pointer,localX,localY,event);
-    //gameObject.anims.pause();
-    this.touching=true;
+  onMouseMove(pointer,currentlyOver) {
+    //console.info("Move: ",pointer,pointer.worldX-pointer.downX,currentlyOver);
+    if (menuScene.press){
+      if (pointer.position.x-pointer.prevPosition.x<-1){
+        menuScene.sprite.anims.nextFrame();}
+      else if (pointer.position.x-pointer.prevPosition.x>1){
+        menuScene.sprite.anims.previousFrame();
+      }
+    }
   }
   //4.循环刷新（16ms）
   update() {
