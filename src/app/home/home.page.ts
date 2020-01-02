@@ -68,8 +68,10 @@ export class HomePage{
   //跳转
   gotoAnimal(index) {
     console.info("enter animal: ",index)
-    this_.router.navigate(['animal', this_.animals[index].dataURL]);
-    this_.menu.scene.pause("menu");
+    if (this_.animals[index].dataURL && this_.animals[index].dataURL!=""){
+      this_.router.navigate(['animal', this_.animals[index].dataURL]);
+      this_.menu.scene.pause("menu");
+    }
   }
 }
 let menuScene:MenuScene;
@@ -102,7 +104,7 @@ class MenuScene extends Phaser.Scene {
     this.sprite.addListener('animationupdate', this.onAnimationUpdate);
     this.input.addListener('pointerdown', this.onMouseDown);
     this.input.addListener('pointerup', this.onMouseUp);
-    this.input.addListener('pointerupoutside', this.onMouseUp);
+    this.input.addListener('pointerupoutside', this.onMouseUpOutside);
     this.input.addListener('pointermove', this.onMouseMove);
   }
   //动画每帧变动时执行
@@ -126,7 +128,7 @@ class MenuScene extends Phaser.Scene {
       //console.info("mouse down out!!!")
     }
   }
-  onMouseUp(pointer) {
+  onMouseUp(pointer,currentlyOver) {
     //console.info("Up: ",pointer,menuScene.press);
     if (menuScene.press){
       menuScene.press=false;
@@ -134,6 +136,13 @@ class MenuScene extends Phaser.Scene {
     }else{
       let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / ANIMAL_PER_FRAME);
       eventEmitter.emit("selectMenuIndex", animalIndex)
+    }
+  }
+  onMouseUpOutside(pointer) {
+    //console.info("Up: ",pointer,menuScene.press);
+    if (menuScene.press){
+      menuScene.press=false;
+      menuScene.sprite.anims.resume();
     }
   }
   onMouseMove(pointer,currentlyOver) {

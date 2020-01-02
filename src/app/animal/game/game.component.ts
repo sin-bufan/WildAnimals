@@ -5,7 +5,7 @@ import {GameScene1} from './game-scene1';
 import {GameScene2} from './game-scene2';
 import {GameScene3} from './game-scene3';
 
-import {GameScene5} from './game-scene5';
+import {GameScene5,Game5Data} from './game-scene5';
 
 let this_:GameComponent//once the Phaser scene is initialized, this contains the default game state
 @Component({
@@ -80,15 +80,11 @@ class GameData{
   type:string;
   intro:string;
   startDialog:StartGameDialog;
-  game:Game5Data;
+  game:GameNData;
 }
 class StartGameDialog{
   text:string;
 }
-class Game5Data{
-  options:Array<Game5Option>
-}
-class Game5Option{
-  imageURL:string;
-  value:string;
+enum GameNData{
+  Game5Data
 }

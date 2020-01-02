@@ -1,7 +1,7 @@
-<div  *ngIf="data">
+<div *ngIf="data">
     <div id='phaser-div'></div>
     <ion-text class="intro-text" *ngIf="data.intro">{{data.intro}}</ion-text>
-    <ion-card class="start-game-dialog" *ngIf="data.startDialog" [hidden]="gameStarted">
+    <ion-card class="start-game-dialog" *ngIf="data.startDialog&&!gameStarted" [hidden]="gameStarted">
         <ion-card-content>{{data.startDialog.text}}</ion-card-content>
         <ion-button class="image-button" expand="full" fill="clear" (click)="startGame()">
             <img src="assets/images/button/startGame.png" />
