@@ -11,9 +11,11 @@ import { AlbumComponent } from './album/album.component';
 import { KeypointComponent } from './keypoint/keypoint.component';
 import { MapComponent } from './map/map.component';
 import { TimelineComponent } from './timeline/timeline.component';
-import { GameComponent } from './game/game.component';
+// import { GameComponent } from './game/game.component';
 import { PhotoComponent } from './photo/photo.component';
 import { VideoComponent } from './video/video.component';
+import { Game5Component } from './game/game5/game5.component';
+import { GameDirective } from './game/game.directive';
 const routes: Routes = [
   {
     path: '',
@@ -36,12 +38,14 @@ const routes: Routes = [
     VideoComponent,
     KeypointComponent,
     MapComponent,
-    GameComponent,
-    TimelineComponent
+    TimelineComponent,
+    GameDirective,
+    Game5Component
   ],
   entryComponents: [
     PhotoComponent,
-    VideoComponent
+    VideoComponent,
+    Game5Component
   ]
 })
 export class AnimalPageModule { }

@@ -102,7 +102,7 @@
     },
     "habits": {
       "des": "生活习性",
-      "type": "Game5",
+      "type": "Game5Component",
       "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。",
       "startDialog":{
         "text":"给不同年龄的熊猫称体重"

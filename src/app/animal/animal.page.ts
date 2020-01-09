@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ComponentFactoryResolver } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
 import { MenuController, Events, IonSlides } from '@ionic/angular';
 import { SIDEMENU_EVENT } from '../sidemenu/sidemenu.component';
-
+import { GameDirective } from './game/game.directive';
+import { GameComponent } from './game/game.component';
+import { Game5Component } from './game/game5/game5.component';
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -12,12 +14,15 @@ import { SIDEMENU_EVENT } from '../sidemenu/sidemenu.component';
 export class AnimalPage implements OnInit {
   @ViewChild("slides",{static:true}) slides:IonSlides;
   @ViewChild("bg",{static:true}) bg:ElementRef;
+  @ViewChild(GameDirective, {static: true}) gameHost: GameDirective;
+  
   constructor(private route: ActivatedRoute,
     private router: Router,
     private animalsDataService: AnimalsDataService,
     // private popoverCtrl: PopoverController,
     private menuCtrl: MenuController,private render: Renderer2,
-    private events: Events) { 
+    private events: Events,
+    private componentFactoryResolver: ComponentFactoryResolver) { 
     }
   animal: any = {};
   slideOpts = {
@@ -38,6 +43,7 @@ export class AnimalPage implements OnInit {
       (data) => {
         this.animal = data.animal;
         //console.info("Animal: ", this.animal)
+        this.loadGameComponent();
       }
     );
   }
@@ -48,6 +54,17 @@ export class AnimalPage implements OnInit {
       this_.updateBackground(progress);
     })
   }
+  //加载对应Game组件
+  loadGameComponent() {
+    // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.animal.habits.type);
+    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+    let viewContainerRef = this.gameHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    let componentRef = viewContainerRef.createComponent(componentFactory);
+    (<GameComponent>componentRef.instance).data = this.animal.habits;
+  }
+
   //根据slides的位置，更新背景图位置
    async updateBackground(progress){
     let domWidth:number = window.innerWidth;

@@ -1,0 +1,51 @@
+<div *ngIf="data" class="content">
+  <ion-text class="intro-text" *ngIf="data.intro">{{ data.intro }}</ion-text>
+  <div class="game-area">
+    <!-- 开始对话框 -->
+    <ion-card
+      class="start-game-dialog"
+      *ngIf="data.startDialog"
+      [hidden]="gameStarted"
+    >
+      <ion-card-content>{{ data.startDialog.text }}</ion-card-content>
+      <ion-button
+        class="image-button"
+        expand="full"
+        fill="clear"
+        (click)="startGame()"
+      >
+        <img src="assets/images/button/startGame.png" />
+      </ion-button>
+    </ion-card>
+    <!-- 游戏 -->
+    <div *ngIf="gameStarted" class="game-content">
+      <div id="phaser-div"></div>
+      <div *ngIf="data.game" class="weight-options">
+        <ion-button
+          class="image-button"
+          expand="full"
+          fill="clear"
+          (click)="options.slideNext()"
+        >
+          <img src="assets/images/button/prevWeight.png" />
+        </ion-button>
+        <div>
+          <ion-slides #options>
+            <ion-slide *ngFor="let item of data.game.options">
+              <img [src]="item.imageURL" />
+            </ion-slide>
+          </ion-slides>
+          <img src="assets/images/weightFrame.png" />
+        </div>
+        <ion-button
+          class="image-button"
+          expand="full"
+          fill="clear"
+          (click)="options.slidePrev()"
+        >
+          <img src="assets/images/button/nextWeight.png" />
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</div>

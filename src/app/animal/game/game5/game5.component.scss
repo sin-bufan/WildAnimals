@@ -1,0 +1,72 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.intro-text {
+  width: 60%;
+  text-align: justify;
+  font-size: 18px;
+}
+.game-area{
+  width: 800px;
+  height: 480px;
+}
+.start-game-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("/assets/images/bg.jpg");
+  max-width: 40%;
+  ion-card-content {
+    font-size: 24px;
+  }
+}
+.game-content{
+  width: 100%;
+  height: 100%;
+}
+.weight-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  right:0;
+  width: fit-content;
+  div {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    ion-slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      ion-slide {
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    img {
+      position: absolute;
+      width: fit-content;
+      height: fit-content;
+      left: 0;
+    }
+  }
+}
