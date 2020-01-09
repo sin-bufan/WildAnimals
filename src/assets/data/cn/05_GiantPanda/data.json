@@ -107,15 +107,26 @@
       "startDialog":{
         "text":"给不同年龄的熊猫称体重"
       },
-      "game":{
+      "gameRounds":[{
+        "question":"Round 1",
         "options":[
-          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight1-140g.png","value":"140g"},
+          {"imageURL":"assets/data/cn/05_GiantPanda/game/weight1-140g.png",
+            "value":"140g",
+            "answer":false,
+            "resultSprite":{
+              "sprite":"assets/data/cn/05_GiantPanda/game/weight1-140g.png",
+              "spriteWidth":"100px",
+              "spriteHeight":"100px",
+              "spriteTotalFrameNum":12,
+              "spriteFrameRate":24
+            }
+          },
           {"imageURL":"assets/data/cn/05_GiantPanda/game/weight2-28kg.png","value":"28kg"},
           {"imageURL":"assets/data/cn/05_GiantPanda/game/weight3-80kg.png","value":"80kg"},
           {"imageURL":"assets/data/cn/05_GiantPanda/game/weight4-120kg.png","value":"120kg"},
           {"imageURL":"assets/data/cn/05_GiantPanda/game/weight5-140kg.png","value":"140kg"}
-        ]
-      }
+        ]}
+      ]
     },
     "protection": {
       "des": "保护措施",

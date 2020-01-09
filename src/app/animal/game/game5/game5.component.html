@@ -5,7 +5,7 @@
     <ion-card
       class="start-game-dialog"
       *ngIf="data.startDialog"
-      [hidden]="gameStarted"
+      [hidden]="round>=0"
     >
       <ion-card-content>{{ data.startDialog.text }}</ion-card-content>
       <ion-button
@@ -18,9 +18,9 @@
       </ion-button>
     </ion-card>
     <!-- 游戏 -->
-    <div *ngIf="gameStarted" class="game-content">
+    <div *ngIf="round>=0" class="game-content">
       <div id="phaser-div"></div>
-      <div *ngIf="data.game" class="weight-options">
+      <div *ngIf="gameOptions" class="weight-options">
         <ion-button
           class="image-button"
           expand="full"
@@ -31,7 +31,7 @@
         </ion-button>
         <div>
           <ion-slides #options>
-            <ion-slide *ngFor="let item of data.game.options">
+            <ion-slide *ngFor="let item of gameOptions">
               <img [src]="item.imageURL" />
             </ion-slide>
           </ion-slides>

@@ -5,12 +5,7 @@ import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router
 
 let this_//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
-const PAUSE_DELAY: number = 1500;
-const ANIMALS_SPRITE_WIDTH: number = 650;
-const ANIMALS_SPRITE_HEIGHT: number = 650;
-const TOTAL_FRAME_NUM: number = 151;
-const FRAME_RATE: number = 24;
-const ANIMAL_PER_FRAME: number = 15;//ms
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -74,6 +69,14 @@ export class HomePage {
     }
   }
 }
+
+const PAUSE_DELAY: number = 1500;
+const ANIMALS_SPRITE_WIDTH: number = 650;
+const ANIMALS_SPRITE_HEIGHT: number = 650;
+const TOTAL_FRAME_NUM: number = 151;
+const FRAME_RATE: number = 24;
+const ANIMAL_PER_FRAME: number = 15;//ms
+
 let menuScene: MenuScene;
 class MenuScene extends Phaser.Scene {
   //1.初始化
