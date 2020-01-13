@@ -3,6 +3,7 @@ import { Component, AfterViewInit,Input, ViewChild } from '@angular/core';
 import * as Phaser from 'phaser';
 import { GameComponent } from '../game.component';
 import { IonSlides } from '@ionic/angular';
+import { stringify } from 'querystring';
 
 let this_:Game5Component//once the Phaser scene is initialized, this contains the default game state
 @Component({
@@ -61,35 +62,45 @@ export class Game5Component implements AfterViewInit,GameComponent {
 }
 let gameScene: Game5Scene;
 const PAUSE_DELAY: number = 1500;
-const SPRITE_WIDTH: number = 650;
-const SPRITE_HEIGHT: number = 650;
-const TOTAL_FRAME_NUM: number = 151;
-const FRAME_RATE: number = 24;
-const ANIMAL_PER_FRAME: number = 15;//ms
 class Game5Scene extends Phaser.Scene {
   //1.初始化
+  rounds:Array<GameRound>
   init(data) {
     gameScene = this;
+    this.rounds = data;
   }
   //2.加载素材
   preload() {
-    //this.load.spritesheet('balance', 'assets/images/animalIcon.png', { frameWidth: SPRITE_WIDTH, frameHeight: SPRITE_HEIGHT });
-    //console.info("spritesheet loaded!!!")
+    for(let i:number = 0;i<this.rounds.length;i++){
+      for(let j:number = 0;j<this.rounds[i].options.length;j++){
+        let resultSprite:Sprite = this.rounds[i].options[j].resultSprite;
+        this.load.spritesheet('balance_'+String(i)+"_"+String(j), resultSprite.spriteURL, { frameWidth: resultSprite.spriteWidth, frameHeight: resultSprite.spriteHeight });
+        console.info("spritesheet loaded!!!")
+      }
+    };
   }
   //3.创建舞台内容
   // animals:Phaser.GameObjects.Sprite;
-  sprite: Phaser.GameObjects.Sprite;
+  spriteArray: Array<Phaser.GameObjects.Sprite>=new Array();
   create(data) {
-    // this.sprite = this.add.sprite(SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2, 'balance');
-    // this.anims.create({
-    //   key: 'game5',
-    //   frames: this.anims.generateFrameNumbers('balance', { start: 0, end: TOTAL_FRAME_NUM - 1 }),
-    //   frameRate: FRAME_RATE,
-    //   repeat: -1
-    // })
-    //console.info("animation created!!!");
+    let sprite:Phaser.GameObjects.Sprite
+    for(let i:number = 0;i<this.rounds.length;i++){
+      for(let j:number = 0;j<this.rounds[i].options.length;j++){
+        let resultSprite:Sprite = this.rounds[i].options[j].resultSprite;
+        sprite = this.add.sprite(resultSprite.spriteWidth / 2, resultSprite.spriteHeight / 2, 'balance_'+String(i)+"_"+String(j));
+        //gameScene.spriteArray.push(sprite)
+        this.anims.create({
+          key: 'balance_'+String(i)+"_"+String(j),
+          frames: this.anims.generateFrameNumbers('balance_'+String(i)+"_"+String(j), { start: 0, end: resultSprite.spriteTotalFrameNum - 1 }),
+          frameRate: resultSprite.spriteFrameRate,
+          repeat: -1
+        })
+      }
+    };
+    console.info("animation created!!!",this);
+    //this.anims.play("balance_0_0",null);
     //this.sprite.setInteractive();
-    //this.sprite.anims.delayedPlay(PAUSE_DELAY, "game5");
+    //sprite.anims.play("balance_0_4");
     //this.sprite.removeAllListeners();
     //this.sprite.addListener('animationupdate', this.onAnimationUpdate);
   }
@@ -130,8 +141,9 @@ class GameOption{
   resultSprite:Sprite;
 }
 class Sprite{
-  spriteWidth:string;
-  spriteHeight:string;
-  spriteTotalFrameNum:string;
-  spriteFrameRate:string;
+  spriteURL:string;
+  spriteWidth:number;
+  spriteHeight:number;
+  spriteTotalFrameNum:number;
+  spriteFrameRate:number;
 }

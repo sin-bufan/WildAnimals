@@ -121,15 +121,15 @@
               "value": "140g",
               "answer": false,
               "resultSprite": {
-                "sprite": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_140g.png",
-                "spriteWidth": "800px",
-                "spriteHeight": "576px",
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_140g.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
                 "spriteTotalFrameNum": 12,
                 "spriteFrameRate": 24
               }
             },
             {
-              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-28kg.png",
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight2-28kg.png",
               "value": "28kg",
               "answer": false,
               "resultSprite": {
@@ -141,7 +141,7 @@
               }
             },
             {
-              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-80kg.png",
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight3-80kg.png",
               "value": "80kg",
               "answer": false,
               "resultSprite": {
@@ -153,7 +153,7 @@
               }
             },
             {
-              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-120kg.png",
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight4-120kg.png",
               "value": "120kg",
               "answer": false,
               "resultSprite": {
@@ -165,7 +165,7 @@
               }
             },
             {
-              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-140kg.png",
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight5-140kg.png",
               "value": "140kg",
               "answer": false,
               "resultSprite": {
