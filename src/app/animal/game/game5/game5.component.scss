@@ -1,8 +1,8 @@
-.content{
+.content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:flex-start;
+  align-items: flex-start;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -13,9 +13,9 @@
   text-align: justify;
   font-size: 18px;
 }
-.game-area{
+.game-area {
   width: 800px;
-  height: 480px;
+  height: 576px;
 }
 .start-game-dialog {
   display: flex;
@@ -33,11 +33,11 @@
     font-size: 24px;
   }
 }
-.phaser-div{
-  width:800px;
-  height: 576px;
+#phaser-div-game5 {
+  width: 100%;
+  height: 100%;
 }
-.game-content{
+.game-content {
   width: 100%;
   height: 100%;
 }
@@ -46,8 +46,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position:absolute;
-  right:0;
+  position: absolute;
+  right: 0;
+  top: 100px;
   width: fit-content;
   div {
     position: relative;
@@ -67,7 +68,7 @@
         }
       }
     }
-   img{
+    img {
       position: absolute;
       width: fit-content;
       height: fit-content;

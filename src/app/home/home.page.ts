@@ -37,8 +37,8 @@ export class HomePage {
   }
   ngAfterViewInit() {
     this_.menu = new Phaser.Game({
-      width: "650px",
-      height: "650px",
+      width: ANIMALS_SPRITE_WIDTH,
+      height: ANIMALS_SPRITE_HEIGHT,
       transparent: true,
       type: Phaser.CANVAS,
       parent: 'phaser-div-menu',
