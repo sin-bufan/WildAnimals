@@ -135,8 +135,8 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_28kg.png",
-                "spriteWidth": "800px",
-                "spriteHeight": "576px",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,
                 "spriteFrameRate": 24
               }
@@ -147,8 +147,8 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_80kg.png",
-                "spriteWidth": "800px",
-                "spriteHeight": "576px",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,
                 "spriteFrameRate": 24
               }
@@ -159,8 +159,8 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_120kg.png",
-                "spriteWidth": "800px",
-                "spriteHeight": "576px",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,
                 "spriteFrameRate": 24
               }
@@ -171,8 +171,8 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_140kg.png",
-                "spriteWidth": "800px",
-                "spriteHeight": "576px",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,
                 "spriteFrameRate": 24
               }

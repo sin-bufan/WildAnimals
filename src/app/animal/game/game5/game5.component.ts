@@ -1,10 +1,9 @@
-import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 
 import * as Phaser from 'phaser';
 import { GameComponent } from '../game.component';
-import { IonSlides } from '@ionic/angular';
 
-let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
+// let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
 @Component({
   selector: 'animal-game5',
   templateUrl: './game5.component.html',
@@ -16,24 +15,29 @@ export class Game5Component implements AfterViewInit, GameComponent {
   @Input()
   set data(value: GameData) {
     if (value != null && value.type != null) {
-      this_._data = value;
-      if (!this_._data.startDialog) {
-        this_.startGame();
+      this._data = value;
+      //this.initGame();
+      if (!this._data.startDialog) {
+        this.startGame();
       }
     }
   };
   get data(): GameData {
-    return this_._data;
+    return this._data;
   }
-  game: Phaser.Game;
-  round: number = -1;
-  @ViewChild("options", { static: true }) options: IonSlides;
   constructor() {
-    this_ = Object.create(this.constructor.prototype);
+    // this_ = Object.create(this.constructor.prototype);
   }
-  //初始化游戏
-  startGame() {
-    this_.game = new Phaser.Game({
+  ngAfterViewInit() {
+    this.initGame();
+  }
+
+  /********************************************************************************************************************/
+  game: Phaser.Game;
+  //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
+  initGame() {
+    //初始化游戏
+    this.game = new Phaser.Game({
       width: 800,
       height: 576,
       transparent: true,
@@ -42,28 +46,31 @@ export class Game5Component implements AfterViewInit, GameComponent {
       scene: [],
       audio: { noAudio: true }
     });
-    this_.game.scene.remove('game5');
-    this_.game.scene.add('game5', Game5Scene, true, this_.data.gameRounds);
-
-    this.round = 0;
-    this.gameOptions = this_.data.gameRounds[0].options;
-    setTimeout(this_.startRound,1000,0)
-    
+    //初始化场景
+    this.game.scene.remove('game5');
+    this.game.scene.add('game5', Game5Scene, true, this.data.gameRounds);
   }
+  //开始游戏
+  startGame() {
+    //this.startRound(0);
+    this.selectWeight(0,1);
+  }
+  round: number = -1;
   gameOptions: Array<GameOption>
+  //开始回合
   startRound(roundNo: number) {
-    this.gameOptions = this_.data.gameRounds[roundNo].options;
-    //console.info(this.gameOptions)
-    //this_.game.scene.start('game5',{roundNo:roundNo})
-    this_.game.events.emit('goRound',{roundNo:roundNo});
-    let game5:Game5Scene = this_.game.scene.scenes[0];
-    console.info(game5,this_.game.scene.scenes,this_.game.scene.keys)
-    game5.startRound(this.round);
+    this.round = roundNo;
+    this.gameOptions = this.data.gameRounds[roundNo].options;
+    // console.info("this_: ",this_,);
+    let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
+    game5.startRound(roundNo);
   }
-
-  ngAfterViewInit() {
+  selectWeight(roundNo: number,optionNo:number) {
+    this.round = roundNo;
+    this.gameOptions = this.data.gameRounds[roundNo].options;
+    let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
+    game5.putWeight(roundNo,optionNo);
   }
-
 }
 
 let gameScene: Game5Scene;
@@ -77,61 +84,43 @@ class Game5Scene extends Phaser.Scene {
   }
   //2.加载素材
   preload() {
-    // console.log(BANLANCE_PREFIX + + String(0), this.rounds[0].questionImageURL);
-    // this.load.image(BANLANCE_PREFIX + + String(0), this.rounds[0].questionImageURL);
     for (let i: number = 0; i < this.rounds.length; i++) {
       this.load.image(BANLANCE_PREFIX + String(i), this.rounds[i].questionImageURL);
-      //console.info(BANLANCE_PREFIX + String(i),this.rounds[i].questionImageURL)
       for (let j: number = 0; j < this.rounds[i].options.length; j++) {
         let resultSprite: Sprite = this.rounds[i].options[j].resultSprite;
         this.load.spritesheet(BANLANCE_PREFIX + String(i) + "_" + String(j), resultSprite.spriteURL, { frameWidth: resultSprite.spriteWidth, frameHeight: resultSprite.spriteHeight });
-        //console.info("spritesheet loaded!!!",resultSprite.spriteURL)
       }
     };
   }
   //3.创建舞台内容
-  // animals:Phaser.GameObjects.Sprite;
-  spriteArray: Array<Phaser.GameObjects.Sprite> = new Array();
   create(data) {
-    // console.log(400, 288, BANLANCE_PREFIX + String(0));
-    // this.add.image(400, 288, BANLANCE_PREFIX + String(0));
-    // let sprite: Phaser.GameObjects.Sprite;
-    // console.info("create started!")
-    // for (let i: number = 0; i < this.rounds.length; i++) {
-    //   for (let j: number = 0; j < this.rounds[i].options.length; j++) {
-    //     let resultSprite: Sprite = this.rounds[i].options[j].resultSprite;
-    //     if (j == 0) {
-    //       this.add.image(resultSprite.spriteWidth / 2, resultSprite.spriteHeight / 2, BANLANCE_PREFIX + String(i));
-    //       console.info(BANLANCE_PREFIX + String(i))
-    //     }
-    //     this.spriteArray[i] = this.add.sprite(resultSprite.spriteWidth / 2, resultSprite.spriteHeight / 2, BANLANCE_PREFIX + String(i) + "_" + String(j));
-    //     //gameScene.spriteArray.push(sprite)
-    //     this.anims.create({
-    //       key: BANLANCE_PREFIX + String(i) + "_anim_" + String(j),
-    //       frames: this.anims.generateFrameNumbers(BANLANCE_PREFIX + String(i) + "_" + String(j), { start: 0, end: resultSprite.spriteTotalFrameNum - 1 }),
-    //       frameRate: resultSprite.spriteFrameRate,
-    //       repeat: 1
-    //     })
-    //   }
-    // };
-    // console.info("animation created!!!", this.spriteArray);
     // this.anims.play("balance_0_0",this.spriteArray[0]);
     //this.spriteArray[0].setInteractive();
     // this.spriteArray[0].anims.play("balance_0_anim_0");
     // this.spriteArray[0].anims.delayedPlay(1, "balance_0_anim_0");
     //this.sprite.removeAllListeners();
     //this.sprite.addListener('animationupdate', this.onAnimationUpdate);
-
-    this_.game.events.on('goRound',function(data){
-      console.log("外部传值：",data.roundNo); 
-  });
   }
-  startRound(roundNo:number){
-    console.log(400, 288, BANLANCE_PREFIX + String(0));
-    this.add.image(400, 288, BANLANCE_PREFIX + String(0));
+  //开始一局
+  startRound(roundNo: number) {
+    console.log("start round: ",roundNo);
+    this.add.image(400, 288, BANLANCE_PREFIX + String(roundNo));
   }
-  switchWeight(){
-
+  //播放结果动画
+  putWeight(roundNo: number, optionNo: number) {
+    let resultSprite: Sprite = this.rounds[roundNo].options[optionNo].resultSprite;
+    let spriteName:string = BANLANCE_PREFIX + String(roundNo) + "_" + String(optionNo);
+    let animName:string = BANLANCE_PREFIX + String(roundNo) + "_anim_" + String(optionNo);
+    
+    console.info("put weight: ",roundNo,optionNo,resultSprite,spriteName,animName)
+    let sprite = this.add.sprite(resultSprite.spriteWidth / 2, resultSprite.spriteHeight / 2, spriteName);
+    this.anims.create({
+      key: animName,
+      frames: this.anims.generateFrameNumbers(spriteName, { start: 0, end: resultSprite.spriteTotalFrameNum - 1 }),
+      frameRate: resultSprite.spriteFrameRate,
+      repeat: 1
+    })
+    sprite.anims.play(animName);
   }
   //动画每帧变动时执行
   // onAnimationUpdate(animation, frame, sprite) {

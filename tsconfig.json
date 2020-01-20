@@ -14,6 +14,9 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    //Setting this flag to true will disable that check and allow the Phaser module to be imported.
+    "allowSyntheticDefaultImports": true,
+    //This needs to be added because otherwise we’ll get an error later on about Phaser not being able to find ActiveXObject.
     "lib": [
       "es2018",
       "dom",
