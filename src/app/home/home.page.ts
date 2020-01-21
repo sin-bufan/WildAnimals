@@ -40,7 +40,7 @@ export class HomePage {
       width: ANIMALS_SPRITE_WIDTH,
       height: ANIMALS_SPRITE_HEIGHT,
       transparent: true,
-      type: Phaser.CANVAS,
+      type: Phaser.WEBGL,
       parent: 'phaser-div-menu',
       scene: [],
       audio: { noAudio: true }

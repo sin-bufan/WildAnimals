@@ -112,6 +112,7 @@
       "startDialog": {
         "text": "给不同年龄的熊猫称体重"
       },
+      "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
       "gameRounds": [
         {
           "question": "Round 1",
@@ -120,7 +121,7 @@
             {
               "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-140g.png",
               "value": "140g",
-              "answer": false,
+              "answer": true,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/1_140g.png",
                 "spriteWidth": 800,

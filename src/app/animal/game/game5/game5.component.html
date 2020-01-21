@@ -1,24 +1,26 @@
 <div *ngIf="data" class="content">
   <ion-text class="intro-text" *ngIf="data.intro">{{ data.intro }}</ion-text>
   <div class="game-area">
+    <!-- 游戏结束画面 -->
+    <img *ngIf="roundNo==999" class="game-complete" [src]="data.gameCompleteImageURL" (click)="resetGameScene()"/>
     <!-- 开始对话框 -->
     <ion-card
       class="start-game-dialog"
       *ngIf="data.startDialog"
-      [hidden]="round>=0"
+      [hidden]="roundNo>=0"
     >
       <ion-card-content>{{ data.startDialog.text }}</ion-card-content>
       <ion-button
         class="image-button"
         expand="full"
         fill="clear"
-        (click)="startGame()"
+        (click)="startGameHandler()"
       >
         <img src="assets/images/button/startGame.png" />
       </ion-button>
     </ion-card>
     <!-- 游戏 -->
-    <div class="game-content">
+    <div class="game-content" [hidden]="roundNo==999">
       <div id="phaser-div-game5"></div>
       <div *ngIf="gameOptions" class="weight-options">
         <ion-button
@@ -30,7 +32,7 @@
           <img src="assets/images/button/prevWeight.png" />
         </ion-button>
         <div>
-          <ion-slides #options>
+          <ion-slides #options [options]="slideOpts" (ionSlideTap)="selectOptionHandler(options)">
             <ion-slide *ngFor="let item of gameOptions">
               <img [src]="item.imageURL" />
             </ion-slide>
