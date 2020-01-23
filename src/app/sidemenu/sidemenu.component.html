@@ -1,17 +1,12 @@
-<!-- <ion-header>
-    <ion-toolbar>
-      <img class="menu-title" src="assets/images/menuTitle.png">
-    </ion-toolbar>
-  </ion-header> -->
 <ion-content>
   <img class="menu-title" src="assets/images/menuTitle.png" />
   <ion-list>
     <ion-menu-toggle auto-hide="false" *ngFor="let animal of animals">
-      <ion-item [routerLink]="['/animal', animal.dataURL]">
-        <ion-thumbnail class="animal-icon"
-          ><img [src]="animal.imageURL"
-        /></ion-thumbnail>
-        <div class="animal-name-container">
+      <ion-item (click)="gotoAnimal(animal)">
+        <ion-thumbnail class="animal-icon">
+          <img [src]="animal.imageURL"/>
+        </ion-thumbnail>
+        <div class="animal-name-container" [ngClass]="{currentItem:animal.name===currentAnimalName}">
           <ion-label class="animal-name">
             {{ animal.name }}
           </ion-label>

@@ -65,6 +65,7 @@
       height: 100%;
       mask-image: url("/assets/images/weightFrame.png");
       ion-slide {
+
         img {
           position: absolute;
           left: 50%;
@@ -79,6 +80,7 @@
       height: fit-content;
       left: 0;
       z-index: -99;
+      cursor: pointer !important;
     }
   }
 }

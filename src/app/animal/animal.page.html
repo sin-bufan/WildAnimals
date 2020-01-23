@@ -1,5 +1,5 @@
 <ion-content>
-  <img #bg class="bg" [src]="animal.bgURL"/>
+  <img #bg class="bg" [src]="animal.bgURL" />
   <ion-slides #slides pager="true" [options]="slideOpts">
     <ion-slide>
       <animal-album class="content" [data]="animal.intro"></animal-album>
@@ -24,22 +24,22 @@
     </ion-slide>
   </ion-slides>
 
-    <ion-button
-      class="left image-button"
-      expand="full"
-      fill="clear"
-      (click)="slides.slidePrev()"
-    >
-      <img src="assets/images/button/prevScreen.png" />
-    </ion-button>
-    <ion-button
-      class="right image-button"
-      expand="full"
-      fill="clear"
-      (click)="slides.slideNext()"
-    >
-      <img src="assets/images/button/nextScreen.png" />
-    </ion-button>
+  <ion-button
+    class="left image-button"
+    expand="full"
+    fill="clear"
+    (click)="slides.slidePrev()"
+  >
+    <img src="assets/images/button/prevScreen.png" />
+  </ion-button>
+  <ion-button
+    class="right image-button"
+    expand="full"
+    fill="clear"
+    (click)="slides.slideNext()"
+  >
+    <img src="assets/images/button/nextScreen.png" />
+  </ion-button>
 
   <div class="top-right">
     <app-bgmusic></app-bgmusic>

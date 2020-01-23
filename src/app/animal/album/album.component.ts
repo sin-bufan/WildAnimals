@@ -39,7 +39,7 @@ export class AlbumComponent implements OnInit {
   }
 }
 //相册数据
-class AlbumData {
+export class AlbumData {
   name:string="";
   aliasName:string="";
   scientificName:string="";

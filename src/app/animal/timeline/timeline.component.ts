@@ -28,7 +28,7 @@ export class TimelineComponent implements OnInit {
   }
 }
 
-class TimelineData {
+export class TimelineData {
   album: Array<Photo> = [];
   timeline: Array<TimelineNode> = [];
 }

@@ -28,10 +28,10 @@ export class MapComponent implements OnInit {
   }
   //阻止上层的slides滑动
   blockEvent(event:Event){
-    console.info(event)
-    // event.originalEvent.stopImmediatePropagation();
-    // event.originalEvent.stopPropagation();
-    // event.originalEvent.preventDefault();
+    // console.info(event)
+    // event.stopImmediatePropagation();
+    //  event.stopPropagation();
+    //event.preventDefault();
   }
   //初始化地图
   initMap(mapData: MapData) {
@@ -42,7 +42,8 @@ export class MapComponent implements OnInit {
     }
 
     this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
-    this.m.on("mousedown",this.blockEvent)
+    // this.m.on("touchmove",this.blockEvent,true);
+    // this.m.on("mousemove",this.blockEvent,true);
     //加入瓦片地图
     L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
       attributionControl: false,
@@ -67,7 +68,7 @@ export class MapComponent implements OnInit {
             return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
           }
         }).bindPopup(function (layer) {
-          console.info("map layer: ",layer);
+          // console.info("map layer: ",layer);
           //return layer.feature.properties.BINOMIAL;
           let url:string = layer.feature.properties.imageURL;
           if (url!=""){
@@ -81,7 +82,7 @@ export class MapComponent implements OnInit {
   }
 }
 //地图数据
-class MapData {
+export class MapData {
   text: string;
   mapPath: string;
   mapCenterX: number;
@@ -99,3 +100,37 @@ class ExtantStatus {
   color: string;
   imageURL:string="";
 }
+
+
+/************************************************************************************/
+
+// import {Directive, HostListener} from "@angular/core";
+
+// @Directive({
+//     selector: "[drag-stop-propagation]"
+// })
+// export class DragStopPropagation
+// {
+//   @HostListener("click", ["$event"])
+//     public onClick(event: any): void
+//     {
+//       console.info("stop click")
+//         event.stopPropagation();
+//     }
+//     @HostListener("mousedown", ["$event"])
+//     public onMouseDown(event: any): void
+//     {
+//       console.info("xxxxxxx")
+//         event.stopPropagation();
+//     }
+//     @HostListener("mousemove", ["$event"])
+//     public onMouseMove(event: any): void
+//     {
+//         event.stopPropagation();
+//     }
+//     @HostListener("mouseup", ["$event"])
+//     public onMouseUp(event: any): void
+//     {
+//         event.stopPropagation();
+//     }
+// }

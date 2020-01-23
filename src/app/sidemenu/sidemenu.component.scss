@@ -1,6 +1,3 @@
-ion-header{
-    // background-blend-mode: multiply;
-}
 .menu-title{
     // position: absolute;
     margin-left: 80px;
@@ -9,11 +6,11 @@ ion-header{
     margin-bottom: 10px;
 }
 ion-content{
-    height:750px;
     background-image: url('/assets/images/bg.jpg');
+    height: 768px;
 }
 ion-list{
-    // background-color:transparent;
+    margin: 0;
 }
 ion-item{
     display:flex;
@@ -36,4 +33,11 @@ ion-item{
 .animal-name2{
     font-size:14px;
     margin: 0;
+}
+
+.currentItem{
+    color: red;;
+}
+.otherItem{
+    color: red;;
 }

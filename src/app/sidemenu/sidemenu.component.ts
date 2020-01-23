@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AnimalsDataService } from '../animals-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidemenu',
@@ -8,34 +9,35 @@ import { AnimalsDataService } from '../animals-data.service';
 })
 export class SidemenuComponent implements OnInit {
 
-  @Input('lang')
-  set lang(value: string) {
-    switch (value) {
-      case "cn":
-        this.initMenu(AnimalsDataService.CN_DATA_URL);
-        break;
-      case "en":
-        this.initMenu(AnimalsDataService.EN_DATA_URL);
-        break;
-    }
-  };
-
-  animals: any = [];
-
   constructor(
-    private animalsDataService: AnimalsDataService) { }
+    private animalsDataService: AnimalsDataService,
+    private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.initMenu();
+  }
 
-  initMenu(data_url: string) {
-    this.animalsDataService.getAnimals(data_url).subscribe(
+  animals: Array<any> = [];
+  //初始化菜单
+  initMenu() {
+    this.animalsDataService.getAnimals().subscribe(
       (data) => {
         this.animals = data.animals;
-        //console.info("Side Menu Data: ", this.animals)
+      }
+    );
+    //接收消息，变更当前选中的菜单项（home.page.ts）
+    this.animalsDataService.$currentAnimal.subscribe(
+      (value) => {
+        this.currentAnimalName = value;
       }
     );
   }
-}
-export enum SIDEMENU_EVENT {
-  UPDATE_SIDEMENU = "UpdateSideMenu", SELECT_MENUITEM = "SelectMenuItem"
+  currentAnimalName:string=""
+  //跳转到章节
+  gotoAnimal(animal) {
+    if (animal.dataURL && animal.dataURL != "") {
+      this.currentAnimalName = animal.name;
+      this.router.navigate(['animal', JSON.stringify(animal)]);
+    }
+  }
 }

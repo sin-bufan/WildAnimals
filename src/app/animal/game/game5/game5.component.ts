@@ -10,9 +10,6 @@ const RESULT_ANIMATION_COMPLETE: string = "resultAnimComplete";
 const GAME_STATE_START: number = -1;
 const GAME_STATE_END: number = 999;
 
-const WEIGHT_X: number = 665;
-const WEIGHT_START_Y: number = 160;
-const WEIGHT_END_Y: number = 280;
 @Component({
   selector: 'animal-game5',
   templateUrl: './game5.component.html',
@@ -55,7 +52,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
       type: Phaser.WEBGL,
       parent: 'phaser-div-game5',
       scene: [],
-      audio: { noAudio: true }
+      audio: { disableWebAudio: true, noAudio: true }
     });
     //初始化场景
     eventEmitter.addListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
@@ -127,6 +124,11 @@ export class Game5Component implements AfterViewInit, GameComponent {
 const QUESTION_PREFIX: string = 'balance';
 const OPTION_PREFIX: string = 'weight';
 const OPTION_ANIM_PREFIX: string = 'weight_anim';
+
+const WEIGHT_X: number = 665;
+const WEIGHT_START_Y: number = 160;
+const WEIGHT_END_Y: number = 280;
+
 class Game5Scene extends Phaser.Scene {
   //1.初始化
   rounds: Array<GameRound>
@@ -190,28 +192,28 @@ class Game5Scene extends Phaser.Scene {
       this.option.destroy();
     }
     // 播放结果动画
-    let resultSprite: Sprite = this.rounds[roundNo].options[optionNo].resultSprite;
+    let resultSpriteData: Sprite = this.rounds[roundNo].options[optionNo].resultSprite;
     let spriteName: string = OPTION_ANIM_PREFIX + "_" + String(roundNo) + "_" + String(optionNo);
     let animName: string = OPTION_ANIM_PREFIX + "_" + String(roundNo) + "_" + String(optionNo);
     // console.info("put weight: ", roundNo, optionNo, resultSprite, spriteName, animName)
     if (this.optionResultAnimSprite) {
       this.optionResultAnimSprite.destroy();
     }
-    this.optionResultAnimSprite = this.add.sprite(resultSprite.spriteWidth / 2, resultSprite.spriteHeight / 2, spriteName);
+    this.optionResultAnimSprite = this.add.sprite(resultSpriteData.spriteWidth / 2, resultSpriteData.spriteHeight / 2, spriteName);
     this.anims.create({
       key: animName,
-      frames: this.anims.generateFrameNumbers(spriteName, { start: 0, end: resultSprite.spriteTotalFrameNum - 1 }),
-      frameRate: resultSprite.spriteFrameRate,
+      frames: this.anims.generateFrameNumbers(spriteName, { start: 0, end: resultSpriteData.spriteTotalFrameNum - 1 }),
+      frameRate: resultSpriteData.spriteFrameRate,
       repeat: 0
     })
     this.optionResultAnimSprite.anims.delayedPlay(0, animName);
-    this.optionResultAnimSprite.addListener('animationcomplete', this.onAnimationEnd);
+    this.optionResultAnimSprite.addListener(Phaser.Animations.Events.SPRITE_ANIMATION_COMPLETE, this.onAnimationEnd);
     return;
   }
   //动画每帧变动时执行
   onAnimationEnd(animation, frame, sprite) {
     sprite.destroy();
-    eventEmitter.emit("resultAnimComplete");
+    eventEmitter.emit(RESULT_ANIMATION_COMPLETE);
   }
   //4.循环刷新（16ms）
   update() {
@@ -219,12 +221,10 @@ class Game5Scene extends Phaser.Scene {
   }
 }
 
-
-
-
 class GameData {
   type: string;
   intro: string;
+  gameCompleteImageURL:string;
   startDialog: StartGameDialog;
   gameRounds: Array<GameRound>;
 }

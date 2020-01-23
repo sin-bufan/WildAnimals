@@ -2,10 +2,10 @@
   <div class="bg">
     <div class="left">
       <img class="title" src="assets/images/homeTitle.png" />
-      <ion-button class="language-button" expand="full" fill="clear">
+      <ion-button class="language-button" expand="full" fill="clear" (click)="loadLanguageData('cn')">
         <img src="assets/images/button/cn_a.png" />
       </ion-button>
-      <ion-button class="language-button" expand="full" fill="clear">
+      <ion-button class="language-button" expand="full" fill="clear" (click)="loadLanguageData('en')">
         <img src="assets/images/button/en_a.png" />
       </ion-button>
     </div>
@@ -14,11 +14,11 @@
   <!-- 右上角按钮 -->
   <div class="top-right">
     <app-bgmusic></app-bgmusic>
-    <ion-button class="nav-button" expand="full" fill="clear">
+    <ion-button class="nav-button" expand="full" fill="clear"  (click)="download()">
       <img src="assets/images/button/download.png" />
     </ion-button>
     <ion-button class="nav-button" expand="full" fill="clear">
-      <img src="assets/images/button/copyright.png" (click)="gotoAnimal(4)"/>
+      <img src="assets/images/button/copyright.png" (click)="info()"/>
     </ion-button>
   </div>
 <!-- </ion-content> -->
