@@ -1,0 +1,182 @@
+{
+  "animal": {
+    "name": "长臂猿",
+    "bgURL": "assets/data/cn/01_Gibbon/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "长臂猿",
+      "aliasName": "别名：黑长臂猿、吼猴、撩梆猴、风猴",
+      "scientificName": "学名：Hylobatidae",
+      "intro": "长臂猿是灵长目长臂猿科动物的通称，有4属16种，因臂特别长而得名。长臂猿不是猴子，它们和猩猩家族的四种一起组成类人猿，是和人类亲缘关系最近的灵长类动物，而长臂猿的体型较其它类人猿要小得多，所以它们也被称作“小猿”。长臂猿是猿类中行动最快捷灵活的一种。中国现分布有六种长臂猿，分别是海南长臂猿、东黑冠长臂猿、西黑冠长臂猿、天行长臂猿、北白颊长臂猿和白掌长臂猿。而北白颊长臂猿、白掌长臂猿在中国的野外种群已基本消失。",
+      "imageURL": "assets/data/cn/01_Gibbon/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/1.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/1.jpg",
+          "text": "长臂猿在大树枝和地面上会像人类一样直立行走"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/2.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/2.jpg",
+          "text": "海南长臂猿雌性（左）和雄性（右）"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/3.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/3.jpg",
+          "text": "西黑冠长臂猿雄性（左）、雌性和婴猿（右）"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/4.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/4.jpg",
+          "text": "东黑冠长臂猿"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/5.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/5.jpg",
+          "text": "天行长臂猿雌性"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/6.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/6.jpg",
+          "text": "天行长臂猿雄性"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/7.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/7.jpg",
+          "text": "白颊长臂猿雄性"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/8.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/8.jpg",
+          "text": "白颊长臂猿母与子"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/9.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/9.jpg",
+          "text": "白掌长臂猿"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/01_Gibbon/video/1.mp4",
+        "thumbURL": "assets/data/cn/01_Gibbon/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/01_Gibbon/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "180px",
+            "top": "380px"
+          },
+          "title": "猿鸣",
+          "text": "长臂猿鸣叫是为了向同类宣告领域范围和寻找配偶，已经组成家庭的长臂猿夫妻常常一起进行精彩的二重唱，这可以加强彼此的感情，稳固家庭关系。歌唱在哺乳动物中很少见，而长臂猿的歌声又是陆生哺乳动物之中最复杂最夸张的，在没有遮挡的情况下，猿鸣可以传达至几公里之外。研究发现从长臂猿的歌声中可以解读出“歌手”的种类、性别和地位等信息。",
+          "imageURL": "assets/data/cn/01_Gibbon/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "270px",
+            "top": "480px"
+          },
+          "title": "体型",
+          "text": "长臂猿没有尾巴，前肢明显长于后肢，依靠两条长臂和钩形的长手，把自己悬挂在树枝上，像荡秋干一样在丛林中快速移动。海南长臂猿、东黑冠长臂猿和西黑冠长臂猿体长均为40-55厘米，天行长臂猿体体长60-90厘米。",
+          "imageURL": "assets/data/cn/01_Gibbon/feather/2.jpg"
+        }
+      ]
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "<p>在古代中国人的文化中，对于猿与猴的认识是有很大不同的，人们有着“美猿鄙猴”或“雅猿俗猴”的倾向。</p><p>早期中国文化体系内，由于长臂猿的掌与臂特别修长，每每见到便都是林间飞荡的形象，人们由此把这类形象看成吐故纳新、引气通脉的高手，能长生不朽甚至化为人形，逐渐成为传统中文化中灵寿的象征。而早期文学作品中的猴子形象则大多是低俗、不成器、被揶揄嬉笑的对象。中国古代文化赋予猿与猴不同的评价，完全是古人对自然认识的一种体现。</p>",
+      "imageURL": "./assets/data/cn/01_Gibbon/culture/pic.jpg"
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game1Component",
+      "startDialog": {
+        "intro": "长臂猿完全树栖，几乎常年生活在树上，不筑巢，觅食、睡觉、休息都在树上进行，很少下地活动。天行长臂猿是“一夫一妻”的家庭结构，海南长臂猿社群配偶制为“一夫二妻”制，即一只成年雄性和两只成年雌性组成。而西黑冠长臂猿则是“一夫一妻”与“一夫二妻”配偶制共存。",
+        "guide": "为6种长臂猿找到它们的<br>同类配偶"
+      },
+      "gameContents": {
+        "options": [
+          {
+            "name": "海南长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/1_male.png"
+          },
+          {
+            "name": "海南长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/1_female.png"
+          },
+          {
+            "name": "西黑冠长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/2_male.png"
+          },
+          {
+            "name": "西黑冠长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/2_female.png"
+          },
+          {
+            "name": "东黑冠长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/3_male.png"
+          },
+          {
+            "name": "东黑冠长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/3_female.png"
+          },
+          {
+            "name": "天行长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/4_male.png"
+          },
+          {
+            "name": "天行长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/4_female.png"
+          },
+          {
+            "name": "白颊长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/5_male.png"
+          },
+          {
+            "name": "白颊长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/5_female.png"
+          }, {
+            "name": "白掌长臂猿",
+            "gender": "雄性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/6_male.png"
+          },
+          {
+            "name": "白掌长臂猿",
+            "gender": "雌性",
+            "imageURL": "assets/data/cn/01_Gibbon/game/6_female.png"
+          }
+        ]
+      },
+      "gameCompleteImageURL": "assets/data/cn/01_Gibbon/game/gameComplete.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/protection/1.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/1.jpg",
+          "text": "海南长臂猿"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/protection/2.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/2.jpg",
+          "text": "天行长臂猿"
+        }
+      ],
+      "text": "<p>海南长臂猿：</p><p>20世纪60年代中期，长臂猿先后在海南岛6个县内绝迹。至2003年开展的海南长臂猿生存环境调查，结果只在霸王岭自然保护区残存了13只。</p><p>从2003年起，霸王岭国家级自然保护区和嘉道理农场暨植物园（KFBG）等一些环保机构展开合作，开始对海南长臂猿进行保护，在他们的资助下，2005年成立长臂猿监测队，对猿群进行持续跟踪，并种植了八万多棵海南长臂猿喜食树种，海南长臂猿的数量增加至现在的4群27只。</p><p>天行长臂猿：</p><p>从2011年开始，在中国云南的长臂猿科研团队设立并持续开展了多年的野外监测和科研工作，为长臂猿种群恢复积累经验。</p><p>2015年，中国唯一专注于长臂猿保护的公益组织“云山保护”注册成立。</p><p>2017年1月，云山保护创始人范朋飞教授及研究团队确立了高黎贡白眉长臂猿属于新物种，并命名为天行长臂猿，这是唯一一种由中国学者命名的类人猿。该物种在中国的数量不到150只，属于极度濒危，保护形势严峻。</p><p>2018年，云山保护和高黎贡山国家级自然保护区、中山大学通过共建共管高黎贡山板厂研究基地的模式，吸引社会力量参与保护中国西南地区生物多样性。</p>"
+    }
+  }
+}

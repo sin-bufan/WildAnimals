@@ -30,9 +30,5 @@ export class TimelineComponent implements OnInit {
 
 export class TimelineData {
   album: Array<Photo> = [];
-  timeline: Array<TimelineNode> = [];
-}
-class TimelineNode {
-  time: Date;
   text: string;
 }

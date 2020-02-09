@@ -11,7 +11,7 @@ import { AlbumComponent } from './album/album.component';
 import { KeypointComponent } from './keypoint/keypoint.component';
 import { MapComponent } from './map/map.component';
 import { TimelineComponent } from './timeline/timeline.component';
-// import { GameComponent } from './game/game.component';
+import { CultureComponent } from './culture/culture.component';
 import { PhotoComponent } from './photo/photo.component';
 import { VideoComponent } from './video/video.component';
 import { Game5Component } from './game/game5/game5.component';
@@ -38,6 +38,7 @@ const routes: Routes = [
     VideoComponent,
     KeypointComponent,
     MapComponent,
+    CultureComponent,
     TimelineComponent,
     GameDirective,
     Game5Component

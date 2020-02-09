@@ -1,10 +1,10 @@
 <div class="bg">
   <div class="left">
     <div *ngIf="data" class="info-container">
-      <h1>{{ data.name }}</h1>
-      <p>{{ data.aliasName }}</p>
-      <p>{{ data.scientificName }}</p>
-      <p>{{ data.intro }}</p>
+      <h1 class="animal-name">{{ data.name }}</h1>
+      <p class="animal-aliasName">{{ data.aliasName }}</p>
+      <p class="animal-scientificName">{{ data.scientificName }}</p>
+      <p class="animal-intro">{{ data.intro }}</p>
     </div>
     <div class="media-container">
       <div *ngIf="data" class="album-container">
@@ -21,5 +21,5 @@
       </ion-thumbnail>
     </div>
   </div>
-  <img *ngIf="data" [src]="data.imageURL" />
+  <img class="right" *ngIf="data" [src]="data.imageURL" />
 </div>

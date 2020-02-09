@@ -12,7 +12,7 @@
     flex-direction:column;
     align-items: flex-start;
     width: 40%;
-    margin: 50px;
+    // margin: 20px;
 }
 .info-container{
     display: flex;
@@ -20,10 +20,30 @@
     width: 100%;
     align-items: flex-start;
 }
-p {
+.animal-name{
+    font-size: 48px;
+    text-align:justify;
+    margin: 5px;
+    margin-bottom: 30px;
+}
+.animal-aliasName{
     text-align:justify;
     margin: 5px;
 }
+.animal-scientificName{
+    text-align:justify;
+    margin: 5px;
+}
+.animal-intro {
+    overflow-y: scroll;
+    height: 100px;
+    text-align:justify;
+    text-indent: 36px;
+    margin: 5px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
 .media-container{
     display: flex;
     flex-direction:row;

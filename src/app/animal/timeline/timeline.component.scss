@@ -10,28 +10,35 @@
     display: flex;
     flex-direction:column;
     align-items: flex-start;
-    width: 20%;
-    margin: 20px;
-}
-.timeline-container{
-    overflow-y: scroll;
-    display: flex;
-    flex-direction:column;
-    align-items: flex-start;
-    width: 50%;
-    max-height: 60%;
-    background:none;
-}
-p{
-    text-align: justify;
-    font-size: 18px;
+    // width: 20%;
     margin: 10px;
 }
-
 ion-thumbnail{
     width: 150px;
     height: 100px;
     margin:10px;
     position: relative;
     cursor: pointer!important;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+}
+.timeline-container{
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width: 666px;
+    height: 529px;
+    // background:none;
+    background-image: url("/assets/images/timelinePanel.png");
+    padding: 36px;
+    div{
+        overflow-y: scroll;
+    }
+}
+.text{
+    text-align: justify;
+    font-size: 18px;
+    text-indent: 36px;
+    line-height: 32px;
 }

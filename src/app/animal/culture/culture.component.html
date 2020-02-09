@@ -1,0 +1,7 @@
+<div class="container">
+  <div *ngIf="data" class="text-container">
+    <ion-text class="text" [innerHTML] = "data.text">
+    </ion-text>
+  </div>
+  <img class="culture-image" [src]="data.imageURL" />
+</div>

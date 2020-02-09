@@ -46,3 +46,11 @@ export class AnimalsDataService {
   }
 
 }
+
+
+export class AnimalIndexData{
+  name:string;
+  name2:string;
+  imageURL:string;
+  dataURL:string;
+}

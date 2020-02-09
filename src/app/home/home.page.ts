@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AnimalsDataService } from '../animals-data.service';
+import { AnimalsDataService, AnimalIndexData } from '../animals-data.service';
 import * as Phaser from 'phaser';
 import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router';
 
@@ -13,7 +13,7 @@ const MENU_SCENE_NAME: string = "menu";
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  animals: any = [];
+  animals: Array<AnimalIndexData> = [];
   menu: Phaser.Game;
   constructor(
     private animalsDataService: AnimalsDataService,
@@ -73,7 +73,12 @@ export class HomePage {
 
   //跳转到章节
   gotoAnimal(index) {
-    // console.info("enter animal: ", index)
+     console.info("enter animal: ", index)
+    if (index>this_.animals.length-1){
+      index = index-this_.animals.length;
+    }else if (index<0){
+      index = index+this_.animals.length;
+    }
     if (this_.animals[index].dataURL && this_.animals[index].dataURL != "") {
       this_.router.navigate(['animal', JSON.stringify(this_.animals[index])]);
       this_.animalsDataService.$currentAnimal.next(this_.animals[index].name)
@@ -81,7 +86,6 @@ export class HomePage {
     }
   }
 }
-
 
 
 const PAUSE_DELAY: number = 2000;

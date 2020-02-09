@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnimalsDataService } from '../animals-data.service';
+import { AnimalsDataService, AnimalIndexData } from '../animals-data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class SidemenuComponent implements OnInit {
     this.initMenu();
   }
 
-  animals: Array<any> = [];
+  animals: Array<AnimalIndexData> = [];
   //初始化菜单
   initMenu() {
     this.animalsDataService.getAnimals().subscribe(

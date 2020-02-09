@@ -1,11 +1,9 @@
+@import "../../global.scss";
 //右上角导航按钮
 .nav-button{
-    margin-left: -10px;
-    margin-right: -10px;
-    height: 52px;
-    button-native{
-        padding:0px;
-    }
+    @extend .image-button;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .mute-button{
     filter: grayscale(100%);

@@ -7,8 +7,9 @@ import { IonSlides } from '@ionic/angular';
 let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
 const RESULT_ANIMATION_COMPLETE: string = "resultAnimComplete";
-const GAME_STATE_START: number = -1;
-const GAME_STATE_END: number = 999;
+const GAME_STATE_START: string = "gameReady";
+const GAME_STATE_PLAY: string = "gamePlaying";
+const GAME_STATE_END: string = "gameCompleted";
 
 @Component({
   selector: 'animal-game5',
@@ -63,11 +64,13 @@ export class Game5Component implements AfterViewInit, GameComponent {
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
     this.game.scene.add('game5', Game5Scene, true, this.data.gameRounds);
-    this.roundNo = GAME_STATE_START;
+    this.roundNo = -1;
+    this.gameState = GAME_STATE_START;
   }
   //开始游戏
   startGameHandler() {
     this.startRound(0);
+    this.gameState = GAME_STATE_PLAY;
   }
   //选择选项
   async selectOptionHandler(optionsSlides: IonSlides) {
@@ -79,12 +82,15 @@ export class Game5Component implements AfterViewInit, GameComponent {
   resultAnimationCompleteHandler() {
     this_.judgeResult();
   }
-  roundNo: number = GAME_STATE_START;
+  roundNo: number = -1;
+  gameState:string = GAME_STATE_START;
+  gameQuestion:string = "";
   gameOptions: Array<GameOption>
   optionNo: number;
   //开始回合
   startRound(roundNo: number) {
     this.roundNo = roundNo;
+    this.gameQuestion = this.data.gameRounds[roundNo].question;
     this.gameOptions = this.data.gameRounds[roundNo].options;
     // console.info("this_: ",this_,);
     let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
@@ -115,9 +121,10 @@ export class Game5Component implements AfterViewInit, GameComponent {
     }
   }
   endGame() {
+    this.gameQuestion = "";
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
-    this.roundNo = GAME_STATE_END;
+    this.gameState = GAME_STATE_END;
   }
 }
 
@@ -224,12 +231,13 @@ class Game5Scene extends Phaser.Scene {
 class GameData {
   type: string;
   intro: string;
-  gameCompleteImageURL:string;
   startDialog: StartGameDialog;
   gameRounds: Array<GameRound>;
+  gameCompleteImageURL:string;
 }
 class StartGameDialog {
-  text: string;
+  guide: string;
+  intro:string;
 }
 class GameRound {
   question: string;

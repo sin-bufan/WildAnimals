@@ -6,15 +6,8 @@
   </div>
   <div *ngIf="data" class="timeline-container">
     <div>
-    <p *ngFor="let item of data.timeline">
-      {{item.text}}
-    </p>
+      <ion-text class="text" [innerHTML]="data.text">
+      </ion-text>
+    </div>
   </div>
-  </div>
-
-  <!-- <ion-virtual-scroll *ngIf="data" [items]="data.timeline" class="timeline-container">
-    <ion-item *virtualItem="let item">
-      {{ item.text }}
-    </ion-item>
-  </ion-virtual-scroll> -->
 </div>

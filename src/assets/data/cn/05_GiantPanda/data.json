@@ -5,8 +5,8 @@
     "intro": {
       "des": "总体介绍",
       "name": "大熊猫",
-      "aliasName": "猫熊",
-      "scientificName": "Ailuropoda melanoleuca",
+      "aliasName": "别名：猫熊",
+      "scientificName": "学名：Ailuropoda melanoleuca",
       "intro": "大熊猫是中国特有的珍稀动物，因为可爱的外形而深受世界各国人民的喜爱，已成为中国的象征之一。",
       "imageURL": "assets/data/cn/05_GiantPanda/icon.png",
       "album": [
@@ -108,14 +108,14 @@
     "habits": {
       "des": "生活习性",
       "type": "Game5Component",
-      "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。",
       "startDialog": {
-        "text": "给不同年龄的熊猫称体重"
+        "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。",
+        "guide": "给不同年龄的熊猫<br>称体重"
       },
       "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
       "gameRounds": [
         {
-          "question": "Round 1",
+          "question": "出生1天的大熊猫有多重？",
           "questionImageURL": "assets/data/cn/05_GiantPanda/game/1.png",
           "options": [
             {
@@ -179,6 +179,72 @@
               }
             }
           ]
+        },
+        {
+          "question": "出生4个月的大熊猫有多重？",
+          "questionImageURL": "assets/data/cn/05_GiantPanda/game/2.png",
+          "options": [
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-140g.png",
+              "value": "140g",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_140g.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight2-28kg.png",
+              "value": "28kg",
+              "answer": true,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_28kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight3-80kg.png",
+              "value": "80kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_80kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight4-120kg.png",
+              "value": "120kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_120kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight5-140kg.png",
+              "value": "140kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_140kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            }
+          ]
         }
       ]
     },
@@ -201,22 +267,7 @@
           "text": "2018年12月27日，中国大熊猫保护研究中心在都江堰市龙溪—虹口国家级自然保护区将两只人工圈养繁殖的大熊猫放归大自然。"
         }
       ],
-      "timeline": [
-        { "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。" },
-        { "text": "1970年代，中国又建立了6个大熊猫保护区。" },
-        {
-          "text": "1990年代，中国开始实施大熊猫保护工程，预算3亿元人民币投入对大熊猫及其栖息地的保护，该项工程的实施使大熊猫栖息地得到了有力的保护，为大熊猫数量及栖息地的扩展创造了条件。"
-        },
-        {
-          "text": "1997年以来，在世界自然基金会(WWF)和德国政府的支持下，四川省开展了大熊猫保护与周边社区发展项目试点。"
-        },
-        {
-          "text": "2015年2月28日第四次野生大熊猫种群数量调查显示中国野生大熊猫数量达到1864只，相比十年前的第三次调查增加了近17%。"
-        },
-        {
-          "text": "2016年9月，国际自然保护联盟（IUCN）发表报告将大熊猫濒危等级由“濒危”降为“易危”。"
-        }
-      ]
+      "text": "<p>1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。</p><p>1970年代，中国又建立了6个大熊猫保护区。</p><p>1990年代，中国开始实施大熊猫保护工程，预算3亿元人民币投入对大熊猫及其栖息地的保护，该项工程的实施使大熊猫栖息地得到了有力的保护，为大熊猫数量及栖息地的扩展创造了条件。</p><p>1997年以来，在世界自然基金会(WWF)和德国政府的支持下，四川省开展了大熊猫保护与周边社区发展项目试点。</p><p>2015年2月28日第四次野生大熊猫种群数量调查显示中国野生大熊猫数量达到1864只，相比十年前的第三次调查增加了近17%。</p><p>2016年9月，国际自然保护联盟（IUCN）发表报告将大熊猫濒危等级由“濒危”降为“易危”。"
     }
   }
 }

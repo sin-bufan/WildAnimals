@@ -8,6 +8,7 @@ import { Game5Component } from './game/game5/game5.component';
 import { AlbumData } from './album/album.component';
 import { MapData } from './map/map.component';
 import { TimelineData } from './timeline/timeline.component';
+import { CultureData } from './culture/culture.component';
 import { KeypointData } from './keypoint/keypoint.component';
 @Component({
   selector: 'app-animal',
@@ -80,12 +81,22 @@ export class AnimalPage implements OnInit {
   //加载对应Game组件
   loadGameComponent() {
     // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.animal.habits.type);
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
-    let viewContainerRef = this.gameHost.viewContainerRef;
-    viewContainerRef.clear();
+    let componentFactory
+    if (this.animal.habits) {
+      switch(this.animal.habits.type){
+        case "Game1Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+          break;
+        case "Game5Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+          break;
+      }
+      let viewContainerRef = this.gameHost.viewContainerRef;
+      viewContainerRef.clear();
 
-    let componentRef = viewContainerRef.createComponent(componentFactory);
-    (<GameComponent>componentRef.instance).data = this.animal.habits;
+      let componentRef = viewContainerRef.createComponent(componentFactory);
+      (<GameComponent>componentRef.instance).data = this.animal.habits;
+    }
   }
   /***************************************************************************************************************/
   //回主页
@@ -109,5 +120,6 @@ class AnimalData {
   feather: KeypointData;
   habitat: MapData;
   habits: GameData;
+  culture: CultureData;
   protection: TimelineData;
 }

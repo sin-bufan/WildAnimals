@@ -1,62 +1,39 @@
 <ion-content>
   <img #bg class="bg" [src]="animal.bgURL" />
   <ion-slides #slides pager="true" [options]="slideOpts">
-    <ion-slide>
+    <ion-slide *ngIf="animal.intro">
       <animal-album class="content" [data]="animal.intro"></animal-album>
     </ion-slide>
-    <ion-slide>
-      <animal-keypoint
-        class="content"
-        [data]="animal.feather"
-      ></animal-keypoint>
+    <ion-slide *ngIf="animal.feather">
+      <animal-keypoint class="content" [data]="animal.feather"></animal-keypoint>
     </ion-slide>
-    <ion-slide>
+    <ion-slide *ngIf="animal.habitat">
       <animal-map class="content" [data]="animal.habitat"></animal-map>
     </ion-slide>
     <ion-slide>
       <ng-template game-host></ng-template>
     </ion-slide>
-    <ion-slide>
-      <animal-timeline
-        class="content"
-        [data]="animal.protection"
-      ></animal-timeline>
+    <ion-slide *ngIf="animal.culture">
+      <animal-culture class="content" [data]="animal.culture"></animal-culture>
+    </ion-slide>
+    <ion-slide *ngIf="animal.protection">
+      <animal-timeline class="content" [data]="animal.protection"></animal-timeline>
     </ion-slide>
   </ion-slides>
 
-  <ion-button
-    class="left image-button"
-    expand="full"
-    fill="clear"
-    (click)="slides.slidePrev()"
-  >
+  <ion-button class="left image-button" expand="full" fill="clear" (click)="slides.slidePrev()">
     <img src="assets/images/button/prevScreen.png" />
   </ion-button>
-  <ion-button
-    class="right image-button"
-    expand="full"
-    fill="clear"
-    (click)="slides.slideNext()"
-  >
+  <ion-button class="right image-button" expand="full" fill="clear" (click)="slides.slideNext()">
     <img src="assets/images/button/nextScreen.png" />
   </ion-button>
 
   <div class="top-right">
     <app-bgmusic></app-bgmusic>
-    <ion-button
-      class="nav-button"
-      expand="full"
-      fill="clear"
-      (click)="onHome()"
-    >
+    <ion-button class="nav-button" expand="full" fill="clear" (click)="onHome()">
       <img src="assets/images/button/home.png" />
     </ion-button>
-    <ion-button
-      class="nav-button"
-      expand="full"
-      fill="clear"
-      (click)="onMenu()"
-    >
+    <ion-button class="nav-button" expand="full" fill="clear" (click)="onMenu()">
       <img src="assets/images/button/menu.png" />
     </ion-button>
   </div>
