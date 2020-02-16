@@ -1,0 +1,34 @@
+<div *ngIf="data" class="game-area">
+  <!-- 游戏结束画面 -->
+  <img [hidden]="gameState!='gameCompleted'" class="game-complete" [src]="data.gameCompleteImageURL"
+    (click)="resetGame()" />
+  <!-- 开始对话框 -->
+  <div class="start-game-dialog" *ngIf="data.startDialog" [hidden]="gameState!='gameReady'">
+    <ion-text class="game-intro" *ngIf="data.startDialog.intro" [innerHTML]="data.startDialog.intro"></ion-text>
+    <ion-text class="game-guide" *ngIf="data.startDialog.guide" [innerHTML]="data.startDialog.guide"></ion-text>
+    <ion-button class="image-button" expand="full" fill="clear" (click)="startGameHandler()">
+      <img src="assets/images/button/startGame.png" />
+    </ion-button>
+  </div>
+  <!-- 游戏1 -->
+  <div class="game1-content" *ngIf="data.gameContents" [hidden]="gameState!='gamePlaying'">
+    <!-- 背景 -->
+    <img class="game-bg" src="assets/images/game/1/bg.png" />
+    <!-- 左右分类标记 -->
+    <ion-text class="catalog-name-left">{{data.gameContents.catalogs[0].name}}</ion-text>
+    <ion-text class="catalog-name-right">{{data.gameContents.catalogs[1].name}}</ion-text>
+    <!-- 正确标记 -->
+    <img class="game-right-icon" src="assets/images/game/1/rightIcon.png" *ngIf="currentSelectedItem"/>
+    <div class="game-right-panel" [hidden]="result!='gameRight'">
+      <img src="assets/images/game/1/rightPanel.png" />
+      <ion-text class="match-item-name">{{gibbonName}}</ion-text>
+    </div>
+    <!-- 配对选项 -->
+    <div class="catalog-items-left">
+      <game1-gibbon *ngFor="let item of data.gameContents.catalogs[0].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
+    </div>
+    <div class="catalog-items-right">
+      <game1-gibbon *ngFor="let item of data.gameContents.catalogs[1].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
+    </div>
+  </div>
+</div>

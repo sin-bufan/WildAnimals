@@ -113,7 +113,7 @@
         "guide": "给不同年龄的熊猫<br>称体重"
       },
       "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
-      "gameRounds": [
+      "gameContents": [
         {
           "question": "出生1天的大熊猫有多重？",
           "questionImageURL": "assets/data/cn/05_GiantPanda/game/1.png",

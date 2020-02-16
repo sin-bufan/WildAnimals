@@ -1,6 +1,6 @@
 <ion-content>
   <img #bg class="bg" [src]="animal.bgURL" />
-  <ion-slides #slides pager="true" [options]="slideOpts">
+  <ion-slides #slides pager="true" (ionSlideDidChange)="slidesChangeHandler($event)">
     <ion-slide *ngIf="animal.intro">
       <animal-album class="content" [data]="animal.intro"></animal-album>
     </ion-slide>
@@ -21,10 +21,10 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-button class="left image-button" expand="full" fill="clear" (click)="slides.slidePrev()">
+  <ion-button class="left image-button" expand="full" fill="clear" (click)="slides.slidePrev()" *ngIf="prevButtonEnabled">
     <img src="assets/images/button/prevScreen.png" />
   </ion-button>
-  <ion-button class="right image-button" expand="full" fill="clear" (click)="slides.slideNext()">
+  <ion-button class="right image-button" expand="full" fill="clear" (click)="slides.slideNext()" *ngIf="nextButtonEnabled">
     <img src="assets/images/button/nextScreen.png" />
   </ion-button>
 

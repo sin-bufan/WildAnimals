@@ -10,7 +10,8 @@ export class BgMusicComponent implements OnInit {
     src: ['assets/bgMusic/1.mp3', 'assets/bgMusic/2.mp3', 'assets/bgMusic/3.mp3'],
     autoplay: true,
     loop: true,
-    volume: 0.5,
+    // volume: 0.5,
+    volume: 0,
     onend: function() {
       //console.log('Finished!');
     }

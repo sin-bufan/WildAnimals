@@ -1,15 +1,12 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 
 import * as Phaser from 'phaser';
-import { GameComponent } from '../game.component';
+import { GameComponent, GameData, GAME_STATE } from '../game.component';
 import { IonSlides } from '@ionic/angular';
 
 let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
 const RESULT_ANIMATION_COMPLETE: string = "resultAnimComplete";
-const GAME_STATE_START: string = "gameReady";
-const GAME_STATE_PLAY: string = "gamePlaying";
-const GAME_STATE_END: string = "gameCompleted";
 
 @Component({
   selector: 'animal-game5',
@@ -18,9 +15,9 @@ const GAME_STATE_END: string = "gameCompleted";
 })
 export class Game5Component implements AfterViewInit, GameComponent {
   //数据
-  _data: GameData;
+  _data: Game5Data;
   @Input()
-  set data(value: GameData) {
+  set data(value: Game5Data) {
     if (value != null && value.type != null) {
       this._data = value;
       if (!this._data.startDialog) {
@@ -28,7 +25,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
       }
     }
   };
-  get data(): GameData {
+  get data(): Game5Data {
     return this._data;
   }
   constructor() {
@@ -43,6 +40,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
   };
   /********************************************************************************************************************/
   game: Phaser.Game;
+  gameState:string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
     //初始化游戏
@@ -57,20 +55,20 @@ export class Game5Component implements AfterViewInit, GameComponent {
     });
     //初始化场景
     eventEmitter.addListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
-    this.resetGameScene()
+    this.resetGame()
   }
   //重置游戏场景
-  resetGameScene() {
+  resetGame() {
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
-    this.game.scene.add('game5', Game5Scene, true, this.data.gameRounds);
+    this.game.scene.add('game5', Game5Scene, true, this.data.gameContents);
     this.roundNo = -1;
-    this.gameState = GAME_STATE_START;
+    this.gameState = GAME_STATE.READY;
   }
   //开始游戏
   startGameHandler() {
     this.startRound(0);
-    this.gameState = GAME_STATE_PLAY;
+    this.gameState = GAME_STATE.PLAYING;
   }
   //选择选项
   async selectOptionHandler(optionsSlides: IonSlides) {
@@ -83,15 +81,14 @@ export class Game5Component implements AfterViewInit, GameComponent {
     this_.judgeResult();
   }
   roundNo: number = -1;
-  gameState:string = GAME_STATE_START;
-  gameQuestion:string = "";
+  gameQuestion: string = "";
   gameOptions: Array<GameOption>
   optionNo: number;
   //开始回合
   startRound(roundNo: number) {
     this.roundNo = roundNo;
-    this.gameQuestion = this.data.gameRounds[roundNo].question;
-    this.gameOptions = this.data.gameRounds[roundNo].options;
+    this.gameQuestion = this.data.gameContents[roundNo].question;
+    this.gameOptions = this.data.gameContents[roundNo].options;
     // console.info("this_: ",this_,);
     let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
     game5.showRound(roundNo);
@@ -99,15 +96,15 @@ export class Game5Component implements AfterViewInit, GameComponent {
   //选择配重
   selectWeight(roundNo: number, optionNo: number) {
     this.roundNo = roundNo;
-    this.gameOptions = this.data.gameRounds[roundNo].options;
+    this.gameOptions = this.data.gameContents[roundNo].options;
     this.optionNo = optionNo;
     let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
     game5.putWeight(roundNo, optionNo);
   }
   judgeResult() {
-    if (this.data.gameRounds[this.roundNo].options[this.optionNo].answer) {
+    if (this.data.gameContents[this.roundNo].options[this.optionNo].answer) {
       //选择正确
-      if (this.roundNo >= this.data.gameRounds.length - 1) {
+      if (this.roundNo >= this.data.gameContents.length - 1) {
         // 游戏结束
         this.endGame();
       } else {
@@ -124,7 +121,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
     this.gameQuestion = "";
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
-    this.gameState = GAME_STATE_END;
+    this.gameState = GAME_STATE.COMPLETED;
   }
 }
 
@@ -228,17 +225,13 @@ class Game5Scene extends Phaser.Scene {
   }
 }
 
-class GameData {
-  type: string;
-  intro: string;
-  startDialog: StartGameDialog;
-  gameRounds: Array<GameRound>;
-  gameCompleteImageURL:string;
+class Game5Data extends GameData {
+  gameContents: Array<GameRound>;
 }
-class StartGameDialog {
-  guide: string;
-  intro:string;
-}
+// class StartGameDialog {
+//   guide: string;
+//   intro:string;
+// }
 class GameRound {
   question: string;
   questionImageURL: string;

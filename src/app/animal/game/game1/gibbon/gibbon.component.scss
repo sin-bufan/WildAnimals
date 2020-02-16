@@ -1,0 +1,27 @@
+div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.portrait {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 124px;
+  height: 124px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: white;
+  border-radius: 50%;
+}
+.selected-overlay {
+  @extend .portrait;
+  border-color: #a051cf;
+}
+.disabled-overlay {
+  @extend .portrait;
+  background-color: #a051cf;
+  opacity: 0.4;
+}

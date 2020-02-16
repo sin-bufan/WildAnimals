@@ -1,0 +1,79 @@
+@import "../game.common.scss";
+.game1-content {
+  @extend .game-content;
+  width: fit-content;
+  height: fit-content;
+  top:55%
+}
+
+.game-bg {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.game-right-icon {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+.game-right-panel {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 40%);
+}
+
+.match-item-name {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}
+.catalog-name {
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  font-size: 30px;
+}
+.catalog-name-left {
+  @extend .catalog-name;
+  left: 95px;
+}
+.catalog-name-right {
+  @extend .catalog-name;
+  right: 95px;
+}
+.catalog-items {
+  position: absolute;
+  top: 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  width: 260px;
+  height: 390px;
+  game1-gibbon {
+    width: 130px;
+    height: 130px;
+  }
+}
+.catalog-items-left {
+  @extend .catalog-items;
+  left: 0px;
+}
+.catalog-items-right {
+  @extend .catalog-items;
+  right: 0px;
+}

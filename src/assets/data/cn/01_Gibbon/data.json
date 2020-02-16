@@ -98,65 +98,64 @@
         "guide": "为6种长臂猿找到它们的<br>同类配偶"
       },
       "gameContents": {
-        "options": [
+        "catalogs": [
           {
-            "name": "海南长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/1_male.png"
+            "name": "雄性",
+            "items": [
+              {
+                "name": "海南长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/1_male.png"
+              },
+              {
+                "name": "西黑冠长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/2_male.png"
+              },
+              {
+                "name": "东黑冠长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/3_male.png"
+              },
+              {
+                "name": "天行长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/4_male.png"
+              },
+              {
+                "name": "白颊长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/5_male.png"
+              },
+              {
+                "name": "白掌长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/6_male.png"
+              }
+            ]
           },
           {
-            "name": "海南长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/1_female.png"
-          },
-          {
-            "name": "西黑冠长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/2_male.png"
-          },
-          {
-            "name": "西黑冠长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/2_female.png"
-          },
-          {
-            "name": "东黑冠长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/3_male.png"
-          },
-          {
-            "name": "东黑冠长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/3_female.png"
-          },
-          {
-            "name": "天行长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/4_male.png"
-          },
-          {
-            "name": "天行长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/4_female.png"
-          },
-          {
-            "name": "白颊长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/5_male.png"
-          },
-          {
-            "name": "白颊长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/5_female.png"
-          }, {
-            "name": "白掌长臂猿",
-            "gender": "雄性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/6_male.png"
-          },
-          {
-            "name": "白掌长臂猿",
-            "gender": "雌性",
-            "imageURL": "assets/data/cn/01_Gibbon/game/6_female.png"
+            "name": "雌性",
+            "items": [
+              {
+                "name": "海南长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/1_female.png"
+              },
+              {
+                "name": "西黑冠长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/2_female.png"
+              },
+              {
+                "name": "东黑冠长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/3_female.png"
+              },
+              {
+                "name": "天行长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/4_female.png"
+              },
+              {
+                "name": "白颊长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/5_female.png"
+              },
+              {
+                "name": "白掌长臂猿",
+                "imageURL": "assets/data/cn/01_Gibbon/game/6_female.png"
+              }
+            ]
           }
         ]
       },

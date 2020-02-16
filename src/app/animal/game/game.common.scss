@@ -1,0 +1,42 @@
+
+.game-complete {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start-game-dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("/assets/images/startGamePanel.png");
+  width: 640px;
+  height: 470px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .game-guide {
+    max-width: 50%;
+    font-size: 30px;
+    margin: 20px;
+  }
+  .game-intro {
+    max-width: 70%;
+    text-align: justify;
+    font-size: 18px;
+    margin: 20px;
+  }
+}
+
+.game-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

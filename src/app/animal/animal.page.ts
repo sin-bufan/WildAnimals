@@ -4,12 +4,14 @@ import { AnimalsDataService } from '../animals-data.service';
 import { MenuController, IonSlides } from '@ionic/angular';
 import { GameDirective } from './game/game.directive';
 import { GameComponent, GameData } from './game/game.component';
-import { Game5Component } from './game/game5/game5.component';
 import { AlbumData } from './album/album.component';
 import { MapData } from './map/map.component';
 import { TimelineData } from './timeline/timeline.component';
 import { CultureData } from './culture/culture.component';
 import { KeypointData } from './keypoint/keypoint.component';
+
+import { Game1Component } from './game/game1/game1.component';
+import { Game5Component } from './game/game5/game5.component';
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -25,9 +27,6 @@ export class AnimalPage implements OnInit {
     private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
-  slideOpts = {
-    loop: true
-  }
   @ViewChild("bg", { static: true }) bg: ElementRef;
   @ViewChild("slides", { static: true }) slides: IonSlides;
   ngOnInit() {
@@ -50,6 +49,58 @@ export class AnimalPage implements OnInit {
   async updateBackground(progress) {
     let domWidth: number = window.innerWidth;
     let bgWidth: number = this.bg.nativeElement.naturalWidth;
+    let slideNum = await this.slides.length()
+    if (!progress) {
+      let swiper = await this.slides.getSwiper();
+      progress = swiper.progress;
+    }
+    // console.info("slides progress: ", progress)
+    let bgLeft: number = 0;
+    if (progress <= 1 / (slideNum - 1)) {
+      bgLeft = 0;
+    } else if (progress > 1 / (slideNum - 1) && progress < 1) {
+      // bgLeft = (domWidth - bgWidth) * (progress - 2 / (slideNum - 1)) / ((slideNum) / (slideNum - 1));
+      bgLeft = (domWidth - bgWidth) * (progress - 1 / (slideNum - 1)) * ((slideNum - 1) / (slideNum - 2))
+    } else {
+      bgLeft = domWidth - bgWidth;
+    }
+
+    // console.info(domWidth,bgWidth,progress,slideNum,bgLeft)
+    this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px")
+  }
+
+
+  //更新按钮状态
+  prevButtonEnabled: boolean = false;
+  nextButtonEnabled: boolean = true;
+  async slidesChangeHandler(event) {
+    let progress
+    if (!progress) {
+      let swiper = await this.slides.getSwiper();
+      progress = swiper.progress;
+    }
+    let slideNum = await this.slides.length()
+    console.info("slides change: ",event,progress)
+    if (progress < 1 / (slideNum - 1)) {
+      this.prevButtonEnabled = false;
+      this.nextButtonEnabled = true;
+    } else if (progress > (slideNum - 2) / (slideNum - 1)) {
+      this.prevButtonEnabled = true;
+      this.nextButtonEnabled = false;
+    } else {
+      this.prevButtonEnabled = true;
+      this.nextButtonEnabled = true;
+    }
+    //console.info(progress,this.prevButtonEnabled,this.nextButtonEnabled)
+  }
+  /*//对于loop slides
+  slideOpts = {
+    loop: true
+  }
+  //根据slides的位置，更新背景图位置
+  async updateBackground(progress) {
+    let domWidth: number = window.innerWidth;
+    let bgWidth: number = this.bg.nativeElement.naturalWidth;
     let slideNum = await this.slides.length() - 2;//5
     if (!progress) {
       let swiper = await this.slides.getSwiper();
@@ -63,8 +114,7 @@ export class AnimalPage implements OnInit {
     }
     // console.info(domWidth,bgWidth,progress,slideNum,bgLeft)
     this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px")
-  }
-
+  }*/
 
   @ViewChild(GameDirective, { static: true }) gameHost: GameDirective;
   animal: AnimalData = new AnimalData();
@@ -83,9 +133,9 @@ export class AnimalPage implements OnInit {
     // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.animal.habits.type);
     let componentFactory
     if (this.animal.habits) {
-      switch(this.animal.habits.type){
+      switch (this.animal.habits.type) {
         case "Game1Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game1Component);
           break;
         case "Game5Component":
           componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);

@@ -1,50 +1,8 @@
-// .game-area {
-
-// }
-
-.game-complete {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.start-game-dialog {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  // --backgound:url("/assets/images/startGamePanel.jpg");
-  background-image: url("/assets/images/startGamePanel.png");
-  width: 640px;
-  height: 470px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .game-guide {
-    max-width: 50%;
-    font-size: 30px;
-    margin: 20px;
-  }
-  .game-intro {
-    max-width: 70%;
-    text-align: justify;
-    font-size: 18px;
-    margin: 20px;
-  }
-}
-
-.game-content {
+@import "../game.common.scss";
+.game5-content {
+  @extend .game-content;
   width: 800px;
   height: 576px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 //天平动画
 #phaser-div-game5 {
@@ -76,7 +34,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      mask-image: url("/assets/images/weightFrame.png");
+      mask-image: url("/assets/images/game/5/weightFrame.png");
       ion-slide {
 
         img {
