@@ -25,10 +25,10 @@
     </div>
     <!-- 配对选项 -->
     <div class="catalog-items-left">
-      <game1-gibbon *ngFor="let item of data.gameContents.catalogs[0].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
+      <game1-gibbon class="image-button" *ngFor="let item of data.gameContents.catalogs[0].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
     </div>
     <div class="catalog-items-right">
-      <game1-gibbon *ngFor="let item of data.gameContents.catalogs[1].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
+      <game1-gibbon class="image-button" *ngFor="let item of data.gameContents.catalogs[1].items" [data]="item" (click)="selectItem(item)"></game1-gibbon>
     </div>
   </div>
 </div>

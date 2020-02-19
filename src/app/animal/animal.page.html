@@ -21,19 +21,19 @@
     </ion-slide>
   </ion-slides>
 
-  <ion-button class="left image-button" expand="full" fill="clear" (click)="slides.slidePrev()" *ngIf="prevButtonEnabled">
+  <ion-button class="image-button left" expand="full" fill="clear" (click)="slides.slidePrev()" *ngIf="prevButtonEnabled">
     <img src="assets/images/button/prevScreen.png" />
   </ion-button>
-  <ion-button class="right image-button" expand="full" fill="clear" (click)="slides.slideNext()" *ngIf="nextButtonEnabled">
+  <ion-button class="image-button right" expand="full" fill="clear" (click)="slides.slideNext()" *ngIf="nextButtonEnabled">
     <img src="assets/images/button/nextScreen.png" />
   </ion-button>
 
   <div class="top-right">
     <app-bgmusic></app-bgmusic>
-    <ion-button class="nav-button" expand="full" fill="clear" (click)="onHome()">
+    <ion-button class="image-button" expand="full" fill="clear" (click)="onHome()">
       <img src="assets/images/button/home.png" />
     </ion-button>
-    <ion-button class="nav-button" expand="full" fill="clear" (click)="onMenu()">
+    <ion-button class="image-button" expand="full" fill="clear" (click)="onMenu()">
       <img src="assets/images/button/menu.png" />
     </ion-button>
   </div>

@@ -1,6 +1,6 @@
 <div class="container">
   <div *ngIf="data" class="album-container">
-    <ion-thumbnail *ngFor="let item of data.album" (click)="showPhoto(item)">
+    <ion-thumbnail  class="image-button" *ngFor="let item of data.album" (click)="showPhoto(item)">
       <img [src]="item.thumbURL" />
     </ion-thumbnail>
   </div>

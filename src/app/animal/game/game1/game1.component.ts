@@ -136,7 +136,7 @@ export class Game1Component implements AfterViewInit, GameComponent {
           if (!item.disabled) {
             completed = false;
           }
-          console.info(item.disabled);
+          // console.info(item.disabled);
         });
       });
     }
@@ -154,7 +154,7 @@ export class Game1Component implements AfterViewInit, GameComponent {
           item.selected = false;
         });
         //乱序
-        //catalog.items = shuffle(catalog.items);
+        catalog.items = shuffle(catalog.items);
         // console.info(catalog.items);
       });
     }

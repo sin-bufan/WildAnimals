@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: -10px;
+  right: -30px;
   top: 20px;
   width: fit-content;
   div {
@@ -34,7 +34,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      mask-image: url("/assets/images/game/5/weightFrame.png");
+      mask-image: url("../../../../assets/images/game/5/weightFrame.png");
       ion-slide {
 
         img {

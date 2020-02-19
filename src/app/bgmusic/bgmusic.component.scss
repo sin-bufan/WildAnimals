@@ -1,11 +1,11 @@
-@import "../../global.scss";
+@import "../common.scss";
 //右上角导航按钮
-.nav-button{
-    @extend .image-button;
-    margin-left: 10px;
-    margin-right: 10px;
+.nav-button {
+  @extend .image-button;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.mute-button{
-    filter: grayscale(100%);
-    opacity: 0.4;
+.mute-button {
+  filter: grayscale(100%);
+  opacity: 0.4;
 }

@@ -8,14 +8,14 @@
     </div>
     <div class="media-container">
       <div *ngIf="data" class="album-container">
-        <ion-thumbnail
+        <ion-thumbnail class="image-button"
           *ngFor="let item of data.album"
           (click)="showPhoto(item)"
         >
           <img [src]="item.thumbURL" />
         </ion-thumbnail>
       </div>
-      <ion-thumbnail class="video-thumb" *ngIf="data && data.video" (click)="showVideo(data.video)">
+      <ion-thumbnail class="video-thumb image-button" *ngIf="data && data.video" (click)="showVideo(data.video)">
         <img [src]="data.video.thumbURL" />
         <img class="video-icon" src="assets/images/videoIcon.png" />
       </ion-thumbnail>

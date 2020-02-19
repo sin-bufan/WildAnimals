@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, ComponentFactoryResolver, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
 import { MenuController, IonSlides } from '@ionic/angular';
@@ -17,7 +17,7 @@ import { Game5Component } from './game/game5/game5.component';
   templateUrl: './animal.page.html',
   styleUrls: ['./animal.page.scss'],
 })
-export class AnimalPage implements OnInit {
+export class AnimalPage implements OnInit,AfterViewInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -27,14 +27,16 @@ export class AnimalPage implements OnInit {
     private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
-  @ViewChild("bg", { static: true }) bg: ElementRef;
-  @ViewChild("slides", { static: true }) slides: IonSlides;
+  @ViewChild("bg", { static: false }) bg: ElementRef;
+  @ViewChild("slides", { static: false }) slides: IonSlides;
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       let data: any = JSON.parse(params.get('animal_data'));
       this.init(data.dataURL);
       this.initMenu(data.name);
     });
+  }
+  ngAfterViewInit(){
     this.initBg();
   }
   //初始化背景图
@@ -46,9 +48,9 @@ export class AnimalPage implements OnInit {
     })
   }
   //根据slides的位置，更新背景图位置
-  async updateBackground(progress) {
+  async updateBackground(progress=null) {
     let domWidth: number = window.innerWidth;
-    let bgWidth: number = this.bg.nativeElement.naturalWidth;
+    let bgWidth: number = this.bg.nativeElement.width;
     let slideNum = await this.slides.length()
     if (!progress) {
       let swiper = await this.slides.getSwiper();
@@ -79,8 +81,7 @@ export class AnimalPage implements OnInit {
       let swiper = await this.slides.getSwiper();
       progress = swiper.progress;
     }
-    let slideNum = await this.slides.length()
-    console.info("slides change: ",event,progress)
+    let slideNum = await this.slides.length();
     if (progress < 1 / (slideNum - 1)) {
       this.prevButtonEnabled = false;
       this.nextButtonEnabled = true;
@@ -116,7 +117,7 @@ export class AnimalPage implements OnInit {
     this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px")
   }*/
 
-  @ViewChild(GameDirective, { static: true }) gameHost: GameDirective;
+  @ViewChild(GameDirective, { static: false }) gameHost: GameDirective;
   animal: AnimalData = new AnimalData();
   //初始化数据
   init(data_url: string) {

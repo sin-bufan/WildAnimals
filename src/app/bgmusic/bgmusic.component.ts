@@ -11,7 +11,7 @@ export class BgMusicComponent implements OnInit {
     autoplay: true,
     loop: true,
     // volume: 0.5,
-    volume: 0,
+    volume: 0.5,
     onend: function() {
       //console.log('Finished!');
     }

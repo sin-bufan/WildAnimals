@@ -1,32 +1,69 @@
 <div *ngIf="data" class="game-area">
   <!-- 游戏结束画面 -->
-  <img [hidden]="gameState!='gameCompleted'" class="game-complete" [src]="data.gameCompleteImageURL"
-    (click)="resetGameScene()" />
+  <img
+    [hidden]="gameState != 'gameCompleted'"
+    class="game-complete"
+    [src]="data.gameCompleteImageURL"
+    (click)="resetGame()"
+  />
   <!-- 开始对话框 -->
-  <div class="start-game-dialog" *ngIf="data.startDialog" [hidden]="gameState!='gameReady'">
-    <ion-text class="game-intro" *ngIf="data.startDialog.intro" [innerHTML]="data.startDialog.intro"></ion-text>
-    <ion-text class="game-guide" *ngIf="data.startDialog.guide" [innerHTML]="data.startDialog.guide"></ion-text>
-    <ion-button class="image-button" expand="full" fill="clear" (click)="startGameHandler()">
+  <div
+    class="start-game-dialog"
+    *ngIf="data.startDialog"
+    [hidden]="gameState != 'gameReady'"
+  >
+    <ion-text
+      class="game-intro"
+      *ngIf="data.startDialog.intro"
+      [innerHTML]="data.startDialog.intro"
+    ></ion-text>
+    <ion-text
+      class="game-guide"
+      *ngIf="data.startDialog.guide"
+      [innerHTML]="data.startDialog.guide"
+    ></ion-text>
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="startGameHandler()"
+    >
       <img src="assets/images/button/startGame.png" />
     </ion-button>
   </div>
   <!-- 游戏 -->
-  <div class="game5-content" [hidden]="gameState!='gamePlaying'">
+  <div class="game5-content" [hidden]="gameState != 'gamePlaying'">
     <div id="phaser-div-game5"></div>
-    <ion-text class="game-question" *ngIf="gameQuestion!=''">{{ gameQuestion }}</ion-text>
+    <ion-text class="game-question" *ngIf="gameQuestion != ''">{{
+      gameQuestion
+    }}</ion-text>
     <div *ngIf="gameOptions" class="weight-options">
-      <ion-button class="image-button" expand="full" fill="clear" (click)="options.slideNext()">
+      <ion-button
+        class="image-button"
+        expand="full"
+        fill="clear"
+        (click)="options.slideNext()"
+      >
         <img src="assets/images/game/5/prevWeight.png" />
       </ion-button>
       <div>
-        <ion-slides #options [options]="slideOpts" (ionSlideTap)="selectOptionHandler(options)">
+        <ion-slides
+          #options
+          [options]="slideOpts"
+          (ionSlideTap)="selectOptionHandler(options)"
+        >
           <ion-slide *ngFor="let item of gameOptions">
             <img [src]="item.imageURL" />
           </ion-slide>
         </ion-slides>
         <img src="assets/images/game/5/weightFrame.png" />
       </div>
-      <ion-button class="image-button" expand="full" fill="clear" (click)="options.slidePrev()">
+      <ion-button
+        class="image-button"
+        expand="full"
+        fill="clear"
+        (click)="options.slidePrev()"
+      >
         <img src="assets/images/game/5/nextWeight.png" />
       </ion-button>
     </div>

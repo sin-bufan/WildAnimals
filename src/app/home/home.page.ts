@@ -87,7 +87,6 @@ export class HomePage {
   }
 }
 
-
 const PAUSE_DELAY: number = 2000;
 const ANIMALS_SPRITE_WIDTH: number = 650;
 const ANIMALS_SPRITE_HEIGHT: number = 650;
@@ -140,7 +139,7 @@ class MenuScene extends Phaser.Scene {
   onAnimationUpdate(animation, frame, sprite) {
     // console.info(frame.index)
     if (frame.index % FRAMES_PER_ANIMAL == 0 && !menuScene.press) {
-      // console.info(frame.index, animation, sprite)
+      //console.info("animation update: ",frame.index, menuScene.press)
       sprite.anims.pause();
       sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME, frame.index);
     }
