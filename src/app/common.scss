@@ -9,10 +9,10 @@
   height: auto;
   --padding-start: 0;
   --padding-end: 0;
-  --background-hover-opacity: 0 !important;
-  --background-focused-opacity: 0 !important;
-  --background-activated-opacity: 0 !important;
-  --ripple-color: white;
+  --background-hover-opacity: 0;
+  --background-focused-opacity: 0;
+  --background-activated: white;
+  // --ripple-color: white;
   --transition:none;
   cursor: pointer !important;
 }

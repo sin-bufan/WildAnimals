@@ -1,6 +1,14 @@
+import {Howl, Howler} from 'howler';
 export interface GameComponent {
   data: any;
 }
+
+export const RIGHT_SOUND = new Howl({
+  src: ['assets/sound/right.mp3']
+});
+export const WRONG_SOUND = new Howl({
+  src: ['assets/sound/wrong.mp3']
+});
 export class GameData {
   type: string;
   intro: string;

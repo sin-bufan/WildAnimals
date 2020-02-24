@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit, Input } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
 
@@ -9,7 +9,7 @@ import { AnimalsDataService } from 'src/app/animals-data.service';
 })
 export class MapComponent implements OnInit {
   //数据
-  _data:MapData;
+  _data: MapData;
   @Input()
   set data(value: MapData) {
     if (value != null) {
@@ -17,40 +17,32 @@ export class MapComponent implements OnInit {
       this.initMap(this._data)
     }
   };
-  get data():MapData{
+  get data(): MapData {
     return this._data;
   }
-  
+
   m: L.Map;//地图实例
-  constructor(private animalsDataService: AnimalsDataService) { }
+  constructor(private animalsDataService: AnimalsDataService,
+    private cdRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-  }
-  //阻止上层的slides滑动
-  blockEvent(event:Event){
-    // console.info(event)
-    // event.stopImmediatePropagation();
-    //  event.stopPropagation();
-    //event.preventDefault();
   }
   //初始化地图
   initMap(mapData: MapData) {
     //let Leaflet = L.noConflict();//为了重复使用L实例
     var container = L.DomUtil.get('map');
-    if(container != null){
+    if (container != null) {
       container._leaflet_id = null;
     }
 
     this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
-    // this.m.on("touchmove",this.blockEvent,true);
-    // this.m.on("mousemove",this.blockEvent,true);
     //加入瓦片地图
     L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
       attributionControl: false,
       minZoom: mapData.mapMinZoom,
       maxZoom: mapData.mapMaxZoom
     }).addTo(this.m);
-    
+    // this.cdRef.detectChanges();
     //加入现状分布图层
     this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonURL).subscribe(
       (data) => {
@@ -60,7 +52,8 @@ export class MapComponent implements OnInit {
             mapData.habitatLegend.forEach(item => {
               if (item.code == feature.properties.PRESENCE) {
                 feature.properties.color = item.color;
-                if (item.imageURL){
+                feature.properties.label = item.label;
+                if (item.imageURL) {
                   feature.properties.imageURL = item.imageURL;
                 }
               }
@@ -70,13 +63,14 @@ export class MapComponent implements OnInit {
         }).bindPopup(function (layer) {
           // console.info("map layer: ",layer);
           //return layer.feature.properties.BINOMIAL;
-          let url:string = layer.feature.properties.imageURL;
-          if (url!=""){
-            return "<img class='map-popup' src="+url+">";
-          }else{
-            return null;
+          let url: string = layer.feature.properties.imageURL;
+          let label: string = layer.feature.properties.label;
+          if (url && url != "") {
+            return "<img src=" + url + ">";
+          } else {
+            return "<h2>"+label+"</h2>";
           }
-        }).addTo(this.m);
+        }, { minWidth: 400 ,closeButton:false}).addTo(this.m);
       }
     );
   }
@@ -98,7 +92,7 @@ class ExtantStatus {
   code: number;
   label: string;
   color: string;
-  imageURL:string="";
+  imageURL: string = "";
 }
 
 

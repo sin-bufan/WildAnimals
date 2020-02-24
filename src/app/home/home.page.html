@@ -1,25 +1,57 @@
 <!-- <ion-content> -->
-  <div class="bg">
-    <div class="left">
-      <img class="title" src="assets/images/homeTitle.png" />
-      <ion-button class="image-button" expand="full" fill="clear" (click)="loadLanguageData('cn')">
+<div class="bg">
+  <div class="left">
+    <img class="title" src="assets/images/homeTitle.png" />
+    <!-- <ion-button class="image-button" expand="full" fill="clear" (click)="loadLanguageData('cn')">
         <img src="assets/images/button/cn_a.png" />
       </ion-button>
       <ion-button class="image-button" expand="full" fill="clear" (click)="loadLanguageData('en')">
         <img src="assets/images/button/en_a.png" />
-      </ion-button>
-    </div>
-    <div id='phaser-div-menu'></div>
+      </ion-button> -->
+    <ion-list lines="none">
+      <ion-radio-group #language value="cn" (ionChange)="changeLanguage($event)">
+        <ion-item>
+          <img
+            [hidden]="language.value!='cn'"
+            src="assets/images/button/cn_a.png"
+          />
+          <img
+            class="image-button"
+            [hidden]="language.value=='cn'"
+            src="assets/images/button/cn_b.png"
+          />
+          <ion-radio value="cn"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <img
+            [hidden]="language.value!='en'"
+            src="assets/images/button/en_a.png"
+          />
+          <img
+            class="image-button"
+            [hidden]="language.value=='en'"
+            src="assets/images/button/en_b.png"
+          />
+          <ion-radio value="en"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </div>
-  <!-- 右上角按钮 -->
-  <div class="top-right">
-    <app-bgmusic></app-bgmusic>
-    <ion-button class="image-button" expand="full" fill="clear"  (click)="download()">
-      <img src="assets/images/button/download.png" />
-    </ion-button>
-    <ion-button class="image-button" expand="full" fill="clear">
-
-      <img src="assets/images/button/copyright.png" (click)="info()"/>
-    </ion-button>
-  </div>
+  <div id="phaser-div-menu"></div>
+</div>
+<!-- 右上角按钮 -->
+<div class="top-right">
+  <app-bgmusic></app-bgmusic>
+  <ion-button
+    class="image-button"
+    expand="full"
+    fill="clear"
+    (click)="download()"
+  >
+    <img src="assets/images/button/download.png" />
+  </ion-button>
+  <ion-button class="image-button" expand="full" fill="clear">
+    <img src="assets/images/button/copyright.png" (click)="info()" />
+  </ion-button>
+</div>
 <!-- </ion-content> -->

@@ -23,11 +23,15 @@ export class HomePage {
   }
   //初始化
   ngOnInit() {
-    this.loadLanguageData();
+    this.changeLanguage();
   }
   //初始化数据
-  loadLanguageData(language: string = AnimalsDataService.CN) {
-    this.animalsDataService.language = language;
+  changeLanguage(event: CustomEvent = null) {
+    if (event == null) {
+      this.animalsDataService.language = AnimalsDataService.CN;
+    } else {
+      this.animalsDataService.language = event.detail.value;
+    }
     this.animalsDataService.getAnimals().subscribe(
       (data) => {
         this_.animals = data.animals;
@@ -73,11 +77,11 @@ export class HomePage {
 
   //跳转到章节
   gotoAnimal(index) {
-     console.info("enter animal: ", index)
-    if (index>this_.animals.length-1){
-      index = index-this_.animals.length;
-    }else if (index<0){
-      index = index+this_.animals.length;
+    console.info("enter animal: ", index)
+    if (index > this_.animals.length - 1) {
+      index = index - this_.animals.length;
+    } else if (index < 0) {
+      index = index + this_.animals.length;
     }
     if (this_.animals[index].dataURL && this_.animals[index].dataURL != "") {
       this_.router.navigate(['animal', JSON.stringify(this_.animals[index])]);

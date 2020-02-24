@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 
 import * as Phaser from 'phaser';
-import { GameComponent, GameData, GAME_STATE } from '../game.component';
+import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
 import { IonSlides } from '@ionic/angular';
 
 let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
@@ -40,7 +40,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
   };
   /********************************************************************************************************************/
   game: Phaser.Game;
-  gameState:string = GAME_STATE.READY;
+  gameState: string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
     //初始化游戏
@@ -102,21 +102,29 @@ export class Game5Component implements AfterViewInit, GameComponent {
     game5.putWeight(roundNo, optionNo);
   }
   judgeResult() {
+    // let that = this_;
     if (this.data.gameContents[this.roundNo].options[this.optionNo].answer) {
       //选择正确
-      if (this.roundNo >= this.data.gameContents.length - 1) {
-        // 游戏结束
-        this.endGame();
-      } else {
-        //下一题
-        this.roundNo++;
-        this.startRound(this.roundNo);
-      }
+      RIGHT_SOUND.once('end', function () {
+        if (this_.roundNo >= this_.data.gameContents.length - 1) {
+          // 游戏结束
+          this_.endGame();
+        } else {
+          //下一题
+          this_.roundNo++;
+          this_.startRound(this_.roundNo);
+        }
+      });
+      RIGHT_SOUND.play();
     } else {
       //选择错误
-      this.startRound(this.roundNo);
+      WRONG_SOUND.once('end', function () {
+        this_.startRound(this_.roundNo);
+      });
+      WRONG_SOUND.play();
     }
   }
+
   endGame() {
     this.gameQuestion = "";
     this.gameOptions = undefined;
@@ -165,6 +173,9 @@ class Game5Scene extends Phaser.Scene {
     // console.log("start round: ", roundNo);
     if (this.question) {
       this.question.destroy();
+    }
+    if (this.optionResultAnimSprite) {
+      this.optionResultAnimSprite.destroy();
     }
     this.question = this.add.image(400, 288, QUESTION_PREFIX + "_" + String(roundNo));
   }
@@ -216,7 +227,7 @@ class Game5Scene extends Phaser.Scene {
   }
   //动画每帧变动时执行
   onAnimationEnd(animation, frame, sprite) {
-    sprite.destroy();
+    //sprite.destroy();
     eventEmitter.emit(RESULT_ANIMATION_COMPLETE);
   }
   //4.循环刷新（16ms）

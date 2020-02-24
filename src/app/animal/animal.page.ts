@@ -12,12 +12,14 @@ import { KeypointData } from './keypoint/keypoint.component';
 
 import { Game1Component } from './game/game1/game1.component';
 import { Game5Component } from './game/game5/game5.component';
+
+const LOCK_SLIDE_LIST:Array<string> = ["map"]
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
   styleUrls: ['./animal.page.scss'],
 })
-export class AnimalPage implements OnInit,AfterViewInit {
+export class AnimalPage implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -36,7 +38,7 @@ export class AnimalPage implements OnInit,AfterViewInit {
       this.initMenu(data.name);
     });
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.initBg();
   }
   //初始化背景图
@@ -48,7 +50,7 @@ export class AnimalPage implements OnInit,AfterViewInit {
     })
   }
   //根据slides的位置，更新背景图位置
-  async updateBackground(progress=null) {
+  async updateBackground(progress = null) {
     let domWidth: number = window.innerWidth;
     let bgWidth: number = this.bg.nativeElement.width;
     let slideNum = await this.slides.length()
@@ -161,6 +163,18 @@ export class AnimalPage implements OnInit,AfterViewInit {
   //初始化菜单
   initMenu(name: string) {
     console.info("当前菜单：", name)
+  }
+  //阻止上层的slides滑动
+  lockSlide(event: Event) {
+    let t: any = event.target;
+    //console.info(t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
+    if (t.id && LOCK_SLIDE_LIST.indexOf(t.id) >= 0) {
+      //console.info(event, event.target);
+      this.slides.lockSwipes(true);
+    }
+  }
+  unlockSlide(event: Event) {
+    this.slides.lockSwipes(false);
   }
 }
 

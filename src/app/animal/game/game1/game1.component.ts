@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { GameComponent, GameData, GAME_STATE, GAME_RESULT } from '../game.component';
+import { GameComponent, GameData, GAME_STATE, GAME_RESULT, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
 import { AnimationController } from '@ionic/angular';
 import { Animation } from '@ionic/core';
 
@@ -90,6 +90,7 @@ export class Game1Component implements AfterViewInit, GameComponent {
   //正确效果
   async showRight(name) {
     this.result = GAME_RESULT.RIGHT;
+    RIGHT_SOUND.play();
     this.gibbonName = name;
     let a: Animation = this.animationCtrl.create()
       .addElement(document.querySelector('.game-right-icon'))
@@ -115,6 +116,7 @@ export class Game1Component implements AfterViewInit, GameComponent {
   //错误效果
   async showWrong() {
     this.result = GAME_RESULT.WRONG;
+    WRONG_SOUND.play();
     let a: Animation = this.animationCtrl.create()
       .addElement(document.querySelector('.game-right-icon'))
       .duration(1000)

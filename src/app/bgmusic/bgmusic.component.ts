@@ -7,7 +7,7 @@ import {Howl, Howler} from 'howler';
 })
 export class BgMusicComponent implements OnInit {
   static sound = new Howl({
-    src: ['assets/bgMusic/1.mp3', 'assets/bgMusic/2.mp3', 'assets/bgMusic/3.mp3'],
+    src: ['assets/sound/bgMusic/1.mp3'],
     autoplay: true,
     loop: true,
     // volume: 0.5,
