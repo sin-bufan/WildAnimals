@@ -1,6 +1,6 @@
 <ion-content>
-  <img #bg class="bg" [src]="animal.bgURL" />
-  <ion-slides #slides pager="true" (ionSlideDidChange)="slidesChangeHandler($event)" 
+  <img #bg *ngIf="animal" class="bg" [src]="animal.bgURL" />
+  <ion-slides *ngIf="animal" #slides [options]="slideOpts" pager="true" (ionSlideDidChange)="slidesChangeHandler($event)" 
   (touchdown)="lockSlide($event)" (mousedown)="lockSlide($event)"
   (touchup)="unlockSlide($event)" (mouseup)="unlockSlide($event)">
     <ion-slide *ngIf="animal.intro">

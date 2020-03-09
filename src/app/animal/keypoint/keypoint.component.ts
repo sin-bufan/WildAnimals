@@ -8,7 +8,7 @@ import { Component, OnInit,Input } from '@angular/core';
 export class KeypointComponent implements OnInit {
   //数据
   @Input() data: KeypointData;
-  index:number=0;
+  index:number=-1;
   constructor() { }
 
   ngOnInit() {}

@@ -1,6 +1,13 @@
 <div class="container">
-  <p *ngIf="data" class="map-text">{{data.text}}</p>
+  <p *ngIf="data" class="map-text">{{ data.text }}</p>
   <div class="map-panel">
-    <div id="map"></div>
+    <ion-slides #mapSlides>
+      <ion-slide>
+        <img [src]="data.imageURL" (click)="showMap()" />
+      </ion-slide>
+      <ion-slide>
+        <div id="map"></div>
+      </ion-slide>
+    </ion-slides>
   </div>
 </div>

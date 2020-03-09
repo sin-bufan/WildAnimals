@@ -12,8 +12,9 @@ import { KeypointData } from './keypoint/keypoint.component';
 
 import { Game1Component } from './game/game1/game1.component';
 import { Game5Component } from './game/game5/game5.component';
+import { AppComponent } from '../app.component';
 
-const LOCK_SLIDE_LIST:Array<string> = ["map"]
+const LOCK_SLIDE_LIST: Array<string> = ["map"]
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -26,20 +27,22 @@ export class AnimalPage implements OnInit, AfterViewInit {
     private animalsDataService: AnimalsDataService,
     private menuCtrl: MenuController,
     private render: Renderer2,
-    private componentFactoryResolver: ComponentFactoryResolver) {
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private app: AppComponent) {
   }
 
   @ViewChild("bg", { static: false }) bg: ElementRef;
   @ViewChild("slides", { static: false }) slides: IonSlides;
   ngOnInit() {
+
+  }
+  ngAfterViewInit() {
     this.route.paramMap.subscribe(params => {
       let data: any = JSON.parse(params.get('animal_data'));
       this.init(data.dataURL);
       this.initMenu(data.name);
+      this.initBg();
     });
-  }
-  ngAfterViewInit() {
-    this.initBg();
   }
   //初始化背景图
   async initBg() {
@@ -51,7 +54,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
   }
   //根据slides的位置，更新背景图位置
   async updateBackground(progress = null) {
-    let domWidth: number = window.innerWidth;
+    let domWidth: number = window.innerWidth / this.app.appScale;
     let bgWidth: number = this.bg.nativeElement.width;
     let slideNum = await this.slides.length()
     if (!progress) {
@@ -66,14 +69,12 @@ export class AnimalPage implements OnInit, AfterViewInit {
       // bgLeft = (domWidth - bgWidth) * (progress - 2 / (slideNum - 1)) / ((slideNum) / (slideNum - 1));
       bgLeft = (domWidth - bgWidth) * (progress - 1 / (slideNum - 1)) * ((slideNum - 1) / (slideNum - 2))
     } else {
-      bgLeft = domWidth - bgWidth;
+      bgLeft = (domWidth - bgWidth);
     }
 
-    // console.info(domWidth,bgWidth,progress,slideNum,bgLeft)
+    //console.info(domWidth,bgWidth,this.app.appScale,progress,slideNum,bgLeft)
     this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px")
   }
-
-
   //更新按钮状态
   prevButtonEnabled: boolean = false;
   nextButtonEnabled: boolean = true;
@@ -96,10 +97,13 @@ export class AnimalPage implements OnInit, AfterViewInit {
     }
     //console.info(progress,this.prevButtonEnabled,this.nextButtonEnabled)
   }
-  /*//对于loop slides
   slideOpts = {
-    loop: true
+    loop: false,
+    // watchSlidesProgress:true,
+    speed:1000//按钮翻页速度
   }
+  /*//对于loop slides
+
   //根据slides的位置，更新背景图位置
   async updateBackground(progress) {
     let domWidth: number = window.innerWidth;
@@ -162,7 +166,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
   }
   //初始化菜单
   initMenu(name: string) {
-    console.info("当前菜单：", name)
+    // console.info("当前菜单：", name)
   }
   //阻止上层的slides滑动
   lockSlide(event: Event) {

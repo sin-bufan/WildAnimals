@@ -1,12 +1,12 @@
 <div class="container">
   <img class="bg" src="assets/images/imagePanel.png" />
-  <div class="image-container">
-    <img class="image" *ngIf="data" [src]="data.imageURL"/>
-    <div *ngIf="data && data.text">
-      <ion-text>{{ data.text }}</ion-text>
-    </div>
+  <div class="image-rect">
+    <!-- <div class="image-container"> -->
+      <img class="image" *ngIf="data" [src]="data.imageURL" />
+      <ion-text *ngIf="data && data.text">{{ data.text }}</ion-text>
+    <!-- </div> -->
   </div>
   <ion-button class="image-button close-button" expand="full" fill="clear">
-    <img src="assets/images/button/closeImage.png" (click)="onClose()"/>
+    <img src="assets/images/button/closeImage.png" (click)="onClose()" />
   </ion-button>
 </div>

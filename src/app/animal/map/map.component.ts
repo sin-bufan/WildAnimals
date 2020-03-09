@@ -1,20 +1,22 @@
-import { Component, AfterViewInit, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, Input, ChangeDetectorRef, ViewChild } from '@angular/core';
 import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
-
+import { IonSlides } from '@ionic/angular';
 @Component({
   selector: 'animal-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements AfterViewInit {
   //数据
   _data: MapData;
   @Input()
   set data(value: MapData) {
     if (value != null) {
       this._data = value;
-      this.initMap(this._data)
+      if (!this.m) {
+        this.initMap(this._data);
+      }
     }
   };
   get data(): MapData {
@@ -22,10 +24,22 @@ export class MapComponent implements OnInit {
   }
 
   m: L.Map;//地图实例
-  constructor(private animalsDataService: AnimalsDataService,
-    private cdRef: ChangeDetectorRef) { }
+  @ViewChild("mapSlides", { static: false }) mapSlides: IonSlides;
+  constructor(private animalsDataService: AnimalsDataService) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    // let that = this;
+    // setTimeout(() => {
+    //   if (that.m) {
+    //     that.m.invalidateSize();
+    //     // console.info(that.m.getSize())
+    //   }
+    // }, 1000)
+  }
+  showMap() {
+    this.mapSlides.slideNext();
+    this.mapSlides.lockSwipes(true);
+    this.m.invalidateSize();
   }
   //初始化地图
   initMap(mapData: MapData) {
@@ -34,7 +48,6 @@ export class MapComponent implements OnInit {
     if (container != null) {
       container._leaflet_id = null;
     }
-
     this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
     //加入瓦片地图
     L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
@@ -42,7 +55,6 @@ export class MapComponent implements OnInit {
       minZoom: mapData.mapMinZoom,
       maxZoom: mapData.mapMaxZoom
     }).addTo(this.m);
-    // this.cdRef.detectChanges();
     //加入现状分布图层
     this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonURL).subscribe(
       (data) => {
@@ -60,17 +72,21 @@ export class MapComponent implements OnInit {
             });
             return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
           }
-        }).bindPopup(function (layer) {
-          // console.info("map layer: ",layer);
-          //return layer.feature.properties.BINOMIAL;
-          let url: string = layer.feature.properties.imageURL;
-          let label: string = layer.feature.properties.label;
-          if (url && url != "") {
-            return "<img src=" + url + ">";
-          } else {
-            return "<h2>"+label+"</h2>";
-          }
-        }, { minWidth: 400 ,closeButton:false}).addTo(this.m);
+        })
+          //点击热区后弹出图文popup（放缩后有错位问题）
+          // .bindPopup(function (layer) {
+          //   //console.info("map layer: ",layer);
+          //   //return layer.feature.properties.BINOMIAL;
+          //   let url: string = layer.feature.properties.imageURL;
+          //   let label: string = layer.feature.properties.label;
+          //   if (url && url != "") {
+          //     return "<img src=" + url + ">";
+          //   } else {
+          //     return "<h2>" + label + "</h2>";
+          //   }
+          // },
+          //   { minWidth: 400, closeButton: false })
+          .addTo(this.m);
       }
     );
   }
@@ -78,6 +94,7 @@ export class MapComponent implements OnInit {
 //地图数据
 export class MapData {
   text: string;
+  imageURL: string;
   mapPath: string;
   mapCenterX: number;
   mapCenterY: number;

@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="data" class="info-container">
+  <div *ngIf="index>=0" class="info-container">
     <img class="feather-image" [src]="data.feathers[index].imageURL" />
     <h1 class="feather-title">{{ data.feathers[index].title }}</h1>
     <p class="feather-text">{{ data.feathers[index].text }}</p>

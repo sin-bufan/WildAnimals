@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalsDataService, AnimalIndexData } from '../animals-data.service';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sidemenu',
@@ -11,7 +12,8 @@ export class SidemenuComponent implements OnInit {
 
   constructor(
     private animalsDataService: AnimalsDataService,
-    private router: Router) { }
+    private router: Router,
+    private menu: MenuController) { }
 
   ngOnInit() {
     this.initMenu();
@@ -39,5 +41,8 @@ export class SidemenuComponent implements OnInit {
       this.currentAnimalName = animal.name;
       this.router.navigate(['animal', JSON.stringify(animal)]);
     }
+  }
+  close(){
+    this.menu.close();
   }
 }

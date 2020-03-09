@@ -6,7 +6,10 @@ import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router
 let this_: HomePage//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
 const SELECT_MENU_INDEX: string = "selectMenuIndex";
+const SHOW_MENU_INDEX: string = "showMenuIndex";
 const MENU_SCENE_NAME: string = "menu";
+const AUTOPLAY_COUNTDOWN: number = 500;//手动操作后回复自动播放的间隔
+const AUTOPLAY_DELAY: number = 200;//自动停止后播放间隔
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -51,7 +54,7 @@ export class HomePage {
       width: ANIMALS_SPRITE_WIDTH,
       height: ANIMALS_SPRITE_HEIGHT,
       transparent: true,
-      type: Phaser.AUTO,
+      type: Phaser.CANVAS,
       parent: 'phaser-div-menu',
       scene: [],
       audio: { disableWebAudio: true, noAudio: true }
@@ -62,6 +65,7 @@ export class HomePage {
 
     //接受传出来的消息
     eventEmitter.addListener(SELECT_MENU_INDEX, this_.gotoAnimal);
+    eventEmitter.addListener(SHOW_MENU_INDEX, this_.showAnimal);
     //返回到主页的时候重新启动menu动画
     this.router.events.subscribe(
       (event: NavigationEvent) => {
@@ -74,10 +78,17 @@ export class HomePage {
       }
     );
   }
-
+  prevAnimal() {
+    let menu: MenuScene = <MenuScene>this_.menu.scene.scenes[0];
+    menu.prevAnimal();
+  }
+  nextAnimal() {
+    let menu: MenuScene = <MenuScene>this_.menu.scene.scenes[0];
+    menu.nextAnimal();
+  }
   //跳转到章节
   gotoAnimal(index) {
-    console.info("enter animal: ", index)
+    // console.info("enter animal: ", index)
     if (index > this_.animals.length - 1) {
       index = index - this_.animals.length;
     } else if (index < 0) {
@@ -89,6 +100,19 @@ export class HomePage {
       this_.menu.scene.pause(MENU_SCENE_NAME);
     }
   }
+  //显示动物名称
+  animalName: string = "";
+  showAnimal(index) {
+    //console.info("show animal: ", index, this_.animals[index].name)
+    if (index > this_.animals.length - 1) {
+      index = index - this_.animals.length;
+    } else if (index < 0) {
+      index = index + this_.animals.length;
+    }
+    if (this_.animals[index].dataURL && this_.animals[index].dataURL != "") {
+      this_.animalName = this_.animals[index].name;
+    }
+  }
 }
 
 const PAUSE_DELAY: number = 2000;
@@ -97,7 +121,9 @@ const ANIMALS_SPRITE_HEIGHT: number = 650;
 const TOTAL_FRAME_NUM: number = 151;
 const FRAME_RATE: number = 24;
 const FRAMES_PER_ANIMAL: number = 15;//ms
-
+const HOT_AREA_R: number = 200;
+const CENTER_OFFSET_X: number = -30;
+const CENTER_OFFSET_Y: number = 15;
 let menuScene: MenuScene;
 const ANIMALS_SPRITE_URL: string = "assets/images/animalIcon.png"
 const ANIMALS_SPRITE_NAME: string = "animals"
@@ -128,6 +154,7 @@ class MenuScene extends Phaser.Scene {
     //播放动画
     this.sprite.setInteractive();
     this.sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME);
+    // menuScene.sprite.anims.play(MENU_ANIM_NAME, true, 0);
     //console.info("animation played!!!",this.animation);
     //加监听事件
     this.sprite.removeAllListeners();
@@ -137,20 +164,45 @@ class MenuScene extends Phaser.Scene {
     this.input.addListener(Phaser.Input.Events.GAMEOBJECT_POINTER_OUT, this.onMouseUpOutside);
     this.input.addListener(Phaser.Input.Events.POINTER_MOVE, this.onMouseMove);
   }
+  // autoplayCounter: number = -1;
+  skipNum: number = 0;
+  prevAnimal() {
+    menuScene.sprite.anims.playReverse(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index - 1);
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
+    menuScene.playClockwise = false;
+    //menuScene.skipNum = 1;
+  }
+  nextAnimal() {
+    menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
+    menuScene.playClockwise = true;
+  }
   //动画每帧变动时执行
+  playClockwise: boolean = true;
   press: boolean = false;//鼠标是否按下
   drag: boolean = false;//鼠标是否拖动中
   onAnimationUpdate(animation, frame, sprite) {
     // console.info(frame.index)
     if (frame.index % FRAMES_PER_ANIMAL == 0 && !menuScene.press) {
-      //console.info("animation update: ",frame.index, menuScene.press)
-      sprite.anims.pause();
-      sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME, frame.index);
+      // console.info("animation update: ", frame.index, menuScene.press);
+      if (menuScene.skipNum > 0) {
+        //跳过一个动物不停
+        menuScene.skipNum--;
+      } else {
+        sprite.anims.pause();
+        sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME, frame.index);
+        // menuScene.autoplayCounter = AUTOPLAY_DELAY;
+      }
     }
+    //进入章节
+    let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / FRAMES_PER_ANIMAL + 0.5);
+    // console.info(frame.index, animalIndex);
+    eventEmitter.emit(SHOW_MENU_INDEX, animalIndex);
   }
   //手势控制
   onMouseDown(pointer, currentlyOver) {
     //console.info("Down: ",pointer,currentlyOver,menuScene.touching);
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
     if (!menuScene.press) {
       menuScene.sprite.anims.pause();
       menuScene.press = true;
@@ -160,37 +212,47 @@ class MenuScene extends Phaser.Scene {
     }
   }
   onMouseUp(pointer, currentlyOver) {
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
     if (menuScene.press) {
-      // console.info("Up: ", pointer, menuScene.press);
-      //回复动画
-      // menuScene.sprite.anims.resume();//不使用resume，是因为会被delayedPlay函数影响
-      menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+      console.info("Up: ", pointer, currentlyOver, menuScene.press);
+      if (menuScene.playClockwise) {
+        menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+      } else {
+        menuScene.sprite.anims.playReverse(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+      }
       menuScene.press = false;
       if (!menuScene.drag) {
         //进入章节
-        let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / FRAMES_PER_ANIMAL);
-        eventEmitter.emit(SELECT_MENU_INDEX, animalIndex)
+        //let distance: number = Math.sqrt(Math.pow(pointer.x - ANIMALS_SPRITE_WIDTH / 2, 2) + Math.pow(pointer.y - ANIMALS_SPRITE_HEIGHT / 2, 2))
+        let distance: number = Math.sqrt(Math.pow(pointer.x - currentlyOver[0].x + CENTER_OFFSET_X, 2) + Math.pow(pointer.y - currentlyOver[0].y + CENTER_OFFSET_Y, 2))
+        if (distance < HOT_AREA_R) {
+          //console.log(pointer.x, pointer.y, distance)
+          let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / FRAMES_PER_ANIMAL);
+          eventEmitter.emit(SELECT_MENU_INDEX, animalIndex)
+        }
       }
       menuScene.drag = false;
     }
   }
   onMouseUpOutside(pointer) {
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
     if (menuScene.press) {
       // console.info("Up Outside: ",pointer,menuScene.press);
-      // menuScene.sprite.anims.resume();//不使用resume，是因为会被delayedPlay函数影响
-      menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
       menuScene.press = false;
       menuScene.drag = false;
     }
   }
   onMouseMove(pointer, currentlyOver) {
     //console.info("Move: ",pointer,pointer.worldX-pointer.downX,currentlyOver);
+    // menuScene.autoplayCounter = AUTOPLAY_COUNTDOWN;
     if (menuScene.press) {
       menuScene.drag = true;
       if (pointer.position.x - pointer.prevPosition.x < -1) {
+        menuScene.playClockwise = true;
         menuScene.sprite.anims.nextFrame();
       }
       else if (pointer.position.x - pointer.prevPosition.x > 1) {
+        menuScene.playClockwise = false;
         if (menuScene.sprite.anims.currentFrame.index > 1) {
           menuScene.sprite.anims.previousFrame();
         } else {
@@ -202,6 +264,34 @@ class MenuScene extends Phaser.Scene {
   }
   //4.循环刷新（16ms）
   update() {
-
+    // if (menuScene.press) { return; }
+    // if (menuScene.autoplayCounter > 0) {
+    //   console.log("count down: ",menuScene.autoplayCounter)
+    //   //倒计时状态
+    //   menuScene.autoplayCounter--;
+    //   // if (menuScene.sprite.anims.currentFrame.index % FRAMES_PER_ANIMAL != 0) {
+    //   //   if (this.playClockwise) {
+    //   //     menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+    //   //   } else {
+    //   //     menuScene.sprite.anims.playReverse(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+    //   //   }
+    //   // }
+    // } else if (menuScene.autoplayCounter == 0) {
+    //   //启动播放
+    //   console.log("start play",menuScene.autoplayCounter,menuScene,menuScene.sprite.anims.currentFrame)
+    //   menuScene.autoplayCounter = -1;
+    //   if (menuScene.playClockwise) {
+    //     menuScene.sprite.anims.play(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+    //   } else {
+    //     menuScene.sprite.anims.playReverse(MENU_ANIM_NAME, false, menuScene.sprite.anims.currentFrame.index);
+    //   }
+    // } else {
+    //   //正在播放
+    //   console.info("playing ",menuScene.sprite.anims.currentFrame.index);
+    //   if (menuScene.sprite.anims.currentFrame.index % FRAMES_PER_ANIMAL == 0 && !menuScene.press) {
+    //     menuScene.sprite.anims.pause(menuScene.sprite.anims.currentFrame);
+    //     menuScene.autoplayCounter = AUTOPLAY_DELAY;
+    //   }
+    // }
   }
 }

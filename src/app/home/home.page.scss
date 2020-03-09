@@ -8,12 +8,59 @@
   justify-content: center;
   align-items: center;
 }
-.left {
+
+.left{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+//左侧
+.title {
+  margin: 30px;
+}
+ion-list {
+  --ion-background-color: green($color: #000000);
+  ion-item {
+    padding: 10px;
+    --background-hover-opacity: 0;
+    --background-focused-opacity: 0;
+    --background-activated: white;
+    --ripple-color: white;
+  }
+}
+.item-disabled{
+  opacity: 1;
+}
+ion-radio {
+  width: 0px;
+  height: 0px;
+  margin: 0;
+}
+//右侧
+.right{
+  margin-left: -100px;
+}
+
+#phaser-div-menu {
+  width: 650px;
+  height: 650px;
+}
+.menu-control{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  left:22px;
+  bottom: 150px;
+}
+.animal-name{
+  font-size: 40px;
+  text-align: center;
+  width: 300px;
+}
+//右上
 .top-right {
   position: absolute;
   right: 10px;
@@ -22,41 +69,4 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.title {
-  margin: 30px;
-}
-
-#phaser-div-menu {
-  width: 650px;
-  height: 650px;
-  margin-left: -100px;
-}
-ion-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: drop-shadow(5px 5px 10px black);
-}
-.slide-bg {
-  position: absolute;
-}
-.slide-content {
-  position: absolute;
-}
-ion-list {
-    --ion-background-color: green($color: #000000);
-    ion-item{
-        padding: 10px;
-        --background-hover-opacity: 0;
-        --background-focused-opacity: 0;
-        --background-activated: white;
-        --ripple-color: white;
-    }
-}
-
-ion-radio {
-  width: 0px;
-  height: 0px;
-  margin: 0;
 }

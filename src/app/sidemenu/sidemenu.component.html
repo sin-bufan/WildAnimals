@@ -1,18 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title slot="start">Menu</ion-title> -->
+    <img class="menu-title" src="assets/images/menuTitle.png" />
+    <ion-buttons slot="end">
+      <ion-button class="image-button" expand="full" fill="clear">
+        <img src="assets/images/button/closeMenu.png" (click)="close()" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <img class="menu-title" src="assets/images/menuTitle.png" />
-  <ion-list>
-    <ion-menu-toggle auto-hide="false" *ngFor="let animal of animals">
+  <ion-list lines="none">
+    <ion-menu-toggle auto-hide="false" *ngFor="let animal of animals let i=index">
       <ion-item (click)="gotoAnimal(animal)">
         <ion-thumbnail class="animal-icon">
-          <img [src]="animal.imageURL"/>
+          <img [src]="animal.imageURL" />
         </ion-thumbnail>
-        <div class="animal-name-container" [ngClass]="{currentItem:animal.name===currentAnimalName}">
+        <div
+          class="animal-name-container"
+          [ngClass]="{ currentItem: animal.name === currentAnimalName }"
+        >
           <ion-label class="animal-name">
             {{ animal.name }}
           </ion-label>
           <ion-label class="animal-name2" *ngIf="animal.name2">
             {{ animal.name2 }}
           </ion-label>
+          <hr class="list-divider-line" *ngIf="i&lt;animals.length-1"/>
         </div>
       </ion-item>
     </ion-menu-toggle>

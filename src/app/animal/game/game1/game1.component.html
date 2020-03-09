@@ -1,7 +1,13 @@
 <div *ngIf="data" class="game-area">
   <!-- 游戏结束画面 -->
-  <img [hidden]="gameState!='gameCompleted'" class="game-complete" [src]="data.gameCompleteImageURL"
-    (click)="resetGame()" />
+  <div
+    [hidden]="gameState != 'gameCompleted'"
+    class="game-complete"
+    (dblclick)="resetGame()"
+  >
+    <img class="game-complete-image" [src]="data.gameCompleteImageURL" />
+    <ion-text>{{ data.gameCompleteTips }}</ion-text>
+  </div>
   <!-- 开始对话框 -->
   <div class="start-game-dialog" *ngIf="data.startDialog" [hidden]="gameState!='gameReady'">
     <ion-text class="game-intro" *ngIf="data.startDialog.intro" [innerHTML]="data.startDialog.intro"></ion-text>

@@ -8,7 +8,7 @@
       "aliasName": "别名：猫熊",
       "scientificName": "学名：Ailuropoda melanoleuca",
       "intro": "大熊猫是中国特有的珍稀动物，因为可爱的外形而深受世界各国人民的喜爱，已成为中国的象征之一。",
-      "imageURL": "assets/data/cn/05_GiantPanda/icon.png",
+      "imageURL": "assets/data/cn/05_GiantPanda/album/intro.png",
       "album": [
         {
           "imageURL": "assets/data/cn/05_GiantPanda/album/1.jpg",
@@ -88,6 +88,7 @@
     "habitat": {
       "des": "栖息环境",
       "text": "大熊猫目前主要分布在中国四川省，另外陕西，云南省也有分布。它们集中在由南向北的六大山系：秦岭、岷山、邛崃、凉山、大相岭和小相岭。",
+      "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg",
       "mapPath": "./assets/data/cn/map/",
       "mapCenterX": "36",
       "mapCenterY": "104",
@@ -113,6 +114,7 @@
         "guide": "给不同年龄的熊猫<br>称体重"
       },
       "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
+      "gameCompleteTips":"双击画面重玩游戏！",
       "gameContents": [
         {
           "question": "出生1天的大熊猫有多重？",
@@ -238,6 +240,72 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_140kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            }
+          ]
+        },
+        {
+          "question": "成年的大熊猫有多重？",
+          "questionImageURL": "assets/data/cn/05_GiantPanda/game/3.png",
+          "options": [
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-140g.png",
+              "value": "140g",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_140g.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight2-28kg.png",
+              "value": "28kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_28kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight3-80kg.png",
+              "value": "80kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_80kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight4-120kg.png",
+              "value": "120kg",
+              "answer": true,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_120kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight5-140kg.png",
+              "value": "140kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_140kg.png",
                 "spriteWidth": 800,
                 "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,

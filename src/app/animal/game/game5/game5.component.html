@@ -1,11 +1,13 @@
 <div *ngIf="data" class="game-area">
   <!-- 游戏结束画面 -->
-  <img
+  <div
     [hidden]="gameState != 'gameCompleted'"
     class="game-complete"
-    [src]="data.gameCompleteImageURL"
-    (click)="resetGame()"
-  />
+    (dblclick)="resetGame()"
+  >
+    <img class="game-complete-image" [src]="data.gameCompleteImageURL" />
+    <ion-text>{{ data.gameCompleteTips }}</ion-text>
+  </div>
   <!-- 开始对话框 -->
   <div
     class="start-game-dialog"
@@ -39,6 +41,7 @@
     }}</ion-text>
     <div *ngIf="gameOptions" class="weight-options">
       <ion-button
+        [hidden]="options.getActiveIndex() == 0"
         class="image-button"
         expand="full"
         fill="clear"
@@ -47,6 +50,7 @@
         <img src="assets/images/game/5/prevWeight.png" />
       </ion-button>
       <div>
+        <img src="assets/images/game/5/weightFrame.png" />
         <ion-slides
           #options
           [options]="slideOpts"
@@ -56,9 +60,9 @@
             <img [src]="item.imageURL" />
           </ion-slide>
         </ion-slides>
-        <img src="assets/images/game/5/weightFrame.png" />
       </div>
       <ion-button
+        [hidden]="options.getActiveIndex() == gameOptions.length - 1"
         class="image-button"
         expand="full"
         fill="clear"

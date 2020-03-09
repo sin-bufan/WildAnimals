@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
 
 import * as Phaser from 'phaser';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
@@ -16,6 +16,7 @@ const RESULT_ANIMATION_COMPLETE: string = "resultAnimComplete";
 export class Game5Component implements AfterViewInit, GameComponent {
   //数据
   _data: Game5Data;
+
   @Input()
   set data(value: Game5Data) {
     if (value != null && value.type != null) {
@@ -35,9 +36,6 @@ export class Game5Component implements AfterViewInit, GameComponent {
   ngAfterViewInit() {
     this.initGame();
   }
-  slideOpts = {
-    loop: false
-  };
   /********************************************************************************************************************/
   game: Phaser.Game;
   gameState: string = GAME_STATE.READY;
@@ -71,8 +69,22 @@ export class Game5Component implements AfterViewInit, GameComponent {
     this.gameState = GAME_STATE.PLAYING;
   }
   //选择选项
-  async selectOptionHandler(optionsSlides: IonSlides) {
-    let selectedIndex: number = await optionsSlides.getActiveIndex();
+  slideOpts = {
+    loop: true
+  };
+  async selectOptionHandler(optionSlides: IonSlides) {
+    let selectedIndex: number = await optionSlides.getActiveIndex();
+    //循环模式下activeIndex的纠正
+    if (optionSlides.options.loop) {
+      if (selectedIndex <= 0) {
+        selectedIndex = this.gameOptions.length - 1
+      } else if (selectedIndex <= this.gameOptions.length) {
+        selectedIndex = selectedIndex - 1;
+      } else {
+        selectedIndex = 0;
+      }
+    }
+    console.info(optionSlides, selectedIndex)
     this.selectWeight(this.roundNo, selectedIndex);
     this.gameOptions = undefined;
   }
@@ -93,6 +105,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
     let game5: Game5Scene = <Game5Scene>this.game.scene.scenes[0];
     game5.showRound(roundNo);
   }
+
   //选择配重
   selectWeight(roundNo: number, optionNo: number) {
     this.roundNo = roundNo;

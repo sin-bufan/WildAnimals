@@ -9,8 +9,12 @@
         <img src="assets/images/button/en_a.png" />
       </ion-button> -->
     <ion-list lines="none">
-      <ion-radio-group #language value="cn" (ionChange)="changeLanguage($event)">
-        <ion-item>
+      <ion-radio-group
+        #language
+        value="cn"
+        (ionChange)="changeLanguage($event)"
+      >
+        <ion-item [disabled]="language.value=='cn'">
           <img
             [hidden]="language.value!='cn'"
             src="assets/images/button/cn_a.png"
@@ -22,7 +26,7 @@
           />
           <ion-radio value="cn"></ion-radio>
         </ion-item>
-        <ion-item>
+        <ion-item [disabled]="language.value=='en'">
           <img
             [hidden]="language.value!='en'"
             src="assets/images/button/en_a.png"
@@ -37,7 +41,18 @@
       </ion-radio-group>
     </ion-list>
   </div>
-  <div id="phaser-div-menu"></div>
+  <div class="right">
+    <div id="phaser-div-menu"></div>
+    <div class="menu-control">
+      <ion-button class="image-button" expand="full" fill="clear">
+        <img src="assets/images/button/prevAnimal.png" (click)="prevAnimal()" />
+      </ion-button>
+      <ion-text class="animal-name">{{animalName}}</ion-text>
+      <ion-button class="image-button" expand="full" fill="clear">
+        <img src="assets/images/button/nextAnimal.png" (click)="nextAnimal()" />
+      </ion-button>
+    </div>
+  </div>
 </div>
 <!-- 右上角按钮 -->
 <div class="top-right">
