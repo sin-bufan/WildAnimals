@@ -1,13 +1,24 @@
 <ion-content>
   <img #bg *ngIf="animal" class="bg" [src]="animal.bgURL" />
-  <ion-slides *ngIf="animal" #slides [options]="slideOpts" pager="true" (ionSlideDidChange)="slidesChangeHandler($event)" 
-  (touchdown)="lockSlide($event)" (mousedown)="lockSlide($event)"
-  (touchup)="unlockSlide($event)" (mouseup)="unlockSlide($event)">
+  <ion-slides
+    *ngIf="animal"
+    #slides
+    [options]="slideOpts"
+    pager="false" scrollbar="true"
+    (ionSlideDidChange)="slidesDidChangeHandler($event)"
+    (touchdown)="lockSlide($event)"
+    (mousedown)="lockSlide($event)"
+    (touchup)="unlockSlide($event)"
+    (mouseup)="unlockSlide($event)"
+  >
     <ion-slide *ngIf="animal.intro">
       <animal-album class="content" [data]="animal.intro"></animal-album>
     </ion-slide>
     <ion-slide *ngIf="animal.feather">
-      <animal-keypoint class="content" [data]="animal.feather"></animal-keypoint>
+      <animal-keypoint
+        class="content"
+        [data]="animal.feather"
+      ></animal-keypoint>
     </ion-slide>
     <ion-slide *ngIf="animal.habitat">
       <animal-map class="content" [data]="animal.habitat"></animal-map>
@@ -19,23 +30,48 @@
       <animal-culture class="content" [data]="animal.culture"></animal-culture>
     </ion-slide>
     <ion-slide *ngIf="animal.protection">
-      <animal-timeline class="content" [data]="animal.protection"></animal-timeline>
+      <animal-timeline
+        class="content"
+        [data]="animal.protection"
+      ></animal-timeline>
     </ion-slide>
   </ion-slides>
 
-  <ion-button class="image-button left" expand="full" fill="clear" (click)="slides.slidePrev()" *ngIf="prevButtonEnabled">
+  <ion-button
+    class="image-button left"
+    expand="full"
+    fill="clear"
+    (click)="slides.slidePrev()"
+    *ngIf="prevButtonEnabled"
+  >
     <img src="assets/images/button/prevScreen.png" />
   </ion-button>
-  <ion-button class="image-button right" expand="full" fill="clear" (click)="slides.slideNext()" *ngIf="nextButtonEnabled">
+  <ion-button
+    class="image-button right"
+    expand="full"
+    fill="clear"
+    (click)="slides.slideNext()"
+    *ngIf="nextButtonEnabled"
+  >
     <img src="assets/images/button/nextScreen.png" />
   </ion-button>
 
   <div class="top-right">
     <app-bgmusic></app-bgmusic>
-    <ion-button class="image-button" expand="full" fill="clear" (click)="onHome()">
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="onHome()"
+    >
       <img src="assets/images/button/home.png" />
     </ion-button>
-    <ion-button class="image-button" expand="full" fill="clear" (click)="onMenu()">
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="onMenu()"
+    >
       <img src="assets/images/button/menu.png" />
     </ion-button>
   </div>

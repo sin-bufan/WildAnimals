@@ -28,14 +28,15 @@ export class MapComponent implements AfterViewInit {
   constructor(private animalsDataService: AnimalsDataService) { }
 
   ngAfterViewInit() {
-    // let that = this;
-    // setTimeout(() => {
-    //   if (that.m) {
-    //     that.m.invalidateSize();
-    //     // console.info(that.m.getSize())
-    //   }
-    // }, 1000)
+    let that = this;
+    setTimeout(() => {
+      if (that.m) {
+        that.m.invalidateSize();
+        // console.info(that.m.getSize())
+      }
+    }, 1000)
   }
+  slideOpts = {allowTouchMove:false,allowSlidePrev:false}
   showMap() {
     this.mapSlides.slideNext();
     this.mapSlides.lockSwipes(true);
@@ -111,37 +112,3 @@ class ExtantStatus {
   color: string;
   imageURL: string = "";
 }
-
-
-/************************************************************************************/
-
-// import {Directive, HostListener} from "@angular/core";
-
-// @Directive({
-//     selector: "[drag-stop-propagation]"
-// })
-// export class DragStopPropagation
-// {
-//   @HostListener("click", ["$event"])
-//     public onClick(event: any): void
-//     {
-//       console.info("stop click")
-//         event.stopPropagation();
-//     }
-//     @HostListener("mousedown", ["$event"])
-//     public onMouseDown(event: any): void
-//     {
-//       console.info("xxxxxxx")
-//         event.stopPropagation();
-//     }
-//     @HostListener("mousemove", ["$event"])
-//     public onMouseMove(event: any): void
-//     {
-//         event.stopPropagation();
-//     }
-//     @HostListener("mouseup", ["$event"])
-//     public onMouseUp(event: any): void
-//     {
-//         event.stopPropagation();
-//     }
-// }

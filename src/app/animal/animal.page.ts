@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, ComponentFactoryResolver, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalsDataService } from '../animals-data.service';
-import { MenuController, IonSlides } from '@ionic/angular';
+import { MenuController, IonSlides, AnimationController } from '@ionic/angular';
 import { GameDirective } from './game/game.directive';
 import { GameComponent, GameData } from './game/game.component';
 import { AlbumData } from './album/album.component';
@@ -11,10 +11,18 @@ import { CultureData } from './culture/culture.component';
 import { KeypointData } from './keypoint/keypoint.component';
 
 import { Game1Component } from './game/game1/game1.component';
+import { Game2Component } from './game/game2/game2.component';
+import { Game3Component } from './game/game3/game3.component';
+import { Game4Component } from './game/game4/game4.component';
 import { Game5Component } from './game/game5/game5.component';
+import { Game6Component } from './game/game6/game6.component';
+import { Game7Component } from './game/game7/game7.component';
+import { Game8Component } from './game/game8/game8.component';
+import { Game9Component } from './game/game9/game9.component';
+import { Game10Component } from './game/game10/game10.component';
 import { AppComponent } from '../app.component';
 
-const LOCK_SLIDE_LIST: Array<string> = ["map"]
+const LOCK_SLIDE_LIST: Array<string> = ["map","game10Circle"]
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -28,7 +36,8 @@ export class AnimalPage implements OnInit, AfterViewInit {
     private menuCtrl: MenuController,
     private render: Renderer2,
     private componentFactoryResolver: ComponentFactoryResolver,
-    private app: AppComponent) {
+    private app: AppComponent,
+    private animationCtrl: AnimationController) {
   }
 
   @ViewChild("bg", { static: false }) bg: ElementRef;
@@ -53,6 +62,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
     })
   }
   //根据slides的位置，更新背景图位置
+  lastBgLeft: number = 0;
   async updateBackground(progress = null) {
     let domWidth: number = window.innerWidth / this.app.appScale;
     let bgWidth: number = this.bg.nativeElement.width;
@@ -71,19 +81,33 @@ export class AnimalPage implements OnInit, AfterViewInit {
     } else {
       bgLeft = (domWidth - bgWidth);
     }
-
-    //console.info(domWidth,bgWidth,this.app.appScale,progress,slideNum,bgLeft)
-    this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px")
+    // this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px");
+    // console.log("transition: ", this.lastBgLeft + "px", bgLeft + "px",Math.abs(bgLeft - this.lastBgLeft))
+    if (Math.abs(bgLeft - this.lastBgLeft) > 1) {
+      // console.log("transition animation!!!")
+      const a = this.animationCtrl.create()
+        .addElement(this.bg.nativeElement)
+        .duration(Math.abs(bgLeft - this.lastBgLeft))
+        .iterations(1)
+        .fromTo('left', this.lastBgLeft + "px", bgLeft + "px");
+      await a.play();
+    } else {
+      // console.log("no transition animation!!!",bgLeft)
+      this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px");
+    }
+    this.lastBgLeft = bgLeft;
+    //console.log(this.lastBgLeft)
   }
   //更新按钮状态
   prevButtonEnabled: boolean = false;
   nextButtonEnabled: boolean = true;
-  async slidesChangeHandler(event) {
+  async slidesDidChangeHandler(event) {
     let progress
     if (!progress) {
       let swiper = await this.slides.getSwiper();
       progress = swiper.progress;
     }
+
     let slideNum = await this.slides.length();
     if (progress < 1 / (slideNum - 1)) {
       this.prevButtonEnabled = false;
@@ -100,7 +124,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
   slideOpts = {
     loop: false,
     // watchSlidesProgress:true,
-    speed:1000//按钮翻页速度
+    speed: 1000//按钮翻页速度
   }
   /*//对于loop slides
 
@@ -144,8 +168,32 @@ export class AnimalPage implements OnInit, AfterViewInit {
         case "Game1Component":
           componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game1Component);
           break;
+        case "Game2Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game2Component);
+          break;
+        case "Game3Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game3Component);
+          break;
+        case "Game4Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game4Component);
+          break;
         case "Game5Component":
           componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+          break;
+        case "Game6Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game6Component);
+          break;
+        case "Game7Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game7Component);
+          break;
+        case "Game8Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game8Component);
+          break;
+        case "Game9Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game9Component);
+          break;
+        case "Game10Component":
+          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game10Component);
           break;
       }
       let viewContainerRef = this.gameHost.viewContainerRef;
@@ -171,13 +219,14 @@ export class AnimalPage implements OnInit, AfterViewInit {
   //阻止上层的slides滑动
   lockSlide(event: Event) {
     let t: any = event.target;
-    //console.info(t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
+    console.info("lock: ",event,t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
     if (t.id && LOCK_SLIDE_LIST.indexOf(t.id) >= 0) {
-      //console.info(event, event.target);
+      console.info(event, event.target);
       this.slides.lockSwipes(true);
     }
   }
   unlockSlide(event: Event) {
+    console.info("unlock: ",event);
     this.slides.lockSwipes(false);
   }
 }

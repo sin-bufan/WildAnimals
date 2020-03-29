@@ -1,7 +1,7 @@
 <div class="container">
   <p *ngIf="data" class="map-text">{{ data.text }}</p>
   <div class="map-panel">
-    <ion-slides #mapSlides>
+    <ion-slides #mapSlides [options]="slideOpts">
       <ion-slide>
         <img [src]="data.imageURL" (click)="showMap()" />
       </ion-slide>

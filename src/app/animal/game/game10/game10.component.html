@@ -1,0 +1,45 @@
+<div *ngIf="data" class="game-area">
+  <!-- 开始对话框 -->
+  <div
+    class="start-game-dialog"
+    *ngIf="data.startDialog"
+    [hidden]="gameState != 'gameReady'"
+  >
+    <ion-text
+      class="game-intro"
+      *ngIf="data.startDialog.intro"
+      [innerHTML]="data.startDialog.intro"
+    ></ion-text>
+    <ion-text
+      class="game-guide"
+      *ngIf="data.startDialog.guide"
+      [innerHTML]="data.startDialog.guide"
+    ></ion-text>
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="startGameHandler()"
+    >
+      <img src="assets/images/button/startGame.png" />
+    </ion-button>
+  </div>
+  <!-- 游戏10 -->
+  <div
+    class="game10-content"
+    *ngIf="data.gameContents"
+    [hidden]="gameState != 'gamePlaying'"
+  >
+    <!-- 背景 -->
+    <img src="assets/images/game/10/arrow.png" />
+    <div class="game10-circle-container">
+      <img class="game10-image" [src]="monthImageURL" />
+      <img
+        #circle
+        id="game10Circle"
+        class="game10-circle"
+        src="assets/images/game/10/circle.png"
+      />
+    </div>
+  </div>
+</div>

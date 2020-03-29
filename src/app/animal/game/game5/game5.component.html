@@ -41,7 +41,6 @@
     }}</ion-text>
     <div *ngIf="gameOptions" class="weight-options">
       <ion-button
-        [hidden]="options.getActiveIndex() == 0"
         class="image-button"
         expand="full"
         fill="clear"
@@ -62,7 +61,6 @@
         </ion-slides>
       </div>
       <ion-button
-        [hidden]="options.getActiveIndex() == gameOptions.length - 1"
         class="image-button"
         expand="full"
         fill="clear"

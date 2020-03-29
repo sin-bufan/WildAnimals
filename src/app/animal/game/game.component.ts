@@ -14,6 +14,7 @@ export class GameData {
   intro: string;
   startDialog: StartGameDialog;
   gameCompleteImageURL: string;
+  gameCompleteTips: string;
 }
 
 class StartGameDialog {

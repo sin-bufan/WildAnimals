@@ -1,11 +1,12 @@
 <div class="container">
-  <div *ngIf="index>=0" class="info-container">
-    <img class="feather-image" [src]="data.feathers[index].imageURL" />
-    <h1 class="feather-title">{{ data.feathers[index].title }}</h1>
-    <p class="feather-text">{{ data.feathers[index].text }}</p>
+  
+  <div #featherInfo hidden class="feather-container">
+    <img *ngIf="index>=0" class="feather-image" [src]="data.feathers[index].imageURL" />
+    <h1 *ngIf="index>=0" class="feather-title">{{ data.feathers[index].title }}</h1>
+    <p *ngIf="index>=0" class="feather-text">{{ data.feathers[index].text }}</p>
   </div>
 
-  <div *ngIf="data" class="point-container">
+  <div #featherAnimal *ngIf="data" class="point-container">
     <img class="animal-image" [src]="data.imageURL" />
     <ion-button
       class="image-button point"
@@ -18,4 +19,5 @@
       <img src="assets/images/button/featherPoint.gif" />
     </ion-button>
   </div>
+
 </div>

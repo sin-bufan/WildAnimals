@@ -159,7 +159,8 @@
           }
         ]
       },
-      "gameCompleteImageURL": "assets/data/cn/01_Gibbon/game/gameComplete.png"
+      "gameCompleteImageURL": "assets/data/cn/01_Gibbon/game/gameComplete.png",
+      "gameCompleteTips":"双击画面重玩游戏！"
     },
     "protection": {
       "des": "保护措施",
