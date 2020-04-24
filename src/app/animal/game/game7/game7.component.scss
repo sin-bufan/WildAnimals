@@ -1,0 +1,23 @@
+@import "../game.common.scss";
+.items {
+  // display: flex;
+  // flex-direction: row;
+  // align-items: flex-end;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  width: 560px;
+  height: 560px;
+  game7-card {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+  }
+}
+.countdown-number {
+  font-size: 100px;
+  color: red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GibbonData } from '../game1.component';
 
 @Component({
   selector: 'game1-gibbon',
@@ -12,4 +11,12 @@ export class GibbonComponent implements OnInit {
 
   ngOnInit() {}
 
+}
+
+export class GibbonData {
+  name: string;
+  gender: string;
+  imageURL: string;
+  selected: boolean = false;
+  disabled: boolean = false;
 }

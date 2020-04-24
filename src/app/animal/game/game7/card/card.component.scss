@@ -1,0 +1,13 @@
+.card-container {
+  width: fit-content;
+  height: fit-content;
+  // transform-style: preserve-3d;
+  // perspective:500px;
+  // -webkit-perspective:150; /* Safari and Chrome */
+}
+img {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  transform-style: preserve-3d;
+}

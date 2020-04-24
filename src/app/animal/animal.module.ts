@@ -26,6 +26,7 @@ import { Game9Component } from './game/game9/game9.component';
 import { Game10Component } from './game/game10/game10.component';
 import { GameDirective } from './game/game.directive';
 import { GibbonComponent } from './game/game1/gibbon/gibbon.component';
+import { CardComponent } from './game/game7/card/card.component';
 const routes: Routes = [
   {
     path: '',
@@ -61,7 +62,8 @@ const routes: Routes = [
     Game8Component,
     Game9Component,
     Game10Component,
-    GibbonComponent
+    GibbonComponent,
+    CardComponent
   ],
   entryComponents: [
     PhotoComponent,

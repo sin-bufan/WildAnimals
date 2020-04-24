@@ -4,12 +4,20 @@
   height: 768px;
 }
 .game-complete {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .game-complete-image {
+    width: fit-content;
+    height: fit-content;
+  }
+  ion-text{
+    color: red;
+  }
 }
 
 .start-game-dialog {
@@ -40,6 +48,8 @@
 
 .game-content {
   position: absolute;
+  width: fit-content;
+  height: fit-content;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

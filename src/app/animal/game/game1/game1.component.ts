@@ -4,7 +4,7 @@ import { AnimationController } from '@ionic/angular';
 import { Animation } from '@ionic/core';
 
 import { shuffle } from 'lodash';
-
+import { GibbonData } from './gibbon/gibbon.component';
 @Component({
   selector: 'animal-game1',
   templateUrl: './game1.component.html',
@@ -173,12 +173,5 @@ class MatchGameData {
 class CatalogData {
   name: string;
   items: Array<GibbonData>;
-}
-export class GibbonData {
-  name: string;
-  gender: string;
-  imageURL: string;
-  selected: boolean = false;
-  disabled: boolean = false;
 }
 

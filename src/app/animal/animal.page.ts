@@ -219,14 +219,14 @@ export class AnimalPage implements OnInit, AfterViewInit {
   //阻止上层的slides滑动
   lockSlide(event: Event) {
     let t: any = event.target;
-    console.info("lock: ",event,t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
+    //console.info("lock: ",event,t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
     if (t.id && LOCK_SLIDE_LIST.indexOf(t.id) >= 0) {
       console.info(event, event.target);
       this.slides.lockSwipes(true);
     }
   }
   unlockSlide(event: Event) {
-    console.info("unlock: ",event);
+    //console.info("unlock: ",event);
     this.slides.lockSwipes(false);
   }
 }

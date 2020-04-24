@@ -92,18 +92,24 @@
       "mapPath": "./assets/data/cn/map/",
       "mapCenterX": "36",
       "mapCenterY": "104",
-      "mapMaxZoom": "8",
-      "mapMinZoom": "2",
-      "mapDefaultZoom": "6",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
       "habitatGeoJsonURL": "./assets/data/cn/05_GiantPanda/map/habitat.json",
       "habitatLegend": [
         {
           "code": 1,
           "label": "EXTANT (RESIDENT)",
           "color": "orange",
+          "alpha": 0.8,
           "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg"
         },
-        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple",
+          "alpha": 0.1
+        }
       ]
     },
     "habits": {
@@ -113,8 +119,8 @@
         "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。",
         "guide": "给不同年龄的熊猫<br>称体重"
       },
-      "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
-      "gameCompleteTips":"双击画面重玩游戏！",
+      "gameCompleteImageURL": "assets/data/cn/05_GiantPanda/game/gameComplete.png",
+      "gameCompleteTips": "双击画面重玩游戏！",
       "gameContents": [
         {
           "question": "出生1天的大熊猫有多重？",

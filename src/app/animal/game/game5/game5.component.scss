@@ -54,19 +54,3 @@
     }
   }
 }
-.game-complete {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .game-complete-image {
-    width: fit-content;
-    height: fit-content;
-  }
-  ion-text{
-    color: red;
-  }
-}

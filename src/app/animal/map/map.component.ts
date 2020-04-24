@@ -2,6 +2,11 @@ import { Component, AfterViewInit, Input, ChangeDetectorRef, ViewChild } from '@
 import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
 import { IonSlides } from '@ionic/angular';
+//地图限制区域
+const CORNER_1 = L.latLng(10, 70);
+const CORNER_2 = L.latLng(60, 140);
+const MAP_BOUNDS = L.latLngBounds(CORNER_1, CORNER_2);
+
 @Component({
   selector: 'animal-map',
   templateUrl: './map.component.html',
@@ -49,13 +54,15 @@ export class MapComponent implements AfterViewInit {
     if (container != null) {
       container._leaflet_id = null;
     }
-    this.m = L.map('map').setView([mapData.mapCenterX, mapData.mapCenterY], 5);
-    //加入瓦片地图
-    L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png', {
+    this.m = L.map('map', {
       attributionControl: false,
       minZoom: mapData.mapMinZoom,
-      maxZoom: mapData.mapMaxZoom
-    }).addTo(this.m);
+      maxZoom: mapData.mapMaxZoom,
+      maxBounds: MAP_BOUNDS 
+  }).setView([mapData.mapCenterX, mapData.mapCenterY],mapData.mapDefaultZoom);
+    //加入瓦片地图
+    L.tileLayer(mapData.mapPath + '{z}/{x}/{y}.png').addTo(this.m);
+    
     //加入现状分布图层
     this.animalsDataService.getGEOJSON(mapData.habitatGeoJsonURL).subscribe(
       (data) => {
@@ -71,7 +78,7 @@ export class MapComponent implements AfterViewInit {
                 }
               }
             });
-            return { stroke: false, opacity: 0.5, fillOpacity: 0.4, color: feature.properties.color };
+            return { stroke: false, fillOpacity: 0.7, color: feature.properties.color };
           }
         })
           //点击热区后弹出图文popup（放缩后有错位问题）
