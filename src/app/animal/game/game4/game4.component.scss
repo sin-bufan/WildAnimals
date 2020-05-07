@@ -1,0 +1,26 @@
+@import "../game.common.scss";
+.game-content{
+    top: 70%;
+}
+.items {
+  width: 640px;
+  height: 360px;
+  game4-rock {
+    position: absolute;
+    width: 160px;
+    height: 120px;
+  }
+}
+.counter-container {
+  position: absolute;
+  left: -160px;
+  top: -300px;
+}
+.counter {
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}

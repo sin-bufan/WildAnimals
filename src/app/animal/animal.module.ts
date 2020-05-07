@@ -27,6 +27,7 @@ import { Game10Component } from './game/game10/game10.component';
 import { GameDirective } from './game/game.directive';
 import { GibbonComponent } from './game/game1/gibbon/gibbon.component';
 import { CardComponent } from './game/game7/card/card.component';
+import { RockComponent } from './game/game4/rock/rock.component';
 const routes: Routes = [
   {
     path: '',
@@ -63,7 +64,8 @@ const routes: Routes = [
     Game9Component,
     Game10Component,
     GibbonComponent,
-    CardComponent
+    CardComponent,
+    RockComponent
   ],
   entryComponents: [
     PhotoComponent,
@@ -77,8 +79,7 @@ const routes: Routes = [
     Game7Component,
     Game8Component,
     Game9Component,
-    Game10Component,
-    GibbonComponent
+    Game10Component
   ]
 })
 export class AnimalPageModule { }

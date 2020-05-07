@@ -1,7 +1,7 @@
 {
   "animal": {
     "name": "大熊猫",
-    "bgURL": "assets/data/cn/07_Elk/bg.jpg",
+    "bgURL": "assets/data/cn/04_GiantSalamander/bg.jpg",
     "intro": {
       "des": "总体介绍",
       "name": "大熊猫",
@@ -108,58 +108,62 @@
     },
     "habits": {
       "des": "生活习性",
-      "type": "Game7Component",
+      "type": "Game4Component",
       "startDialog": {
         "intro": "雌性麋鹿产仔之后，有单独藏匿幼鹿的习惯，幼鹿只在吃奶的时候才从藏身的草丛出来。",
         "guide": "找到躲在草丛里的<br>小麋鹿"
       },
-      "gameCompleteImageURL": "assets/data/cn/07_Elk/game/gameComplete.png",
+      "gameCompleteImageURL": "assets/data/cn/04_GiantSalamander/game/gameComplete.png",
       "gameCompleteTips": "双击画面重玩游戏！",
       "gameContents": {
         "items": [
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Elk.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_1.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_1.png",
             "answer": true
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_2.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_2.png",
+            "answer": true
+          },
+          {
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_3.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_3.png",
+            "answer": true
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_4.png",
             "answer": false
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_5.png",
             "answer": false
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_6.png",
             "answer": false
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_7.png",
             "answer": false
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_1.png",
             "answer": false
           },
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_2.png",
             "answer": false
-          },
+          }
+          ,
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_3.png",
             "answer": false
-          },
+          }
+          ,
           {
-            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
-            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_4.png",
             "answer": false
           }
         ]
