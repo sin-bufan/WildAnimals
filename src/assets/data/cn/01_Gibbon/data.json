@@ -8,7 +8,7 @@
       "aliasName": "别名：黑长臂猿、吼猴、撩梆猴、风猴",
       "scientificName": "学名：Hylobatidae",
       "intro": "长臂猿是灵长目长臂猿科动物的通称，有4属16种，因臂特别长而得名。长臂猿不是猴子，它们和猩猩家族的四种一起组成类人猿，是和人类亲缘关系最近的灵长类动物，而长臂猿的体型较其它类人猿要小得多，所以它们也被称作“小猿”。长臂猿是猿类中行动最快捷灵活的一种。中国现分布有六种长臂猿，分别是海南长臂猿、东黑冠长臂猿、西黑冠长臂猿、天行长臂猿、北白颊长臂猿和白掌长臂猿。而北白颊长臂猿、白掌长臂猿在中国的野外种群已基本消失。",
-      "imageURL": "assets/data/cn/01_Gibbon/album/intro.png",
+      "imageURL": "assets/data/cn/01_Gibbon/icon.png",
       "album": [
         {
           "imageURL": "assets/data/cn/01_Gibbon/album/1.jpg",
@@ -159,8 +159,7 @@
           }
         ]
       },
-      "gameCompleteImageURL": "assets/data/cn/01_Gibbon/game/gameComplete.png",
-      "gameCompleteTips":"双击画面重玩游戏！"
+      "gameCompleteImageURL": "assets/data/cn/01_Gibbon/game/gameComplete.png"
     },
     "protection": {
       "des": "保护措施",
@@ -168,12 +167,12 @@
         {
           "imageURL": "assets/data/cn/01_Gibbon/protection/1.jpg",
           "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/1.jpg",
-          "text": "海南长臂猿"
+          "text": "海南省霸王岭自然保护区中的原始雨林"
         },
         {
           "imageURL": "assets/data/cn/01_Gibbon/protection/2.jpg",
           "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/2.jpg",
-          "text": "天行长臂猿"
+          "text": "云南高黎贡山自然保护区"
         }
       ],
       "text": "<p>海南长臂猿：</p><p>20世纪60年代中期，长臂猿先后在海南岛6个县内绝迹。至2003年开展的海南长臂猿生存环境调查，结果只在霸王岭自然保护区残存了13只。</p><p>从2003年起，霸王岭国家级自然保护区和嘉道理农场暨植物园（KFBG）等一些环保机构展开合作，开始对海南长臂猿进行保护，在他们的资助下，2005年成立长臂猿监测队，对猿群进行持续跟踪，并种植了八万多棵海南长臂猿喜食树种，海南长臂猿的数量增加至现在的4群27只。</p><p>天行长臂猿：</p><p>从2011年开始，在中国云南的长臂猿科研团队设立并持续开展了多年的野外监测和科研工作，为长臂猿种群恢复积累经验。</p><p>2015年，中国唯一专注于长臂猿保护的公益组织“云山保护”注册成立。</p><p>2017年1月，云山保护创始人范朋飞教授及研究团队确立了高黎贡白眉长臂猿属于新物种，并命名为天行长臂猿，这是唯一一种由中国学者命名的类人猿。该物种在中国的数量不到150只，属于极度濒危，保护形势严峻。</p><p>2018年，云山保护和高黎贡山国家级自然保护区、中山大学通过共建共管高黎贡山板厂研究基地的模式，吸引社会力量参与保护中国西南地区生物多样性。</p>"

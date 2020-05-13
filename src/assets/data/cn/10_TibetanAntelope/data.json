@@ -1,107 +1,107 @@
 {
   "animal": {
-    "name": "大熊猫",
+    "name": "藏羚羊",
     "bgURL": "assets/data/cn/10_TibetanAntelope/bg.jpg",
     "intro": {
       "des": "总体介绍",
-      "name": "大熊猫",
-      "aliasName": "别名：猫熊",
-      "scientificName": "学名：Ailuropoda melanoleuca",
-      "intro": "大熊猫是中国特有的珍稀动物，因为可爱的外形而深受世界各国人民的喜爱，已成为中国的象征之一。",
-      "imageURL": "assets/data/cn/05_GiantPanda/album/intro.png",
+      "name": "藏羚羊",
+      "aliasName": "又名：藏羚、长角羊",
+      "scientificName": "学名：Pantholops hodgsonii",
+      "intro": "<p>藏羚羊是中国典型的高原动物，为中国一级保护动物，主要分布于中国以羌塘为中心的青藏高原地区（青海、西藏、新疆），少量见于印度拉达克地区。近年在中国政府和社会的广泛关注与保护下，如今藏羚羊种群数量逐渐恢复。</p><p>2008年北京奥运会吉祥物之中的福娃迎迎便是以藏羚羊为蓝本，以赞扬其能在严酷环境生存的顽强生命力，表示挑战极限的精神，更以“羊”字谐音意喻“喜气洋洋”。</p>",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/icon.png",
       "album": [
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/1.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/1.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/1.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/1.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/2.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/2.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/2.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/2.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/3.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/3.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/3.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/3.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/4.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/4.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/4.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/4.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/5.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/5.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/5.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/5.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/6.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/6.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/6.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/6.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/7.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/7.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/7.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/7.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/8.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/8.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/8.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/8.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/9.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/9.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/9.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/9.jpg"
         }
       ],
       "video": {
-        "videoURL": "assets/data/cn/05_GiantPanda/video/1.mp4",
-        "thumbURL": "assets/data/cn/05_GiantPanda/video/1.jpg"
+        "videoURL": "assets/data/cn/10_TibetanAntelope/video/1.mp4",
+        "thumbURL": "assets/data/cn/10_TibetanAntelope/video/1.jpg"
       }
     },
     "feather": {
       "des": "外形特征",
-      "imageURL": "assets/data/cn/05_GiantPanda/feather/feathers.png",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/feather/feathers.png",
       "feathers": [
         {
-          "position": { "left": "20px", "top": "120px" },
-          "title": "圆脸",
-          "text": "为了取食竹子，大熊猫演化出具有发达咬合肌的圆脸，配合粗大的臼齿，可将竹子研磨成较小的颗粒便于消化。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/1.jpg"
+          "position": {
+            "left": "200px",
+            "top": "100px"
+          },
+          "title": "皮毛",
+          "text": "为了适应青藏高原寒冷的气候和强烈的辐射，藏羚羊的皮毛非常特殊，有粗毛和绒毛之分，绒毛质地柔软，保暖性能极佳。",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/1.jpg"
         },
         {
-          "position": { "left": "60px", "top": "300px" },
-          "title": "第六指",
-          "text": "大熊猫前掌五根手指的对面斜上方有一个像拇指一样的肉垫，这就是被称作伪拇指的熊猫“第六指”。这根“第六指”，使它拥有了动物界少有的对握功能。因此，大熊猫能够更加灵活地取食竹子。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/2.jpg"
+          "position": {
+            "left": "50px",
+            "top": "20px"
+          },
+          "title": "羊角",
+          "text": "雄性藏羚羊成年后，长出一对又长又直且顶端锋利的黑色长角，几乎平行垂直向上，至角尖处，两角又相向往内稍稍弯曲，侧面远望，两角重叠，颇似一角，故有“一角羚”之称。",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/2.jpg"
         },
         {
-          "position": { "left": "220px", "top": "100px" },
-          "title": "毛色",
-          "text": "大熊猫头部和身体毛色黑白相间分明，这种黑白相间的外表，有利于隐蔽在密林的树上和积雪的地面而不易被天敌发现。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/3.jpg"
-        },
-        {
-          "position": { "left": "400px", "top": "150px" },
-          "title": "尾巴",
-          "text": "大熊猫的尾巴就像一个宽扁的坐垫，长度约10-15cm，仅次于懒熊，位居熊类第二长。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/4.jpg"
+          "position": {
+            "left": "0px",
+            "top": "80px"
+          },
+          "title": "口鼻部",
+          "text": "藏羚羊最突出的特征是吻鼻部宽阔，这种特征与牛相似。宽大的口鼻，可以帮助它在高海拔缺氧的环境下，呼吸更多的氧气。",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/3.jpg"
         }
       ]
     },
     "habitat": {
       "des": "栖息环境",
-      "text": "大熊猫目前主要分布在中国四川省，另外陕西，云南省也有分布。它们集中在由南向北的六大山系：秦岭、岷山、邛崃、凉山、大相岭和小相岭。",
-      "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg",
-      "mapPath": "./assets/data/cn/map/",
+      "text": "藏羚羊是青藏高原的特有物种，栖息于海拔4600-6000米的高山草原、草甸和高寒荒漠地带，尤其喜欢在有水源、地势平坦的草滩上活动。藏羚羊生存的地区东西相跨达到1600公里，季节性迁徙是它们重要的生态特征。母羚羊的产羔地主要在乌兰乌拉湖、卓乃湖、可可西里湖，太阳湖等地。",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/map/1.jpg",
+      "mapPath": "./assets/data/map/",
       "mapCenterX": "36",
       "mapCenterY": "104",
-      "mapMaxZoom": "8",
-      "mapMinZoom": "2",
-      "mapDefaultZoom": "6",
-      "habitatGeoJsonURL": "./assets/data/cn/05_GiantPanda/map/habitat.json",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/10_TibetanAntelope/map/habitat.json",
       "habitatLegend": [
         {
           "code": 1,
           "label": "EXTANT (RESIDENT)",
           "color": "orange",
-          "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/map/1.jpg"
         },
         { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
       ]
@@ -114,36 +114,75 @@
         "guide": "藏羚羊的一年四季"
       },
       "gameContents": [
-        {"month":"11","degree_start":0,"degree_end":15,"imageURL":"assets/data/cn/10_TibetanAntelope/game/11.png"},
-        {"month":"12","degree_start":15,"degree_end":45,"imageURL":"assets/data/cn/10_TibetanAntelope/game/12.png"},
-        {"month":"1-3","degree_start":45,"degree_end":135,"imageURL":"assets/data/cn/10_TibetanAntelope/game/1-3.png"},
-        {"month":"4-5","degree_start":135,"degree_end":195,"imageURL":"assets/data/cn/10_TibetanAntelope/game/4-5.png"},
-        {"month":"6-7","degree_start":195,"degree_end":255,"imageURL":"assets/data/cn/10_TibetanAntelope/game/6-7.png"},
-        {"month":"8-10","degree_start":255,"degree_end":345,"imageURL":"assets/data/cn/10_TibetanAntelope/game/8-10.png"},
-        {"month":"11","degree_start":345,"degree_end":360,"imageURL":"assets/data/cn/10_TibetanAntelope/game/11.png"}
-      
+        {
+          "month": "11",
+          "degree_start": 0,
+          "degree_end": 15,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+        },
+        {
+          "month": "12",
+          "degree_start": 15,
+          "degree_end": 45,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/12.png"
+        },
+        {
+          "month": "1-3",
+          "degree_start": 45,
+          "degree_end": 135,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/1-3.png"
+        },
+        {
+          "month": "4-5",
+          "degree_start": 135,
+          "degree_end": 195,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/4-5.png"
+        },
+        {
+          "month": "6-7",
+          "degree_start": 195,
+          "degree_end": 255,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/6-7.png"
+        },
+        {
+          "month": "8-10",
+          "degree_start": 255,
+          "degree_end": 345,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/8-10.png"
+        },
+        {
+          "month": "11",
+          "degree_start": 345,
+          "degree_end": 360,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+        }
       ]
     },
     "protection": {
       "des": "保护措施",
       "album": [
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/1.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/1.jpg",
-          "text": "四川马边：红外相机拍到的野生大熊猫。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/1.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/1.jpg",
+          "text": "西藏阿里出现藏羚羊大规模迁徙"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/2.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/2.jpg",
-          "text": "中国大熊猫保护研究中心雅安碧峰峡基地，17只新生熊猫宝宝集合在幼儿园，集体向公众问好。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/2.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/2.jpg",
+          "text": "青藏铁路边的藏羚羊"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/3.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/3.jpg",
-          "text": "2018年12月27日，中国大熊猫保护研究中心在都江堰市龙溪—虹口国家级自然保护区将两只人工圈养繁殖的大熊猫放归大自然。"
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/3.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/3.jpg",
+          "text": "藏羚羊安全通过青藏公路赴卓乃湖产仔"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/4.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/4.jpg",
+          "text": "世界海拔最高的动物救护中心工作人员在救治藏羚羊"
         }
       ],
-      "text": "<p>1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。</p><p>1970年代，中国又建立了6个大熊猫保护区。</p><p>1990年代，中国开始实施大熊猫保护工程，预算3亿元人民币投入对大熊猫及其栖息地的保护，该项工程的实施使大熊猫栖息地得到了有力的保护，为大熊猫数量及栖息地的扩展创造了条件。</p><p>1997年以来，在世界自然基金会(WWF)和德国政府的支持下，四川省开展了大熊猫保护与周边社区发展项目试点。</p><p>2015年2月28日第四次野生大熊猫种群数量调查显示中国野生大熊猫数量达到1864只，相比十年前的第三次调查增加了近17%。</p><p>2016年9月，国际自然保护联盟（IUCN）发表报告将大熊猫濒危等级由“濒危”降为“易危”。"
+      "text": "<p>1981年中国加入《濒危野生动植物种国际贸易公约》，严格禁止一切贸易性出口藏羚羊及其产品的活动。1988年，藏羚羊确定为中国国家一级保护野生动物，严禁非法猎捕。1999年中国西宁藏羚羊保护及贸易控制国际研讨会上正式发布了关于藏羚羊保护及贸易控制的《西宁宣言》，标志着国际间合作打击盗猎藏羚羊、制止藏羚羊绒制品非法国际贸易活动的局面初步形成，这对保护藏 羚羊资源将起到极大的促进作用。中国政府在藏羚羊重要分布区先后划建了青海可可西里国家级自然保护区、新疆阿尔金山国家级自然保护区、西藏羌塘自然保护区等多处自然保护区，成立了专门保护管理机构和执法队伍，定期进行巡山和对藏羚羊种群活动实施监测。2016年9月，世界自然保护联盟(IUCN) 将藏羚羊从“濒危”降为“近危”。</p><p>天路与藏羚羊的迁徙之路</p><p>为了西藏地区社会经济发展和各民族生活水平的提高，中国政府先后修筑了青藏公路和青藏铁路，因其海拔之高而被称作“天路”。然而天路也不可避免的对生态环境造成了切割，对藏羚羊的迁徙产生了一定影响，比如迁徙时间的推迟等。为此青藏铁路设计施工中首次引用了野生动物通道，全程共设33处动物通道。观察研究表明随着时间的推移，藏羚羊对通道的适应性在逐步提高，野生动物通道的设置对这些高原生命起到了积极的作用。</p>"
     }
   }
 }

@@ -1,0 +1,141 @@
+{
+  "animal": {
+    "name": "雪豹",
+    "bgURL": "assets/data/cn/09_SnowLeopard/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "雪豹",
+      "aliasName": "",
+      "scientificName": "学名：Panther uncia",
+      "intro": "雪豹是一种典型的生活在高山与亚高山带的大型猫科动物， 全身灰白色，布满黑斑，分布在中国西部广大地区，由于其常在雪线附近和雪地间活动，故名“雪豹”。",
+      "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/1.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/2.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/3.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/4.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/5.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/6.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/7.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/8.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/9.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/09_SnowLeopard/video/1.mp4",
+        "thumbURL": "assets/data/cn/09_SnowLeopard/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/09_SnowLeopard/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "50px",
+            "top": "50px"
+          },
+          "title": "头部",
+          "text": "雪豹隆起的头骨和扩大的鼻腔可以加热、湿润高原干燥寒冷的空气，同时加大每次呼吸量；血液中又小又多的红细胞则能更有效地在高海拔地区吸收氧气。",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "30px",
+            "top": "100px"
+          },
+          "title": "喉骨",
+          "text": "狮、虎这类大型猫科动物都是食物链顶端的猎手，它们不仅拥有凶猛的外表，还能发出霸气的咆哮。然而同样作为食物链顶端的大型猫科动物，雪豹却由于喉骨硬化而没法发出那样的咆哮。它们可以发出嘘声、喵声、低吼声、甚至是很像人大哭的声音，但就是不能大声咆哮，少了几分王者之气。",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "200px",
+            "top": "200px"
+          },
+          "title": "体毛",
+          "text": "为了抵御山区及冬日的严寒，与其他猫科动物相比雪豹的毛长而浓密，肚子上的冬毛甚至可以长到12cm。",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "雪豹是高原地区的岩栖性的动物，经常在永久冰雪高山裸岩及寒漠带的环境中活动。中国是雪豹最主要的栖息地，占到全球雪豹分布面积的60%以上。青海、西藏、新疆、甘肃、四川、云南和内蒙古均有雪豹分布。",
+      "imageURL": "assets/data/cn/09_SnowLeopard/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/09_SnowLeopard/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange",
+          "imageURL": "assets/data/cn/09_SnowLeopard/map/1.jpg"
+        },
+        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+      ]
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game9Component",
+      "startDialog": {
+        "intro": "<p>通常人们认为雪豹只生活在高海拔的高山地区，通过科学家近年来的观察，雪豹有时也出现在低海拔地区，与豹的分布范围相互重叠，形成竞争关系。</p><p>雪豹行动敏捷机警，动作灵活，善于跳跃，白天很少出来，具有夜行性，昼伏夜出。晨昏时分是雪豹的活动高峰，它们会选择在这个时间段开展捕猎及社交活动。</p>",
+        "guide": "帮雪豹回家<br />（晨昏时分是雪豹的活动高峰）"
+      },
+      "gameContents": {},
+      "gameCompleteImageURL": "assets/data/cn/09_SnowLeopard/game/gameComplete.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/1.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/1.jpg",
+          "text": "西藏申扎县红外相机拍摄到的雪豹。"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/2.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/2.jpg",
+          "text": "在祁连山海拔3500米的地方拍摄到的雪豹。"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/3.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/3.jpg",
+          "text": "2017年6月，中国唯一雪豹人工繁育基地——青藏高原野生动物园育活的首只雪豹满一岁。"
+        }
+      ],
+      "text": "<p>1989年，中国政府将雪豹列为国家一级保护野生动物，依法实施拯救和保护。</p><p>目前，中国已经建立雪豹相关自然保护区26个，总面积约625560平方公里，约占雪豹现实分布区的60%，构成了最基本的雪豹保护与监测网络，并开展栖息地巡护，遏制非法猎捕等行为，对维护雪豹种群及其栖息地安全发挥着重要的作用。</p><p>2018年7月19日，从“与豹同行”国际雪豹金钱豹研究与保护论坛获悉，位于青海省南部的三江源地区全境估算现存雪豹数量或已超过1000只，被学界公认为世界雪豹连片分布最集中的区域之一。</p>"
+    }
+  }
+}

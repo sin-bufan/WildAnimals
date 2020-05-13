@@ -1,0 +1,132 @@
+{
+  "animal": {
+    "name": "东北虎",
+    "bgURL": "assets/data/cn/02_ManchurianTiger/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "东北虎",
+      "aliasName": "别名：西伯利亚虎，阿穆尔虎",
+      "scientificName": "学名：Panthera tigris altaica",
+      "intro": "东北虎为东北亚大型猫科动物，是现存体重最大的肉食性猫科动物。头大而圆，前额上的数条黑色横纹，中间常被串通，极似汉字“王”字，故有“丛林之王”之美称。生性内向，多疑而凶猛，动作敏捷，在丛林中出没无常，一般人很难亲眼目睹野生的西伯利亚虎。",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/1.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/2.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/3.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/4.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/5.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/6.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/7.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/8.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/9.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/02_ManchurianTiger/video/1.mp4",
+        "thumbURL": "assets/data/cn/02_ManchurianTiger/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "100px",
+            "top": "100px"
+          },
+          "title": "皮毛",
+          "text": "东北虎的毛色为锈黄色带黑色横条纹，冬毛比夏毛更长、更软、更浓密，但颜色暗淡。全身布满黑色的条纹，前额上的黑色横纹中间略相串通，形似汉字“王”字。",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "200px",
+            "top": "200px"
+          },
+          "title": "体型",
+          "text": "为了适应严寒的天气，东北虎演化成九个虎亚种中体型最大的亚种，雄虎的体型大于雌虎，最大的个体体重可达三百公斤，体长近两米。",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "20px",
+            "top": "20px"
+          },
+          "title": "舌头",
+          "text": "东北虎的舌头和其他猫科动物结构相同，可长到30厘米，正面皮肤布满角质化的倒刺，像锉刀一样非常坚硬有力，能将骨头上的残肉舔食得干干净净，还可以起到清洁皮毛、抚慰幼仔和调节体温的作用。",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "中国境内的东北虎主要分布在与俄罗斯接壤的珲春地区，平日栖息在针阔混交和寒带森林中。在这些地区，夏季一般比较温和，冬季严寒，覆盖有很厚的雪层。",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/02_ManchurianTiger/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg"
+        },
+        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+      ]
+    },
+    "habits": {
+      "des": "文化象征",
+      "type": "Game2Component",
+      "startDialog": {
+        "intro": "中国古代对虎的形象十分崇拜，特别是在军事上，统治者传达军事命令、征调兵将以及用于各项事务的凭证，就称为虎符。虎符剖为左右两半，右边留存于朝廷，左半交地方官吏或统兵将帅保管，使用时两半相合，即为“符合”，表示命令验证可信。",
+        "guide": "拼出相同图案的虎符<br>调动援军保卫城池"
+      },
+      "gameCompleteImageURL":"assets/data/cn/02_ManchurianTiger/game/gameComplete.png",
+      "gameContents": [
+      ]
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/protection/1.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/protection/thumb/1.jpg",
+          "text": "位于黑龙江省牡丹江市海林市的横道河子东北虎林园，是世界最大的东北虎繁育饲养基地。"
+        }
+      ],
+      "text": "<p>东北虎数量一度锐减，保护东北虎及其自然生态环境已上升到中国的国家发展战略，随着保护力度升级，中国境内东北虎种群数量正在稳步回升。</p><p>1993年5月29日，中国政府颁布《关于禁止犀牛角和虎骨贸易的通知》中严禁进出口虎骨；禁止出售、收购、运输、携带、邮寄虎骨；取消虎骨药用标准，禁止用虎骨制药。中国曾是世界上虎制品需求最大的国家，中国政府颁布的这一禁令遏制了市场需求，有效地防止了野生老虎的灭绝。</p><p>2001年12月，吉林珲春东北虎自然保护区成立，3年后成功升级为国家级自然保护区。</p><p>2017年，中国政府在吉林、黑龙江两省交界的广袤区域成立东北虎豹国家公园，占地面积1.46万平方公里。比中国原有的虎豹保护区加起来还大很多。根据《吉林省野生东北虎和东北豹重大生态保护工程规划》，到2025年中国政府将在长白山区形成面积逾2万平方公里的虎豹分布区。</p>"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "animal": {
+    "name": "普氏野马",
+    "bgURL": "assets/data/cn/08_PrzewalskisHorse/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "普氏野马",
+      "aliasName": "又名：蒙古野马、亚洲野马",
+      "scientificName": "学名：Equus przewalskii",
+      "intro": "普氏野马是地球上最后的野马，被世人称为活化石，世界级明星保护物种。普氏野马曾一度因环境变化在中国境内消失，上世纪八十年代中国与国际社会合作，将其引入中国进行人工饲养，并于2001年成功野放。",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/1.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/2.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/3.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/4.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/5.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/6.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/7.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/8.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/9.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/08_PrzewalskisHorse/video/1.mp4",
+        "thumbURL": "assets/data/cn/08_PrzewalskisHorse/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "180px",
+            "top": "380px"
+          },
+          "title": "体型",
+          "text": "普氏野马是大型食草动物，体型健硕，成体体长220-280cm，肩高120cm以上，体重约300Kg。",
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "270px",
+            "top": "480px"
+          },
+          "title": "皮毛",
+          "text": "野马体毛为棕黄色，向腹部渐变为黄白色，四肢、鬃毛、尾巴及口鼻前端都呈黑色加上直立的鬃毛，在野外很好辨认。鬃毛短硬，呈黑色，逆生直立，不同于家马的鬃毛垂于颈两侧；马尾呈束状，区别于家马自上而下的长毛。",
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/2.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "化石证据表明，普氏野马曾经广泛分布于欧亚大陆。在中国，其活动范围从新疆西部直到台湾海峡。随着气候的变化和人类活动的影响，普氏野马分布区域逐渐缩小，局限在中国新疆准噶尔盆地北塔山及甘肃、内蒙古交界的马鬃山一带的荒漠、戈壁和草原环境中。它们首选山脊地带生活，其次会选择草地，一年中有些时间它们也会在丘陵地带生活。",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/08_PrzewalskisHorse/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange",
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/map/1.jpg"
+        },
+        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+      ]
+    },
+    "habits": {
+      "des": "生活习性（游戏数据是长臂猿）",
+      "type": "Game8Component",
+      "startDialog": {
+        "intro": "普氏野马机警、善奔驰，一般由强壮的雄马为首领，5-20只结成马群，生活在开阔的戈壁荒漠或沙漠地带。群体中的个体之间在进食之后常互相清理皮肤，一般呈相反方向站立，然后将头伸到同伴的侧身，轻轻地啃噬对方的耆甲、肩部、背侧、臀部等。有趣的是双方啃噬的都是同一个部位，当一方改变部位时，另一方立即相应地改变，配合十分默契。",
+        "guide": "感受普氏野马之间的默契"
+      },
+      "gameContents": {
+      },
+      "gameCompleteImageURL": "assets/data/cn/08_PrzewalskisHorse/game/gameComplete.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/protection/1.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/protection/thumb/1.jpg",
+          "text": "新疆卡拉麦里野放的普氏野马"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/protection/2.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/protection/thumb/2.jpg",
+          "text": "甘肃敦煌境内近距离拍摄到的普氏野马种群"
+        }
+      ],
+      "text": "<p>1985年在新疆吉木萨尔县建立了中国第一个普氏野马繁育中心，随后又相继在中国甘肃的武威和安西建立了两个普氏野马繁殖中心，到2007年12月，新疆吉木萨尔县所繁育野马数量超过200匹，武威和安西两地繁育的野马数量也超过百匹。目前世界共有普氏野马1000多匹，中国境内的普氏野马超过400匹。</p><p>2001年8月，中国在新疆卡拉麦里山自然保护区首次开展普氏野马野放工作，之后数年，保护区工作人员攻克一道又一道难关，使野化放生的野马超过百匹。如今，普氏野马在世界自然保护联盟名录中的保护状态已经从“野外灭绝”恢复为“濒危”。</p>"
+    }
+  }
+}

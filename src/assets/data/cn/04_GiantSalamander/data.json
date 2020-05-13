@@ -1,107 +1,94 @@
 {
   "animal": {
-    "name": "大熊猫",
+    "name": "大鲵",
     "bgURL": "assets/data/cn/04_GiantSalamander/bg.jpg",
     "intro": {
       "des": "总体介绍",
-      "name": "大熊猫",
-      "aliasName": "别名：猫熊",
-      "scientificName": "学名：Ailuropoda melanoleuca",
-      "intro": "大熊猫是中国特有的珍稀动物，因为可爱的外形而深受世界各国人民的喜爱，已成为中国的象征之一。",
-      "imageURL": "assets/data/cn/05_GiantPanda/album/intro.png",
+      "name": "大鲵",
+      "aliasName": "又名：娃娃鱼",
+      "scientificName": "学名：Andrias davidianus",
+      "intro": "中国大鲵是世界上现存体型最大的两栖动物，是中国特有的珍稀物种，生活在淡水中，因其叫声酷似婴儿啼哭，故俗称娃娃鱼。这种古老的生物可以追溯到1.7亿年前。中国大鲵被列为国家二级重点保护野生动物，是中国的国宝之一。",
+      "imageURL": "assets/data/cn/04_GiantSalamander/icon.png",
       "album": [
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/1.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/1.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/1.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/1.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/2.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/2.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/2.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/2.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/3.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/3.jpg",
-          "text": "1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/3.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/3.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/4.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/4.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/4.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/4.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/5.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/5.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/5.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/5.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/6.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/6.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/6.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/6.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/7.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/7.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/7.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/7.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/8.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/8.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/8.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/8.jpg"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/album/9.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/album/thumb/9.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/9.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/9.jpg"
         }
-      ],
-      "video": {
-        "videoURL": "assets/data/cn/05_GiantPanda/video/1.mp4",
-        "thumbURL": "assets/data/cn/05_GiantPanda/video/1.jpg"
-      }
+      ]
     },
     "feather": {
       "des": "外形特征",
-      "imageURL": "assets/data/cn/05_GiantPanda/feather/feathers.png",
+      "imageURL": "assets/data/cn/04_GiantSalamander/feather/feathers.png",
       "feathers": [
         {
           "position": { "left": "20px", "top": "120px" },
-          "title": "圆脸",
-          "text": "为了取食竹子，大熊猫演化出具有发达咬合肌的圆脸，配合粗大的臼齿，可将竹子研磨成较小的颗粒便于消化。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/1.jpg"
+          "title": "大嘴",
+          "text": "大鲵的头部宽扁，口大致呈半圆形。猎物游至其身边时，大鲵会使用它的大嘴发动致命一击，整个吞下毫无察觉的猎物。",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/1.jpg"
         },
         {
-          "position": { "left": "60px", "top": "300px" },
-          "title": "第六指",
-          "text": "大熊猫前掌五根手指的对面斜上方有一个像拇指一样的肉垫，这就是被称作伪拇指的熊猫“第六指”。这根“第六指”，使它拥有了动物界少有的对握功能。因此，大熊猫能够更加灵活地取食竹子。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/2.jpg"
+          "position": { "left": "60px", "top": "360px" },
+          "title": "小眼",
+          "text": "大鲵的眼位于头部两侧位，眼间隔宽而平坦，无眼睑。",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/2.jpg"
         },
         {
-          "position": { "left": "220px", "top": "100px" },
-          "title": "毛色",
-          "text": "大熊猫头部和身体毛色黑白相间分明，这种黑白相间的外表，有利于隐蔽在密林的树上和积雪的地面而不易被天敌发现。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/3.jpg"
-        },
-        {
-          "position": { "left": "400px", "top": "150px" },
-          "title": "尾巴",
-          "text": "大熊猫的尾巴就像一个宽扁的坐垫，长度约10-15cm，仅次于懒熊，位居熊类第二长。",
-          "imageURL": "assets/data/cn/05_GiantPanda/feather/4.jpg"
+          "position": { "left": "250px", "top": "100px" },
+          "title": "皮肤",
+          "text": "大鲵皮肤湿软粘滑，皮肤的颜色多样，以褐色、浅棕色、红棕色或暗黑色为底色，杂以深浅不一的斑纹，体色时常会根据外界环境的改变而发生变化。",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/3.jpg"
         }
       ]
     },
     "habitat": {
       "des": "栖息环境",
-      "text": "大熊猫目前主要分布在中国四川省，另外陕西，云南省也有分布。它们集中在由南向北的六大山系：秦岭、岷山、邛崃、凉山、大相岭和小相岭。",
-      "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg",
-      "mapPath": "./assets/data/cn/map/",
+      "text": "大鲵对地质、地貌、水质等均有较高要求，被誉为优良生态环境的“指示生物”，集中分布于中国的黄河、长江及珠江流域。",
+      "imageURL": "assets/data/cn/04_GiantSalamander/map/1.jpg",
+      "mapPath": "./assets/data/map/",
       "mapCenterX": "36",
       "mapCenterY": "104",
-      "mapMaxZoom": "8",
-      "mapMinZoom": "2",
-      "mapDefaultZoom": "6",
-      "habitatGeoJsonURL": "./assets/data/cn/05_GiantPanda/map/habitat.json",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/04_GiantSalamander/map/habitat.json",
       "habitatLegend": [
         {
           "code": 1,
           "label": "EXTANT (RESIDENT)",
           "color": "orange",
-          "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg"
+          "imageURL": "assets/data/cn/04_GiantSalamander/map/1.jpg"
         },
         { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
       ]
@@ -110,8 +97,8 @@
       "des": "生活习性",
       "type": "Game4Component",
       "startDialog": {
-        "intro": "雌性麋鹿产仔之后，有单独藏匿幼鹿的习惯，幼鹿只在吃奶的时候才从藏身的草丛出来。",
-        "guide": "找到躲在草丛里的<br>小麋鹿"
+        "intro": "",
+        "guide": "大鲵"
       },
       "gameCompleteImageURL": "assets/data/cn/04_GiantSalamander/game/gameComplete.png",
       "gameCompleteTips": "双击画面重玩游戏！",
@@ -173,22 +160,22 @@
       "des": "保护措施",
       "album": [
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/1.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/1.jpg",
-          "text": "四川马边：红外相机拍到的野生大熊猫。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/1.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/1.jpg",
+          "text": "位于湖南张家界的大鲵国家级自然保护区"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/2.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/2.jpg",
-          "text": "中国大熊猫保护研究中心雅安碧峰峡基地，17只新生熊猫宝宝集合在幼儿园，集体向公众问好。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/2.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/2.jpg",
+          "text": "江西上饶山涧溪流发现的特大野生大鲵"
         },
         {
-          "imageURL": "assets/data/cn/05_GiantPanda/protection/3.jpg",
-          "thumbURL": "assets/data/cn/05_GiantPanda/protection/thumb/3.jpg",
-          "text": "2018年12月27日，中国大熊猫保护研究中心在都江堰市龙溪—虹口国家级自然保护区将两只人工圈养繁殖的大熊猫放归大自然。"
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/3.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/3.jpg",
+          "text": "贵州贵定县人工饲养的野生大鲵"
         }
       ],
-      "text": "<p>1960年代，四川省建立了4个以保护大熊猫为主的自然保护区。</p><p>1970年代，中国又建立了6个大熊猫保护区。</p><p>1990年代，中国开始实施大熊猫保护工程，预算3亿元人民币投入对大熊猫及其栖息地的保护，该项工程的实施使大熊猫栖息地得到了有力的保护，为大熊猫数量及栖息地的扩展创造了条件。</p><p>1997年以来，在世界自然基金会(WWF)和德国政府的支持下，四川省开展了大熊猫保护与周边社区发展项目试点。</p><p>2015年2月28日第四次野生大熊猫种群数量调查显示中国野生大熊猫数量达到1864只，相比十年前的第三次调查增加了近17%。</p><p>2016年9月，国际自然保护联盟（IUCN）发表报告将大熊猫濒危等级由“濒危”降为“易危”。"
+      "text": "<p>中国大鲵于1988年被列为国家二级保护动物，而世界自然保护联盟（IUCN）濒危物种红色名录将其濒危等级评定为极危（CR）。</p><p>自1996年湖南张家界建立第一个大鲵自然保护区开始至今，中国已建立以大鲵为重点保护物种的自然保护区26个。</p><p>20世纪70年代，中国就开始了大鲵人工养殖的研究工作，到1987年，中国进行集约式养殖研究获得成功，开创了大鲵养殖新局面。现在人工养殖的大鲵已经重返野外，大鲵的野外放生工作正在各地积极的展开。/p>"
     }
   }
 }

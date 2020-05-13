@@ -1,0 +1,169 @@
+{
+  "animal": {
+    "name": "丹顶鹤",
+    "bgURL": "assets/data/cn/03_Red-crownedCranes/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "丹顶鹤",
+      "aliasName": "",
+      "scientificName": "学名：Grus japonensis",
+      "intro": "丹顶鹤是最濒危的一种鹤类，属中国国家一级保护动物。丹顶鹤在中国和日本等国有着深厚的文化内涵，是吉祥的象征。",
+      "imageURL": "assets/data/cn/03_Red-crownedCranes/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/1.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/2.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/3.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/4.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/5.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/6.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/7.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/8.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/album/9.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/03_Red-crownedCranes/video/1.mp4",
+        "thumbURL": "assets/data/cn/03_Red-crownedCranes/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/03_Red-crownedCranes/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "0px",
+            "top": "0px"
+          },
+          "title": "丹顶",
+          "text": "丹顶鹤的“丹顶”指的是头部裸露的赤红色皮肤，这片红色的皮肤在繁殖季会变得更加鲜艳。",
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "100px",
+            "top": "100px"
+          },
+          "title": "羽毛",
+          "text": "成年丹顶鹤整体为纯白色，颈部以上除枕部外为黑色，黑色的飞羽收起时像是形成了黑色的尾巴，但真正的尾羽是白色的。丹顶鹤每年在繁殖季结束后换羽一次。换羽时几乎所有飞羽同时脱落，它们会暂时失去飞行能力。",
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "200px",
+            "top": "200px"
+          },
+          "title": "身高体重",
+          "text": "丹顶鹤站立时身高150-158cm，它们的平均体重是鹤类中最大的，4.8-10.5公斤之间，雄鹤体重、体型相比雌鹤稍大一些。",
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/feather/3.jpg"
+        },
+        {
+          "position": {
+            "left": "300px",
+            "top": "300px"
+          },
+          "title": "鹤舞",
+          "text": "丹顶鹤每年四月初发情期间，雄鹤主动求爱，引颈耸翅，引吭高歌，发出“呵，呵，呵”的嘹亮声音。而雌鹤则高声应和，然后彼此对鸣、跳跃和舞蹈。雄鹤、雌鹤对歌对舞，你来我往，一旦婚配成对，就偕老至终。因此自古以来，中国特别是东北地区，把丹顶鹤择偶过程中对歌对舞看成吉兆，美其名曰“鹤舞”",
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/feather/4.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "<p>丹顶鹤常成对或成家族群和小群活动。迁徙季节和冬季，常由数个或数十个家族群结成较大的群体。</p><p>生活在中国的丹顶鹤随季节迁徙，在春夏季活动于中国的东北部的开阔草地、湿地。越冬地在中国的东南沿海和长江下游地区，主要生活在泥沼、河流、稻田等地。</p>",
+      "imageURL": "assets/data/cn/03_Red-crownedCranes/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/03_Red-crownedCranes/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange",
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/map/1.jpg"
+        },
+        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+      ]
+    },
+    "habits": {
+      "des": "文化象征（游戏数据是熊猫）",
+      "type": "Game3Component",
+      "startDialog": {
+        "intro": "<p>中国传统文化中丹顶鹤飘逸的形象是长寿、成仙的象征，所以又被称作“仙鹤”。在历史文学和美术作品中，丹顶鹤常作为仙人的坐骑出现，由于丹顶鹤寿命长达50~60年,人们常把它和松树绘在一起,作为长寿的象征。</p><p>明清时期，丹顶鹤在文官补服上有着重要的象征地位，仅次于皇帝的龙凤，因而人们也称鹤为“一品鸟”。</p>",
+        "guide": "把丹顶鹤的形象放到正确的场景中"
+      },
+      "gameCompleteImageURL":"assets/data/cn/03_Red-crownedCranes/game/gameComplete.png",
+      "gameContents": [
+        {
+          "question": "1",
+          "questionImageURL": "assets/data/cn/03_Red-crownedCranes/game/1q.png",
+          "options": [
+            {
+              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/1.png",
+              "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/1a.png",
+              "answer": true
+            },
+            {
+              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/2.png",
+              "answer": false
+            },
+            {
+              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/3.png",
+              "answer": false
+            },
+            {
+              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/4.png",
+              "answer": false
+            }
+          ]
+        }
+      ]
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/protection/1.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/protection/thumb/1.jpg",
+          "text": "中国最大的丹顶鹤人工饲养繁育基地——黑龙江扎龙国家级自然保护区"
+        },
+        {
+          "imageURL": "assets/data/cn/03_Red-crownedCranes/protection/2.jpg",
+          "thumbURL": "assets/data/cn/03_Red-crownedCranes/protection/thumb/2.jpg",
+          "text": "丹顶鹤在江苏盐城国家级珍禽自然保护区越冬"
+        }
+      ],
+      "text": "根据丹顶鹤生存迁徙的主要目的地区域范围，中国政府在1987年批准建立黑龙江扎龙国家级自然保护区，1992年批准建立江苏盐城湿地珍禽国家级自然保护区。其后多年中国政府又根据科学研究成果，沿着丹顶鹤迁徙的路线，中国的沿海地区，设立星罗棋布的湿地自然保护区为其迁徙保驾护航。"
+    }
+  }
+}

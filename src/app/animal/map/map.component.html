@@ -1,5 +1,5 @@
 <div class="container">
-  <p *ngIf="data" class="map-text">{{ data.text }}</p>
+  <ion-text *ngIf="data" class="map-text" [innerHTML]="data.text"></ion-text>
   <div class="map-panel">
     <ion-slides #mapSlides [options]="slideOpts">
       <ion-slide>

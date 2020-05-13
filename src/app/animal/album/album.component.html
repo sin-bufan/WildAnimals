@@ -4,7 +4,7 @@
       <h1 class="animal-name">{{ data.name }}</h1>
       <p class="animal-aliasName">{{ data.aliasName }}</p>
       <p class="animal-scientificName">{{ data.scientificName }}</p>
-      <p class="animal-intro">{{ data.intro }}</p>
+      <ion-text class="animal-intro"  [innerHTML]="data.intro"></ion-text>
     </div>
     <div class="media-container">
       <div *ngIf="data" class="album-container">
