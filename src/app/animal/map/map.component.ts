@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input, ChangeDetectorRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, Input, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
 import { IonSlides } from '@ionic/angular';
@@ -30,6 +30,7 @@ export class MapComponent implements AfterViewInit {
 
   m: L.Map;//地图实例
   @ViewChild("mapSlides", { static: false }) mapSlides: IonSlides;
+  @ViewChild("map", { static: true }) map: ElementRef;
   constructor(private animalsDataService: AnimalsDataService) { }
 
   ngAfterViewInit() {
@@ -49,12 +50,14 @@ export class MapComponent implements AfterViewInit {
   }
   //初始化地图
   initMap(mapData: MapData) {
-    //let Leaflet = L.noConflict();//为了重复使用L实例
-    var container = L.DomUtil.get('map');
-    if (container != null) {
-      container._leaflet_id = null;
-    }
-    this.m = L.map('map', {
+    // let Leaflet = L.noConflict();//为了重复使用L实例
+    // var container = L.DomUtil.get('map');
+    // if (container != null) {
+    //   console.log("map exited!!!")
+    //   container._leaflet_id = null;
+    // }
+    // console.log(mapData.id);
+    this.m = L.map(this.map.nativeElement, {
       attributionControl: false,
       minZoom: mapData.mapMinZoom,
       maxZoom: mapData.mapMaxZoom,

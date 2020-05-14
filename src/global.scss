@@ -61,7 +61,7 @@
 *, *::after, *::before {
   -webkit-user-select: none;
   -webkit-user-drag: none;
-  -webkit-app-region: no-drag;
+  // -webkit-app-region: no-drag;
   // cursor: default;
 }
 //用于继承的样式

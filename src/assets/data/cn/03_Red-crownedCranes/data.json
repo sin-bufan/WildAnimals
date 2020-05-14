@@ -122,32 +122,49 @@
         "intro": "<p>中国传统文化中丹顶鹤飘逸的形象是长寿、成仙的象征，所以又被称作“仙鹤”。在历史文学和美术作品中，丹顶鹤常作为仙人的坐骑出现，由于丹顶鹤寿命长达50~60年,人们常把它和松树绘在一起,作为长寿的象征。</p><p>明清时期，丹顶鹤在文官补服上有着重要的象征地位，仅次于皇帝的龙凤，因而人们也称鹤为“一品鸟”。</p>",
         "guide": "把丹顶鹤的形象放到正确的场景中"
       },
-      "gameCompleteImageURL":"assets/data/cn/03_Red-crownedCranes/game/gameComplete.png",
-      "gameContents": [
-        {
-          "question": "1",
-          "questionImageURL": "assets/data/cn/03_Red-crownedCranes/game/1q.png",
-          "options": [
-            {
-              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/1.png",
-              "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/1a.png",
-              "answer": true
-            },
-            {
-              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/2.png",
-              "answer": false
-            },
-            {
-              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/3.png",
-              "answer": false
-            },
-            {
-              "imageURL": "assets/data/cn/03_Red-crownedCranes/game/4.png",
-              "answer": false
-            }
-          ]
-        }
-      ]
+      "gameCompleteImageURL": "assets/data/cn/03_Red-crownedCranes/game/gameComplete.png",
+      "gameContents": {
+        "questions": [
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/1q.png",
+            "value": 1
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/2q.png",
+            "value": 2
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/3q.png",
+            "value": 3
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/4q.png",
+            "value": 4
+          }
+        ],
+        "options": [
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/1.png",
+            "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/1a.png",
+            "value": 1
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/2.png",
+            "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/2a.png",
+            "value": 2
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/3.png",
+            "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/3a.png",
+            "value": 3
+          },
+          {
+            "imageURL": "assets/data/cn/03_Red-crownedCranes/game/4.png",
+            "answerImageURL": "assets/data/cn/03_Red-crownedCranes/game/4a.png",
+            "value": 4
+          }
+        ]
+      }
     },
     "protection": {
       "des": "保护措施",

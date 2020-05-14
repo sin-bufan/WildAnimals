@@ -1,3 +1,65 @@
-<p>
-  game3 works!
-</p>
+<div *ngIf="data" class="game-area">
+  <!-- 游戏结束画面 -->
+  <div
+    [hidden]="gameState != 'gameCompleted'"
+    class="game-complete"
+    (dblclick)="resetGame()"
+  >
+    <img class="game-complete-image" [src]="data.gameCompleteImageURL" />
+    <ion-text>{{ data.gameCompleteTips }}</ion-text>
+  </div>
+  <!-- 开始对话框 -->
+  <div
+    class="start-game-dialog"
+    *ngIf="data.startDialog"
+    [hidden]="gameState != 'gameReady'"
+  >
+    <ion-text
+      class="game-intro"
+      *ngIf="data.startDialog.intro"
+      [innerHTML]="data.startDialog.intro"
+    ></ion-text>
+    <ion-text
+      class="game-guide"
+      *ngIf="data.startDialog.guide"
+      [innerHTML]="data.startDialog.guide"
+    ></ion-text>
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="startGameHandler()"
+    >
+      <img src="assets/images/button/startGame.png" />
+    </ion-button>
+  </div>
+  <!-- 游戏 -->
+  <div class="game3-content" [hidden]="gameState != 'gamePlaying'">
+    <div *ngIf="gameOptions" class="game-options">
+      <div
+        *ngFor="let item of gameOptions"
+        class="game-option"
+        (click)="selectOptionHandler(item)"
+        (dragover)="dragQuestionImageOverHandler($event,item)"
+        (dragleave)="dragQuestionImageLeaveHandler($event,item)"
+        (drop)="dropQuestionImageHandler($event,item)"
+      >
+        <img src="assets/images/game/3/optionPanel.png" />
+        <img class="option-image" [src]="item.imageURL" />
+        <img
+          [hidden]="!item.done"
+          class="option-image"
+          [src]="item.answerImageURL"
+        />
+      </div>
+    </div>
+    <img id="game3QuestionImage" draggable="true"
+      *ngIf="gameQuestion"
+      class="game-question-image"
+      [src]="gameQuestion.imageURL"
+      [hidden]="gameQuestion.done"
+      (dragstart)="dragQuestionImageStartHandler($event)"
+      (dragend)="dragQuestionImageEndHandler($event)"
+    />
+  </div>
+</div>

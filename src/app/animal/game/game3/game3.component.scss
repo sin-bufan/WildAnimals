@@ -1,0 +1,39 @@
+@import "../game.common.scss";
+// .game3-content{
+//     @extend .game-content;
+//     width: fit-content;
+//     height: fit-content;
+// }
+.game-question-image{
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-user-drag: element;
+    -webkit-app-region: drag;
+}
+.game-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 45%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 700px;
+}
+.game-option{
+    position: relative;
+    width: 222px;
+    height: 346px;
+    cursor: pointer;
+}
+.option-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
