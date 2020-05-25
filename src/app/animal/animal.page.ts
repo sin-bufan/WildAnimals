@@ -162,45 +162,48 @@ export class AnimalPage implements OnInit, AfterViewInit {
   //加载对应Game组件
   loadGameComponent() {
     // let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.animal.habits.type);
-    let componentFactory
-    if (this.animal.habits) {
-      switch (this.animal.habits.type) {
-        case "Game1Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game1Component);
-          break;
-        case "Game2Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game2Component);
-          break;
-        case "Game3Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game3Component);
-          break;
-        case "Game4Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game4Component);
-          break;
-        case "Game5Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
-          break;
-        case "Game6Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game6Component);
-          break;
-        case "Game7Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game7Component);
-          break;
-        case "Game8Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game8Component);
-          break;
-        case "Game9Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game9Component);
-          break;
-        case "Game10Component":
-          componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game10Component);
-          break;
-      }
-      let viewContainerRef = this.gameHost.viewContainerRef;
-      viewContainerRef.clear();
+    if (this.gameHost) {
+      let componentFactory
+      if (this.animal.habits) {
+        switch (this.animal.habits.type) {
+          case "Game1Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game1Component);
+            break;
+          case "Game2Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game2Component);
+            break;
+          case "Game3Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game3Component);
+            break;
+          case "Game4Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game4Component);
+            break;
+          case "Game5Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game5Component);
+            break;
+          case "Game6Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game6Component);
+            break;
+          case "Game7Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game7Component);
+            break;
+          case "Game8Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game8Component);
+            break;
+          case "Game9Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game9Component);
+            break;
+          case "Game10Component":
+            componentFactory = this.componentFactoryResolver.resolveComponentFactory(Game10Component);
+            break;
+        }
 
-      let componentRef = viewContainerRef.createComponent(componentFactory);
-      (<GameComponent>componentRef.instance).data = this.animal.habits;
+        let viewContainerRef = this.gameHost.viewContainerRef;
+        viewContainerRef.clear();
+
+        let componentRef = viewContainerRef.createComponent(componentFactory);
+        (<GameComponent>componentRef.instance).data = this.animal.habits;
+      }
     }
   }
   /***************************************************************************************************************/
