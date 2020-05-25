@@ -100,22 +100,19 @@
         {
           "code": 1,
           "label": "EXTANT (RESIDENT)",
-          "color": "orange",
-          "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg"
+          "color": "orange"
         },
-        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
       ]
     },
-    "habits": {
-      "des": "文化象征",
-      "type": "Game2Component",
-      "startDialog": {
-        "intro": "中国古代对虎的形象十分崇拜，特别是在军事上，统治者传达军事命令、征调兵将以及用于各项事务的凭证，就称为虎符。虎符剖为左右两半，右边留存于朝廷，左半交地方官吏或统兵将帅保管，使用时两半相合，即为“符合”，表示命令验证可信。",
-        "guide": "拼出相同图案的虎符<br>调动援军保卫城池"
-      },
-      "gameCompleteImageURL":"assets/data/cn/02_ManchurianTiger/game/gameComplete.png",
-      "gameContents": [
-      ]
+    "culture": {
+      "des": "文化印记",
+      "text": "",
+      "imageURL": "./assets/data/cn/02_ManchurianTiger/culture/pic.jpg"
     },
     "protection": {
       "des": "保护措施",

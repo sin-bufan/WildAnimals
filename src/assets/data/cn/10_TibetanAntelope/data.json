@@ -100,10 +100,13 @@
         {
           "code": 1,
           "label": "EXTANT (RESIDENT)",
-          "color": "orange",
-          "imageURL": "assets/data/cn/10_TibetanAntelope/map/1.jpg"
+          "color": "orange"
         },
-        { "code": 3, "label": "POSSIBLY EXTANT (RESIDENT)", "color": "purple" }
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
       ]
     },
     "habits": {

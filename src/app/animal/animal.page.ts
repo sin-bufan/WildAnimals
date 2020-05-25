@@ -22,7 +22,7 @@ import { Game9Component } from './game/game9/game9.component';
 import { Game10Component } from './game/game10/game10.component';
 import { AppComponent } from '../app.component';
 
-const LOCK_SLIDE_LIST: Array<string> = ["map","game10Circle","game3QuestionImage"]
+const LOCK_SLIDE_LIST: Array<string> = ["map", "game10Circle", "game3QuestionImage"]
 @Component({
   selector: 'app-animal',
   templateUrl: './animal.page.html',
@@ -155,7 +155,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
       (data) => {
         this.animal = data.animal;
         //console.info("Animal: ", this.animal)
-        this.loadGameComponent();
+        if (this.animal.habits) { this.loadGameComponent(); }
       }
     );
   }

@@ -3,7 +3,8 @@
   <div class="map-panel">
     <ion-slides #mapSlides [options]="slideOpts">
       <ion-slide>
-        <img [src]="data.imageURL" (click)="showMap()" />
+        <img class="habitat-image" [src]="data.imageURL" (click)="showMap()" />
+        <img *ngIf="hasMap" class="map-icon" src="assets/images/button/mapIcon.gif" />
       </ion-slide>
       <ion-slide>
         <div #map id="map" class="map"></div>
