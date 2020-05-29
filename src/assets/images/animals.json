@@ -1,0 +1,64 @@
+{
+  "animals": [
+    {
+      "name": "长臂猿",
+      "name2":"Gibbon",
+      "imageURL": "assets/data/cn/01_Gibbon/icon.png",
+      "dataURL": "assets/data/cn/01_Gibbon/data.json"
+    },
+    {
+      "name": "东北虎",
+      "name2":"Manchurian Tiger",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/icon.png",
+      "dataURL": "assets/data/cn/02_ManchurianTiger/data.json"
+    },
+    {
+      "name": "丹顶鹤",
+      "name2":"Red-crowned Cranes",
+      "imageURL": "assets/data/cn/03_Red-crownedCranes/icon.png",
+      "dataURL": "assets/data/cn/03_Red-crownedCranes/data.json"
+    },
+    {
+      "name": "大鲵",
+      "name2":"Giant Salamander",
+      "imageURL": "assets/data/cn/04_GiantSalamander/icon.png",
+      "dataURL": "assets/data/cn/04_GiantSalamander/data.json"
+    },
+    {
+      "name": "大熊猫",
+      "name2":"Giant Panda",
+      "imageURL": "assets/data/cn/05_GiantPanda/icon.png",
+      "dataURL": "assets/data/cn/05_GiantPanda/data.json"
+    },
+    {
+      "name": "金丝猴",
+      "name2":"Golden Monkey",
+      "imageURL": "assets/data/cn/06_GoldenMonkey/icon.png",
+      "dataURL": "assets/data/cn/06_GoldenMonkey/data.json"
+    },
+    {
+      "name": "麋鹿",
+      "name2":"Elk",
+      "imageURL": "assets/data/cn/07_Elk/icon.png",
+      "dataURL": "assets/data/cn/07_Elk/data.json"
+    },
+    {
+      "name": "普氏野马",
+      "name2":"Przewalskis Horse",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "dataURL": "assets/data/cn/08_PrzewalskisHorse/data.json"
+    },
+    {
+      "name": "雪豹",
+      "name2":"Snow Leopard",
+      "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
+      "dataURL": "assets/data/cn/09_SnowLeopard/data.json"
+    },
+    {
+      "name": "藏羚羊",
+      "name2":"Tibetan Antelope",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/icon.png",
+      "dataURL": "assets/data/cn/10_TibetanAntelope/data.json"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<div *ngIf="data" class="bg">
+  <div>
+    <img src="assets/images/copyright.png"/>
+    <ion-text class="download-text" [innerHTML]="copyrightText"></ion-text>
+  </div>
+  <div class="list" *ngFor="let item of data">
+    <img [src]="item.downloadIconURL" />
+    <ion-text class="download-text" [innerHTML]="item.name"></ion-text>
+    <ion-button class="image-button" expand="full" fill="clear">
+      <img src="assets/images/button/nextAnimal.png" (click)="download()" />
+    </ion-button>
+  </div>
+  <ion-button class="image-button close-button" expand="full" fill="clear">
+    <img src="assets/images/button/closeImage.png" (click)="onClose()" />
+  </ion-button>
+</div>

@@ -79,7 +79,7 @@ export class MapComponent implements AfterViewInit {
       (data) => {
         L.geoJSON(data, {
           style: function (feature) {
-            console.info(feature);
+            //console.info(feature);
             mapData.habitatLegend.forEach(item => {
               if (item.code == feature.properties.PRESENCE) {
                 feature.properties.color = item.color;

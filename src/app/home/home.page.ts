@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { AnimalsDataService, AnimalIndexData } from '../animals-data.service';
 import * as Phaser from 'phaser';
 import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router';
+import { DownloadComponent } from '../download/download.component';
 
 let this_: HomePage//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
@@ -20,7 +22,8 @@ export class HomePage {
   menu: Phaser.Game;
   constructor(
     private animalsDataService: AnimalsDataService,
-    private router: Router) {
+    private router: Router,
+    private modalController: ModalController) {
     //this_ = Object.create(this.constructor.prototype);
     this_ = this;
   }
@@ -38,10 +41,23 @@ export class HomePage {
     this.animalsDataService.getAnimals().subscribe(
       (data) => {
         this_.animals = data.animals;
+        this.copyrightText = data.copyrightText;
       }
     );
   }
-  download() { }
+  //打开下载窗口
+  copyrightText: string = "";
+  async download() {
+    const modal = await this.modalController.create({
+      component: DownloadComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': this_.animals,
+        'copyrightText': this_.copyrightText,
+      }
+    });
+    return await modal.present();
+  }
   info() {
     this.gotoAnimal(4);//临时用作跳转到大熊猫
   }

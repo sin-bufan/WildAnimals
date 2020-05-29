@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {SharedModule} from '../shared.module';
 import { HomePage } from './home.page';
+import { DownloadComponent } from '../download/download.component';
 
 // import { BgMusicComponent } from '../bgmusic/bgmusic.component';
 
@@ -22,7 +23,11 @@ import { HomePage } from './home.page';
     ])
   ],
   declarations: [
-    HomePage
+    HomePage,
+    DownloadComponent
+  ],
+  entryComponents: [
+    DownloadComponent
   ]
 })
 export class HomePageModule { }
