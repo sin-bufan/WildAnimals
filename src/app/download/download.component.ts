@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AnimalsDataService } from '../animals-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-download',
@@ -9,17 +11,26 @@ import { ModalController } from '@ionic/angular';
 export class DownloadComponent implements OnInit {
   @Input() copyrightText: string;
   @Input() data: DownloadItem;
-  constructor(private modalCtrl:ModalController) { 
+  lang:string;
+  constructor(
+    private router: Router,
+    private animalsDataService: AnimalsDataService,
+    private modalCtrl: ModalController) {
+      this.lang = animalsDataService.language;
   }
-  onClose(){
+  onClose() {
     this.modalCtrl.dismiss({
       'dismissed': true
     });
   }
-  ngOnInit() {}
+  ngOnInit() { }
+  download(item){
+    console.info(this.data,item.downloadFileURL)
+    this.router.navigate([item.downloadFileURL])
+  }
 }
-export class DownloadItem{
-  name:string;
-  downloadIconURL:string;
-  downloadFileURL:string;
+export class DownloadItem {
+  name: string;
+  downloadIconURL: string;
+  downloadFileURL: string;
 }
