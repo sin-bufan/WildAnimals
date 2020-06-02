@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="image-rect">
+      <img class="image" *ngIf="data" [src]="data.imageURL" />
+      <ion-text *ngIf="data && data.text">{{ data.text }}</ion-text>
+  </div>
+  <ion-button class="image-button close-button" expand="full" fill="clear">
+    <img src="assets/images/button/closeImage.png" (click)="onClose()" />
+  </ion-button>
+</div>

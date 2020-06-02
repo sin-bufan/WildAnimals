@@ -2,7 +2,8 @@ import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
 
 import * as Phaser from 'phaser';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, ModalController } from '@ionic/angular';
+import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
 
 let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
@@ -29,7 +30,8 @@ export class Game5Component implements AfterViewInit, GameComponent {
   get data(): Game5Data {
     return this._data;
   }
-  constructor() {
+  constructor(
+    private modalController:ModalController) {
     // this_ = Object.create(this.constructor.prototype);
     this_ = this;
   }
@@ -138,12 +140,23 @@ export class Game5Component implements AfterViewInit, GameComponent {
     }
   }
 
-  endGame() {
+  async endGame() {
     this.gameQuestion = "";
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
     this.gameState = GAME_STATE.COMPLETED;
+    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    const modal = await this.modalController.create({
+      component: GameCompleteComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+      }
+    });
+    await modal.present();
+    this.resetGame();
   }
+  
 }
 
 const QUESTION_PREFIX: string = 'balance';

@@ -2,6 +2,8 @@ import { Component, AfterViewInit, Input, ViewChild } from '@angular/core';
 
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
 import { shuffle } from 'lodash';
+import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
+import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'app-game3',
   templateUrl: './game3.component.html',
@@ -23,7 +25,8 @@ export class Game3Component implements AfterViewInit, GameComponent {
   get data(): Game3Data {
     return this._data;
   }
-  constructor() {
+  constructor(
+    private modalController:ModalController) {
   }
   ngAfterViewInit() {
     this.initGame();
@@ -118,10 +121,20 @@ export class Game3Component implements AfterViewInit, GameComponent {
     }
   }
 
-  endGame() {
+  async endGame() {
     this.gameQuestion = undefined;
     this.gameOptions = undefined;
     this.gameState = GAME_STATE.COMPLETED;
+    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    const modal = await this.modalController.create({
+      component: GameCompleteComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+      }
+    });
+    await modal.present();
+    this.resetGame();
   }
 }
 class Game3Data extends GameData {

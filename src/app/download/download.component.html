@@ -5,11 +5,11 @@
       <ion-text class="download-text" [innerHTML]="item.name"></ion-text>
       <ion-button class="image-button" expand="full" fill="clear" [href]="[item.downloadFileURL]">
         <img
-          *ngIf="animalsDataService.language == 'cn'"
+          *ngIf="lang == 'cn'"
           src="assets/images/button/download_cn.png"
         />
         <img
-          *ngIf="animalsDataService.language == 'en'"
+          *ngIf="lang == 'en'"
           src="assets/images/button/download_en.png"
         />
       </ion-button>

@@ -110,7 +110,7 @@
       "des": "生活习性",
       "type": "Game5Component",
       "startDialog": {
-        "intro": "熊猫的寿命在20岁以上，如果顺利的话，每只雌熊猫一生会养育六到七只熊猫宝宝。刚出生的熊猫宝宝体重仅为母亲的千分之一。能否得到妈妈的照顾成为了新出生大熊猫唯一的生存希望。",
+        "intro": "",
         "guide": "给不同年龄的熊猫<br>称体重"
       },
       "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
@@ -239,6 +239,72 @@
               "answer": false,
               "resultSprite": {
                 "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/2_140kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            }
+          ]
+        },
+        {
+          "question": "成年的大熊猫有多重？",
+          "questionImageURL": "assets/data/cn/05_GiantPanda/game/3.png",
+          "options": [
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight1-140g.png",
+              "value": "140g",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_140g.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight2-28kg.png",
+              "value": "28kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_28kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight3-80kg.png",
+              "value": "80kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_80kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight4-120kg.png",
+              "value": "120kg",
+              "answer": true,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_120kg.png",
+                "spriteWidth": 800,
+                "spriteHeight": 576,
+                "spriteTotalFrameNum": 60,
+                "spriteFrameRate": 24
+              }
+            },
+            {
+              "imageURL": "assets/data/cn/05_GiantPanda/game/weight5-140kg.png",
+              "value": "140kg",
+              "answer": false,
+              "resultSprite": {
+                "spriteURL": "assets/data/cn/05_GiantPanda/game/resultAnimation/3_140kg.png",
                 "spriteWidth": 800,
                 "spriteHeight": 576,
                 "spriteTotalFrameNum": 60,

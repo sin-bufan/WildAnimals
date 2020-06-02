@@ -1,10 +1,11 @@
 import { Component, AfterViewInit, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { GameComponent, GameData, GAME_STATE, GAME_RESULT, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
-import { AnimationController } from '@ionic/angular';
+import { AnimationController, ModalController } from '@ionic/angular';
 import { Animation } from '@ionic/core';
 
 import { shuffle } from 'lodash';
 import { GibbonData } from './gibbon/gibbon.component';
+import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
 @Component({
   selector: 'animal-game1',
   templateUrl: './game1.component.html',
@@ -27,7 +28,8 @@ export class Game1Component implements AfterViewInit, GameComponent {
     return this._data;
   }
   constructor(private animationCtrl: AnimationController,
-    private cdRef: ChangeDetectorRef) {
+    private cdRef: ChangeDetectorRef,
+    private modalController:ModalController) {
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -51,8 +53,18 @@ export class Game1Component implements AfterViewInit, GameComponent {
     this.processCatalogData();
     this.gameState = GAME_STATE.PLAYING;
   }
-  endGame() {
+  async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
+    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    const modal = await this.modalController.create({
+      component: GameCompleteComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+      }
+    });
+    await modal.present();
+    this.resetGame();
   }
   currentSelectedItem: GibbonData = null;
   result: string = GAME_RESULT.EMPTY;

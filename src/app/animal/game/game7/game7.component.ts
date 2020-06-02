@@ -1,10 +1,11 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef, Input, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
-import { AnimationController, IonSlides } from '@ionic/angular';
+import { AnimationController, IonSlides, ModalController } from '@ionic/angular';
 import { Animation } from '@ionic/core';
 
 import { shuffle } from 'lodash';
 import { CardComponent, CardData } from './card/card.component';
+import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
 const CARD_START_X: number = 200;
 const CARD_START_Y: number = -300;
 const CARD_H_GAP: number = 200;
@@ -35,7 +36,8 @@ export class Game7Component implements AfterViewInit, GameComponent {
   @ViewChildren("card", { read: ElementRef }) cardsElementRef: QueryList<ElementRef>;
   @ViewChildren("card") cards: QueryList<CardComponent>;
   constructor(private animationCtrl: AnimationController,
-    private cdRef: ChangeDetectorRef) {
+    private cdRef: ChangeDetectorRef,
+    private modalController:ModalController) {
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -60,8 +62,18 @@ export class Game7Component implements AfterViewInit, GameComponent {
     this.gameState = GAME_STATE.PLAYING;
     this.showGame()
   }
-  endGame() {
+  async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
+    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    const modal = await this.modalController.create({
+      component: GameCompleteComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+      }
+    });
+    await modal.present();
+    this.resetGame();
   }
   cardsPositionIndex: Array<number> = new Array();
   async showGame() {

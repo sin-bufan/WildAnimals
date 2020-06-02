@@ -103,7 +103,7 @@
       "des": "生活习性",
       "type": "Game7Component",
       "startDialog": {
-        "intro": "雌性麋鹿产仔之后，有单独藏匿幼鹿的习惯，幼鹿只在吃奶的时候才从藏身的草丛出来。",
+        "intro": "",
         "guide": "找到躲在草丛里的<br>小麋鹿"
       },
       "gameCompleteImageURL": "assets/data/cn/07_Elk/game/gameComplete.png",

@@ -3,8 +3,8 @@ import * as L from 'leaflet';
 import { AnimalsDataService } from 'src/app/animals-data.service';
 import { IonSlides } from '@ionic/angular';
 //地图限制区域
-const CORNER_1 = L.latLng(10, 70);
-const CORNER_2 = L.latLng(60, 140);
+const CORNER_1 = L.latLng(0, 70);
+const CORNER_2 = L.latLng(50, 140);
 const MAP_BOUNDS = L.latLngBounds(CORNER_1, CORNER_2);
 
 @Component({

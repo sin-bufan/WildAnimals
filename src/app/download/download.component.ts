@@ -16,7 +16,7 @@ export class DownloadComponent implements OnInit {
     private router: Router,
     private animalsDataService: AnimalsDataService,
     private modalCtrl: ModalController) {
-      this.lang = animalsDataService.language;
+      this.lang = this.animalsDataService.language;
   }
   onClose() {
     this.modalCtrl.dismiss({

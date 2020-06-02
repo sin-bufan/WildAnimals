@@ -21,6 +21,7 @@ export class RockComponent implements OnInit {
       .onFinish(() => {
       });
     await a.play();
+    this.data.open = true;
   }
   public async hide(duration: number = 200) {
     let a: Animation = this.animationCtrl.create()
@@ -31,6 +32,7 @@ export class RockComponent implements OnInit {
       .onFinish(() => {
       });
     await a.play();
+    this.data.open = false;
   }
 }
 
@@ -40,4 +42,5 @@ export class RockData {
   answer: boolean;
   x: number = 0;
   y: number = 0;
+  open:boolean = false;
 }

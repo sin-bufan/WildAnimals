@@ -1,10 +1,11 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef, Input, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
-import { AnimationController, IonSlides } from '@ionic/angular';
+import { AnimationController, IonSlides, ModalController } from '@ionic/angular';
 import { Animation } from '@ionic/core';
 
 import { shuffle } from 'lodash';
 import { RockComponent, RockData } from './rock/rock.component';
+import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
 
 const ROCK_H_GAP: number = 150;
 const ROCK_V_GAP: number = 120;
@@ -34,7 +35,8 @@ export class Game4Component implements AfterViewInit, GameComponent {
   @ViewChildren("rock", { read: ElementRef }) rocksElementRef: QueryList<ElementRef>;
   @ViewChildren("rock") rocks: QueryList<RockComponent>;
   constructor(private animationCtrl: AnimationController,
-    private cdRef: ChangeDetectorRef) {
+    private cdRef: ChangeDetectorRef,
+    private modalController:ModalController) {
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -60,8 +62,18 @@ export class Game4Component implements AfterViewInit, GameComponent {
     this.gameState = GAME_STATE.PLAYING;
     this.showGame()
   }
-  endGame() {
+  async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
+    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    const modal = await this.modalController.create({
+      component: GameCompleteComponent,
+      cssClass: 'photo-modal',
+      componentProps: {
+        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+      }
+    });
+    await modal.present();
+    this.resetGame();
   }
   rocksPositionIndex: Array<number> = new Array();
   async showGame() {
@@ -135,11 +147,11 @@ export class Game4Component implements AfterViewInit, GameComponent {
   totalFishNum = 0;
   async selectItem(event, item: RockData, index: number) {
     let this_ = this;
-    if (this.enable) {
+    let rock: RockComponent = this.rocks.toArray()[index] as RockComponent;
+    if (this.enable && !rock.data.open) {
       this.enable = false;
-      let rock: RockComponent = this.rocks.toArray()[index] as RockComponent;
       await rock.show();
-      console.info(event, item);
+      // console.info(event, item);
       if (item.answer) {
         this.showRight();
         this.findFishNum++;
