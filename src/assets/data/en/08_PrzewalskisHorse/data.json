@@ -1,0 +1,106 @@
+{
+  "animal": {
+    "name": "普氏野马",
+    "bgURL": "assets/data/cn/08_PrzewalskisHorse/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Przewalski’s Horse",
+      "aliasName": "Alternate name: Mongolian wild horse, Asian wild horse",
+      "scientificName": "Scientific name: <i>Equus przewalskii</i>",
+      "intro": "As the last wild horse in the world, Przewalski’s horse is considered a living fossil, a world-class star species under protection. It once disappeared in China due to environmental changes. In the 1980s, China cooperated with the international community and introduced specimens to China for artificial breeding. In 2001, the offspring were successfully released in the wild.",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/1.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/2.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/3.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/4.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/5.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/6.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/7.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/8.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/album/9.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/08_PrzewalskisHorse/video/1.mp4",
+        "thumbURL": "assets/data/cn/08_PrzewalskisHorse/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "350px",
+            "top": "150px"
+          },
+          "title": "Physique",
+          "text": "The Przewalski’s horse is large herbivore with a strong body. The adult body is 220-280 cm long, the shoulder height 120 cm or more, and the body weight about 300 kg.",
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "170px",
+            "top": "100px"
+          },
+          "title": "Fur",
+          "text": "The body hair of the wild horse is brownish yellow, gradually turning yellowish white on the belly. The limbs, mane, tail and the front ends of the mouth and nose are black with erect bristles, which are well recognized in the wild. The black mane is short, hard and erect, different from domestic horse’s mane hanging on both sides of the neck; and the horsetail is bundled, which is at variance with the long hair of domestic horse hanging down.",
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/feather/2.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "Fossil evidence shows that Przewalski’s horses were once widely distributed in Eurasia. In China, its sphere of activities extended from western Xinjiang to the Taiwan Strait. With the change of climate and the influence of human activities, the distribution area gradually narrowed down, becoming limited to the Beita Mountain in the Dzungaria Basin of Xinjiang, and the desert, Gobi and grassland environment in the Mazongshan area at the junction of Gansu and Inner Mongolia. They like to live on mountain ridges and in meadowland, and spend some time each year in the hills.",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/map/1.jpg"
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "",
+      "imageURL": "./assets/data/en/08_PrzewalskisHorse/culture/pic.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/protection/1.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/protection/thumb/1.jpg",
+          "text": "The wild horses of Pushi released in Karamaili, Xinjiang."
+        },
+        {
+          "imageURL": "assets/data/cn/08_PrzewalskisHorse/protection/2.jpg",
+          "thumbURL": "assets/data/cn/08_PrzewalskisHorse/protection/thumb/2.jpg",
+          "text": "Herd of Pushi wild horses in Dunhuang, Gansu Province."
+        }
+      ],
+      "text": "<p>In 1985, China’s first Przewalski’s horse breeding center was established in Jimsar County, Xinjiang. Subsequently, two Przewalski’s horse breeding centers were built in Wuwei and Anxi of Gansu Province. In December 2007, the number of wild horses bred in Jimsar County exceeded 200, and that of wild horses bred in Wuwei and Anxi was over a hundred. At present, there are more than 1,000 Przewalski’s horses in the world, including over 400 in China.</p><p>In August 2001, China released Przewalski’s horses for the first time in Kalamaili Nature Reserve in Xinjiang. In the following years, the staff of the nature reserve tackled one difficulty after another, increasing the number of wild horses to over 100. Today, the protection status of Przewalski’s horses on the IUCN list has been restored from “wild extinction” to “endangered species”. </p>"
+    }
+  }
+}

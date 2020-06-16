@@ -30,7 +30,8 @@
       fill="clear"
       (click)="startGameHandler()"
     >
-      <img src="assets/images/button/startGame.png" />
+      <img *ngIf="lang == 'cn'" src="assets/images/button/startGame_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/startGame_en.png" />
     </ion-button>
   </div>
   <!-- 游戏 -->
@@ -40,9 +41,9 @@
         *ngFor="let item of gameOptions"
         class="game-option"
         (click)="selectOptionHandler(item)"
-        (dragover)="dragQuestionImageOverHandler($event,item)"
-        (dragleave)="dragQuestionImageLeaveHandler($event,item)"
-        (drop)="dropQuestionImageHandler($event,item)"
+        (dragover)="dragQuestionImageOverHandler($event, item)"
+        (dragleave)="dragQuestionImageLeaveHandler($event, item)"
+        (drop)="dropQuestionImageHandler($event, item)"
       >
         <img src="assets/images/game/3/optionPanel.png" />
         <img class="option-image" [src]="item.imageURL" />
@@ -53,7 +54,9 @@
         />
       </div>
     </div>
-    <img id="game3QuestionImage" draggable="true"
+    <img
+      id="game3QuestionImage"
+      draggable="true"
       *ngIf="gameQuestion"
       class="game-question-image"
       [src]="gameQuestion.imageURL"

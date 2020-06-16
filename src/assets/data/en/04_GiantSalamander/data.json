@@ -1,0 +1,184 @@
+{
+  "animal": {
+    "name": "大鲵",
+    "bgURL": "assets/data/cn/04_GiantSalamander/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Giant Salamander",
+      "aliasName": "Alternate name: Wawayu (baby fish)",
+      "scientificName": "Scientific name: <i>Andrias davidianus</i>",
+      "intro": "Customarily known as wawayu in Chinese, the Chinese giant salamander is a kind of  amphibian living in fresh water, whose existence can be traced back 170 million years ago. As a key wild animal under the second-class State protection, it is one of China’s national treasures.",
+      "imageURL": "assets/data/cn/04_GiantSalamander/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/1.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/2.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/3.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/4.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/5.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/6.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/7.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/8.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/album/9.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/album/thumb/9.jpg"
+        }
+      ]
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/04_GiantSalamander/feather/feathers.png",
+      "feathers": [
+        {
+          "position": { "left": "20px", "top": "35px" },
+          "title": "Big Mouth",
+          "text": "A gant salamander’s head is wide and flat, with a roughly semicircular mouth. When some prey swims close to it, it will deal a fatal blow with its mouth, and swallow the prey whole prey. ",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/1.jpg"
+        },
+        {
+          "position": { "left": "100px", "top": "35px" },
+          "title": "Small Eyes",
+          "text": "The eyes are situated on both sides of the head, with wide and flat interorbital space but without eyelids.",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/2.jpg"
+        },
+        {
+          "position": { "left": "240px", "top": "170px" },
+          "title": "Skin",
+          "text": "The skin is wet, soft, sticky and smooth, varying in color. On a brown, light brown, reddish brown or dark black background, there are markings of different shades. The body color often changes with the external environment.",
+          "imageURL": "assets/data/cn/04_GiantSalamander/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "Having high requirements on geology, landform and water quality, giant salamanders are known as “indicator organisms” of an excellent ecological environment. They are mainly distributed in the Yellow, Yangtze and Pearl river basins.",
+      "imageURL": "assets/data/cn/04_GiantSalamander/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/04_GiantSalamander/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange"
+        },
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
+      ]
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game4Component",
+      "startDialog": {
+        "intro": "",
+        "guide": "大鲵"
+      },
+      "gameCompleteImageURL": "assets/data/en/04_GiantSalamander/game/gameComplete.png",
+      "gameCompleteTips": "",
+      "gameContents": {
+        "items": [
+          {
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_1.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_1.png",
+            "answer": true
+          },
+          {
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_2.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_2.png",
+            "answer": true
+          },
+          {
+            "fishImageURL": "assets/data/cn/04_GiantSalamander/game/fish_3.png",
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_3.png",
+            "answer": true
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_4.png",
+            "answer": false
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_5.png",
+            "answer": false
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_6.png",
+            "answer": false
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_7.png",
+            "answer": false
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_1.png",
+            "answer": false
+          },
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_2.png",
+            "answer": false
+          }
+          ,
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_3.png",
+            "answer": false
+          }
+          ,
+          {
+            "rockImageURL": "assets/data/cn/04_GiantSalamander/game/rock_4.png",
+            "answer": false
+          }
+        ]
+      }
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/1.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/1.jpg",
+          "text": "The Giant Salamander National Nature Reserve in Zhangjiajie, Hunan Province."
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/2.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/2.jpg",
+          "text": "Wild giant salamander found in a stream on Shangrao Mountain, Jiangxi Province."
+        },
+        {
+          "imageURL": "assets/data/cn/04_GiantSalamander/protection/3.jpg",
+          "thumbURL": "assets/data/cn/04_GiantSalamander/protection/thumb/3.jpg",
+          "text": "Wild giant salamander raised in Guiding County, Guizhou Province."
+        }
+      ],
+      "text": "<p>The Chinese giant salamander was listed under State second-class protection in 1988, while the International Union for Conservation of Nature (IUCN) rated it as a “critical species”. </p><p>Since 1996, when the first giant salamander nature reserve was established in Zhangjiajie, Hunan Province, a total of 26 nature reserves with giant salamanders as key protected species have been built in the country. </p><p>In the 1970s, research on cultivation of giant salamanders began in China. In 1987, it succeeded in intensive farming, creating a new situation of giant salamander breeding. Nowadays, they are set free in the wild in various places. </p>"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "animal": {
+    "name": "麋鹿",
+    "bgURL": "assets/data/cn/07_Elk/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "麋鹿",
+      "aliasName": "又名：四不像、戴维鹿、大卫鹿",
+      "scientificName": "学名：Elaphurus davidianus",
+      "intro": "麋鹿是世界珍稀动物。由于其脸长如马，蹄大如牛，尾巴长似驴，交叉似鹿，被中国人戏称为“四不像”。",
+      "imageURL": "assets/data/cn/07_Elk/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/1.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/2.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/3.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/4.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/5.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/6.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/7.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/8.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/album/9.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/album/thumb/9.jpg"
+        }
+      ]
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/07_Elk/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "135px",
+            "top": "220px"
+          },
+          "title": "长脸",
+          "text": "麋鹿生活在平原沼泽地带，因而较长的脸部便于它们将嘴探入水中采食水生植物。",
+          "imageURL": "assets/data/cn/07_Elk/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "220px",
+            "top": "90px"
+          },
+          "title": "长角",
+          "text": "角是雄性麋鹿打斗及进行求偶炫耀，赢得雌性青睐的利器。",
+          "imageURL": "assets/data/cn/07_Elk/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "200px",
+            "top": "510px"
+          },
+          "title": "蹄",
+          "text": "宽大的蹄和皮腱膜减少了蹄着地时的压强，有利于其在泥泞的湿地上行走而不至于深陷。",
+          "imageURL": "assets/data/cn/07_Elk/feather/3.jpg"
+        },
+        {
+          "position": {
+            "left": "400px",
+            "top": "300px"
+          },
+          "title": "尾巴",
+          "text": "湿地环境滋生蚊蝇较多，长长的尾巴方便其驱赶臀部周围的蚊蝇。",
+          "imageURL": "assets/data/cn/07_Elk/feather/4.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "<p>野生麋鹿的最后栖息地是长江口附近沿海地区。它们十分喜爱温暖湿润的沼泽水域，甚至喜欢接触海水，衔食海藻。</p><p>中国古人通过观察发现，麋鹿在水草丰富的沼泽地带踩出大片的泥滩，而稻谷在泥潭中长势特别好，人们随即效法麋鹿开拓出大片大片的泥塘种植稻谷，并取得了成功。为了纪念这个发现，中国的先人们将这种与米联系起来的鹿命名为“麋”，就是鹿脚下生米的意思。</p>",
+      "imageURL": "assets/data/cn/07_Elk/map/1.jpg"
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game7Component",
+      "startDialog": {
+        "intro": "",
+        "guide": "找到躲在草丛里的<br>小麋鹿"
+      },
+      "gameCompleteImageURL": "assets/data/cn/07_Elk/game/gameComplete.png",
+      "gameCompleteTips": "双击画面重玩游戏！",
+      "gameContents": {
+        "items": [
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Elk.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": true
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          },
+          {
+            "frontImageURL": "assets/data/cn/07_Elk/game/cardFront-Gress.jpg",
+            "backImageURL": "assets/data/cn/07_Elk/game/cardBack.jpg",
+            "answer": false
+          }
+        ]
+      }
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/07_Elk/protection/1.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/protection/thumb/1.jpg",
+          "text": "江苏盐城大丰黄海湿地麋鹿自然保护区"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/protection/2.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/protection/thumb/2.jpg",
+          "text": "南昌，鄱阳湖湿地公园，被野外放归的麋鹿。"
+        },
+        {
+          "imageURL": "assets/data/cn/07_Elk/protection/3.jpg",
+          "thumbURL": "assets/data/cn/07_Elk/protection/thumb/3.jpg",
+          "text": "北京大兴南海子麋鹿苑里散养的麋鹿"
+        }
+      ],
+      "text": "<p>据科学家考证，早在3 千多年前，中国黄河、长江中下游地区就有麋鹿，汉朝以后逐渐减少。</p><p>到19世纪时，只剩在北京南海子皇家猎苑内一群。在西方发现后不久被八国联军捕捉并从此在中国消失。直到1898年被英国购买并繁殖到255头。20世纪80年代，部分麋鹿个体送回中国，并有部分被放生野外。</p><p>1985年至1986年，中国从英国共计引进77头麋鹿，到如今麋鹿种群已经发展到近5000头，种群增长了50倍。</p><p>为了保障麋鹿重回中国后的生活，中国政府先后建立起多处国家级自然保护区及自然保护站。江苏、湖北等3省的4处麋鹿原生地恢复了4群近千头野生麋鹿群，结束了中国150多年来没有野生麋鹿的历史。在种群数量增长同时，麋鹿的繁殖率、成活率、年递增率等各项指标均居世界首位。</p><p>中国民众也对麋鹿保持着良好的保护意识，并期望麋鹿能够继续自由地生活在这片原本属于它们的故土之上。</p>"
+    }
+  }
+}

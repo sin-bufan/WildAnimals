@@ -4,6 +4,7 @@ import * as Phaser from 'phaser';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '../game.component';
 import { IonSlides, ModalController } from '@ionic/angular';
 import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 
 let this_: Game5Component//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
@@ -30,8 +31,11 @@ export class Game5Component implements AfterViewInit, GameComponent {
   get data(): Game5Data {
     return this._data;
   }
+  lang:string
   constructor(
-    private modalController:ModalController) {
+    private modalController:ModalController,
+    private animalsDataService: AnimalsDataService) {
+      this.lang = this.animalsDataService.language;
     // this_ = Object.create(this.constructor.prototype);
     this_ = this;
   }

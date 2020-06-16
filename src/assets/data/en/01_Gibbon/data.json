@@ -1,0 +1,181 @@
+{
+  "animal": {
+    "name": "长臂猿",
+    "bgURL": "assets/data/cn/01_Gibbon/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Gibbon",
+      "aliasName": "Alternate name: Black gibbon, howling monkey, Liaobanghou, fenghou",
+      "scientificName": "Scientific name: Hylobatidae",
+      "intro": "Gibbon (changbiyuan) is the general name for the primate, with 16 species in four categories. It got its Chinese name because of its long arm (changbi). Gibbons are not monkeys, but anthropoids together with four species of orangs, being the closest primates to humans. However, gibbons are much smaller than other apes, and are often called “small apes”. They are the quickest and most flexible among all apes. There are six species of gibbons in China, including Hainan gibbon, eastern black crested gibbon, western black crested gibbon, Tianxing gibbon, northern white-cheeked gibbon and white-handed gibbon. However, wild populations of white-cheeked gibbons and white-handed gibbons in China have basically disappeared.",
+      "imageURL": "assets/data/cn/01_Gibbon/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/1.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/1.jpg",
+          "text": "Gibbons can walk upright like humans on big branches as well as on the ground."
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/2.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/2.jpg",
+          "text": "Female (left) and male (right) Hainan gibbons."
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/3.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/3.jpg",
+          "text": "Male western black-crested gibbon (left). Female crested gibbons and babies (right)."
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/4.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/4.jpg",
+          "text": "Eastern black-crested gibbon"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/5.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/5.jpg",
+          "text": "Female Tianxing gibbon"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/6.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/6.jpg",
+          "text": "Male Tianxing gibbon"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/7.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/7.jpg",
+          "text": "Male white-cheeked gibbon"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/8.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/8.jpg",
+          "text": "Female white-cheeked gibbons and babies."
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/album/9.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/album/thumb/9.jpg",
+          "text": "White-handed gibbon"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/01_Gibbon/video/1.mp4",
+        "thumbURL": "assets/data/cn/01_Gibbon/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/01_Gibbon/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "180px",
+            "top": "380px"
+          },
+          "title": "Ape singing",
+          "text": "Gibbons shout loudly to announce their occupation of a certain territory and that they would like to be joined by a spouse. Gibbon couples often perform wonderful duets together, which can strengthen their feelings for each other and stabilize family relations. Singing is very rare among mammals, and gibbon singing is the most complex and exaggerated form among land mammals. Without the intervention of any shelter, a gibbon singing can be heard several kilometers away. Researchers can tell gibbon's type, gender and status from their songs.",
+          "imageURL": "assets/data/cn/01_Gibbon/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "270px",
+            "top": "480px"
+          },
+          "title": "Appearance Features",
+          "text": "Gibbons have no tail; their forelimbs are obviously longer than their hind legs. They rely on two long arms and long hook-shaped hands to hang from branches and move fast in the jungle, swinging from one tree to another. The body length of the Hainan gibbon, Eastern black-crested gibbon and Western black-crested gibbon is 40-55 cm, and that of the Tianxing gibbon 60-90 cm.",
+          "imageURL": "assets/data/cn/01_Gibbon/feather/2.jpg"
+        }
+      ]
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "<p>In the culture of ancient Chinese, there was a great difference between the understanding of apes and monkeys. People had a tendency to praise apes and belittle monkeys, or think apes elegant and monkeys vulgar.</p><p> In the early Chinese cultural system, because the palms and arms of gibbons were particularly slender and long, they were often thought to fly in the forest. People thus regarded this kind of image as a master that got rid of staleness and took on the fresh, and could live forever and turn into a human form. It has gradually become a symbol of spiritual life in traditional Chinese culture. However, monkeys in the early literary works are considered vulgar, incompetent and ridiculous. The ancient Chinese culture gave different evaluations to apes and monkeys, reflecting ancient people’s understanding of nature. </p>",
+      "imageURL": "./assets/data/en/01_Gibbon/culture/pic.png"
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game1Component",
+      "startDialog": {
+        "intro": "",
+        "guide": "Finding a mate of their own for six species of Gibbons"
+      },
+      "gameContents": {
+        "catalogs": [
+          {
+            "name": "Male",
+            "items": [
+              {
+                "name": "Hainan gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/1_male.png"
+              },
+              {
+                "name": "Western black crested gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/2_male.png"
+              },
+              {
+                "name": "Eastern black crested gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/3_male.png"
+              },
+              {
+                "name": "Tianxing gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/4_male.png"
+              },
+              {
+                "name": "White-cheeked gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/5_male.png"
+              },
+              {
+                "name": "White-handed gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/6_male.png"
+              }
+            ]
+          },
+          {
+            "name": "Female",
+            "items": [
+              {
+                "name": "Hainan gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/1_female.png"
+              },
+              {
+                "name": "Western black crested gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/2_female.png"
+              },
+              {
+                "name": "Eastern black crested gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/3_female.png"
+              },
+              {
+                "name": "Tianxing gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/4_female.png"
+              },
+              {
+                "name": "White-cheeked gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/5_female.png"
+              },
+              {
+                "name": "White-handed gibbon",
+                "imageURL": "assets/data/cn/01_Gibbon/game/6_female.png"
+              }
+            ]
+          }
+        ]
+      },
+      "gameCompleteImageURL": "assets/data/en/01_Gibbon/game/gameComplete.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/protection/1.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/1.jpg",
+          "text": "海南省霸王岭自然保护区中的原始雨林"
+        },
+        {
+          "imageURL": "assets/data/cn/01_Gibbon/protection/2.jpg",
+          "thumbURL": "assets/data/cn/01_Gibbon/protection/thumb/2.jpg",
+          "text": "云南高黎贡山自然保护区"
+        }
+      ],
+      "text": "<p>Hainan Gibbon:</p><p>All of a sudden,gibbons disappeared from the six counties of Hainan Island in the mid-1960s. According to an investigation of the living environment carried out in 2003, only 13 gibbons remained in the Bawangling Nature Reserve.</p><p>Since 2003,the reserve and some environmental protection organizations such as the Kadoorie Farm and Botanical Garden (KFBG) have cooperated to protect Hainan gibbons. With their support, a gibbon monitoring team was established in 2005 to keep track of the animals, which have  increased to 27 to four groups.</p><p>Tianxing  Gibbon:</p><p>Since 2011, the gibbon research team in Yunnan Province has established and continued to carry out field monitoring and scientific research ever since, accumulating experience for gibbon population restoration.</p><p>In 2015, Yunshan protection, the only public welfare organization focusing on gibbon welfare in China, was registered.</p><p>In January 2017, Professor Fan Pengfei, founder of Yunshan conservation, and his research team established that the white-browed gibbon in Gaoligong us a new species and named it Tianxing gibbon, becoming the only anthropoid ape named by Chinese scholars. The number of this species in China is less than 150, meaning they are extremely endangered and the protection situation is grim.</p><p>In 2018, the Yunshan Nature Reserve, Gaoligongshan National Nature Reserve and Sun Yat sen University jointly managed the research base of Gaoligongshan plate plant to attract social forces to participate in the protection of biodiversity in Southwest China.</p>"
+    }
+  }
+}

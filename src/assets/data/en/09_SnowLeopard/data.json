@@ -1,0 +1,139 @@
+{
+  "animal": {
+    "name": "雪豹",
+    "bgURL": "assets/data/cn/09_SnowLeopard/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Snow Leopard",
+      "aliasName": "",
+      "scientificName": "Scientific name: <i>Panther uncia</i>",
+      "intro": "Snow Leopard is a typical large felid living in the mountains and subalpine zones. It is grayish white on the whole, covered with dark spots. It is distributed in the vast areas of western China. Since it often emerges near the snow line and in the snowfields, it is called “snow leopard.”",
+      "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/1.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/2.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/3.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/4.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/5.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/6.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/7.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/8.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/album/9.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/09_SnowLeopard/video/1.mp4",
+        "thumbURL": "assets/data/cn/09_SnowLeopard/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/09_SnowLeopard/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "50px",
+            "top": "30px"
+          },
+          "title": "Head",
+          "text": "The raised skull and enlarged nasal cavities of snow leopard can heat and moisten the plateau’s dry and cold air while increasing the respiratory capacity; large quantities of small red cells in blood can absorb oxygen at high altitudes more effectively.",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "90px",
+            "top": "100px"
+          },
+          "title": "Laryngeal Bone",
+          "text": "Large felids like lion and tiger are hunters at the top of the food chain. They not only have a fierce appearance, but also can produce a domineering roar. However, the snow leopard cannot do so, because of throat hardening. They can make a hiss, mew, low roar and even loud cry like a person. However, it cannot scream loudly, thus looking less imposing. ",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "280px",
+            "top": "130px"
+          },
+          "title": "Body Hair",
+          "text": "In order to withstand the mountain cold especially in winter, the snow leopard’s hair is longer and thicker compared with other felids, and the winter hair on the stomach can even grow as long as  12 cm.",
+          "imageURL": "assets/data/cn/09_SnowLeopard/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "Snow leopards are rock animals in the plateau area and often move on the bare rocks in the permanent snow-capped mountains, and cold desert. China is their main habitat, with more than 60% of the global snow leopard distribution area. Snow leopards are distributed in Qinghai, Tibet, Xinjiang, Gansu, Sichuan, Yunnan and Inner Mongolia.",
+      "imageURL": "assets/data/cn/09_SnowLeopard/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/09_SnowLeopard/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange"
+        },
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
+      ]
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "",
+      "imageURL": "./assets/data/en/09_SnowLeopard/culture/pic.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/1.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/1.jpg",
+          "text": "Snow leopard photographed by an infrared camera in Shenzha County, Tibet."
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/2.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/2.jpg",
+          "text": "Snow leopard photographed at an altitude of 3,500 meters in Qilian Mountain."
+        },
+        {
+          "imageURL": "assets/data/cn/09_SnowLeopard/protection/3.jpg",
+          "thumbURL": "assets/data/cn/09_SnowLeopard/protection/thumb/3.jpg",
+          "text": "In June 2017, the first snow leopard in China’s only artificial breeding base, the Qinghai Tibet Plateau Wildlife Park, reached the age of one."
+        }
+      ],
+      "text": "<p>In 1989, the Chinese government rated the snow leopard as a wild animal under State first-class protection, and rescued and protected them according to law.</p><p>At present, China has established 26 snow leopard-related nature reserves with a total area of about 625,560 square kilometers, accounting for about 60% of the actual distribution area of the species. They constitute the most basic snow leopard protection and monitoring network, and conduct habitat patrols to curb illegal hunting and other behavior, playing an important role in maintaining snow leopard safety.</p><p>On July 19, 2018, from the “Going with Leopards” International Snow Leopard and Panthera Pardus Research and Protection Forum, it was learned that the number of existing snow leopards in the Sanjiangyuan area in the southern part of Qinghai Province had been estimated to exceed 1,000, and it is recognized by the academic community as one of the contiguous areas with most concentrated distribution of snow leopards. </p>"
+    }
+  }
+}

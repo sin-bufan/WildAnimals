@@ -53,19 +53,19 @@
       "imageURL": "assets/data/cn/04_GiantSalamander/feather/feathers.png",
       "feathers": [
         {
-          "position": { "left": "20px", "top": "120px" },
+          "position": { "left": "20px", "top": "35px" },
           "title": "大嘴",
           "text": "大鲵的头部宽扁，口大致呈半圆形。猎物游至其身边时，大鲵会使用它的大嘴发动致命一击，整个吞下毫无察觉的猎物。",
           "imageURL": "assets/data/cn/04_GiantSalamander/feather/1.jpg"
         },
         {
-          "position": { "left": "60px", "top": "360px" },
+          "position": { "left": "100px", "top": "35px" },
           "title": "小眼",
           "text": "大鲵的眼位于头部两侧位，眼间隔宽而平坦，无眼睑。",
           "imageURL": "assets/data/cn/04_GiantSalamander/feather/2.jpg"
         },
         {
-          "position": { "left": "250px", "top": "100px" },
+          "position": { "left": "240px", "top": "170px" },
           "title": "皮肤",
           "text": "大鲵皮肤湿软粘滑，皮肤的颜色多样，以褐色、浅棕色、红棕色或暗黑色为底色，杂以深浅不一的斑纹，体色时常会根据外界环境的改变而发生变化。",
           "imageURL": "assets/data/cn/04_GiantSalamander/feather/3.jpg"

@@ -4,6 +4,7 @@ import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND } from '.
 import { shuffle } from 'lodash';
 import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
 import { ModalController } from '@ionic/angular';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 @Component({
   selector: 'app-game3',
   templateUrl: './game3.component.html',
@@ -25,8 +26,11 @@ export class Game3Component implements AfterViewInit, GameComponent {
   get data(): Game3Data {
     return this._data;
   }
+  lang:string;
   constructor(
-    private modalController:ModalController) {
+    private modalController:ModalController,
+    private animalsDataService: AnimalsDataService) {
+      this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     this.initGame();

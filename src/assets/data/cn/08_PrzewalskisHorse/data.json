@@ -58,8 +58,8 @@
       "feathers": [
         {
           "position": {
-            "left": "180px",
-            "top": "380px"
+            "left": "350px",
+            "top": "150px"
           },
           "title": "体型",
           "text": "普氏野马是大型食草动物，体型健硕，成体体长220-280cm，肩高120cm以上，体重约300Kg。",
@@ -67,8 +67,8 @@
         },
         {
           "position": {
-            "left": "270px",
-            "top": "480px"
+            "left": "170px",
+            "top": "100px"
           },
           "title": "皮毛",
           "text": "野马体毛为棕黄色，向腹部渐变为黄白色，四肢、鬃毛、尾巴及口鼻前端都呈黑色加上直立的鬃毛，在野外很好辨认。鬃毛短硬，呈黑色，逆生直立，不同于家马的鬃毛垂于颈两侧；马尾呈束状，区别于家马自上而下的长毛。",
@@ -84,7 +84,7 @@
     "culture": {
       "des": "文化印记",
       "text": "",
-      "imageURL": "./assets/data/cn/08_PrzewalskisHorse/culture/pic.jpg"
+      "imageURL": "./assets/data/cn/08_PrzewalskisHorse/culture/pic.png"
     },
     "protection": {
       "des": "保护措施",

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import {SharedModule} from '../shared.module';
 import { HomePage } from './home.page';
 import { DownloadComponent } from '../download/download.component';
+import { CopyrightComponent } from '../copyright/copyright.component';
 
 // import { BgMusicComponent } from '../bgmusic/bgmusic.component';
 
@@ -24,10 +25,12 @@ import { DownloadComponent } from '../download/download.component';
   ],
   declarations: [
     HomePage,
-    DownloadComponent
+    DownloadComponent,
+    CopyrightComponent
   ],
   entryComponents: [
-    DownloadComponent
+    DownloadComponent,
+    CopyrightComponent
   ]
 })
 export class HomePageModule { }

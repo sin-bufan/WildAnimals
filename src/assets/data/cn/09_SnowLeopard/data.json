@@ -59,7 +59,7 @@
         {
           "position": {
             "left": "50px",
-            "top": "50px"
+            "top": "30px"
           },
           "title": "头部",
           "text": "雪豹隆起的头骨和扩大的鼻腔可以加热、湿润高原干燥寒冷的空气，同时加大每次呼吸量；血液中又小又多的红细胞则能更有效地在高海拔地区吸收氧气。",
@@ -67,7 +67,7 @@
         },
         {
           "position": {
-            "left": "30px",
+            "left": "90px",
             "top": "100px"
           },
           "title": "喉骨",
@@ -76,8 +76,8 @@
         },
         {
           "position": {
-            "left": "200px",
-            "top": "200px"
+            "left": "280px",
+            "top": "130px"
           },
           "title": "体毛",
           "text": "为了抵御山区及冬日的严寒，与其他猫科动物相比雪豹的毛长而浓密，肚子上的冬毛甚至可以长到12cm。",
@@ -112,7 +112,7 @@
     "culture": {
       "des": "文化印记",
       "text": "",
-      "imageURL": "./assets/data/cn/09_SnowLeopard/culture/pic.jpg"
+      "imageURL": "./assets/data/cn/09_SnowLeopard/culture/pic.png"
     },
     "protection": {
       "des": "保护措施",

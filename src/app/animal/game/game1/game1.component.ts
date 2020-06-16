@@ -6,6 +6,7 @@ import { Animation } from '@ionic/core';
 import { shuffle } from 'lodash';
 import { GibbonData } from './gibbon/gibbon.component';
 import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 @Component({
   selector: 'animal-game1',
   templateUrl: './game1.component.html',
@@ -27,9 +28,12 @@ export class Game1Component implements AfterViewInit, GameComponent {
   get data(): Game1Data {
     return this._data;
   }
+  lang:string;
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
-    private modalController:ModalController) {
+    private modalController:ModalController,
+    private animalsDataService: AnimalsDataService) {
+      this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();

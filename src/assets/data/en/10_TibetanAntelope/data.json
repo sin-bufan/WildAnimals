@@ -1,0 +1,191 @@
+{
+  "animal": {
+    "name": "藏羚羊",
+    "bgURL": "assets/data/cn/10_TibetanAntelope/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Tibetan Antelope",
+      "aliasName": "Alternate name: chiru, long-horn sheep",
+      "scientificName": "Scientific name: <i>Pantholops hodgsonii</i>",
+      "intro": "<p>Tibetan antelopes are typical high-altitude animals under first-class State protection, mainly distributed in the Qinghai-Tibet Plateau (Qinghai, Tibet and Xinjiang) centering on Qiangtang. A small number of them can be seen in Ladakh, India. Thanks to the concern and protection of Chinese government and society, the population has gradually recovered from near extinction.</p><p>Fuwa Yingying, one of the mascots of 2008 Beijing Olympic Games, was designed in imitation of the Tibetan antelope to praise its tenacious vitality of living in harsh environment, and highlight its spirit of challenging the limits of survivability. Moreover, its Chinese name contains the Chinese character “yang”, with a meaning of “bursting with happiness”. </p>",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/1.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/2.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/3.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/4.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/5.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/6.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/7.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/8.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/album/9.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/10_TibetanAntelope/video/1.mp4",
+        "thumbURL": "assets/data/cn/10_TibetanAntelope/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "280px",
+            "top": "310px"
+          },
+          "title": "Fur",
+          "text": " In order to adapt to the cold climate and strong solar radiation on the Qinghai-Tibet Plateau, the Tibetan antelopes has unique fur with both coarse and fine hairs. The fine hairs are soft and effective in keeping it warm.",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "100px",
+            "top": "100px"
+          },
+          "title": "Horns",
+          "text": "Adult males have a pair of long, straight black horns with sharp tips. The two horns are almost parallel and erect, only slightly curving inward at the tips. Seen from one side, the two horns overlap into one, so the species is also known as the “one-horn antelope.”",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "40px",
+            "top": "280px"
+          },
+          "title": "Mouth and Nose",
+          "text": "The most salient feature of Tibetan antelopes is a wide mouth and nose, similar to that of an ox. This helps it inhale more oxygen in a high-altitude and oxygen-deficient environment.",
+          "imageURL": "assets/data/cn/10_TibetanAntelope/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "Unique to the Qinghai-Tibet Plateau, Tibetan antelopes inhabit alpine grasslands, meadows and deserts at an altitude of 4,600-6,000 meters. In particular, they love flat grass beaches close to sources of water. Their distribution covers 1,600 km from east to west. Seasonal migration is an important ecological feature. Females mainly give birth at Wulanwula Lake, Zhuonai Lake, Hoh Xil Lake and Sun Lake.",
+      "imageURL": "assets/data/cn/10_TibetanAntelope/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/10_TibetanAntelope/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange"
+        },
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
+      ]
+    },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game10Component",
+      "startDialog": {
+        "intro": "",
+        "guide": "Tibetan antelopes in four seasons"
+      },
+      "gameContents": [
+        {
+          "month": "11",
+          "degree_start": 0,
+          "degree_end": 15,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+        },
+        {
+          "month": "12",
+          "degree_start": 15,
+          "degree_end": 45,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/12.png"
+        },
+        {
+          "month": "1-3",
+          "degree_start": 45,
+          "degree_end": 135,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/1-3.png"
+        },
+        {
+          "month": "4-5",
+          "degree_start": 135,
+          "degree_end": 195,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/4-5.png"
+        },
+        {
+          "month": "6-7",
+          "degree_start": 195,
+          "degree_end": 255,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/6-7.png"
+        },
+        {
+          "month": "8-10",
+          "degree_start": 255,
+          "degree_end": 345,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/8-10.png"
+        },
+        {
+          "month": "11",
+          "degree_start": 345,
+          "degree_end": 360,
+          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+        }
+      ]
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/1.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/1.jpg",
+          "text": "Large scale migration of Tibetan antelopes in Ngari, Tibet."
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/2.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/2.jpg",
+          "text": "Tibetan antelopes beside the Qinghai-Tibet Railway."
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/3.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/3.jpg",
+          "text": "Tibetan antelopes go to Chonyi Co Lake to give birth, passing safely through passages under the Qinghai-Tibet Highway."
+        },
+        {
+          "imageURL": "assets/data/cn/10_TibetanAntelope/protection/4.jpg",
+          "thumbURL": "assets/data/cn/10_TibetanAntelope/protection/thumb/4.jpg",
+          "text": "Staff of the world's highest animal rescue center treating Tibetan antelopes."
+        }
+      ],
+      "text": "<p> In 1981, China joined the Convention on International Trade in Endangered Species of Wild Fauna and Flora, strictly prohibiting all trade-oriented exports of Tibetan antelopes and their products. In 1988, the Tibetan antelope was identified as a State Class I protected species, and hunting was strictly prohibited. The Xining Declaration on the Conservation of and Control of Trade in Tibetan Antelope was formally released at a corresponding international symposium in Xining in Qinghai Province in 1999, marking the beginning of international cooperation in combating the poaching of Tibetan antelopes and stopping illegal international trade in Tibetan antelope cashmere products. This greatly promoted the protection of the species. The Chinese government has successively established a number of nature reserves such as Qinghai Hoh Xil National Nature Reserve, Xinjiang Altun Mountain National Nature Reserve and Tibet Changtang National Nature Reserve in the important distribution areas of Tibetan antelopes, and established special protection management institutions and a law enforcement team to regularly conduct mountain patrols and monitor the activities of the antelope populations. In September 2016, the International Union for Conservation of Nature (IUCN) lowered the status of Tibetan antelopes from an “endangered species” to a “near-threatened species”. </p><p>Heavenly Roads and Migration Routes of Tibetan Antelopes</p><p>For the social and economic development and the improvement of living standards of various ethnic groups in Tibet, the Chinese government successively built the Qinghai-Tibet Highway and the Qinghai-Tibet Railway, known as “heavenly roads” because of their high altitude. However, they inevitably caused divisions in the ecological environment, which had a certain impact on the migration of Tibetan antelopes, such as delays in the process. For this reason, the wildlife passage was first introduced in the design and construction of the Qinghai-Tibet Railway. There were 33 animal passages planned along the whole route. Observational studies have shown that over time, the adaptability of Tibetan antelopes to these passages is gradually increasing, playing a positive role in their lives on the plateau.</p>"
+    }
+  }
+}

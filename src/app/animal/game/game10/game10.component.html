@@ -21,7 +21,8 @@
       fill="clear"
       (click)="startGameHandler()"
     >
-      <img src="assets/images/button/startGame.png" />
+      <img *ngIf="lang == 'cn'" src="assets/images/button/startGame_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/startGame_en.png" />
     </ion-button>
   </div>
   <!-- 游戏10 -->

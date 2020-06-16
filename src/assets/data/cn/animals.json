@@ -58,20 +58,20 @@
       "downloadFileURL":"assets/data/cn/00_Download/7.eps"
     },
     {
-      "name": "普氏野马",
-      "name2":"Przewalskis Horse",
-      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
-      "dataURL": "assets/data/cn/08_PrzewalskisHorse/data.json",
-      "downloadIconURL":"assets/data/cn/00_Download/8.png",
-      "downloadFileURL":"assets/data/cn/00_Download/8.eps"
-    },
-    {
       "name": "雪豹",
       "name2":"Snow Leopard",
       "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
       "dataURL": "assets/data/cn/09_SnowLeopard/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/9.png",
       "downloadFileURL":"assets/data/cn/00_Download/9.eps"
+    },
+    {
+      "name": "普氏野马",
+      "name2":"Przewalskis Horse",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "dataURL": "assets/data/cn/08_PrzewalskisHorse/data.json",
+      "downloadIconURL":"assets/data/cn/00_Download/8.png",
+      "downloadFileURL":"assets/data/cn/00_Download/8.eps"
     },
     {
       "name": "藏羚羊",

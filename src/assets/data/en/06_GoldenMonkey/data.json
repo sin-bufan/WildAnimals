@@ -1,0 +1,139 @@
+{
+  "animal": {
+    "name": "金丝猴",
+    "bgURL": "assets/data/cn/06_GoldenMonkey/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Golden Monkey",
+      "aliasName": "Alternate name: Snub-nosed Monkey",
+      "scientificName": "Scientific name: <i>Rhinopithecus roxellana</i>",
+      "intro": "There are five kinds of golden monkeys in the world, all featuring a snub nose, so the Latin name means “snub-nosed monkey.” Among them, Sichuan golden monkeys, Yunnan golden monkeys and Guizhou golden monkeys are unique to China. Because of the golden hairs of Sichuan golden monkeys, Chinese people used to call them “golden monkeys”, and as a result, all the species that were later designated as “snub-nosed monkeys” were covered by this common name.",
+      "imageURL": "assets/data/cn/06_GoldenMonkey/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/1.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/2.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/3.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/4.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/5.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/6.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/7.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/8.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/album/9.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/06_GoldenMonkey/video/1.mp4",
+        "thumbURL": "assets/data/cn/06_GoldenMonkey/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/06_GoldenMonkey/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "95px",
+            "top": "80px"
+          },
+          "title": "Snub Nose",
+          "text": "The golden monkey’s nasal bone became degraded and the nostrils faced upwards, which was to adapt to a high-altitude environment, so that it could inhale and exhale in the relatively thin air more smoothly. It has prominent forehead and long hairs, which can help prevent rainwater from flowing directly into the upward-facing nostrils. If there is a heavy rain, they will look for protective coverage from a dense canopy.",
+          "imageURL": "assets/data/cn/06_GoldenMonkey/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "310px",
+            "top": "280px"
+          },
+          "title": "Hair",
+          "text": "Among the various populations with the “golden monkey” moniker, only the Sichuan variety have golden hairs.",
+          "imageURL": "assets/data/cn/06_GoldenMonkey/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "90px",
+            "top": "120px"
+          },
+          "title": "Red Lips",
+          "text": " Like peaches, male Yunnan golden monkeys’ lips gradually turn red as they grow up. Researchers believe that there may be two reasons: first, female Yunnan golden monkeys may prefer males with red lips when picking a mate; and second, the male’s lip color as a sign of their status can reduce conflict: the paler the lips, the less threatening the monkey appears. This makes the breeding male monkeys target rivals with bright red lips.",
+          "imageURL": "assets/data/cn/06_GoldenMonkey/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "The golden monkey is a typical forest arboreal animal. Sichuan golden monkeys are distributed in Sichuan, Gansu, Shaanxi and Hubei; Yunnan golden monkeys in southwestern China are confined to the Yunling Mountains from northwestern Yunnan to southeastern Tibet; and Sichuan golden monkeys are mainly distributed in the Fanjing Mountain in the northeast of Guizhou. ",
+      "imageURL": "assets/data/cn/06_GoldenMonkey/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/06_GoldenMonkey/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange"
+        },
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
+      ]
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "",
+      "imageURL": "./assets/data/en/06_GoldenMonkey/culture/pic.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/protection/1.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/protection/thumb/1.jpg",
+          "text": "Wild golden monkeys in the early stage of development in Shennongjia National Nature Reserve in Hubei Province."
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/protection/2.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/protection/thumb/2.jpg",
+          "text": "The Yunnan golden monkey seen at observation point 7, Xiangguqing, Tacheng, Yunnan Baima Snowy Mountain National Nature Reserve."
+        },
+        {
+          "imageURL": "assets/data/cn/06_GoldenMonkey/protection/3.jpg",
+          "thumbURL": "assets/data/cn/06_GoldenMonkey/protection/thumb/3.jpg",
+          "text": "A Sichuan golden monkey photographed by an infrared camera in the Baishuihe National Nature Reserve, Pengzhou, Sichuan Province."
+        }
+      ],
+      "text": "<p>According to the assessment of the IUCN Red List of Threatened Species, Sichuan, Yunnan and Guizhou golden monkeys are endangered, while the Myanmar golden monkeys are extremely endangered. All of them are under the State first-class protection.</p><p>The nature reserves established in China for Sichuan golden monkeys include 15 in Sichuan, three in Shaanxi, one in Hubei, three in Gansu, and one in Jiangxi; those for the protection of Yunnan golden monkeys include 10 in Yunnan and four in Tibet; and those for the protection of Guizhou golden monkeys include two in Guizhou. </p><p>In 2017, large-scale Yunnan golden monkeys’ synchronous monitoring work was launched throughout the province. Organized by the Yunnan Provincial Forestry Department, this project was subsidized by the Noah Ark Special Fund of the Alashan SEE Southwest Project Center. Eight domestic research, forestry and nature reserve management units and social organizations jointly explored a new model of cooperation between government (competent departments of the industry), scientific research institutions and civil organizations to protect endangered wildlife.</p>"
+    }
+  }
+}

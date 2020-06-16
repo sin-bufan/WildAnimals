@@ -30,7 +30,8 @@
       fill="clear"
       (click)="startGameHandler()"
     >
-      <img src="assets/images/button/startGame.png" />
+      <img *ngIf="lang == 'cn'" src="assets/images/button/startGame_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/startGame_en.png" />
     </ion-button>
   </div>
   <!-- 游戏4 -->
@@ -48,7 +49,7 @@
       >
       </game4-rock>
     </div>
-    <div [hidden]="findFishNum==0" class="counter-container">
+    <div [hidden]="findFishNum == 0" class="counter-container">
       <img src="assets/images/game/4/counterFrame.png" />
       <ion-text class="counter">{{ findFishNum }}</ion-text>
     </div>

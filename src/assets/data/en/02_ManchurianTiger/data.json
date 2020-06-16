@@ -1,0 +1,129 @@
+{
+  "animal": {
+    "name": "东北虎",
+    "bgURL": "assets/data/cn/02_ManchurianTiger/bg.jpg",
+    "intro": {
+      "des": "总体介绍",
+      "name": "Manchurian Tiger",
+      "aliasName": "Alternate name: Siberian tiger, Amur tiger",
+      "scientificName": "Scientific name: <i>Panthera tigris altaica</i>",
+      "intro": "As a large animal in Northeast Asia, the Manchurian tiger is the heaviest carnivorous feline in existence. Its head is large and round, with several black horizontal stripes on the forehead cut through by a vertical stroke, forming the Chinese character “wang (king)”. Thus, it is hailed as “king of the jungle”. Being introverted, suspicious, fierce and agile, it appears and disappears unexpectedly in the jungle, so it is hard for ordinary people to witness the wild Siberian tiger.",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/icon.png",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/1.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/1.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/2.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/2.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/3.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/3.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/4.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/4.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/5.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/5.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/6.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/6.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/7.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/7.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/8.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/8.jpg"
+        },
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/album/9.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/album/thumb/9.jpg"
+        }
+      ],
+      "video": {
+        "videoURL": "assets/data/cn/02_ManchurianTiger/video/1.mp4",
+        "thumbURL": "assets/data/cn/02_ManchurianTiger/video/1.jpg"
+      }
+    },
+    "feather": {
+      "des": "外形特征",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/feather/feathers.png",
+      "feathers": [
+        {
+          "position": {
+            "left": "180px",
+            "top": "30px"
+          },
+          "title": "Fur",
+          "text": "The coat color of Siberian tiger is rust yellow with black horizontal stripes. Its winter hair is longer, softer and denser than the summer version, but looks dim. The whole body is covered with black stripes, and the black horizontal stripes on the forehead are slightly cut through by a vertical stroke, forming the Chinese character “wang (king)”. ",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/1.jpg"
+        },
+        {
+          "position": {
+            "left": "280px",
+            "top": "100px"
+          },
+          "title": "Physique",
+          "text": "In order to adapt to cold weather, Siberian tigers evolved into the largest of the nine tiger subspecies. The male tiger is larger than the female. The largest individual tiger weighs 300 kilograms, with a body length of nearly two meters.",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/2.jpg"
+        },
+        {
+          "position": {
+            "left": "40px",
+            "top": "120px"
+          },
+          "title": "Tongue",
+          "text": "The tongue of a Siberian tiger has the same structure as that of other felids. It can grow up to 30 cm. The front skin is covered with keratinized barbs, as hard and powerful as a file. It can lap all the meat on bones, and also clean the skin, soothe babies and regulate the body temperature. ",
+          "imageURL": "assets/data/cn/02_ManchurianTiger/feather/3.jpg"
+        }
+      ]
+    },
+    "habitat": {
+      "des": "栖息环境",
+      "text": "Mainly distributed in the Hunchun area bordering Russia, Siberian tigers in China live in mixed broadleaf-conifer forests and frigid forests, where it is generally mild in summer and bitterly cold in winter. The area is covered with a thick layer of snow in winter.",
+      "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg",
+      "mapPath": "./assets/data/map/",
+      "mapCenterX": "36",
+      "mapCenterY": "104",
+      "mapMaxZoom": "7",
+      "mapMinZoom": "4",
+      "mapDefaultZoom": "5",
+      "habitatGeoJsonURL": "./assets/data/cn/02_ManchurianTiger/map/habitat.json",
+      "habitatLegend": [
+        {
+          "code": 1,
+          "label": "EXTANT (RESIDENT)",
+          "color": "orange"
+        },
+        {
+          "code": 3,
+          "label": "POSSIBLY EXTANT (RESIDENT)",
+          "color": "purple"
+        }
+      ]
+    },
+    "culture": {
+      "des": "文化印记",
+      "text": "In ancient times, the tiger image was highly worshipped, in particular for military purpose. The certificate used by a ruler to convey military orders, recruit troops and take charge of various matters is a tiger-shaped tally. It was divided into two halves, with one half kept in the court and the other handed over to local governor or general. When put in use, the two halves were combined into the tiger-shaped tally to indicate that the verification of the order was credible. ",
+      "imageURL": "./assets/data/en/02_ManchurianTiger/culture/pic.png"
+    },
+    "protection": {
+      "des": "保护措施",
+      "album": [
+        {
+          "imageURL": "assets/data/cn/02_ManchurianTiger/protection/1.jpg",
+          "thumbURL": "assets/data/cn/02_ManchurianTiger/protection/thumb/1.jpg",
+          "text": "位于黑龙江省牡丹江市海林市的横道河子东北虎林园，是世界最大的东北虎繁育饲养基地。"
+        }
+      ],
+      "text": "<p>The number of Siberian tigers once dropped sharply. Protection of the animal and its natural ecological environment has been included in China’s national development strategy. With upgraded protection, the population is steadily rising.</p><p>On May 29, 1993, the Chinese government promulgated the <i>Notice Concerning the Ban of the Trade of Rhinoceros Horns and Tiger Bones</i>, prohibiting the import and export, as well as the sale, acquisition, transportation, carrying and mailing of tiger bones, canceling the standards for use of tiger bones for medicinal purposes and forbidding any pharmacy to hold tiger bones in any form. China used to be the country with the largest demand for tiger products in the world. The ban promulgated by the Chinese government curbed market demand and effectively prevented the extinction of wild tigers.</p><p>Jilin Hunchun Manchurian Tiger Nature Reserve was established in December 2001 and successfully upgraded to a national nature reserve three years later. </p><p>In 2017, the Chinese government established the National Park for Manchurian Tiger and Amur Leopard in the vast border areas of Jilin and Heilongjiang provinces, covering an area of 14,600 square kilometers. It is much larger than the original tiger and leopard reserve in China. According to the <i>Plan of Jilin Province on Major Ecological Protection Project of Wild Manchurian Tigers and Amur Leopards</i>, by 2025, the Chinese government will form a tiger and leopard distribution area of over 20,000 square kilometers in Changbai Mountains.</p>"
+    }
+  }
+}

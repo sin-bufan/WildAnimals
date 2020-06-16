@@ -30,7 +30,8 @@
       fill="clear"
       (click)="startGameHandler()"
     >
-      <img src="assets/images/button/startGame.png" />
+      <img *ngIf="lang == 'cn'" src="assets/images/button/startGame_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/startGame_en.png" />
     </ion-button>
   </div>
   <!-- 游戏7 -->
@@ -40,13 +41,15 @@
     [hidden]="gameState != 'gamePlaying'"
   >
     <div class="items">
-      <game7-card #card class="card"
-        *ngFor="let item of this.data.gameContents.items;let i=index"
-        (click)="selectItem($event,item,i)"
+      <game7-card
+        #card
+        class="card"
+        *ngFor="let item of this.data.gameContents.items; let i = index"
+        (click)="selectItem($event, item, i)"
         [data]="item"
       >
       </game7-card>
-      <ion-text class="countdown-number">{{countDownNumber}}</ion-text>
+      <ion-text class="countdown-number">{{ countDownNumber }}</ion-text>
     </div>
   </div>
 </div>

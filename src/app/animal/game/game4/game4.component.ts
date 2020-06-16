@@ -6,6 +6,7 @@ import { Animation } from '@ionic/core';
 import { shuffle } from 'lodash';
 import { RockComponent, RockData } from './rock/rock.component';
 import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 
 const ROCK_H_GAP: number = 150;
 const ROCK_V_GAP: number = 120;
@@ -34,9 +35,12 @@ export class Game4Component implements AfterViewInit, GameComponent {
   }
   @ViewChildren("rock", { read: ElementRef }) rocksElementRef: QueryList<ElementRef>;
   @ViewChildren("rock") rocks: QueryList<RockComponent>;
+  lang:string;
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
-    private modalController:ModalController) {
+    private modalController:ModalController,
+    private animalsDataService: AnimalsDataService) {
+      this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();

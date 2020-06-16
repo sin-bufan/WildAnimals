@@ -4,6 +4,7 @@ import { AnimalsDataService, AnimalIndexData } from '../animals-data.service';
 import * as Phaser from 'phaser';
 import { Router, NavigationEnd, Event as NavigationEvent } from '@angular/router';
 import { DownloadComponent } from '../download/download.component';
+import { CopyrightComponent } from '../copyright/copyright.component';
 
 let this_: HomePage//once the Phaser scene is initialized, this contains the default game state
 let eventEmitter: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
@@ -58,8 +59,12 @@ export class HomePage {
     });
     return await modal.present();
   }
-  info() {
-    this.gotoAnimal(4);//临时用作跳转到大熊猫
+  async copyright() {
+    const modal = await this.modalController.create({
+      component: CopyrightComponent,
+      cssClass: 'photo-modal'
+    });
+    return await modal.present();
   }
   /************************************************************************************************/
   //初始化menu
@@ -130,7 +135,7 @@ export class HomePage {
     }
   }
 }
-
+/************************************************************************/
 const PAUSE_DELAY: number = 2000;
 const ANIMALS_SPRITE_WIDTH: number = 650;
 const ANIMALS_SPRITE_HEIGHT: number = 650;

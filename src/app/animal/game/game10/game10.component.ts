@@ -3,6 +3,7 @@ import { GameComponent, GameData, GAME_STATE, GAME_RESULT, RIGHT_SOUND, WRONG_SO
 import { AnimationController } from '@ionic/angular';
 import { Animation, Gesture } from '@ionic/core';
 import { GestureController } from '@ionic/angular';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 @Component({
   selector: 'app-game10',
   templateUrl: './game10.component.html',
@@ -25,10 +26,13 @@ export class Game10Component implements AfterViewInit, GameComponent {
     return this._data;
   }
   @ViewChild('circle') circle: ElementRef;
+  lang:string
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
     private render: Renderer2,
-    private gestureCtrl: GestureController) {
+    private gestureCtrl: GestureController,
+    private animalsDataService: AnimalsDataService) {
+      this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -43,9 +47,11 @@ export class Game10Component implements AfterViewInit, GameComponent {
 
   onMove(detail) {
     let d:number = this.currentDegree + detail.deltaX;
-    if (d<0){
+    console.info(d);
+    while(d<0){
       d=d+360;
-    }else if (d>=360){
+    }
+    while(d>=360){
       d=d-360;
     }
     this.updateMonth(d);
