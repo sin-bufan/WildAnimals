@@ -6,7 +6,7 @@
       "des": "总体介绍",
       "name": "Giant Panda",
       "aliasName": "Alternate name: panda",
-      "scientificName": "Scientific name: Ailuropoda melanoleuca",
+      "scientificName": "Scientific name: <i>Ailuropoda melanoleuca</i>",
       "intro": "<p>The giant panda is a rare animal unique to China. Black and white, it features a round face, big black-rimmed eyes, chubby body, symbolic splayfoot and claws as sharp as a scalpel. It is one of the loveliest animals in the world. </p><p>With a history of at least eight million years, the giant panda is known as “living fossil” and a “national treasure of China.” It is the promotional ambassador of the World Wide Fund for Nature, and one of the most easily-recognizable symbols of China.</p>",
       "imageURL": "assets/data/cn/05_GiantPanda/icon.png",
       "album": [
@@ -113,7 +113,7 @@
         "intro": "",
         "guide": "Weighing Pandas of Different Ages"
       },
-      "gameCompleteImageURL":"assets/data/cn/05_GiantPanda/game/gameComplete.png",
+      "gameCompleteImageURL":"assets/data/en/05_GiantPanda/game/gameComplete.png",
       "gameContents": [
         {
           "question": "Day 1 after birth",

@@ -121,43 +121,43 @@
           "month": "11",
           "degree_start": 0,
           "degree_end": 15,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/11.png"
         },
         {
           "month": "12",
           "degree_start": 15,
           "degree_end": 45,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/12.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/12.png"
         },
         {
           "month": "1-3",
           "degree_start": 45,
           "degree_end": 135,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/1-3.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/1-3.png"
         },
         {
           "month": "4-5",
           "degree_start": 135,
           "degree_end": 195,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/4-5.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/4-5.png"
         },
         {
           "month": "6-7",
           "degree_start": 195,
           "degree_end": 255,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/6-7.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/6-7.png"
         },
         {
           "month": "8-10",
           "degree_start": 255,
           "degree_end": 345,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/8-10.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/8-10.png"
         },
         {
           "month": "11",
           "degree_start": 345,
           "degree_end": 360,
-          "imageURL": "assets/data/cn/10_TibetanAntelope/game/11.png"
+          "imageURL": "assets/data/en/10_TibetanAntelope/game/11.png"
         }
       ]
     },

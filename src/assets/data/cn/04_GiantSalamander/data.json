@@ -101,10 +101,10 @@
       "type": "Game4Component",
       "startDialog": {
         "intro": "",
-        "guide": "大鲵"
+        "guide": "翻开石块<br>找到下面隐藏的3条大鲵"
       },
       "gameCompleteImageURL": "assets/data/cn/04_GiantSalamander/game/gameComplete.png",
-      "gameCompleteTips": "双击画面重玩游戏！",
+      "gameCompleteTips": "",
       "gameContents": {
         "items": [
           {

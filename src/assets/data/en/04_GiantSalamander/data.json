@@ -101,7 +101,7 @@
       "type": "Game4Component",
       "startDialog": {
         "intro": "",
-        "guide": "大鲵"
+        "guide": "Three giant salamanders hidden below stones"
       },
       "gameCompleteImageURL": "assets/data/en/04_GiantSalamander/game/gameComplete.png",
       "gameCompleteTips": "",

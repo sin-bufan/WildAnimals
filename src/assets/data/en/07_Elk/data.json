@@ -4,10 +4,10 @@
     "bgURL": "assets/data/cn/07_Elk/bg.jpg",
     "intro": {
       "des": "总体介绍",
-      "name": "麋鹿",
-      "aliasName": "又名：四不像、戴维鹿、大卫鹿",
-      "scientificName": "学名：Elaphurus davidianus",
-      "intro": "麋鹿是世界珍稀动物。由于其脸长如马，蹄大如牛，尾巴长似驴，交叉似鹿，被中国人戏称为“四不像”。",
+      "name": "Elk",
+      "aliasName": "Altrenate name: nondescript, David deer",
+      "scientificName": "Scientific name: <i>Elaphurus davidianus</i>",
+      "intro": "The elk is a rare animal in the world. Since its face is as long as that of a horse, its hoof as big as that of an ox, its tail as long as that of donkey, and its horn like that of deer, Chinese dub it as “nondescript”.",
       "imageURL": "assets/data/cn/07_Elk/icon.png",
       "album": [
         {
@@ -57,8 +57,8 @@
             "left": "135px",
             "top": "220px"
           },
-          "title": "长脸",
-          "text": "麋鹿生活在平原沼泽地带，因而较长的脸部便于它们将嘴探入水中采食水生植物。",
+          "title": "Long Face",
+          "text": " Elks live in plain swamps. The long face allows it to put its mouth into the water to eat aquatic plants. ",
           "imageURL": "assets/data/cn/07_Elk/feather/1.jpg"
         },
         {
@@ -66,8 +66,8 @@
             "left": "220px",
             "top": "90px"
           },
-          "title": "长角",
-          "text": "角是雄性麋鹿打斗及进行求偶炫耀，赢得雌性青睐的利器。",
+          "title": "Long Horns",
+          "text": "Horns are edge tools of male elks to fight and show off to win the favor of females. ",
           "imageURL": "assets/data/cn/07_Elk/feather/2.jpg"
         },
         {
@@ -75,8 +75,8 @@
             "left": "200px",
             "top": "510px"
           },
-          "title": "蹄",
-          "text": "宽大的蹄和皮腱膜减少了蹄着地时的压强，有利于其在泥泞的湿地上行走而不至于深陷。",
+          "title": "Hoofs",
+          "text": "Wide hoof and aponeurosis reduce the pressure on the hoofs when they hit the ground, helping them to walk on muddy wetlands without sinking.",
           "imageURL": "assets/data/cn/07_Elk/feather/3.jpg"
         },
         {
@@ -84,26 +84,26 @@
             "left": "400px",
             "top": "300px"
           },
-          "title": "尾巴",
-          "text": "湿地环境滋生蚊蝇较多，长长的尾巴方便其驱赶臀部周围的蚊蝇。",
+          "title": "Tail ",
+          "text": "The wetland environment breeds more mosquitoes and flies, and the long tail is handy in driving them away from the buttocks.",
           "imageURL": "assets/data/cn/07_Elk/feather/4.jpg"
         }
       ]
     },
-    "habitat": {
-      "des": "栖息环境",
-      "text": "<p>野生麋鹿的最后栖息地是长江口附近沿海地区。它们十分喜爱温暖湿润的沼泽水域，甚至喜欢接触海水，衔食海藻。</p><p>中国古人通过观察发现，麋鹿在水草丰富的沼泽地带踩出大片的泥滩，而稻谷在泥潭中长势特别好，人们随即效法麋鹿开拓出大片大片的泥塘种植稻谷，并取得了成功。为了纪念这个发现，中国的先人们将这种与米联系起来的鹿命名为“麋”，就是鹿脚下生米的意思。</p>",
-      "imageURL": "assets/data/cn/07_Elk/map/1.jpg"
+    "culture": {
+      "des": "文化印记",
+      "text": "<p>The final habitat of wild elks is the coastal area near the Yangtze River estuary. They are very fond of warm and humid marsh waters, and even like to touch the sea water and eat seaweed.</p><p>Through observation, the ancient Chinese discovered that elks could create a large stretch of mudflat when stepping in waterweed-rich swamps, and rice grew particularly well in such an environment. People immediately followed the elks to open up large patches of mud ponds for rice planting. Success was achieved. To commemorate this discovery, the Chinese ancestors named the deer associated with rice as “mi (weed)”, which means rice growing from under the deer’s feet.</p>",
+      "imageURL": "assets/data/en/07_Elk/culture/pic.png"
     },
     "habits": {
       "des": "生活习性",
       "type": "Game7Component",
       "startDialog": {
         "intro": "",
-        "guide": "找到躲在草丛里的<br>小麋鹿"
+        "guide": "Young elks hiding in the grass"
       },
-      "gameCompleteImageURL": "assets/data/cn/07_Elk/game/gameComplete.png",
-      "gameCompleteTips": "双击画面重玩游戏！",
+      "gameCompleteImageURL": "assets/data/en/07_Elk/game/gameComplete.png",
+      "gameCompleteTips": "",
       "gameContents": {
         "items": [
           {
@@ -160,20 +160,20 @@
         {
           "imageURL": "assets/data/cn/07_Elk/protection/1.jpg",
           "thumbURL": "assets/data/cn/07_Elk/protection/thumb/1.jpg",
-          "text": "江苏盐城大丰黄海湿地麋鹿自然保护区"
+          "text": "Dafeng Yellow Sea Wetland Elk Nature Reserve, Yancheng, Jiangsu."
         },
         {
           "imageURL": "assets/data/cn/07_Elk/protection/2.jpg",
           "thumbURL": "assets/data/cn/07_Elk/protection/thumb/2.jpg",
-          "text": "南昌，鄱阳湖湿地公园，被野外放归的麋鹿。"
+          "text": "Nanchang, Poyang Lake Wetland Park, where elks are released into the wild."
         },
         {
           "imageURL": "assets/data/cn/07_Elk/protection/3.jpg",
           "thumbURL": "assets/data/cn/07_Elk/protection/thumb/3.jpg",
-          "text": "北京大兴南海子麋鹿苑里散养的麋鹿"
+          "text": "Scattered elks in the Nanhaizi Elk Garden, Daxing, Beijing."
         }
       ],
-      "text": "<p>据科学家考证，早在3 千多年前，中国黄河、长江中下游地区就有麋鹿，汉朝以后逐渐减少。</p><p>到19世纪时，只剩在北京南海子皇家猎苑内一群。在西方发现后不久被八国联军捕捉并从此在中国消失。直到1898年被英国购买并繁殖到255头。20世纪80年代，部分麋鹿个体送回中国，并有部分被放生野外。</p><p>1985年至1986年，中国从英国共计引进77头麋鹿，到如今麋鹿种群已经发展到近5000头，种群增长了50倍。</p><p>为了保障麋鹿重回中国后的生活，中国政府先后建立起多处国家级自然保护区及自然保护站。江苏、湖北等3省的4处麋鹿原生地恢复了4群近千头野生麋鹿群，结束了中国150多年来没有野生麋鹿的历史。在种群数量增长同时，麋鹿的繁殖率、成活率、年递增率等各项指标均居世界首位。</p><p>中国民众也对麋鹿保持着良好的保护意识，并期望麋鹿能够继续自由地生活在这片原本属于它们的故土之上。</p>"
+      "text": "<p>According to scientific research, as early as 3,000 years ago, there were elks inhabiting the middle and lower reaches of the Yellow River and the Yangtze River, which gradually decreased after the Han Dynasty around two thousand years ago.</p><p>By the 19th Century, there was only one group of elks left in the Royal Hunting Garden in Nanhaizi, Beijing. Shortly after being discovered by some Westerners, they were captured by the Eight-Power Allied Forces and disappeared from China. Some elks were purchased by the U.K. until 1898, expanding to a herd of 255. In the 1980s, some elks were sent back to China, often for release in the wild.</p><p>From 1985 to 1986, China imported a total of 77 elks from the United Kingdom. By now, the population of elks has grown to nearly 5,000. </p><p>In order to ensure save living conditions for elks that had returned to China, the government has established several national nature reserves and nature conservation stations. At the four native habitats of elks in three provinces, including Jiangsu and Hubei, four groups of nearly a thousand wild elks were restored, the first time in 150 years to see wild elks in China. As the population grew, the elks’ reproductive rate, survival rate, annual growth rate and other indicators ranked first in the world. </p><p>The Chinese people also maintain a good sense of protection for the elks, and expect them to continue to live freely on their native land.</p>"
     }
   }
 }

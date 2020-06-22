@@ -39,6 +39,7 @@ export class HomePage {
     } else {
       this.animalsDataService.language = event.detail.value;
     }
+    this.animalsDataService.$currentLanguage.next(this.animalsDataService.language);
     this.animalsDataService.getAnimals().subscribe(
       (data) => {
         this_.animals = data.animals;
@@ -75,7 +76,7 @@ export class HomePage {
       width: ANIMALS_SPRITE_WIDTH,
       height: ANIMALS_SPRITE_HEIGHT,
       transparent: true,
-      type: Phaser.CANVAS,
+      type: Phaser.AUTO,
       parent: 'phaser-div-menu',
       scene: [],
       audio: { disableWebAudio: true, noAudio: true }
@@ -157,7 +158,7 @@ class MenuScene extends Phaser.Scene {
   //2.加载素材
   preload() {
     this.load.spritesheet(ANIMALS_SPRITE_NAME, ANIMALS_SPRITE_URL, { frameWidth: ANIMALS_SPRITE_WIDTH, frameHeight: ANIMALS_SPRITE_HEIGHT });
-    //console.info("spritesheet loaded!!!")
+    console.info("spritesheet loaded!!!")
   }
   //3.创建舞台内容
   // animals:Phaser.GameObjects.Sprite;
@@ -171,7 +172,7 @@ class MenuScene extends Phaser.Scene {
       frameRate: FRAME_RATE,
       repeat: -1
     })
-    //console.info("animation created!!!");
+    console.info("animation created!!!",this.sprite,this.anims,this.sprite.anims);
     //播放动画
     this.sprite.setInteractive();
     this.sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME);

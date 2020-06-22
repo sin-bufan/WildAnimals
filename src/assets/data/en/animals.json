@@ -1,9 +1,9 @@
 {
-  "copyrightText":"图案版权归五洲传播出版社所有，下载请勿商用。",
+  "copyrightText":"The copyright of these patterns belongs to China Intercontinental Press, please do not use it for commercial after downloading.",
   "animals": [
     {
       "name": "Gibbon",
-      "name2":"Gibbon",
+      "name2":"Hylobatidae",
       "imageURL": "assets/data/cn/01_Gibbon/icon.png",
       "dataURL": "assets/data/en/01_Gibbon/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/1.png",
@@ -11,7 +11,7 @@
     },
     {
       "name": "Manchurian Tiger",
-      "name2":"Manchurian Tiger",
+      "name2":"Panthera tigris altaica",
       "imageURL": "assets/data/cn/02_ManchurianTiger/icon.png",
       "dataURL": "assets/data/en/02_ManchurianTiger/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/2.png",
@@ -19,7 +19,7 @@
     },
     {
       "name": "Red-crowned Cranes",
-      "name2":"Red-crowned Cranes",
+      "name2":"Grus japonensis",
       "imageURL": "assets/data/cn/03_Red-crownedCranes/icon.png",
       "dataURL": "assets/data/en/03_Red-crownedCranes/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/3.png",
@@ -27,7 +27,7 @@
     },
     {
       "name": "Giant Salamander",
-      "name2":"Giant Salamander",
+      "name2":"Andrias davidianus",
       "imageURL": "assets/data/cn/04_GiantSalamander/icon.png",
       "dataURL": "assets/data/en/04_GiantSalamander/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/4.png",
@@ -35,7 +35,7 @@
     },
     {
       "name": "Giant Panda",
-      "name2":"Giant Panda",
+      "name2":"Ailuropoda melanoleuca",
       "imageURL": "assets/data/cn/05_GiantPanda/icon.png",
       "dataURL": "assets/data/en/05_GiantPanda/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/5.png",
@@ -43,7 +43,7 @@
     },
     {
       "name": "Golden Monkey",
-      "name2":"Golden Monkey",
+      "name2":"Rhinopithecus roxellana",
       "imageURL": "assets/data/cn/06_GoldenMonkey/icon.png",
       "dataURL": "assets/data/en/06_GoldenMonkey/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/6.png",
@@ -51,31 +51,31 @@
     },
     {
       "name": "Elk",
-      "name2":"Elk",
+      "name2":"Elaphurus davidianus",
       "imageURL": "assets/data/cn/07_Elk/icon.png",
       "dataURL": "assets/data/en/07_Elk/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/7.png",
       "downloadFileURL":"assets/data/cn/00_Download/7.eps"
     },
     {
-      "name": "Przewalskis Horse",
-      "name2":"Przewalskis Horse",
-      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
-      "dataURL": "assets/data/en/08_PrzewalskisHorse/data.json",
-      "downloadIconURL":"assets/data/cn/00_Download/8.png",
-      "downloadFileURL":"assets/data/cn/00_Download/8.eps"
-    },
-    {
       "name": "Snow Leopard",
-      "name2":"Snow Leopard",
+      "name2":"Panther uncia",
       "imageURL": "assets/data/cn/09_SnowLeopard/icon.png",
       "dataURL": "assets/data/en/09_SnowLeopard/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/9.png",
       "downloadFileURL":"assets/data/cn/00_Download/9.eps"
     },
     {
+      "name": "Przewalskis Horse",
+      "name2":"Equus przewalskii",
+      "imageURL": "assets/data/cn/08_PrzewalskisHorse/icon.png",
+      "dataURL": "assets/data/en/08_PrzewalskisHorse/data.json",
+      "downloadIconURL":"assets/data/cn/00_Download/8.png",
+      "downloadFileURL":"assets/data/cn/00_Download/8.eps"
+    },
+    {
       "name": "Tibetan Antelope",
-      "name2":"Tibetan Antelope",
+      "name2":"Pantholops hodgsonii",
       "imageURL": "assets/data/cn/10_TibetanAntelope/icon.png",
       "dataURL": "assets/data/en/10_TibetanAntelope/data.json",
       "downloadIconURL":"assets/data/cn/00_Download/10.png",

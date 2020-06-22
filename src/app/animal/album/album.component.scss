@@ -22,23 +22,24 @@
 }
 .animal-name {
   font-size: 48px;
-  text-align: justify;
+  text-align: start;
   margin: 5px;
   margin-bottom: 30px;
 }
 .animal-aliasName {
-  text-align: justify;
+  text-align: start;
   margin: 5px;
 }
 .animal-scientificName {
-  text-align: justify;
+  text-align: start;
   margin: 5px;
 }
 .animal-intro {
   overflow-y: scroll;
-  height: 100px;
-  text-align: justify;
-  text-indent: 36px;
+  height: 120px;
+  line-height: 30px;
+  text-align: start;
+  // text-indent: 36px;
   margin: 5px;
   margin-top: 24px;
   margin-bottom: 24px;

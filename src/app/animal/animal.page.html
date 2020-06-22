@@ -7,9 +7,7 @@
     pager="false" scrollbar="true"
     (ionSlideDidChange)="slidesDidChangeHandler($event)"
     (touchdown)="lockSlide($event)"
-    (mousedown)="lockSlide($event)"
     (touchup)="unlockSlide($event)"
-    (mouseup)="unlockSlide($event)"
   >
     <ion-slide *ngIf="animal.intro">
       <animal-album class="content" [data]="animal.intro"></animal-album>

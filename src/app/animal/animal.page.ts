@@ -123,6 +123,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
   }
   slideOpts = {
     loop: false,
+    allowTouchMove: false,
     // watchSlidesProgress:true,
     speed: 1000//按钮翻页速度
   }
@@ -224,7 +225,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
     let t: any = event.target;
     //console.info("lock: ",event,t.id,LOCK_SLIDE_LIST,LOCK_SLIDE_LIST.indexOf(t.id));
     if (t.id && LOCK_SLIDE_LIST.indexOf(t.id) >= 0) {
-      console.info(event, event.target);
+      // console.info(event, event.target);
       this.slides.lockSwipes(true);
     }
   }

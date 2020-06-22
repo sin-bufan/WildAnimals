@@ -16,6 +16,18 @@ export class SidemenuComponent implements OnInit {
     private menu: MenuController) { }
 
   ngOnInit() {
+    //接收消息，变更当前菜单语种（home.page.ts）
+    this.animalsDataService.$currentLanguage.subscribe(
+      (value) => {
+        this.initMenu();
+      }
+    );
+    //接收消息，变更当前选中的菜单项（home.page.ts）
+    this.animalsDataService.$currentAnimal.subscribe(
+      (value) => {
+        this.currentAnimalName = value;
+      }
+    );
     this.initMenu();
   }
 
@@ -27,14 +39,10 @@ export class SidemenuComponent implements OnInit {
         this.animals = data.animals;
       }
     );
-    //接收消息，变更当前选中的菜单项（home.page.ts）
-    this.animalsDataService.$currentAnimal.subscribe(
-      (value) => {
-        this.currentAnimalName = value;
-      }
-    );
+
+
   }
-  currentAnimalName:string=""
+  currentAnimalName: string = ""
   //跳转到章节
   gotoAnimal(animal) {
     if (animal.dataURL && animal.dataURL != "") {
@@ -42,7 +50,7 @@ export class SidemenuComponent implements OnInit {
       this.router.navigate(['animal', JSON.stringify(animal)]);
     }
   }
-  close(){
+  close() {
     this.menu.close();
   }
 }

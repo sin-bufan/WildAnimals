@@ -36,11 +36,13 @@
     <div class="game10-circle-container">
       <img class="game10-image" [src]="monthImageURL" />
       <img
-        #circle
-        id="game10Circle"
-        class="game10-circle"
-        src="assets/images/game/10/circle.png"
-      />
+      #circle
+      id="game10Circle"
+      class="game10-circle" *ngIf="lang == 'cn'" src="assets/images/game/10/circle_cn.png" />
+      <img
+      #circle
+      id="game10Circle"
+      class="game10-circle" *ngIf="lang == 'en'" src="assets/images/game/10/circle_en.png" />
     </div>
   </div>
 </div>

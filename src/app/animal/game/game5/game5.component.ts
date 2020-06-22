@@ -58,16 +58,20 @@ export class Game5Component implements AfterViewInit, GameComponent {
       audio: { disableWebAudio: true, noAudio: true }
     });
     //初始化场景
+    // eventEmitter.removeListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
+    eventEmitter.removeAllListeners();
     eventEmitter.addListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
     this.resetGame()
   }
   //重置游戏场景
   resetGame() {
+    console.info("reset game 5!")
     this.gameOptions = undefined;
     this.game.scene.remove('game5');
     this.game.scene.add('game5', Game5Scene, true, this.data.gameContents);
     this.roundNo = -1;
     this.gameState = GAME_STATE.READY;
+    // eventEmitter.removeAllListeners();
   }
   //开始游戏
   startGameHandler() {
@@ -104,6 +108,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
   optionNo: number;
   //开始回合
   startRound(roundNo: number) {
+    console.info("Game 5 Round ",roundNo)
     this.roundNo = roundNo;
     this.gameQuestion = this.data.gameContents[roundNo].question;
     this.gameOptions = this.data.gameContents[roundNo].options;
@@ -252,6 +257,7 @@ class Game5Scene extends Phaser.Scene {
       repeat: 0
     })
     this.optionResultAnimSprite.anims.delayedPlay(0, animName);
+    this.optionResultAnimSprite.removeListener(Phaser.Animations.Events.SPRITE_ANIMATION_COMPLETE, this.onAnimationEnd);
     this.optionResultAnimSprite.addListener(Phaser.Animations.Events.SPRITE_ANIMATION_COMPLETE, this.onAnimationEnd);
     return;
   }

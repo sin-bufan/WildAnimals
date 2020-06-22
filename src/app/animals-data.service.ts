@@ -25,6 +25,7 @@ export class AnimalsDataService {
   }
 
   $currentAnimal = new Subject<string>();
+  $currentLanguage = new Subject<string>();
   //获取动物列表数据
   getAnimals(): any {
     switch (this.language) {
