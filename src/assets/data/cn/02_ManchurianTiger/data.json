@@ -89,12 +89,12 @@
       "des": "栖息环境",
       "text": "中国境内的东北虎主要分布在与俄罗斯接壤的珲春地区，平日栖息在针阔混交和寒带森林中。在这些地区，夏季一般比较温和，冬季严寒，覆盖有很厚的雪层。",
       "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/02_ManchurianTiger/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/02_ManchurianTiger/map/habitat.json",
       "habitatLegend": [
         {

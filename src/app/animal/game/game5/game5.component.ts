@@ -52,7 +52,7 @@ export class Game5Component implements AfterViewInit, GameComponent {
       width: 800,
       height: 576,
       transparent: true,
-      type: Phaser.WEBGL,
+      type: Phaser.AUTO,
       parent: 'phaser-div-game5',
       scene: [],
       audio: { disableWebAudio: true, noAudio: true }

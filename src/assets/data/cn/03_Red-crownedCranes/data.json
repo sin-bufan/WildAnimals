@@ -98,12 +98,12 @@
       "des": "栖息环境",
       "text": "<p>丹顶鹤常成对或成家族群和小群活动。迁徙季节和冬季，常由数个或数十个家族群结成较大的群体。</p><p>生活在中国的丹顶鹤随季节迁徙，在春夏季活动于中国的东北部的开阔草地、湿地。越冬地在中国的东南沿海和长江下游地区，主要生活在泥沼、河流、稻田等地。</p>",
       "imageURL": "assets/data/cn/03_Red-crownedCranes/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/03_Red-crownedCranes/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/03_Red-crownedCranes/map/habitat.json",
       "habitatLegend": [
         {

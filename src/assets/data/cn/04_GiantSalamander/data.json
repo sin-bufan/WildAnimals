@@ -76,12 +76,12 @@
       "des": "栖息环境",
       "text": "大鲵对地质、地貌、水质等均有较高要求，被誉为优良生态环境的“指示生物”，集中分布于中国的黄河、长江及珠江流域。",
       "imageURL": "assets/data/cn/04_GiantSalamander/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/04_GiantSalamander/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/04_GiantSalamander/map/habitat.json",
       "habitatLegend": [
         {

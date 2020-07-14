@@ -86,12 +86,12 @@
       "des": "栖息环境",
       "text": "Fond of damp conditions, giant pandas are distributed mainly in Sichuan Province, as well as Shaanxi and Yunnan provinces. They mainly live in six major mountain chains from south to north, including Qinling, Minshan, Qionglai, Liangshan, Daxiangling and Xiaoxiangling.",
       "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/en/05_GiantPanda/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/05_GiantPanda/map/habitat.json",
       "habitatLegend": [
         {

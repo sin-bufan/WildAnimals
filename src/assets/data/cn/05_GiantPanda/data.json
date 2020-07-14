@@ -86,12 +86,12 @@
       "des": "栖息环境",
       "text": "大熊猫目前主要分布在中国四川省，另外陕西，云南省也有分布。它们集中在由南向北的六大山系：秦岭、岷山、邛崃、凉山、大相岭和小相岭。",
       "imageURL": "assets/data/cn/05_GiantPanda/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/05_GiantPanda/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/05_GiantPanda/map/habitat.json",
       "habitatLegend": [
         {

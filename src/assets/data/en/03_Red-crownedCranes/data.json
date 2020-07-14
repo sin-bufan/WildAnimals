@@ -98,12 +98,12 @@
       "des": "栖息环境",
       "text": "<p>Red-crowned cranes often walk round in pairs, kindred and small groups. In the migratory season and winter, several or dozens of “families” form larger groups.</p><p>Red-crowned cranes living in China migrate with the seasons. They move to open grasslands and wetlands in the northeast in spring and summer. They spend winter on the southeast coast and the lower reaches of the Yangtze River. They mainly live in swamps, rivers and rice fields, etc.</p>",
       "imageURL": "assets/data/cn/03_Red-crownedCranes/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/en/03_Red-crownedCranes/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/03_Red-crownedCranes/map/habitat.json",
       "habitatLegend": [
         {

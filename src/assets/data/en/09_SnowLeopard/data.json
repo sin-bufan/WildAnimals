@@ -89,12 +89,12 @@
       "des": "栖息环境",
       "text": "Snow leopards are rock animals in the plateau area and often move on the bare rocks in the permanent snow-capped mountains, and cold desert. China is their main habitat, with more than 60% of the global snow leopard distribution area. Snow leopards are distributed in Qinghai, Tibet, Xinjiang, Gansu, Sichuan, Yunnan and Inner Mongolia.",
       "imageURL": "assets/data/cn/09_SnowLeopard/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/en/09_SnowLeopard/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/09_SnowLeopard/map/habitat.json",
       "habitatLegend": [
         {

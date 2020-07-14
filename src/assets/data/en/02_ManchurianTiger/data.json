@@ -89,12 +89,12 @@
       "des": "栖息环境",
       "text": "Mainly distributed in the Hunchun area bordering Russia, Siberian tigers in China live in mixed broadleaf-conifer forests and frigid forests, where it is generally mild in summer and bitterly cold in winter. The area is covered with a thick layer of snow in winter.",
       "imageURL": "assets/data/cn/02_ManchurianTiger/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/en/02_ManchurianTiger/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/02_ManchurianTiger/map/habitat.json",
       "habitatLegend": [
         {

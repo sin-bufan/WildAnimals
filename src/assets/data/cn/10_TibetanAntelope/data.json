@@ -89,12 +89,12 @@
       "des": "栖息环境",
       "text": "藏羚羊是青藏高原的特有物种，栖息于海拔4600-6000米的高山草原、草甸和高寒荒漠地带，尤其喜欢在有水源、地势平坦的草滩上活动。藏羚羊生存的地区东西相跨达到1600公里，季节性迁徙是它们重要的生态特征。母羚羊的产羔地主要在乌兰乌拉湖、卓乃湖、可可西里湖，太阳湖等地。",
       "imageURL": "assets/data/cn/10_TibetanAntelope/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/10_TibetanAntelope/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/10_TibetanAntelope/map/habitat.json",
       "habitatLegend": [
         {

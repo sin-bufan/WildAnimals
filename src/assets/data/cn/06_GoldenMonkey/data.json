@@ -89,12 +89,12 @@
       "des": "栖息环境",
       "text": "金丝猴是典型的森林树栖动物。川金丝猴分布于四川、甘肃，陕西、湖北地区。滇金丝猴分布于中国西南部，局限于云南西北部至西藏东南部的云岭山区。黔金丝猴主要分布于贵州东北部的梵净山中。",
       "imageURL": "assets/data/cn/06_GoldenMonkey/map/1.jpg",
-      "mapPath": "./assets/data/map/",
-      "mapCenterX": "36",
-      "mapCenterY": "104",
-      "mapMaxZoom": "7",
-      "mapMinZoom": "4",
-      "mapDefaultZoom": "5",
+      "mapPath": "./assets/data/cn/06_GoldenMonkey/map/tiles/",
+      "mapCenterX": "72",
+      "mapCenterY": "-80",
+      "mapMaxZoom": "5",
+      "mapMinZoom": "2",
+      "mapDefaultZoom": "3",
       "habitatGeoJsonURL": "./assets/data/cn/06_GoldenMonkey/map/habitat.json",
       "habitatLegend": [
         {
