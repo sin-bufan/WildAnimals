@@ -109,6 +109,152 @@
         }
       ]
     },
+    "habits": {
+      "des": "生活习性",
+      "type": "Game1Component",
+      "startDialog": {
+        "intro": "",
+        "guide": "为6种长臂猿找到它们的<br>同类配偶"
+      },
+      "gameContents": {
+        "question": [
+          {
+            "value": 1,
+            "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/1.png"
+          },
+          {
+            "value": 2,
+            "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/2.png"
+          },
+          {
+            "value": 3,
+            "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/3.png"
+          },
+          {
+            "value": 4,
+            "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/4.png"
+          },
+          {
+            "value": 5,
+            "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/5.png"
+          }
+        ],
+        "options": [
+          [
+            {
+              "value": 1,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/1a.png"
+            },
+            {
+              "value": 2,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/2a.png"
+            },
+            {
+              "value": 3,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/3a.png"
+            },
+            {
+              "value": 4,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/4a.png"
+            },
+            {
+              "value": 5,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/5a.png"
+            }
+          ],
+          [
+            {
+              "value": 1,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/1b.png"
+            },
+            {
+              "value": 2,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/2b.png"
+            },
+            {
+              "value": 3,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/3b.png"
+            },
+            {
+              "value": 4,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/4b.png"
+            },
+            {
+              "value": 5,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/5b.png"
+            }
+          ],
+          [
+            {
+              "value": 1,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/1c.png"
+            },
+            {
+              "value": 2,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/2c.png"
+            },
+            {
+              "value": 3,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/3c.png"
+            },
+            {
+              "value": 4,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/4c.png"
+            },
+            {
+              "value": 5,
+              "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/5c.png"
+            }
+          ]
+        ],
+        "fight": [
+          {
+            "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
+            "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
+            "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
+            "enemyEnterTime": 10,
+            "soldierQuestionValue": 4
+          },
+          {
+            "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
+            "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
+            "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
+            "enemyEnterTime": 5,
+            "soldierQuestionValue": 2
+          },
+          {
+            "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
+            "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
+            "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
+            "enemyEnterTime": 0,
+            "soldierQuestionValue": 1
+          },
+          {
+            "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
+            "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
+            "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
+            "enemyEnterTime": 15,
+            "soldierQuestionValue": 3
+          },
+          {
+            "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
+            "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
+            "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
+            "enemyEnterTime": 20,
+            "soldierQuestionValue": 5
+          }
+        ],
+        "fireImageURL": [
+          "assets/data/cn/02_ManchurianTiger/game/fire_1.gif",
+          "assets/data/cn/02_ManchurianTiger/game/fire_2.gif",
+          "assets/data/cn/02_ManchurianTiger/game/fire_3.gif",
+          "assets/data/cn/02_ManchurianTiger/game/fire_4.gif"
+        ],
+        "gameWinImageURL": "assets/data/cn/02_ManchurianTiger/game/win.png",
+        "gameLostImageURL": "assets/data/cn/02_ManchurianTiger/game/lost.png",
+        "gameCompleteImageURL": "assets/data/cn/02_ManchurianTiger/game/gameComplete.png"
+      }
+    },
     "culture": {
       "des": "文化印记",
       "text": "中国古代对虎的形象十分崇拜，特别是在军事上，统治者传达军事命令、征调兵将以及用于各项事务的凭证，就称为虎符。虎符剖为左右两半，右边留存于朝廷，左半交地方官吏或统兵将帅保管，使用时两半相合，即为“符合”，表示命令验证可信。",
