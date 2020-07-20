@@ -111,13 +111,13 @@
     },
     "habits": {
       "des": "生活习性",
-      "type": "Game1Component",
+      "type": "Game2Component",
       "startDialog": {
         "intro": "",
-        "guide": "为6种长臂猿找到它们的<br>同类配偶"
+        "guide": "拼出相同图案的虎符<br>调动援军保卫城池"
       },
       "gameContents": {
-        "question": [
+        "questions": [
           {
             "value": 1,
             "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/1.png"
@@ -139,7 +139,7 @@
             "imageURL": "assets/data/cn/02_ManchurianTiger/game/puzzle/5.png"
           }
         ],
-        "options": [
+        "puzzle": [
           [
             {
               "value": 1,
@@ -207,19 +207,19 @@
             }
           ]
         ],
-        "fight": [
+        "fights": [
           {
             "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
             "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
             "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
-            "enemyEnterTime": 10,
+            "enemyEnterTime": 300,
             "soldierQuestionValue": 4
           },
           {
             "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
             "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
             "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
-            "enemyEnterTime": 5,
+            "enemyEnterTime": 100,
             "soldierQuestionValue": 2
           },
           {
@@ -233,14 +233,14 @@
             "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
             "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
             "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
-            "enemyEnterTime": 15,
+            "enemyEnterTime": 200,
             "soldierQuestionValue": 3
           },
           {
             "enemyImageURL": "assets/data/cn/02_ManchurianTiger/game/enemy.png",
             "soldierImageURL": "assets/data/cn/02_ManchurianTiger/game/soldier.png",
             "fightImageURL": "assets/data/cn/02_ManchurianTiger/game/fight.gif",
-            "enemyEnterTime": 20,
+            "enemyEnterTime": 400,
             "soldierQuestionValue": 5
           }
         ],
@@ -249,11 +249,11 @@
           "assets/data/cn/02_ManchurianTiger/game/fire_2.gif",
           "assets/data/cn/02_ManchurianTiger/game/fire_3.gif",
           "assets/data/cn/02_ManchurianTiger/game/fire_4.gif"
-        ],
-        "gameWinImageURL": "assets/data/cn/02_ManchurianTiger/game/win.png",
-        "gameLostImageURL": "assets/data/cn/02_ManchurianTiger/game/lost.png",
-        "gameCompleteImageURL": "assets/data/cn/02_ManchurianTiger/game/gameComplete.png"
-      }
+        ]
+      },
+      "gameWinImageURL": "assets/data/cn/02_ManchurianTiger/game/win.png",
+      "gameLostImageURL": "assets/data/cn/02_ManchurianTiger/game/lost.png",
+      "gameCompleteImageURL": "assets/data/cn/02_ManchurianTiger/game/gameComplete.png"
     },
     "culture": {
       "des": "文化印记",

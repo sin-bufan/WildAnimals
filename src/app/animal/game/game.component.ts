@@ -30,5 +30,7 @@ export const GAME_STATE = {
 export const GAME_RESULT = {
   EMPTY:"empty",
   RIGHT: "gameRight",
-  WRONG: "gameWrong"
+  WRONG: "gameWrong",
+  WIN:"gameWin",
+  LOST:"gameLost"
 }

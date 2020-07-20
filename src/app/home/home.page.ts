@@ -172,7 +172,7 @@ class MenuScene extends Phaser.Scene {
       frameRate: FRAME_RATE,
       repeat: -1
     })
-    console.info("animation created!!!",this.sprite,this.anims,this.sprite.anims);
+    console.info("animation created!!!", this.sprite, this.anims, this.sprite.anims);
     //播放动画
     this.sprite.setInteractive();
     this.sprite.anims.delayedPlay(PAUSE_DELAY, MENU_ANIM_NAME);
@@ -246,7 +246,10 @@ class MenuScene extends Phaser.Scene {
       if (!menuScene.drag) {
         //进入章节
         //let distance: number = Math.sqrt(Math.pow(pointer.x - ANIMALS_SPRITE_WIDTH / 2, 2) + Math.pow(pointer.y - ANIMALS_SPRITE_HEIGHT / 2, 2))
-        let distance: number = Math.sqrt(Math.pow(pointer.x - currentlyOver[0].x + CENTER_OFFSET_X, 2) + Math.pow(pointer.y - currentlyOver[0].y + CENTER_OFFSET_Y, 2))
+        let distance: number = 0;
+        if (currentlyOver.length > 0) {
+          distance = Math.sqrt(Math.pow(pointer.x - currentlyOver[0].x + CENTER_OFFSET_X, 2) + Math.pow(pointer.y - currentlyOver[0].y + CENTER_OFFSET_Y, 2))
+        }
         if (distance < HOT_AREA_R) {
           //console.log(pointer.x, pointer.y, distance)
           let animalIndex: number = Math.floor(menuScene.sprite.anims.currentFrame.index / FRAMES_PER_ANIMAL);

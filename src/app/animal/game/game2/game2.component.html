@@ -1,3 +1,110 @@
-<p>
-  game2 works!
-</p>
+<div *ngIf="data" class="game-area">
+  <!-- 游戏结束画面 -->
+  <!-- <div
+    [hidden]="gameState != 'gameCompleted'"
+    class="game-complete"
+    (dblclick)="resetGame()"
+  >
+    <img class="game-complete-image" [src]="data.gameCompleteImageURL" />
+    <ion-text>{{ data.gameCompleteTips }}</ion-text>
+  </div> -->
+  <!-- 开始对话框 -->
+  <div
+    class="start-game-dialog"
+    *ngIf="data.startDialog"
+    [hidden]="gameState != 'gameReady'"
+  >
+    <ion-text
+      class="game-intro"
+      *ngIf="data.startDialog.intro"
+      [innerHTML]="data.startDialog.intro"
+    ></ion-text>
+    <ion-text
+      class="game-guide"
+      *ngIf="data.startDialog.guide"
+      [innerHTML]="data.startDialog.guide"
+    ></ion-text>
+    <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      (click)="startGameHandler()"
+    >
+      <!-- <img src="assets/images/button/startGame.png" /> -->
+      <img *ngIf="lang == 'cn'" src="assets/images/button/startGame_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/startGame_en.png" />
+    </ion-button>
+  </div>
+  <!-- 游戏2 -->
+  <div
+    class="game2-content"
+    *ngIf="data.gameContents"
+    [hidden]="gameState != 'gamePlaying'"
+  >
+    <!-- 战场 -->
+    <div class="battle-field">
+      <img class="battle-bg" src="assets/images/game/2/gameSceneBg.png" />
+      <img class="fire" *ngIf="fireIndex>=0" [src]="fire[fireIndex]" />
+      <div class="battle">
+        <div
+          *ngFor="let fight of fights; let i = index"
+          class="fight-field"
+        >
+        <img class="enemy" [src]="fight.enemyImageURL"  *ngIf="fight.fighting!=0" [ngStyle]="{'top.px': fight.enemyPositionY}"/>
+        <img class="fight" [src]="fight.fightImageURL" *ngIf="fight.fighting>0"/>
+        <img class="soldier" [src]="fight.soldierImageURL" *ngIf="fight.soldierInPosition"/>
+      </div>
+      </div>
+      <img class="game-win" *ngIf="gameResult=='gameWin'" [src]="data.gameWinImageURL" />
+      <img class="game-lost" *ngIf="gameResult=='gameLost'" [src]="data.gameLostImageURL" />
+    </div>
+    <!-- 指挥部 -->
+    <div class="HQ">
+      <!-- 问题 -->
+      <img
+        class="question"
+        *ngIf="gameQuestion"
+        [src]="gameQuestion.imageURL"
+      />
+      <!-- 选项 -->
+      <div class="puzzle-container">
+        <img class="puzzle-bg" src="assets/images/game/2/puzzleFrame.png" />
+        <img class="puzzle-bg" src="assets/images/game/2/puzzleGlass.png" />
+        <div class="puzzle">
+          <div
+            *ngFor="let items of puzzle; let i = index"
+            class="puzzle-column"
+          >
+            <ion-button
+              class="image-button"
+              expand="full"
+              fill="clear" [hidden]="puzzleComplete"
+              (click)="puzzleItemsSlides.slideNext()"
+            >
+              <img src="assets/images/game/2/puzzleButtonUp.png" />
+            </ion-button>
+            <div>
+              <ion-slides
+                #puzzleItemsSlides
+                [options]="slideOpts"
+                (ionSlideDidChange)="selectPuzzleHandler(puzzleItemsSlides, i)"
+              >
+                <ion-slide *ngFor="let item of items">
+                  <img [src]="item.imageURL" />
+                </ion-slide>
+              </ion-slides>
+            </div>
+            <ion-button
+              class="image-button"
+              expand="full"
+              fill="clear" [hidden]="puzzleComplete"
+              (click)="puzzleItemsSlides.slidePrev()"
+            >
+              <img src="assets/images/game/2/puzzleButtonDown.png" />
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
