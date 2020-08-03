@@ -24,7 +24,7 @@
   left: 20px;
   top: 20px;
   right: 20px;
-  bottom: 100px;
+  bottom: 70px;
   mask-image: url("../../../../assets/images/game/2/battleMask.png");
 }
 .fire{
@@ -60,7 +60,7 @@
   position: absolute;
   left:50%;
   transform: translateX(-50%);
-  bottom: 0px;
+  bottom: 10px;
 }
 .game-win {
   width: fit-content;
@@ -91,13 +91,13 @@
 .question {
   width: fit-content;
   height: fit-content;
-  margin-bottom: 60px;
 }
 .puzzle-container {
   position: relative;
   width: 328px;
   height: 280px;
   padding: 0;
+  margin: 30px;
 }
 .puzzle-bg {
   position: absolute;

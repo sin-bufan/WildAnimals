@@ -1,7 +1,7 @@
 <div class="container">
     <img class="bg" src="assets/images/imagePanel.png" />
     <div class="image-container">
-        <video *ngIf="data"  [src]="data.videoURL" controls="controls"></video>
+        <video *ngIf="data"  [src]="data.videoURL" controls controlslist="nofullscreen nodownload" disablePictureInPicture></video>
     </div>
     <ion-button class="image-button close-button" expand="full" fill="clear">
         <img src="assets/images/button/closeImage.png" (click)="onClose()"/>

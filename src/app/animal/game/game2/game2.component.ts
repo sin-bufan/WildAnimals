@@ -1,13 +1,13 @@
 import { Component, AfterViewInit, Input, ViewChild, ChangeDetectorRef } from '@angular/core';
-
+import { Animation } from '@ionic/core';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND, GAME_RESULT } from '../game.component';
 import { shuffle } from 'lodash';
 import { GameCompleteComponent } from '../gameComplete/gameComplete.component';
-import { ModalController, IonSlides } from '@ionic/angular';
+import { ModalController, IonSlides, AnimationController } from '@ionic/angular';
 import { AnimalsDataService } from 'src/app/animals-data.service';
 import { TimeInterval, interval, Subscription } from 'rxjs';
-const ENEMY_ENTER_Y: number = -210;
-const ENEMY_EXIT_Y: number = 280;
+const ENEMY_ENTER_Y: number = -220;
+const ENEMY_EXIT_Y: number = 270;
 const LOSE_CONDITION: number = 3;
 @Component({
   selector: 'app-game2',
@@ -34,6 +34,7 @@ export class Game2Component implements AfterViewInit, GameComponent {
   constructor(
     private modalController: ModalController,
     private animalsDataService: AnimalsDataService,
+    private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef) {
     this.lang = this.animalsDataService.language;
   }
@@ -93,6 +94,27 @@ export class Game2Component implements AfterViewInit, GameComponent {
       this.puzzleInPosition.push(false);
     }
     this.puzzleComplete = false;
+    if (this.roundNo >= this.gameQuestions.length - 1) {
+      this.skipButtonEnabled = false;
+    } else {
+      this.skipButtonEnabled = true;
+    }
+    let a: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector(".question"))
+      .duration(500)
+      .delay(200)
+      .easing('ease-out')
+      .iterations(1)
+      .fromTo('opacity', "0", "1")
+      .onFinish(() => {
+      });
+    a.play()
+  }
+  skipButtonEnabled: boolean = true;
+  nextRound() {
+    //下一题
+    this.roundNo++;
+    this.startRound(this.roundNo);
   }
   puzzleInPosition: Array<boolean>;
   puzzleComplete: boolean = false;
@@ -121,12 +143,12 @@ export class Game2Component implements AfterViewInit, GameComponent {
         }
       }
       this.puzzleComplete = true;
-      RIGHT_SOUND.once('end', function () {
+      RIGHT_SOUND.once('end', async function () {
+        await this_.showRight(this_.roundNo);
         if (this_.roundNo >= this_.gameQuestions.length - 1) {
           // 游戏结束
-          this_.endGame();
+          // this_.endGame();
         } else {
-          this_.showRight(this_.roundNo);
           //下一题
           this_.roundNo++;
           this_.startRound(this_.roundNo);
@@ -158,7 +180,28 @@ export class Game2Component implements AfterViewInit, GameComponent {
   }
   /******************************************************************************/
   //完成一个拼图
-  showRight(puzzleCatalogIndex: number) {
+  async showRight(puzzleCatalogIndex: number) {
+    //虎符闪烁
+    let a: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector(".question"))
+      .duration(500)
+      .easing('ease-out')
+      .iterations(1)
+      .fromTo('opacity', "0", "1")
+      .onFinish(() => {
+      });
+    let b: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector(".question"))
+      .duration(300)
+      .delay(200)
+      .easing('ease-out')
+      .iterations(1)
+      .fromTo('transform', "translate(0, 0) scale(1)", "translate(-480px, 450px) scale(0.3)")
+      .onFinish(() => {
+      });
+    await a.play();
+    await b.play();
+
     console.info("援军出城：", puzzleCatalogIndex);
     let this_ = this;
     this.fights.forEach((fight) => {
@@ -166,10 +209,26 @@ export class Game2Component implements AfterViewInit, GameComponent {
         fight.soldierInPosition = true;
       }
     })
+    let c: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector(".question"))
+      .duration(500)
+      .iterations(1)
+      .fromTo('opacity', "1", "0")
+      .onFinish(() => {
+      });
+    let d: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector(".question"))
+      .duration(0)
+      .iterations(1)
+      .to('transform', "translate(0, 0) scale(1)")
+      .onFinish(() => {
+      });
+    await c.play();
+    await d.play();
   }
   fights: Array<FightData>;
   fire: Array<string>;
-  battleTimer = interval(100);;
+  battleTimer = interval(80);;
   battleTimerSubscribe: Subscription;
   startBattle() {
     this.fights = this.data.gameContents.fights;
@@ -198,7 +257,7 @@ export class Game2Component implements AfterViewInit, GameComponent {
         else {
           if (fight.enemyPositionY < ENEMY_EXIT_Y) {
             //敌军前进
-            fight.enemyPositionY = fight.enemyPositionY + 2;
+            fight.enemyPositionY = fight.enemyPositionY + 1;
             // this.cdRef.detectChanges();
           } else if (fight.enemyPositionY == ENEMY_EXIT_Y && fight.fighting != FIGHTING_STATE.WIN && fight.fighting != FIGHTING_STATE.LOSE) {
             //兵临城下
@@ -243,8 +302,8 @@ export class Game2Component implements AfterViewInit, GameComponent {
 }
 class Game2Data extends GameData {
   gameContents: PuzzleGameData;
-  gameWinImageURL:string;
-  gameLostImageURL:string;
+  gameWinImageURL: string;
+  gameLostImageURL: string;
 }
 class PuzzleGameData {
   questions: Array<GameQuestion>;
@@ -272,16 +331,16 @@ class FightData {
   soldierInPosition: boolean = false;
   fighting: number = FIGHTING_STATE.NOT_MEET;
 }
-enum ENEMY_STATE {
-  NO_ENEMY = -1,
-  ENEMY_COMMING = 0,
-  ENEMY_ARRIVED = 1,
-  ENEMY_DEFEATED = 2,
-}
-enum SOLDIER_STATE {
-  SOLDIER_NOT_READY = 0,
-  SOLDIER_READY = 1
-}
+// enum ENEMY_STATE {
+//   NO_ENEMY = -1,
+//   ENEMY_COMMING = 0,
+//   ENEMY_ARRIVED = 1,
+//   ENEMY_DEFEATED = 2,
+// }
+// enum SOLDIER_STATE {
+//   SOLDIER_NOT_READY = 0,
+//   SOLDIER_READY = 1
+// }
 enum FIGHTING_STATE {
   NOT_MEET = -100,
   START_FIGHT = 40,

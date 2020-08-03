@@ -44,19 +44,37 @@
     <!-- 战场 -->
     <div class="battle-field">
       <img class="battle-bg" src="assets/images/game/2/gameSceneBg.png" />
-      <img class="fire" *ngIf="fireIndex>=0" [src]="fire[fireIndex]" />
+      <img class="fire" *ngIf="fireIndex >= 0" [src]="fire[fireIndex]" />
       <div class="battle">
-        <div
-          *ngFor="let fight of fights; let i = index"
-          class="fight-field"
-        >
-        <img class="enemy" [src]="fight.enemyImageURL"  *ngIf="fight.fighting!=0" [ngStyle]="{'top.px': fight.enemyPositionY}"/>
-        <img class="fight" [src]="fight.fightImageURL" *ngIf="fight.fighting>0"/>
-        <img class="soldier" [src]="fight.soldierImageURL" *ngIf="fight.soldierInPosition"/>
+        <div *ngFor="let fight of fights; let i = index" class="fight-field">
+          <img
+            class="enemy"
+            [src]="fight.enemyImageURL"
+            *ngIf="fight.fighting != 0"
+            [ngStyle]="{ 'top.px': fight.enemyPositionY }"
+          />
+          <img
+            class="fight"
+            [src]="fight.fightImageURL"
+            *ngIf="fight.fighting > 0"
+          />
+          <img
+            class="soldier"
+            [src]="fight.soldierImageURL"
+            *ngIf="fight.soldierInPosition"
+          />
+        </div>
       </div>
-      </div>
-      <img class="game-win" *ngIf="gameResult=='gameWin'" [src]="data.gameWinImageURL" />
-      <img class="game-lost" *ngIf="gameResult=='gameLost'" [src]="data.gameLostImageURL" />
+      <img
+        class="game-win"
+        *ngIf="gameResult == 'gameWin'"
+        [src]="data.gameWinImageURL"
+      />
+      <img
+        class="game-lost"
+        *ngIf="gameResult == 'gameLost'"
+        [src]="data.gameLostImageURL"
+      />
     </div>
     <!-- 指挥部 -->
     <div class="HQ">
@@ -66,6 +84,16 @@
         *ngIf="gameQuestion"
         [src]="gameQuestion.imageURL"
       />
+      <ion-button
+      class="image-button"
+      expand="full"
+      fill="clear"
+      [disabled]="!skipButtonEnabled"
+      (click)="nextRound()"
+    >
+      <img *ngIf="lang == 'cn'" src="assets/images/button/nextGameRound_cn.png" />
+      <img *ngIf="lang == 'en'" src="assets/images/button/nextGameRound_en.png" />
+    </ion-button>
       <!-- 选项 -->
       <div class="puzzle-container">
         <img class="puzzle-bg" src="assets/images/game/2/puzzleFrame.png" />
@@ -78,7 +106,8 @@
             <ion-button
               class="image-button"
               expand="full"
-              fill="clear" [hidden]="puzzleComplete"
+              fill="clear"
+              [hidden]="puzzleComplete"
               (click)="puzzleItemsSlides.slideNext()"
             >
               <img src="assets/images/game/2/puzzleButtonUp.png" />
@@ -97,7 +126,8 @@
             <ion-button
               class="image-button"
               expand="full"
-              fill="clear" [hidden]="puzzleComplete"
+              fill="clear"
+              [hidden]="puzzleComplete"
               (click)="puzzleItemsSlides.slidePrev()"
             >
               <img src="assets/images/game/2/puzzleButtonDown.png" />
@@ -105,6 +135,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
