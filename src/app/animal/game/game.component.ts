@@ -1,6 +1,8 @@
 import {Howl, Howler} from 'howler';
 export interface GameComponent {
   data: any;
+  initGame:()=>void;
+  resetGame:()=>void;
 }
 
 export const RIGHT_SOUND = new Howl({

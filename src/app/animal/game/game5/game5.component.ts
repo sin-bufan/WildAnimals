@@ -61,7 +61,15 @@ export class Game5Component implements AfterViewInit, GameComponent {
     // eventEmitter.removeListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
     eventEmitter.removeAllListeners();
     eventEmitter.addListener(RESULT_ANIMATION_COMPLETE, this.resultAnimationCompleteHandler);
-    this.resetGame()
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
+    this.resetGame();
   }
   //重置游戏场景
   resetGame() {

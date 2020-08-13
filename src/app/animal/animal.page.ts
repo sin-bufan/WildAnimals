@@ -96,7 +96,7 @@ export class AnimalPage implements OnInit, AfterViewInit {
       this.render.setStyle(this.bg.nativeElement, "left", bgLeft + "px");
     }
     this.lastBgLeft = bgLeft;
-    //console.log(this.lastBgLeft)
+    console.log(this.lastBgLeft, bgLeft)
   }
   //更新按钮状态
   prevButtonEnabled: boolean = false;
@@ -119,7 +119,12 @@ export class AnimalPage implements OnInit, AfterViewInit {
       this.prevButtonEnabled = true;
       this.nextButtonEnabled = true;
     }
-    //console.info(progress,this.prevButtonEnabled,this.nextButtonEnabled)
+    // console.info(event, progress * (slideNum - 1), this.prevButtonEnabled, this.nextButtonEnabled)
+
+    //如果是离开游戏画面，终止游戏
+    if (this.animal.habits!=null && event.target.id == "animal-slides") {
+      this.animalsDataService.$currentAnimalSection.next(this.animal.habits.type);
+    }
   }
   slideOpts = {
     loop: false,

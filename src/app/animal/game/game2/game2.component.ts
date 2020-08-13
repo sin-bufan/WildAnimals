@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, Input, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, Input, ViewChild, ChangeDetectorRef, ViewChildren, QueryList } from '@angular/core';
 import { Animation } from '@ionic/core';
 import { GameComponent, GameData, GAME_STATE, RIGHT_SOUND, WRONG_SOUND, GAME_RESULT } from '../game.component';
 import { shuffle } from 'lodash';
@@ -45,8 +45,14 @@ export class Game2Component implements AfterViewInit, GameComponent {
   gameState: string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
-    //初始化游戏
-
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     //初始化场景
     this.resetGame()
   }
@@ -102,13 +108,14 @@ export class Game2Component implements AfterViewInit, GameComponent {
     let a: Animation = this.animationCtrl.create()
       .addElement(document.querySelector(".question"))
       .duration(500)
-      .delay(200)
+      .delay(500)
       .easing('ease-out')
       .iterations(1)
       .fromTo('opacity', "0", "1")
       .onFinish(() => {
       });
-    a.play()
+    a.play();
+    this.initPuzzle();
   }
   skipButtonEnabled: boolean = true;
   nextRound() {
@@ -118,7 +125,23 @@ export class Game2Component implements AfterViewInit, GameComponent {
   }
   puzzleInPosition: Array<boolean>;
   puzzleComplete: boolean = false;
-  //选择选项
+  //初始化拼图
+  @ViewChildren("puzzleItemsSlides") puzzleItemsSlides: QueryList<IonSlides>;
+  initPuzzle() {
+    // console.info(this.puzzleItemsSlides);
+    this.puzzleItemsSlides.forEach((item: IonSlides, index: number, array: Array<IonSlides>) => {
+      let startPositon: number = Math.floor(Math.random() * this.puzzle[index].length);
+      // console.info(startPositon);
+      item.slideTo(startPositon);
+      if (this.gameQuestion.value == this.puzzle[index][startPositon].value) {
+        //选择正确
+        this.puzzleInPosition[index] = true;
+      } else {
+        this.puzzleInPosition[index] = false;
+      }
+    })
+  }
+  //选择选项拼图改变
   async selectPuzzleHandler(puzzleItemsSlides: IonSlides, puzzleCatalogIndex: number) {
     let selectedIndex: number = await puzzleItemsSlides.getActiveIndex();
     //循环模式下activeIndex的纠正
@@ -168,14 +191,16 @@ export class Game2Component implements AfterViewInit, GameComponent {
     this.puzzle = undefined;
     this.gameState = GAME_STATE.COMPLETED;
     // console.info({ imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips })
-    const modal = await this.modalController.create({
-      component: GameCompleteComponent,
-      cssClass: 'photo-modal',
-      componentProps: {
-        'data': { imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips }
-      }
-    });
-    await modal.present();
+    if (this.gameResult == GAME_RESULT.WIN) {
+      const modal = await this.modalController.create({
+        component: GameCompleteComponent,
+        cssClass: 'photo-modal',
+        componentProps: {
+          'data': { imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips }
+        }
+      });
+      await modal.present();
+    }
     this.resetGame();
   }
   /******************************************************************************/
@@ -186,13 +211,13 @@ export class Game2Component implements AfterViewInit, GameComponent {
       .addElement(document.querySelector(".question"))
       .duration(500)
       .easing('ease-out')
-      .iterations(1)
+      .iterations(2)
       .fromTo('opacity', "0", "1")
       .onFinish(() => {
       });
     let b: Animation = this.animationCtrl.create()
       .addElement(document.querySelector(".question"))
-      .duration(300)
+      .duration(500)
       .delay(200)
       .easing('ease-out')
       .iterations(1)
@@ -202,7 +227,7 @@ export class Game2Component implements AfterViewInit, GameComponent {
     await a.play();
     await b.play();
 
-    console.info("援军出城：", puzzleCatalogIndex);
+    // console.info("援军出城：", puzzleCatalogIndex);
     let this_ = this;
     this.fights.forEach((fight) => {
       if (fight.soldierQuestionValue == this.gameQuestion.value && fight.fighting != FIGHTING_STATE.LOSE) {
@@ -265,16 +290,16 @@ export class Game2Component implements AfterViewInit, GameComponent {
               //城下有兵
               if (fight.fighting == FIGHTING_STATE.NOT_MEET) {
                 //开打
-                console.info("开打！");
+                // console.info("开打！");
                 fight.fighting = FIGHTING_STATE.START_FIGHT;
                 // this.cdRef.detectChanges();
               } else if (fight.fighting > FIGHTING_STATE.WIN) {
                 //还在打
                 fight.fighting = fight.fighting - 1;
-                console.info("胜利倒计时：", fight.fighting);
+                // console.info("胜利倒计时：", fight.fighting);
               }
             } else {
-              console.info("失守");
+              // console.info("失守");
               fight.fighting = FIGHTING_STATE.LOSE;
               this.fireIndex++;
             }
@@ -287,13 +312,13 @@ export class Game2Component implements AfterViewInit, GameComponent {
       })
     }
     if (battleEnd) {
-      console.info("游戏结束！");
+      // console.info("游戏结束！");
       this.battleTimerSubscribe.unsubscribe();
       if (this.fireIndex >= LOSE_CONDITION) {
-        console.info("游戏失败！");
+        // console.info("游戏失败！");
         this.gameResult = GAME_RESULT.LOST;
       } else {
-        console.info("游戏胜利！");
+        // console.info("游戏胜利！");
         this.gameResult = GAME_RESULT.WIN;
       }
       setTimeout(this.endGame.bind(this), 3000);

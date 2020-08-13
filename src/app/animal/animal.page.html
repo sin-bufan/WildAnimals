@@ -1,7 +1,7 @@
 <ion-content>
   <img #bg *ngIf="animal" class="bg" [src]="animal.bgURL" />
   <ion-slides
-    *ngIf="animal"
+    *ngIf="animal" id="animal-slides"
     #slides
     [options]="slideOpts"
     pager="false" scrollbar="true"

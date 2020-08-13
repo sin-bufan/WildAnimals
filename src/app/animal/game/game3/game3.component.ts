@@ -39,8 +39,14 @@ export class Game3Component implements AfterViewInit, GameComponent {
   gameState: string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
-    //初始化游戏
-
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     //初始化场景
     this.resetGame()
   }

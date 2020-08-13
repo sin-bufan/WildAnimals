@@ -12,7 +12,7 @@ const CARD_START_Y: number = -300;
 const CARD_H_GAP: number = 200;
 const CARD_V_GAP: number = 200;
 const CARD_COLUMN_NUM: number = 3;
-const SHUFFLE_NUM:number = 3;
+const SHUFFLE_NUM: number = 3;
 @Component({
   selector: 'app-game7',
   templateUrl: './game7.component.html',
@@ -36,12 +36,12 @@ export class Game7Component implements AfterViewInit, GameComponent {
   }
   @ViewChildren("card", { read: ElementRef }) cardsElementRef: QueryList<ElementRef>;
   @ViewChildren("card") cards: QueryList<CardComponent>;
-  lang:string;
+  lang: string;
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
-    private modalController:ModalController,
+    private modalController: ModalController,
     private animalsDataService: AnimalsDataService) {
-      this.lang = this.animalsDataService.language;
+    this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -55,6 +55,14 @@ export class Game7Component implements AfterViewInit, GameComponent {
     for (let i: number = 0; i < this.data.gameContents.items.length; i++) {
       this.cardsPositionIndex.push(i);
     }
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     this.resetGame()
   }
   //重置游戏场景
@@ -68,12 +76,12 @@ export class Game7Component implements AfterViewInit, GameComponent {
   }
   async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
-    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    console.info({ imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips })
     const modal = await this.modalController.create({
       component: GameCompleteComponent,
       cssClass: 'photo-modal',
       componentProps: {
-        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+        'data': { imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips }
       }
     });
     await modal.present();
@@ -90,7 +98,7 @@ export class Game7Component implements AfterViewInit, GameComponent {
       item.nativeElement.style.top = CARD_START_Y + "px";
     })
     //发牌
-    await this.arrangeCards(300,100);
+    await this.arrangeCards(300, 100);
     //显示牌面
     this.cards.forEach((item) => {
       item.show();
@@ -103,15 +111,15 @@ export class Game7Component implements AfterViewInit, GameComponent {
       await card.hide(100);
     }
     //洗牌
-    for (let i=0;i<SHUFFLE_NUM;i++){
+    for (let i = 0; i < SHUFFLE_NUM; i++) {
       this.cardsPositionIndex = shuffle(this.cardsPositionIndex);
       await this.arrangeCards();
     }
-    
+
     this.enable = true;
   }
   //移动位置动画
-  async arrangeCards(duration:number=1000,delayOffset: number = 0) {
+  async arrangeCards(duration: number = 1000, delayOffset: number = 0) {
     //新确定坐标
     let a: Array<Animation> = new Array(this.cardsPositionIndex.length);
     for (let i: number = 0; i < this.cardsPositionIndex.length; i++) {

@@ -28,12 +28,12 @@ export class Game1Component implements AfterViewInit, GameComponent {
   get data(): Game1Data {
     return this._data;
   }
-  lang:string;
+  lang: string;
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
-    private modalController:ModalController,
+    private modalController: ModalController,
     private animalsDataService: AnimalsDataService) {
-      this.lang = this.animalsDataService.language;
+    this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -45,6 +45,14 @@ export class Game1Component implements AfterViewInit, GameComponent {
   gameState: string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     //初始化游戏
     this.resetGame()
   }
@@ -59,12 +67,12 @@ export class Game1Component implements AfterViewInit, GameComponent {
   }
   async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
-    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    console.info({ imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips })
     const modal = await this.modalController.create({
       component: GameCompleteComponent,
       cssClass: 'photo-modal',
       componentProps: {
-        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+        'data': { imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips }
       }
     });
     await modal.present();

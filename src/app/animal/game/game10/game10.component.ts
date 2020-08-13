@@ -26,13 +26,13 @@ export class Game10Component implements AfterViewInit, GameComponent {
     return this._data;
   }
   @ViewChild('circle') circle: ElementRef;
-  lang:string
+  lang: string
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
     private render: Renderer2,
     private gestureCtrl: GestureController,
     private animalsDataService: AnimalsDataService) {
-      this.lang = this.animalsDataService.language;
+    this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -46,18 +46,18 @@ export class Game10Component implements AfterViewInit, GameComponent {
   }
 
   onMove(detail) {
-    let d:number = this.currentDegree + detail.deltaX;
+    let d: number = this.currentDegree + detail.deltaX;
     console.info(d);
-    while(d<0){
-      d=d+360;
+    while (d < 0) {
+      d = d + 360;
     }
-    while(d>=360){
-      d=d-360;
+    while (d >= 360) {
+      d = d - 360;
     }
     this.updateMonth(d);
   }
 
-  currentDegree:number=0;
+  currentDegree: number = 0;
   onEnd(detail) {
     this.currentDegree = this.currentDegree + detail.deltaX;
   }
@@ -65,7 +65,14 @@ export class Game10Component implements AfterViewInit, GameComponent {
   gameState: string = GAME_STATE.READY;
   //初始化游戏，不能放到set data里面，因为phaser-div-game5可能还没生成
   initGame() {
-    //初始化游戏
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     this.resetGame()
   }
 
@@ -83,10 +90,10 @@ export class Game10Component implements AfterViewInit, GameComponent {
   }
 
   monthImageURL: string;
-  updateMonth(deg:number = 0){
-    this.render.setStyle(this.circle.nativeElement, "transform", "translateX(-50%) rotate("+ deg + "deg)");
+  updateMonth(deg: number = 0) {
+    this.render.setStyle(this.circle.nativeElement, "transform", "translateX(-50%) rotate(" + deg + "deg)");
     this.data.gameContents.forEach(m => {
-      if (m.degree_start<=deg && deg <m.degree_end){
+      if (m.degree_start <= deg && deg < m.degree_end) {
         this.monthImageURL = m.imageURL;
         this.cdRef.detectChanges();
       }

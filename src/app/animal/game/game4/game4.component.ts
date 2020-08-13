@@ -35,12 +35,12 @@ export class Game4Component implements AfterViewInit, GameComponent {
   }
   @ViewChildren("rock", { read: ElementRef }) rocksElementRef: QueryList<ElementRef>;
   @ViewChildren("rock") rocks: QueryList<RockComponent>;
-  lang:string;
+  lang: string;
   constructor(private animationCtrl: AnimationController,
     private cdRef: ChangeDetectorRef,
-    private modalController:ModalController,
+    private modalController: ModalController,
     private animalsDataService: AnimalsDataService) {
-      this.lang = this.animalsDataService.language;
+    this.lang = this.animalsDataService.language;
   }
   ngAfterViewInit() {
     // this.initGame();
@@ -54,6 +54,14 @@ export class Game4Component implements AfterViewInit, GameComponent {
     for (let i: number = 0; i < this.data.gameContents.items.length; i++) {
       this.rocksPositionIndex.push(i);
     }
+    //离开游戏的时候重置
+    let this_ = this;
+    this.animalsDataService.$currentAnimalSection.subscribe(
+      (value) => {
+        //console.info("获取导航事件：",value);
+        this_.resetGame();
+      }
+    );
     this.resetGame()
   }
   //重置游戏场景
@@ -68,12 +76,12 @@ export class Game4Component implements AfterViewInit, GameComponent {
   }
   async endGame() {
     this.gameState = GAME_STATE.COMPLETED;
-    console.info({imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips})
+    console.info({ imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips })
     const modal = await this.modalController.create({
       component: GameCompleteComponent,
       cssClass: 'photo-modal',
       componentProps: {
-        'data': {imageURL:this.data.gameCompleteImageURL,text:this.data.gameCompleteTips}
+        'data': { imageURL: this.data.gameCompleteImageURL, text: this.data.gameCompleteTips }
       }
     });
     await modal.present();
@@ -105,7 +113,7 @@ export class Game4Component implements AfterViewInit, GameComponent {
       let rockY: number = rockRowIndex * ROCK_V_GAP;
       let rockOffsetX: number = ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2;
       let rockOffsetY: number = ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2;
-      let rockRotate: number =  ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2;
+      let rockRotate: number = ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2;
       //console.info('left', rockX + "px", ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2 + "px");
       //console.info('top', rockY + "px", ROCK_MAX_OFFSET - Math.random() * ROCK_MAX_OFFSET * 2 + "px");
       //播放卡片移动动画
@@ -118,7 +126,7 @@ export class Game4Component implements AfterViewInit, GameComponent {
         // .fromTo('opacity', 0, 1)
         .fromTo('left', rockX + "px", rockX + rockOffsetX + "px")
         .fromTo('top', rockY + "px", rockY + rockOffsetY + "px")
-        .fromTo('transform',"rotate(0deg)", "rotate("+rockRotate+"deg)")
+        .fromTo('transform', "rotate(0deg)", "rotate(" + rockRotate + "deg)")
         .onFinish(() => {
         });
     }

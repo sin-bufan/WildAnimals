@@ -39,8 +39,6 @@ export class SidemenuComponent implements OnInit {
         this.animals = data.animals;
       }
     );
-
-
   }
   currentAnimalName: string = ""
   //跳转到章节
