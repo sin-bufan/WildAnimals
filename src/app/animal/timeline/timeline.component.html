@@ -6,7 +6,7 @@
   </div>
   <div *ngIf="data" class="timeline-container">
     <div>
-      <ion-text class="text" [innerHTML]="data.text">
+      <ion-text class="text" [ngClass]="{'text-cn': animalsDataService.language == 'cn'}" [innerHTML]="data.text">
       </ion-text>
     </div>
   </div>

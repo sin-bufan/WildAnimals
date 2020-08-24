@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
+import { AnimalsDataService } from 'src/app/animals-data.service';
 
 @Component({
   selector: 'animal-keypoint',
@@ -12,8 +13,10 @@ export class KeypointComponent implements OnInit {
   index: number = -1;
 
   @ViewChild("featherAnimal", { static: false }) feather_animal: ElementRef;
-  @ViewChild("featherInfo", { static: false }) feather_info: ElementRef
-  constructor(private animationCtrl: AnimationController) { }
+  @ViewChild("featherInfo", { static: false }) feather_info: ElementRef;
+  constructor(private animationCtrl: AnimationController, 
+    public animalsDataService: AnimalsDataService) {
+  }
 
   ngOnInit() { }
   async onShow(i: number) {
@@ -43,7 +46,7 @@ export class KeypointComponent implements OnInit {
       .addElement(this.feather_info.nativeElement)
       .duration(800)
       .iterations(1)
-      .fromTo('transform','translate(-50%,-50%)', 'translate(-120%,-50%)' )
+      .fromTo('transform', 'translate(-50%,-50%)', 'translate(-120%,-50%)')
       .fromTo('opacity', '0', '1')
       .easing("ease-out");
     await a.play()

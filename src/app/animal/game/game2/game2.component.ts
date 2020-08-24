@@ -207,14 +207,14 @@ export class Game2Component implements AfterViewInit, GameComponent {
   //完成一个拼图
   async showRight(puzzleCatalogIndex: number) {
     //虎符闪烁
-    let a: Animation = this.animationCtrl.create()
-      .addElement(document.querySelector(".question"))
-      .duration(500)
-      .easing('ease-out')
-      .iterations(2)
-      .fromTo('opacity', "0", "1")
-      .onFinish(() => {
-      });
+    // let a: Animation = this.animationCtrl.create()
+    //   .addElement(document.querySelector(".question"))
+    //   .duration(500)
+    //   .easing('ease-out')
+    //   .iterations(2)
+    //   .fromTo('opacity', "0", "1")
+    //   .onFinish(() => {
+    //   });
     let b: Animation = this.animationCtrl.create()
       .addElement(document.querySelector(".question"))
       .duration(500)
@@ -224,7 +224,7 @@ export class Game2Component implements AfterViewInit, GameComponent {
       .fromTo('transform', "translate(0, 0) scale(1)", "translate(-480px, 450px) scale(0.3)")
       .onFinish(() => {
       });
-    await a.play();
+    // await a.play();
     await b.play();
 
     // console.info("援军出城：", puzzleCatalogIndex);

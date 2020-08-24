@@ -11,12 +11,10 @@ import { Router } from '@angular/router';
 export class DownloadComponent implements OnInit {
   @Input() copyrightText: string;
   @Input() data: DownloadItem;
-  lang:string;
   constructor(
     private router: Router,
     private modalCtrl: ModalController,
-    private animalsDataService: AnimalsDataService) {
-      this.lang = this.animalsDataService.language;
+    public animalsDataService: AnimalsDataService) {
   }
   onClose() {
     this.modalCtrl.dismiss({

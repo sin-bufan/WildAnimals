@@ -3,7 +3,7 @@
   <div #featherInfo hidden class="feather-container">
     <img *ngIf="index>=0" class="feather-image" [src]="data.feathers[index].imageURL" />
     <h1 *ngIf="index>=0" class="feather-title">{{ data.feathers[index].title }}</h1>
-    <p *ngIf="index>=0" class="feather-text">{{ data.feathers[index].text }}</p>
+    <p *ngIf="index>=0" class="feather-text" [ngClass]="{'text-cn': animalsDataService.language == 'cn'}">{{ data.feathers[index].text }}</p>
   </div>
 
   <div #featherAnimal *ngIf="data" class="point-container">

@@ -1,5 +1,5 @@
 <div class="container">
-  <ion-text *ngIf="data" class="map-text" [innerHTML]="data.text"></ion-text>
+  <ion-text *ngIf="data" class="map-text" [ngClass]="{'text-cn': animalsDataService.language == 'cn'}" [innerHTML]="data.text"></ion-text>
   <div class="map-panel">
     <ion-slides #mapSlides [options]="slideOpts">
       <ion-slide>

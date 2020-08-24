@@ -31,7 +31,8 @@ export class MapComponent implements AfterViewInit {
   m: L.Map;//地图实例
   @ViewChild("mapSlides", { static: false }) mapSlides: IonSlides;
   @ViewChild("map", { static: true }) map: ElementRef;
-  constructor(private animalsDataService: AnimalsDataService) { }
+  constructor(public animalsDataService: AnimalsDataService) { 
+  }
 
   ngAfterViewInit() {
     let that = this;

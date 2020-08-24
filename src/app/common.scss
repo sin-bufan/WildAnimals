@@ -25,3 +25,8 @@ ion-button{
 .image-button:active {
   transform: scale(1) translateY(1px);
 }
+
+.text-cn{
+  // @extend text;
+  text-indent: 36px;
+}

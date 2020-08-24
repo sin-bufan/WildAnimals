@@ -4,7 +4,7 @@
       <ion-text class="animal-name"  [innerHTML]="data.name"></ion-text>
       <ion-text class="animal-aliasName"  [innerHTML]="data.aliasName"></ion-text>
       <ion-text class="animal-scientificName"  [innerHTML]="data.scientificName"></ion-text>
-      <ion-text class="animal-intro"  [innerHTML]="data.intro"></ion-text>
+      <ion-text class="animal-intro"  [ngClass]="{'text-cn': animalsDataService.language == 'cn'}" [innerHTML]="data.intro"></ion-text>
     </div>
     <div class="media-container">
       <div *ngIf="data" class="album-container">
